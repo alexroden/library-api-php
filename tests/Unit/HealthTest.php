@@ -13,11 +13,9 @@ class HealthTest extends TestCase
 
         $response = $controller->index();
 
+        $this->assertSame(200, $response->status);
         $this->assertSame([
-            'data' => [
-                'status' => 'ok',
-            ],
-            'status' => 200,
-        ], $response);
+            'status' => 'ok',
+        ], $response->data);
     }
 }
