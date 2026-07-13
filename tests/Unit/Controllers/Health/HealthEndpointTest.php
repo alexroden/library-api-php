@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\Unit\Controllers\Health;
+namespace Tests\Unit\Controllers\Health;
 
 use App\Controllers\HealthController;
 use PHPUnit\Framework\TestCase;

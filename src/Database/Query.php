@@ -3,6 +3,7 @@
 namespace App\Database;
 
 use PDO;
+use PDOStatement;
 
 readonly class Query
 {
@@ -11,19 +12,34 @@ readonly class Query
     ) {
     }
 
-    public function select(string $table, array $attributes = []): array
+//    public function select(string $table, array $attributes = []): array
+//    {
+//
+//
+//        $stmt = $this->execute(
+//            sprintf(), $params);
+//
+//        return $stmt->fetchAll();
+//    }
+
+    public function first(string $table, array $attrs, array $where = []): ?array
     {
+        array_unshift($attrs, 'id');
+        $attrs = array_merge($attrs, ['created_at', 'updated_at']);
 
+        $column = implode(', ', $attrs);
+        $sql = "SELECT {$column} FROM {$table}";
 
-        $stmt = $this->execute(
-            sprintf(), $params);
+        $values = [];
+        if (count($where) > 0) {
+            $sql .= ' WHERE ';
+            foreach ($where as $key => $value) {
+                $sql .= "{$key} = :{$key}";
+                $values[":{$key}"] = $value;
+            }
+        }
 
-        return $stmt->fetchAll();
-    }
-
-    public function first(string $sql, array $params = []): ?array
-    {
-        $stmt = $this->execute($sql, $params);
+        $stmt = $this->execute($sql, $values);
 
         $result = $stmt->fetch();
 
