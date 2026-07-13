@@ -1,5 +1,6 @@
 {
   "name": "alexrode/libray-api-php",
+  "license": "MIT",
   "description": "A training project in PHP to create an api for a library",
   "type": "project",
   "require": {
