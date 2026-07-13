@@ -1,0 +1,13 @@
+{
+  "name": "alexrode/libray-api-php",
+  "description": "A training project in PHP to create an api for a library",
+  "type": "project",
+  "require": {
+    "php": "^8.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}
