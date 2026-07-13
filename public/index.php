@@ -2,8 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\Hello;
+use App\Router;
 
-$hello = new Hello();
+$router = new Router();
+require __DIR__ . '/../routes/api.php';
 
-echo $hello->greet();
+$router->dispatch();
