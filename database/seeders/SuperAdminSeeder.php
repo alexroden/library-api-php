@@ -16,7 +16,7 @@ class SuperAdminSeeder extends AbstractSeeder
             'SELECT id FROM users WHERE email = ?'
         );
         $exists->execute([
-            $_ENV['SUPER_ADMIN_EMAIL'],
+            getenv('SUPER_ADMIN_EMAIL'),
         ]);
 
         if ($exists->fetch()) {
@@ -31,9 +31,9 @@ class SuperAdminSeeder extends AbstractSeeder
 
         $s = explode('-', Roles::SUPER_ADMIN);
         $stmt->execute([
-            $_ENV['SUPER_ADMIN_EMAIL'],
+            getenv('SUPER_ADMIN_EMAIL'),
             password_hash(
-                $_ENV['SUPER_ADMIN_PASSWORD'],
+                getenv('SUPER_ADMIN_PASSWORD'),
                 PASSWORD_ARGON2ID
             ),
             $s[0],

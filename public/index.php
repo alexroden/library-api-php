@@ -9,5 +9,4 @@ $router = new Router();
 require __DIR__ . '/../routes/api.php';
 
 $request = Request::capture();
-
 $router->dispatch($request);
