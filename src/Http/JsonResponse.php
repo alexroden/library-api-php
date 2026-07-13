@@ -4,6 +4,10 @@ namespace App\Http;
 
 class JsonResponse
 {
+    /**
+     * @param array $data
+     * @param int $status
+     */
     public function __construct(
         public array $data,
         public int $status = 200

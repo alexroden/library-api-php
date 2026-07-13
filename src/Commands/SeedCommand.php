@@ -2,23 +2,28 @@
 
 namespace App\Commands;
 
+use App\Config\Config;
+use Database\Seeders\PermissionsSeeder;
 use Database\Seeders\RolesSeeder;
+use Database\Seeders\SuperAdminSeeder;
 use PDO;
 
 class SeedCommand
 {
+    private array $seeders = [
+        RolesSeeder::class,
+        PermissionsSeeder::class,
+        SuperAdminSeeder::class,
+    ];
+
     public function __construct(
-        private PDO $db
+        private readonly PDO $db,
     ) {
     }
 
     public function run(): void
     {
-        $seeders = [
-            RolesSeeder::class,
-        ];
-
-        foreach ($seeders as $seeder) {
+        foreach ($this->seeders as $seeder) {
             echo "Running {$seeder}...\n";
 
             (new $seeder($this->db))->run();

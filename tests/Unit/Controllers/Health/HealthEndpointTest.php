@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Unit;
+namespace tests\Unit\Controllers\Health;
 
 use App\Controllers\HealthController;
 use PHPUnit\Framework\TestCase;
 
-class HealthTest extends TestCase
+class HealthEndpointTest extends TestCase
 {
-    public function testHealthReturnsOk(): void
+    public function testHealthEndpointReturnsOk(): void
     {
         $controller = new HealthController();
 

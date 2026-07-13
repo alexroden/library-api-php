@@ -5,11 +5,11 @@ CREATE TABLE user_roles (
    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-   CONSTRAINT fk_users_roles_user
+   CONSTRAINT fk_user_roles_user
        FOREIGN KEY (user_id) REFERENCES users(id)
            ON DELETE CASCADE,
 
-   CONSTRAINT fk_users_roles_role
+   CONSTRAINT fk_user_roles_role
        FOREIGN KEY (role_id) REFERENCES roles(id)
            ON DELETE CASCADE,
 
