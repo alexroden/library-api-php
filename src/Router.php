@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Http\JsonResponse;
+
 class Router
 {
     private array $routes = [];
@@ -27,7 +29,11 @@ class Router
 
         [$controller, $action] = $handler;
 
-        (new $controller())->{$action}();
+        $response = (new $controller())->{$action}();
+
+        if ($response instanceof JsonResponse) {
+            $response->send();
+        }
     }
 
     public function get(string $path, callable|array $handler): void

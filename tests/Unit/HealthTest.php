@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class HealthTest extends TestCase
 {
-    public function testIndexReturnsHealthyStatus(): void
+    public function testHealthReturnsOk(): void
     {
         $controller = new HealthController();
 
