@@ -10,9 +10,11 @@ services:
     networks:
       - api_network
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      test: [ "CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$MYSQL_ROOT_PASSWORD --silent" ]
       interval: 5s
+      timeout: 5s
       retries: 20
+      start_period: 20s
   migrate:
     image: migrate/migrate:v4.17.1
     depends_on:
@@ -21,7 +23,7 @@ services:
     networks:
       - api_network
     volumes:
-      - ./migrations:/migrations
+      - ./database/migrations:/migrations
     entrypoint:
       [
         "sh",
