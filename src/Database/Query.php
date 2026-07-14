@@ -2,51 +2,93 @@
 
 namespace App\Database;
 
+use App\Models\AbstractModel;
 use PDO;
-use PDOStatement;
 
-readonly class Query
+class Query
 {
+    private array $conditions = [];
+
     public function __construct(
-        protected PDO $db
+        private PDO $pdo,
+        private string $table,
+        private string $class,
+        private array $attributes = ['*']
     ) {
     }
 
-//    public function select(string $table, array $attributes = []): array
-//    {
-//
-//
-//        $stmt = $this->execute(
-//            sprintf(), $params);
-//
-//        return $stmt->fetchAll();
-//    }
+    public function where(
+        string $column,
+        string $operator,
+        mixed $value
+    ): static {
+        $this->conditions[] = [
+            $column,
+            $operator,
+            $this->formatValue($value),
+            'AND'
+        ];
 
-    public function first(string $table, array $attrs, array $where = []): ?array
-    {
-        array_unshift($attrs, 'id');
-        $attrs = array_merge($attrs, ['created_at', 'updated_at']);
-
-        $column = implode(', ', $attrs);
-        $sql = "SELECT {$column} FROM {$table}";
-
-        $values = [];
-        if (count($where) > 0) {
-            $sql .= ' WHERE ';
-            foreach ($where as $key => $value) {
-                $sql .= "{$key} = :{$key}";
-                $values[":{$key}"] = $value;
-            }
-        }
-
-        $stmt = $this->execute($sql, $values);
-
-        $result = $stmt->fetch();
-
-        return $result ?: null;
+        return $this;
     }
 
-    public function insert(string $table, array $attributes = []): int
+    public function orWhere(
+        string $column,
+        string $operator,
+        mixed $value
+    ): static {
+        $this->conditions[] = [
+            $column,
+            $operator,
+            $this->formatValue($value),
+            'OR'
+        ];
+
+        return $this;
+    }
+
+    public function get(int $limit = 10, int $offset = 0): array
+    {
+        $attributes = $this->attributes;
+        if (count($attributes) > 0 && $attributes[0] !== '*') {
+            array_unshift($attributes, 'id');
+            $attributes = array_merge($attributes, ['created_at', 'updated_at']);
+        }
+
+        $columns = implode(', ', $attributes);
+        $query = "SELECT {$columns} FROM {$this->table}";
+
+        $bindings = $this->applyConditions($query);
+
+        $query .= " LIMIT {$limit} OFFSET {$offset}";
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute($bindings);
+
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return array_map(function (array $row) {
+            $model = new $this->class(
+                new self(
+                    $this->pdo,
+                    $this->table,
+                    $this->class,
+                    $this->attributes,
+                ),
+            );
+
+            $model->fill($row);
+
+            return $model;
+        }, $rows);
+    }
+
+    public function first(): ?AbstractModel
+    {
+        return $this->get(1)[0] ?? null;
+    }
+
+    public function insert(array $attributes = []): int
     {
         $columns = implode(', ', array_keys($attributes));
 
@@ -55,10 +97,10 @@ readonly class Query
             array_fill(0, count($attributes), '?')
         );
 
-        $stmt = $this->db->prepare(
+        $stmt = $this->pdo->prepare(
             sprintf(
                 'INSERT INTO %s (%s) VALUES (%s)',
-                $table,
+                $this->table,
                 $columns,
                 $placeholders
             )
@@ -66,24 +108,67 @@ readonly class Query
 
         $stmt->execute(array_values($attributes));
 
-        return (int) $this->db->lastInsertId();
+        return (int) $this->pdo->lastInsertId();
     }
 
-    public function update(string $sql, array $params = []): bool
+    public function update(array $attributes = []): void
     {
-        return $this->execute($sql, $params)->rowCount() > 0;
+        $columns = implode(
+            ', ',
+            array_map(
+                fn ($column) => "{$column} = ?",
+                array_keys($attributes)
+            )
+        );
+
+        $query = 'UPDATE %s SET %s';
+        $bindings = array_merge(array_values($attributes), $this->applyConditions($query));
+
+        $foo = sprintf(
+            $query,
+            $this->table,
+            $columns,
+        );
+
+        $stmt = $this->pdo->prepare(
+            $foo,
+        );
+
+        $stmt->execute($bindings);
     }
 
-    public function delete(string $sql, array $params = []): bool
+    public function getConnection(): PDO
     {
-        return $this->execute($sql, $params)->rowCount() > 0;
+        return $this->pdo;
     }
 
-    private function execute(string $sql, array $params = []): PDOStatement
+    private function formatValue(mixed $value): string
     {
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute($params);
+        return match (true) {
+            is_string($value) => "'{$value}'",
+            is_bool($value)   => $value ? 'TRUE' : 'FALSE',
+            is_null($value)   => 'NULL',
+            default           => $value,
+        };
+    }
 
-        return $stmt;
+    private function applyConditions(string &$query): array
+    {
+        $bindings = [];
+        if ($this->conditions !== []) {
+            $query .= ' WHERE ';
+
+            foreach ($this->conditions as $index => $condition) {
+                if ($index > 0) {
+                    $query .= " {$condition[3]} ";
+                }
+
+                $query .= "{$condition[0]} {$condition[1]} ?";
+
+                $bindings[] = $condition[2];
+            }
+        }
+
+        return $bindings;
     }
 }

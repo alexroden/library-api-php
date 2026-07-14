@@ -2,35 +2,50 @@
 
 namespace Tests\Unit\Models;
 
-use App\Database\Query;
 use App\Models\User;
-use Tests\AbstractDatabaseTestCase;
+use Tests\AbstractTestCase;
 use Tests\Factories\UserFactory;
 
-class UserTest extends AbstractDatabaseTestCase
+class UserTest extends AbstractTestCase
 {
+    private User $user;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->user = new UserFactory($this->query)->create();
+    }
+
+    public function testGet(): void
+    {
+        $model = new User($this->query);
+        $users = $model->where('id', '=', $this->user->id)->get();
+
+        $this->assertCount(1, $users);
+    }
+
+    public function testFirst(): void
+    {
+        $model = new User($this->query);
+        $user = $model->where('id', '=', $this->user->id)->first();
+
+        $this->assertEquals($this->user->id, $user->id);
+    }
+
     public function testCreate(): void
     {
         $model = new User($this->query);
 
-        $id = $model->create([
+        $user = $model->create([
             'email' => 'john.smith@example.com',
             'password' => 'password',
             'first_name' => 'John',
             'last_name' => 'Smith',
         ]);
 
-        $this->assertSame(1, $id);
+        $this->assertNotNull($user->id);
     }
 
-    public function testFirst(): void
-    {
-        $expected = new UserFactory($this->query)->create();
 
-        $model = new User($this->query);
-        $user = $model->first(['id' => 1]);
-
-        $this->assertEquals($expected->id, $user->id);
-
-    }
 }

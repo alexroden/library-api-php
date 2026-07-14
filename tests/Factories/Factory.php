@@ -21,17 +21,11 @@ abstract class Factory
 
     abstract protected function definition(): array;
 
-    public function create(array $attributes = []): AbstractModel
+    public function create(array $attributes = []): ?AbstractModel
     {
-        $attributes = array_replace(
+        return $this->model()->create(array_replace(
             $this->definition(),
             $attributes
-        );
-
-        $id = $this->model()->create($attributes);
-
-        return $this->model()->first([
-            'id' => $id,
-        ]);
+        ));
     }
 }

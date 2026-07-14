@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\Database\Query;
+use JsonSerializable;
 
-abstract class AbstractModel
+abstract class AbstractModel implements JsonSerializable
 {
     protected string $table;
 
@@ -17,25 +18,55 @@ abstract class AbstractModel
     ) {
     }
 
-    public function create(array $attributes): int
+    public function create(array $attributes): AbstractModel
     {
         $attributes = $this->filterFillable($attributes);
 
-        return $this->query->insert(
+        $id = $this->newQuery()->insert($attributes);
+
+        return $this->where('id', '=', $id)->first();
+    }
+
+    public function fill(array $attributes): static
+    {
+        $this->attributes = $attributes;
+
+        return $this;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return $this->attributes;
+    }
+
+    protected function newQuery(): Query
+    {
+        return new Query(
+            $this->query->getConnection(),
             $this->table,
-            $attributes
+            static::class,
+            $this->fillable,
         );
     }
 
-    public function first(array $where): ?static
+    public function update(array $attributes): void
     {
-        $row = $this->query->first(
-            $this->table,
-            $this->fillable,
-            $where
-        );
+        $attributes = $this->filterFillable($attributes);
 
-        return $row ? $this->hydrate($row) : null;
+        $this->newQuery()->update($attributes);
+    }
+
+    public function where(
+        string $column,
+        string $operator,
+        mixed $value,
+    ): Query
+    {
+        return $this->newQuery()->where(
+            $column,
+            $operator,
+            $value,
+        );
     }
 
     public function __get(string $key): mixed
@@ -48,25 +79,11 @@ abstract class AbstractModel
         $this->attributes[$key] = $value;
     }
 
-    public function toArray(): array
-    {
-        return $this->attributes;
-    }
-
     protected function filterFillable(array $attributes): array
     {
         return array_intersect_key(
             $attributes,
             array_flip($this->fillable)
         );
-    }
-
-    protected function hydrate(array $attributes): static
-    {
-        $model = new static($this->query);
-
-        $model->attributes = $attributes;
-
-        return $model;
     }
 }
