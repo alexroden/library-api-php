@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Database\Database;
+use App\Database\Connection;
 use App\Database\Query;
 use App\Models\User;
 use PDO;
@@ -16,9 +16,9 @@ abstract class AbstractTestCase extends TestCase
     {
         parent::setUp();
 
-        Database::reset();
+        Connection::reset();
 
-        Database::getConnection('sqlite::memory:');
+        Connection::getConnection('sqlite::memory:');
 
         $this->createSchema();
 
@@ -40,7 +40,7 @@ abstract class AbstractTestCase extends TestCase
                     |> (fn($x) => preg_replace('/ON UPDATE CURRENT_TIMESTAMP/i', '', $x));
 
 
-            Database::exec($sql);
+            Connection::exec($sql);
         }
     }
 }

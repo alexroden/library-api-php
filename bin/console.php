@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Commands\SeedCommand;
-use App\Database\Database;
+use App\Database\Connection;
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
@@ -12,7 +12,7 @@ $dotenv->load();
 
 $command = $argv[1] ?? null;
 
-$database = new Database();
+$database = new Connection();
 
 switch ($command) {
     case 'seed':

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Database\Query;
 use App\Enums\Roles;
 use App\Exceptions\NotFountException;
 use App\Models\User;
@@ -14,33 +13,20 @@ class SuperAdminSeeder extends AbstractSeeder
      */
     public function run(): void
     {
-        $user = new User(new Query($this->db));
-        $exists->execute([
-            getenv('SUPER_ADMIN_EMAIL'),
-        ]);
-
-        if ($exists->fetch()) {
+        $srv = new User();
+        if ($srv->where('email', '=', getenv('SUPER_ADMIN_EMAIL'))->first()) {
             echo "Super admin already exists.\n";
             return;
         }
 
-        $stmt = $this->db->prepare(
-            'INSERT INTO users (email, password, first_name, last_name)
-             VALUES (?, ?, ?, ?)'
-        );
-
-        $s = explode('-', Roles::SUPER_ADMIN);
-        $stmt->execute([
-            getenv('SUPER_ADMIN_EMAIL'),
-            password_hash(
-                getenv('SUPER_ADMIN_PASSWORD'),
-                PASSWORD_ARGON2ID
-            ),
-            $s[0],
-            $s[1],
+        $name = explode('-', Roles::SUPER_ADMIN);
+        $user = $srv->create([
+            'email' => getenv('SUPER_ADMIN_EMAIL'),
+            'password' => password_hash(getenv('SUPER_ADMIN_PASSWORD'), PASSWORD_ARGON2ID),
+            'first_name' => $name[0],
+            'last_name' => $name[1],
         ]);
 
-        $userId = (int) $this->db->lastInsertId();
         $exists = $this->db->prepare(
             'SELECT id FROM roles WHERE name = ?'
         );
@@ -56,7 +42,7 @@ class SuperAdminSeeder extends AbstractSeeder
              VALUES (?, ?)'
         );
 
-        $stmt->execute([$userId, $roleRow['id']]);
+        $stmt->execute([$user->id, $roleRow['id']]);
 
         echo "Super admin created.\n";
     }

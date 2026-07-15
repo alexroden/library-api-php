@@ -48,7 +48,7 @@ class Query
 
     public function get(int $limit = 10, int $offset = 0): array
     {
-        $pdo = Database::getConnection();
+        $pdo = Connection::getConnection();
         $attributes = $this->attributes;
         if (count($attributes) > 0 && $attributes[0] !== '*') {
             array_unshift($attributes, 'id');
@@ -89,7 +89,7 @@ class Query
 
     public function insert(array $attributes = []): int
     {
-        $pdo = Database::getConnection();
+        $pdo = Connection::getConnection();
         $columns = implode(', ', array_keys($attributes));
 
         $placeholders = implode(
@@ -113,7 +113,7 @@ class Query
 
     public function update(array $attributes = []): void
     {
-        $pdo = Database::getConnection();
+        $pdo = Connection::getConnection();
         $columns = implode(
             ', ',
             array_map(
@@ -166,10 +166,5 @@ class Query
         }
 
         return $bindings;
-    }
-
-    public function getConnection(): PDO
-    {
-        return Database::getConnection();
     }
 }
