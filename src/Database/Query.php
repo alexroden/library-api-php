@@ -10,7 +10,6 @@ class Query
     private array $conditions = [];
 
     public function __construct(
-        private PDO $pdo,
         private string $table,
         private string $class,
         private array $attributes = ['*']
@@ -49,6 +48,7 @@ class Query
 
     public function get(int $limit = 10, int $offset = 0): array
     {
+        $pdo = Database::getConnection();
         $attributes = $this->attributes;
         if (count($attributes) > 0 && $attributes[0] !== '*') {
             array_unshift($attributes, 'id');
@@ -62,7 +62,7 @@ class Query
 
         $query .= " LIMIT {$limit} OFFSET {$offset}";
 
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $pdo->prepare($query);
         $stmt->execute($bindings);
 
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -70,7 +70,6 @@ class Query
         return array_map(function (array $row) {
             $model = new $this->class(
                 new self(
-                    $this->pdo,
                     $this->table,
                     $this->class,
                     $this->attributes,
@@ -90,6 +89,7 @@ class Query
 
     public function insert(array $attributes = []): int
     {
+        $pdo = Database::getConnection();
         $columns = implode(', ', array_keys($attributes));
 
         $placeholders = implode(
@@ -97,7 +97,7 @@ class Query
             array_fill(0, count($attributes), '?')
         );
 
-        $stmt = $this->pdo->prepare(
+        $stmt = $pdo->prepare(
             sprintf(
                 'INSERT INTO %s (%s) VALUES (%s)',
                 $this->table,
@@ -108,11 +108,12 @@ class Query
 
         $stmt->execute(array_values($attributes));
 
-        return (int) $this->pdo->lastInsertId();
+        return (int) $pdo->lastInsertId();
     }
 
     public function update(array $attributes = []): void
     {
+        $pdo = Database::getConnection();
         $columns = implode(
             ', ',
             array_map(
@@ -130,16 +131,11 @@ class Query
             $columns,
         );
 
-        $stmt = $this->pdo->prepare(
+        $stmt = $pdo->prepare(
             $foo,
         );
 
         $stmt->execute($bindings);
-    }
-
-    public function getConnection(): PDO
-    {
-        return $this->pdo;
     }
 
     private function formatValue(mixed $value): string
@@ -170,5 +166,10 @@ class Query
         }
 
         return $bindings;
+    }
+
+    public function getConnection(): PDO
+    {
+        return Database::getConnection();
     }
 }

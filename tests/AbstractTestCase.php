@@ -10,18 +10,19 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractTestCase extends TestCase
 {
-    protected PDO $db;
     protected Query $query;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $database = new Database('sqlite::memory:');
-        $this->db = $database->getConnection();
+        Database::reset();
+
+        Database::getConnection('sqlite::memory:');
+
         $this->createSchema();
 
-        $this->query = new Query($this->db, 'users', User::class, ['email', 'password', 'first_name', 'last_name']);
+        $this->query = new Query('users', User::class, ['email', 'password', 'first_name', 'last_name']);
     }
 
     private function createSchema(): void
@@ -38,7 +39,8 @@ abstract class AbstractTestCase extends TestCase
                     |> (fn($x) => preg_replace('/,\s*INDEX\s+[^(]+\([^)]+\)/i', '',  $x))
                     |> (fn($x) => preg_replace('/ON UPDATE CURRENT_TIMESTAMP/i', '', $x));
 
-            $this->db->exec($sql);
+
+            Database::exec($sql);
         }
     }
 }

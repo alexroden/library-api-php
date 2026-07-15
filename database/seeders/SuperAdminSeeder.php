@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Database\Query;
 use App\Enums\Roles;
 use App\Exceptions\NotFountException;
+use App\Models\User;
 
 class SuperAdminSeeder extends AbstractSeeder
 {
@@ -12,9 +14,7 @@ class SuperAdminSeeder extends AbstractSeeder
      */
     public function run(): void
     {
-        $exists = $this->db->prepare(
-            'SELECT id FROM users WHERE email = ?'
-        );
+        $user = new User(new Query($this->db));
         $exists->execute([
             getenv('SUPER_ADMIN_EMAIL'),
         ]);

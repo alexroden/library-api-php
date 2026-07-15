@@ -11,9 +11,8 @@ abstract class Factory
 {
     protected Generator $faker;
 
-    public function __construct(
-        protected Query $query
-    ) {
+    public function __construct()
+    {
         $this->faker = FakerFactory::create();
     }
 

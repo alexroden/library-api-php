@@ -8,7 +8,7 @@ class UserFactory extends Factory
 {
     protected function model(): User
     {
-        return new User($this->query);
+        return new User();
     }
 
     protected function definition(): array

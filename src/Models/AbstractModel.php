@@ -4,18 +4,22 @@ namespace App\Models;
 
 use App\Database\Query;
 use JsonSerializable;
+use PDO;
 
 abstract class AbstractModel implements JsonSerializable
 {
+    protected Query $query;
     protected string $table;
-
     protected array $fillable = [];
-
     protected array $attributes = [];
 
-    public function __construct(
-        protected Query $query
-    ) {
+    public function __construct() {
+        $fillable = $this->fillable;
+        if (count($fillable) === 0) {
+            $fillable = null;
+        }
+
+        $this->query = new Query($this->table, static::class, $fillable);
     }
 
     public function create(array $attributes): AbstractModel
@@ -42,7 +46,6 @@ abstract class AbstractModel implements JsonSerializable
     protected function newQuery(): Query
     {
         return new Query(
-            $this->query->getConnection(),
             $this->table,
             static::class,
             $this->fillable,

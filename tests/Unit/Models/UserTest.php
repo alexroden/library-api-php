@@ -46,6 +46,4 @@ class UserTest extends AbstractTestCase
 
         $this->assertNotNull($user->id);
     }
-
-
 }
