@@ -2,13 +2,13 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
-use AlexRoden\LibraryApiPhp\Database\Query;
+use AlexRoden\LibraryApiPhp\Database\DB;
 use JsonSerializable;
 use PDO;
 
 abstract class AbstractModel implements JsonSerializable
 {
-    protected Query $query;
+    protected DB $query;
     protected string $table;
     protected array $fillable = [];
     protected array $attributes = [];
@@ -19,14 +19,12 @@ abstract class AbstractModel implements JsonSerializable
             $fillable = null;
         }
 
-        $this->query = new Query($this->table, static::class, $fillable);
+        $this->query = new DB($this->table, static::class, $fillable);
     }
 
-    public function create(array $attributes): AbstractModel
+    public function create(array $attributes): static
     {
-        $attributes = $this->filterFillable($attributes);
-
-        $id = $this->newQuery()->insert($attributes);
+        $id = $this->DB()->insert($this->filterFillable($attributes));
 
         return $this->where('id', '=', $id)->first();
     }
@@ -43,29 +41,18 @@ abstract class AbstractModel implements JsonSerializable
         return $this->attributes;
     }
 
-    protected function newQuery(): Query
-    {
-        return new Query(
-            $this->table,
-            static::class,
-            $this->fillable,
-        );
-    }
-
     public function update(array $attributes): void
     {
-        $attributes = $this->filterFillable($attributes);
-
-        $this->newQuery()->update($attributes);
+        $this->DB()->update($this->filterFillable($attributes));
     }
 
     public function where(
         string $column,
         string $operator,
         mixed $value,
-    ): Query
+    ): DB
     {
-        return $this->newQuery()->where(
+        return $this->DB()->where(
             $column,
             $operator,
             $value,
@@ -80,6 +67,15 @@ abstract class AbstractModel implements JsonSerializable
     public function __set(string $key, mixed $value): void
     {
         $this->attributes[$key] = $value;
+    }
+
+    protected function DB(?string $table = null, ?string $class = null, ?array $fillable = null): DB
+    {
+        return new DB(
+            $table ?? $this->table,
+            $class ?? static::class,
+            $fillable ?? $this->fillable,
+        );
     }
 
     protected function filterFillable(array $attributes): array

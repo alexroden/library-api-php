@@ -3,25 +3,21 @@
 namespace AlexRoden\LibraryApiPhp\Tests;
 
 use AlexRoden\LibraryApiPhp\Database\Connection;
-use AlexRoden\LibraryApiPhp\Database\Query;
+use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Models\User;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractTestCase extends TestCase
 {
-    protected Query $query;
 
     protected function setUp(): void
     {
         parent::setUp();
 
         Connection::reset();
-
         Connection::getConnection('sqlite::memory:');
 
         $this->createSchema();
-
-        $this->query = new Query('users', User::class, ['email', 'password', 'first_name', 'last_name']);
     }
 
     private function createSchema(): void
