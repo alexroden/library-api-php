@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Config\Config;
 use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Models\Role;
 
 class RolesSeeder extends AbstractSeeder
 {
@@ -14,26 +15,18 @@ class RolesSeeder extends AbstractSeeder
      */
     public function run(): void
     {
-        foreach (Roles::getConstants() as $role) {
-            $exists = $this->db->prepare(
-                'SELECT id FROM roles WHERE name = ?'
-            );
-            $exists->execute([$role]);
+        $model = new Role();
 
-            if ($row = $exists->fetch()) {
+        foreach (Roles::getConstants() as $role) {
+            if ($row = $model->where('name', '=', $role)->first()) {
                 echo "Role {$role} already exists.\n";
-                $this->linkPermissions($row['id'], $role);
+                $this->linkPermissions($row->id, $role);
 
                 continue;
             }
 
-            $this->db->prepare(
-                'INSERT INTO roles (name)
-                 VALUES (?)'
-            )->execute([$role]);
-
-            $roleId = (int) $this->db->lastInsertId();
-            $this->linkPermissions($roleId, $role);
+            $row = $model->create(['name' => $role]);
+            $this->linkPermissions($row->id, $role);
 
             echo "Role {$role} created.\n";
         }

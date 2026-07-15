@@ -3,6 +3,7 @@
 namespace AlexRoden\LibraryApiPhp\Database;
 
 use AlexRoden\LibraryApiPhp\Models\AbstractModel;
+use InvalidArgumentException;
 use PDO;
 
 class Query
@@ -89,6 +90,10 @@ class Query
 
     public function insert(array $attributes = []): int
     {
+        if ($attributes === []) {
+            throw new InvalidArgumentException('No attributes provided for insert.');
+        }
+
         $pdo = Connection::getConnection();
         $columns = implode(', ', array_keys($attributes));
 
@@ -97,14 +102,14 @@ class Query
             array_fill(0, count($attributes), '?')
         );
 
-        $stmt = $pdo->prepare(
-            sprintf(
-                'INSERT INTO %s (%s) VALUES (%s)',
-                $this->table,
-                $columns,
-                $placeholders
-            )
+        $sql = sprintf(
+            'INSERT INTO %s (%s) VALUES (%s)',
+            $this->table,
+            $columns,
+            $placeholders
         );
+
+        $stmt = $pdo->prepare($sql);
 
         $stmt->execute(array_values($attributes));
 

@@ -14,12 +14,12 @@ class UserTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->user = new UserFactory($this->query)->create();
+        $this->user = new UserFactory()->create();
     }
 
     public function testGet(): void
     {
-        $model = new User($this->query);
+        $model = new User();
         $users = $model->where('id', '=', $this->user->id)->get();
 
         $this->assertCount(1, $users);
@@ -27,7 +27,7 @@ class UserTest extends AbstractTestCase
 
     public function testFirst(): void
     {
-        $model = new User($this->query);
+        $model = new User();
         $user = $model->where('id', '=', $this->user->id)->first();
 
         $this->assertEquals($this->user->id, $user->id);
@@ -35,7 +35,7 @@ class UserTest extends AbstractTestCase
 
     public function testCreate(): void
     {
-        $model = new User($this->query);
+        $model = new User();
 
         $user = $model->create([
             'email' => 'john.smith@example.com',

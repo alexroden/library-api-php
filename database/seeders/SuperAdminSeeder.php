@@ -13,14 +13,14 @@ class SuperAdminSeeder extends AbstractSeeder
      */
     public function run(): void
     {
-        $srv = new User();
-        if ($srv->where('email', '=', getenv('SUPER_ADMIN_EMAIL'))->first()) {
+        $model = new User();
+        if ($model->where('email', '=', getenv('SUPER_ADMIN_EMAIL'))->first()) {
             echo "Super admin already exists.\n";
             return;
         }
 
         $name = explode('-', Roles::SUPER_ADMIN);
-        $user = $srv->create([
+        $user = $model->create([
             'email' => getenv('SUPER_ADMIN_EMAIL'),
             'password' => password_hash(getenv('SUPER_ADMIN_PASSWORD'), PASSWORD_ARGON2ID),
             'first_name' => $name[0],
