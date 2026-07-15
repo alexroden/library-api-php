@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace AlexRoden\LibraryApiPhp;
 
-use App\Http\JsonResponse;
-use App\Http\Request;
+use AlexRoden\LibraryApiPhp\Http\JsonResponse;
+use AlexRoden\LibraryApiPhp\Http\Request;
 
 class Router
 {

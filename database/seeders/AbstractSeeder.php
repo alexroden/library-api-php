@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
 use PDO;
 

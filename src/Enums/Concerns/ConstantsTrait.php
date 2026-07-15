@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums\Concerns;
+namespace AlexRoden\LibraryApiPhp\Enums\Concerns;
 
 use ReflectionClass;
 

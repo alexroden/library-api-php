@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit\Database;
+namespace AlexRoden\LibraryApiPhp\Tests\Unit\Database;
 
-use App\Database\Query;
-use App\Models\User;
-use Tests\AbstractTestCase;
-use Tests\Factories\UserFactory;
+use AlexRoden\LibraryApiPhp\Database\Query;
+use AlexRoden\LibraryApiPhp\Models\User;
+use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
+use AlexRoden\LibraryApiPhp\Tests\Factories\UserFactory;
 
 class QueryTest extends AbstractTestCase
 {

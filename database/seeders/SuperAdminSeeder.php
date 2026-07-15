@@ -1,10 +1,10 @@
 <?php
 
-namespace Database\Seeders;
+namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
-use App\Enums\Roles;
-use App\Exceptions\NotFountException;
-use App\Models\User;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Models\User;
 
 class SuperAdminSeeder extends AbstractSeeder
 {

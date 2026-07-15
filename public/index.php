@@ -2,9 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\Database\Connection;
-use App\Http\Request;
-use App\Router;
+use AlexRoden\LibraryApiPhp\Database\Connection;
+use AlexRoden\LibraryApiPhp\Http\Request;
+use AlexRoden\LibraryApiPhp\Router;
 
 Connection::getConnection();
 

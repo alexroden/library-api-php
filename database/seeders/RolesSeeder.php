@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
-use App\Config\Config;
-use App\Enums\Permissions;
-use App\Enums\Roles;
-use App\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Config\Config;
+use AlexRoden\LibraryApiPhp\Enums\Permissions;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
 
 class RolesSeeder extends AbstractSeeder
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Factories;
+namespace AlexRoden\LibraryApiPhp\Tests\Factories;
 
-use App\Database\Query;
-use App\Models\AbstractModel;
+use AlexRoden\LibraryApiPhp\Database\Query;
+use AlexRoden\LibraryApiPhp\Models\AbstractModel;
 use Faker\Factory as FakerFactory;
 use Faker\Generator;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit\Controllers\Health;
+namespace AlexRoden\LibraryApiPhp\Tests\Unit\Controllers\Health;
 
-use App\Controllers\HealthController;
+use AlexRoden\LibraryApiPhp\Controllers\HealthController;
 use PHPUnit\Framework\TestCase;
 
 class HealthEndpointTest extends TestCase

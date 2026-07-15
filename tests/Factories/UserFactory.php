@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Factories;
+namespace AlexRoden\LibraryApiPhp\Tests\Factories;
 
-use App\Models\User;
+use AlexRoden\LibraryApiPhp\Models\User;
 
 class UserFactory extends Factory
 {

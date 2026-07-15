@@ -1,11 +1,10 @@
 <?php
 
-namespace Tests;
+namespace AlexRoden\LibraryApiPhp\Tests;
 
-use App\Database\Connection;
-use App\Database\Query;
-use App\Models\User;
-use PDO;
+use AlexRoden\LibraryApiPhp\Database\Connection;
+use AlexRoden\LibraryApiPhp\Database\Query;
+use AlexRoden\LibraryApiPhp\Models\User;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractTestCase extends TestCase

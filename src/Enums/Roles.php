@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Enums;
+namespace AlexRoden\LibraryApiPhp\Enums;
 
-use App\Enums\Concerns\ConstantsTrait;
+use AlexRoden\LibraryApiPhp\Enums\Concerns\ConstantsTrait;
 
 final class Roles
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders;
+namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
-use App\Enums\Permissions;
-use App\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Enums\Permissions;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
 
 class PermissionsSeeder extends AbstractSeeder
 {

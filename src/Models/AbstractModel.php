@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace AlexRoden\LibraryApiPhp\Models;
 
-use App\Database\Query;
+use AlexRoden\LibraryApiPhp\Database\Query;
 use JsonSerializable;
 use PDO;
 

@@ -1,7 +1,7 @@
 <?php
 
-use App\Enums\Permissions;
-use App\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Enums\Permissions;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
 
 return [
 

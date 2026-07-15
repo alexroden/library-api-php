@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace AlexRoden\LibraryApiPhp\Exceptions;
 
 class NotFountException extends AbstractException
 {

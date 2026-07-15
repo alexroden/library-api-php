@@ -14,13 +14,13 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src/",
-      "Database\\Seeders\\": "database/seeders/"
+      "AlexRoden\\LibraryApiPhp\\": "src/",
+      "AlexRoden\\LibraryApiPhp\\Database\\Seeders\\": "database/seeders/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "AlexRoden\\LibraryApiPhp\\Tests\\": "tests/"
     }
   },
   "scripts": {

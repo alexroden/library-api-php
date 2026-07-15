@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http;
+namespace AlexRoden\LibraryApiPhp\Http;
 
 class JsonResponse
 {

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Commands;
+namespace AlexRoden\LibraryApiPhp\Commands;
 
-use App\Config\Config;
-use Database\Seeders\PermissionsSeeder;
-use Database\Seeders\RolesSeeder;
-use Database\Seeders\SuperAdminSeeder;
+use AlexRoden\LibraryApiPhp\Database\Seeders\PermissionsSeeder;
+use AlexRoden\LibraryApiPhp\Database\Seeders\RolesSeeder;
+use AlexRoden\LibraryApiPhp\Database\Seeders\SuperAdminSeeder;
 use PDO;
 
 class SeedCommand

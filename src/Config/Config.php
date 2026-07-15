@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Config;
+namespace AlexRoden\LibraryApiPhp\Config;
 
 use RuntimeException;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Database;
+namespace AlexRoden\LibraryApiPhp\Database;
 
-use App\Models\AbstractModel;
+use AlexRoden\LibraryApiPhp\Models\AbstractModel;
 use PDO;
 
 class Query

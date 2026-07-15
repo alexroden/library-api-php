@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Models;
+namespace AlexRoden\LibraryApiPhp\Tests\Unit\Models;
 
-use App\Models\User;
-use Tests\AbstractTestCase;
-use Tests\Factories\UserFactory;
+use AlexRoden\LibraryApiPhp\Models\User;
+use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
+use AlexRoden\LibraryApiPhp\Tests\Factories\UserFactory;
 
 class UserTest extends AbstractTestCase
 {
