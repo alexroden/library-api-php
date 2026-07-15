@@ -4,6 +4,7 @@ namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
 use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Models\Role;
 use AlexRoden\LibraryApiPhp\Models\User;
 
 class SuperAdminSeeder extends AbstractSeeder
@@ -27,13 +28,9 @@ class SuperAdminSeeder extends AbstractSeeder
             'last_name' => $name[1],
         ]);
 
-        $exists = $this->db->prepare(
-            'SELECT id FROM roles WHERE name = ?'
-        );
-
-        $exists->execute([Roles::SUPER_ADMIN]);
-        $roleRow = $exists->fetch();
-        if (!$roleRow) {
+        $role = new Role();
+        $row = $role->where('name', '=', Roles::SUPER_ADMIN)->first();
+        if (!$row) {
             throw NotFountException::resource('Role - '.Roles::SUPER_ADMIN);
         }
 
@@ -42,7 +39,7 @@ class SuperAdminSeeder extends AbstractSeeder
              VALUES (?, ?)'
         );
 
-        $stmt->execute([$user->id, $roleRow['id']]);
+        $stmt->execute([$user->id, $row->id]);
 
         echo "Super admin created.\n";
     }

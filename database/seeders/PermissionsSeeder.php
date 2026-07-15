@@ -4,32 +4,21 @@ namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
 use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Models\Permission;
 
 class PermissionsSeeder extends AbstractSeeder
 {
     public function run(): void
     {
+        $model = new Permission();
         foreach (Permissions::getConstants() as $permission) {
-            $exists = $this->db->prepare(
-                'SELECT id FROM permissions WHERE name = ?'
-            );
-
-            $exists->execute([
-                $permission,
-            ]);
-
-            if ($exists->fetch()) {
+            if ($model->where('name', '=', $permission)->first()) {
                 echo "Permission {$permission} already exists.\n";
                 continue;
             }
 
-            $stmt = $this->db->prepare(
-                'INSERT INTO permissions (name)
-                 VALUES (?)'
-            );
-
-            $stmt->execute([
-                $permission
+            $model->create([
+                'name' => $permission,
             ]);
 
             echo "Role {$permission} created.\n";

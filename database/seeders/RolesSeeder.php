@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Config\Config;
 use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Models\Permission;
 use AlexRoden\LibraryApiPhp\Models\Role;
 
 class RolesSeeder extends AbstractSeeder
@@ -37,14 +38,10 @@ class RolesSeeder extends AbstractSeeder
      */
     private function linkPermissions(int $roleId, string $role): void
     {
+        $model = new Permission();
         foreach (Config::get("role-permissions.{$role}") as $permission) {
-            $perm = $this->db->prepare(
-                'SELECT id FROM permissions WHERE name = ?'
-            );
-            $perm->execute([$permission]);
-
-            $row = $perm->fetch();
-            if (!$row) {
+            $perm = $model->where('name', '=', $permission)->first();
+            if (!$perm) {
                 throw NotFountException::resource("Permission - {$permission}}");
             }
 
