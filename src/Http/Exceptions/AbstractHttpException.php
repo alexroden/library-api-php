@@ -1,10 +1,10 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Exceptions;
+namespace AlexRoden\LibraryApiPhp\Http\Exceptions;
 
 use Exception;
 
-class HttpException extends Exception
+class AbstractHttpException extends Exception
 {
     public function __construct(
         private readonly int $statusCode,

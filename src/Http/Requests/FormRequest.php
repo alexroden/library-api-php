@@ -3,10 +3,10 @@
 namespace AlexRoden\LibraryApiPhp\Http\Requests;
 
 
-use AlexRoden\LibraryApiPhp\Exceptions\UnauthorizedException;
-use AlexRoden\LibraryApiPhp\Exceptions\ValidationException;
-use AlexRoden\LibraryApiPhp\Http\Request;
-use AlexRoden\LibraryApiPhp\Validator\Validator;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\UnauthorizedException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\ValidationException;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use AlexRoden\LibraryApiPhp\Http\Middlewares\Validator\Validator;
 
 abstract class FormRequest extends Request
 {

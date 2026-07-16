@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Exceptions;
+namespace AlexRoden\LibraryApiPhp\Http\Exceptions;
 
-class ValidationException extends HttpException
+class ValidationException extends AbstractHttpException
 {
     public function __construct(
         private readonly array $errors

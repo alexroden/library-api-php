@@ -4,8 +4,6 @@
 
 use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
-use AlexRoden\LibraryApiPhp\Middleware\AuthMiddleware;
-use AlexRoden\LibraryApiPhp\Middleware\PermissionMiddleware;
 
 $router->prefix('/api', function ($router) {
     $router->get('/_health', [HealthController::class, 'index']);

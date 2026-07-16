@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Middleware;
+namespace AlexRoden\LibraryApiPhp\Http\Middlewares;
 
-use AlexRoden\LibraryApiPhp\Http\Request;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 
 interface MiddlewareInterface
 {

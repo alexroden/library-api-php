@@ -1,13 +1,13 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Middleware;
+namespace AlexRoden\LibraryApiPhp\Http\Middlewares;
 
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
-use AlexRoden\LibraryApiPhp\Exceptions\JwtException;
-use AlexRoden\LibraryApiPhp\Http\Request;
-use AlexRoden\LibraryApiPhp\Models\User;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\JwtException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\PermissionException;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 
-class AuthMiddleware implements MiddlewareInterface
+class PermissionMiddleware implements MiddlewareInterface
 {
     protected Jwt $jwt;
 
@@ -19,14 +19,17 @@ class AuthMiddleware implements MiddlewareInterface
     /**
      * @throws JwtException
      * @throws \JsonException
+     * @throws PermissionException
      */
     public function handle(Request $request, callable $next, mixed ... $parameters): mixed
     {
         $token = $request->bearerToken();
-
         $payload = $this->jwt->decode($token);
 
-        $request->setUser(User::find($payload['sub']));
+        $missing = array_diff($parameters, $payload['permissions']);
+        if (! empty($missing)) {
+            throw new PermissionException();
+        }
 
         return $next($request);
     }

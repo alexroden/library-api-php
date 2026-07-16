@@ -3,7 +3,6 @@
 namespace AlexRoden\LibraryApiPhp\Tests\Features\Users;
 
 use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
-use AlexRoden\LibraryApiPhp\Http\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
 use AlexRoden\LibraryApiPhp\Models\User;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;

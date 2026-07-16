@@ -1,11 +1,11 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Exceptions;
+namespace AlexRoden\LibraryApiPhp\Http\Exceptions;
 
-class PermissionException extends HttpException
+class JwtException extends AbstractHttpException
 {
     public function __construct(
-        string $message = 'User don\'t have permission to access this resource.',
+        string $message = 'Invalid or expired token.',
         int $statusCode = 401,
         ?\Throwable $previous = null
     ) {

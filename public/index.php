@@ -3,9 +3,9 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use AlexRoden\LibraryApiPhp\Database\Connection;
-use AlexRoden\LibraryApiPhp\Exceptions\ValidationException;
-use AlexRoden\LibraryApiPhp\Exceptions\HttpException;
-use AlexRoden\LibraryApiPhp\Http\Request;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\AbstractHttpException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\ValidationException;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Router;
 use Dotenv\Dotenv;
 
@@ -29,7 +29,7 @@ try {
         'message' => $e->getMessage(),
         'errors' => $e->errors(),
     ]);
-} catch (HttpException $e) {
+} catch (AbstractHttpException $e) {
     http_response_code($e->statusCode());
 
     header('Content-Type: application/json');

@@ -2,10 +2,10 @@
 
 namespace AlexRoden\LibraryApiPhp;
 
-use AlexRoden\LibraryApiPhp\Http\JsonResponse;
-use AlexRoden\LibraryApiPhp\Http\Request;
-use AlexRoden\LibraryApiPhp\Middleware\AuthMiddleware;
-use AlexRoden\LibraryApiPhp\Middleware\PermissionMiddleware;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
+use AlexRoden\LibraryApiPhp\Http\Middlewares\AuthMiddleware;
+use AlexRoden\LibraryApiPhp\Http\Middlewares\PermissionMiddleware;
 use ReflectionMethod;
 use ReflectionNamedType;
 

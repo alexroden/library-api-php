@@ -3,11 +3,11 @@
 namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
-use AlexRoden\LibraryApiPhp\Exceptions\NotFoundException;
-use AlexRoden\LibraryApiPhp\Exceptions\UnauthorizedException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
-use AlexRoden\LibraryApiPhp\Http\JsonResponse;
-use AlexRoden\LibraryApiPhp\Http\Request;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\NotFoundException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\UnauthorizedException;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
 use AlexRoden\LibraryApiPhp\Models\User;
 

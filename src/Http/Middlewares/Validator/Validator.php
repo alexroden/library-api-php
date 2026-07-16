@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Validator;
+namespace AlexRoden\LibraryApiPhp\Http\Middlewares\Validator;
 
 class Validator
 {

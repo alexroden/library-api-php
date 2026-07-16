@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Exceptions;
+namespace AlexRoden\LibraryApiPhp\Http\Exceptions;
 
-class NotFoundException extends HttpException
+class NotFoundException extends AbstractHttpException
 {
     public function __construct(
         string $message = 'Not found'

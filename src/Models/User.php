@@ -3,6 +3,7 @@
 namespace AlexRoden\LibraryApiPhp\Models;
 
 use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
+use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
 /**
  * @extends AbstractModel<User>
@@ -19,15 +20,13 @@ class User extends AbstractModel
         'last_name',
     ];
 
+    /**
+     * @throws ResourceNotFoundException
+     * @throws UndefinedClassException
+     */
     public function assignRole(Role|string $role): void
     {
-        if (is_string($role)) {
-            $model = new Role();
-            $role = $model->where('name', '=', $role)->first();
-            if (!$role) {
-                throw ResourceNotFoundException::resource("Role - {$role}");
-            }
-        }
+        $role = $this->getRole($role);
 
         if (
             !$this->DB(
@@ -121,9 +120,43 @@ class User extends AbstractModel
             'id',
             ['name'],
         )->excludeLocalAttributes()->get(
-            null,
-            null,
-            true,
+            excludeModelMapping: true,
         ));
+    }
+
+    /**
+     * @throws UndefinedClassException
+     * @throws ResourceNotFoundException
+     */
+    public function unassignRole(Role|string $role): void
+    {
+        $this->DB(
+            'user_roles',
+        )->where(
+            'user_id',
+            '=',
+            $this->id,
+        )->where(
+            'role_id',
+            '=',
+            $this->getRole($role)->id,
+        )->delete();
+    }
+
+    /**
+     * @throws UndefinedClassException
+     * @throws ResourceNotFoundException
+     */
+    protected function getRole(Role|string $role): Role
+    {
+        if (is_string($role)) {
+            $model = new Role();
+            $role = $model->where('name', '=', $role)->first();
+            if (!$role) {
+                throw ResourceNotFoundException::resource("Role - {$role}");
+            }
+        }
+
+        return $role;
     }
 }

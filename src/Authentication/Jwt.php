@@ -2,7 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Authentication;
 
-use AlexRoden\LibraryApiPhp\Exceptions\JwtException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\JwtException;
 
 class Jwt
 {

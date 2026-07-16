@@ -2,7 +2,9 @@
 
 namespace AlexRoden\LibraryApiPhp\Exceptions;
 
-class ResourceNotFoundException extends AbstractException
+use Exception;
+
+class ResourceNotFoundException extends Exception
 {
     public static function resource(string $resource): self
     {

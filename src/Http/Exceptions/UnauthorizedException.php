@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Exceptions;
+namespace AlexRoden\LibraryApiPhp\Http\Exceptions;
 
-class UnauthorizedException extends HttpException
+class UnauthorizedException extends AbstractHttpException
 {
     public function __construct(
         string $message = 'Forbidden'

@@ -2,6 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Database;
 
+use AlexRoden\LibraryApiPhp\Exceptions\DatabaseException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\AbstractModel;
 use InvalidArgumentException;
@@ -25,6 +26,27 @@ class DB
         private ?string $class = null,
         private array $attributes = ['*']
     ) {
+    }
+
+    public function delete(): void
+    {
+        $pdo = Connection::getConnection();
+
+        $sql = "DELETE FROM {$this->table}";
+        $bindings = $this->applyConditions($sql);
+
+        $stmt = $pdo->prepare($sql);
+        if (!$stmt->execute($bindings)) {
+            $error = $stmt->errorInfo();
+
+            throw new DatabaseException(
+                sprintf(
+                    'Database query failed [%s]: %s',
+                    $error[0],
+                    $error[2]
+                )
+            );
+        }
     }
 
     public function excludeLocalAttributes(bool $excludeLocalAttributes = true): self
@@ -95,21 +117,33 @@ class DB
         }
 
         $columns = implode(', ', $attributes);
-        $query = "SELECT {$columns} FROM {$this->table}";
+        $sql = "SELECT {$columns} FROM {$this->table}";
 
-        $this->applyJoins($query);
-        $bindings = $this->applyConditions($query);
+        $this->applyJoins($sql);
+        $bindings = $this->applyConditions($sql);
 
         if ($limit) {
-            $query .= " LIMIT {$limit}";
+            $sql .= " LIMIT ?";
+            $bindings[] = $limit;
         }
 
         if ($offset) {
-            $query .= " OFFSET {$offset}";
+            $sql .= " OFFSET ?";
+            $bindings[] = $offset;
         }
 
-        $stmt = $pdo->prepare($query);
-        $stmt->execute($bindings);
+        $stmt = $pdo->prepare($sql);
+        if (!$stmt->execute($bindings)) {
+            $error = $stmt->errorInfo();
+
+            throw new DatabaseException(
+                sprintf(
+                    'Database query failed [%s]: %s',
+                    $error[0],
+                    $error[2]
+                )
+            );
+        }
 
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -157,8 +191,17 @@ class DB
         );
 
         $stmt = $pdo->prepare($sql);
+        if (!$stmt->execute(array_values($attributes))) {
+            $error = $stmt->errorInfo();
 
-        $stmt->execute(array_values($attributes));
+            throw new DatabaseException(
+                sprintf(
+                    'Database query failed [%s]: %s',
+                    $error[0],
+                    $error[2]
+                )
+            );
+        }
 
         return (int) $pdo->lastInsertId();
     }

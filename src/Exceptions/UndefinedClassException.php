@@ -2,7 +2,9 @@
 
 namespace AlexRoden\LibraryApiPhp\Exceptions;
 
-class UndefinedClassException extends AbstractException
+use Exception;
+
+class UndefinedClassException extends Exception
 {
     public function __construct(string $table)
     {
