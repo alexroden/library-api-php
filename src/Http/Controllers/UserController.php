@@ -23,7 +23,7 @@ class UserController
     /**
      * @throws NotFoundException
      * @throws UndefinedClassException
-     * @throws UnauthorizedException
+     * @throws UnauthorizedException|\JsonException
      */
     public function auth(AuthRequest $request): JsonResponse
     {

@@ -6,6 +6,8 @@ use AlexRoden\LibraryApiPhp\Models\User;
 
 class UserFactory extends Factory
 {
+    public string $plainPassword = 'password';
+
     protected function model(): User
     {
         return new User();
@@ -15,7 +17,7 @@ class UserFactory extends Factory
     {
         return [
             'email' => $this->faker->email(),
-            'password' => password_hash('password', PASSWORD_ARGON2ID),
+            'password' => $this->plainPassword,
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
         ];

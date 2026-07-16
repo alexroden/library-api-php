@@ -69,6 +69,11 @@ abstract class AbstractModel implements JsonSerializable
         return $attributes;
     }
 
+    public function toJson(int $flags = 0): string|false
+    {
+        return json_encode($this->toArray(), $flags);
+    }
+
     public function update(array $attributes): void
     {
         $this->DB()->update($this->filterFillable($attributes));
