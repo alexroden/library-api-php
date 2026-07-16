@@ -16,6 +16,7 @@ Connection::getConnection();
 
 $router = new Router();
 require __DIR__ . '/../routes/api.php';
+require __DIR__ . '/../routes/docs.php';
 
 $request = new Request();
 try {

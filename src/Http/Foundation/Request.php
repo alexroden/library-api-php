@@ -16,7 +16,7 @@ class Request
     public function __construct(
         ?array $query = null,
         ?array $body = null,
-        ?array $headers = null,
+        ?array $headers = [],
         ?array $files = null,
     )
     {

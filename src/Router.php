@@ -166,7 +166,9 @@ class Router
     {
         $previousPrefix = $this->prefix;
         $this->prefix .= $prefix;
+
         $callback($this);
+
         $this->prefix = $previousPrefix;
     }
 

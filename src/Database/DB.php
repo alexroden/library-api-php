@@ -82,6 +82,7 @@ class DB
 
         $pdo = Connection::getConnection();
         $attributes = $this->attributes;
+
         if (count($attributes) > 0 && $attributes[0] !== '*') {
             $prefix = '';
             if (count($this->joins) > 0) {
@@ -123,14 +124,13 @@ class DB
         $bindings = $this->applyConditions($sql);
 
         if ($limit) {
-            $sql .= " LIMIT ?";
-            $bindings[] = $limit;
+            $sql .= " LIMIT {$limit}";
         }
 
         if ($offset) {
-            $sql .= " OFFSET ?";
-            $bindings[] = $offset;
+            $sql .= " OFFSET {$offset}";
         }
+
 
         $stmt = $pdo->prepare($sql);
         if (!$stmt->execute($bindings)) {
