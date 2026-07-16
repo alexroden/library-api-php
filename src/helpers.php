@@ -1,15 +1,15 @@
 <?php
 
+use Symfony\Component\VarDumper\VarDumper;
+
 if (! function_exists('dd')) {
     function dd(mixed ...$vars): never
     {
         foreach ($vars as $var) {
-            echo '<pre>';
-            var_dump($var);
-            echo '</pre>';
+            VarDumper::dump($var);
         }
 
-        exit(1);
+        exit;
     }
 }
 
@@ -17,9 +17,7 @@ if (! function_exists('dump')) {
     function dump(mixed ...$vars): void
     {
         foreach ($vars as $var) {
-            echo '<pre>';
-            var_dump($var);
-            echo '</pre>';
+            VarDumper::dump($var);
         }
     }
 }

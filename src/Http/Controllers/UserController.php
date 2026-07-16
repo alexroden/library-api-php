@@ -47,6 +47,11 @@ class UserController
         );
     }
 
+    public function create(Request $request): JsonResponse
+    {
+        dd($request);
+    }
+
     public function getAuthenticatedUser(Request $request): JsonResponse
     {
         return new JsonResponse([

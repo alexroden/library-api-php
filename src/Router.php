@@ -4,13 +4,21 @@ namespace AlexRoden\LibraryApiPhp;
 
 use AlexRoden\LibraryApiPhp\Http\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Request;
+use AlexRoden\LibraryApiPhp\Middleware\AuthMiddleware;
+use AlexRoden\LibraryApiPhp\Middleware\PermissionMiddleware;
 use ReflectionMethod;
 use ReflectionNamedType;
 
 class Router
 {
+    private array $middlewareAliases = [
+        'auth' => AuthMiddleware::class,
+        'permission' => PermissionMiddleware::class,
+    ];
+
     private array $routes = [];
     private string $prefix = '';
+    private array $middlewareStack = [];
 
     /**
      * @param Request $request
@@ -32,9 +40,26 @@ class Router
 
         $pipeline = array_reduce(
             array_reverse($route['middleware']),
-            function (callable $next, string $middlewareClass) {
-                return function (Request $request) use ($middlewareClass, $next) {
-                    return (new $middlewareClass())->handle($request, $next);
+            function (callable $next, string $middleware) {
+                return function (Request $request) use ($middleware, $next) {
+
+                    [$name, $parameterString] = array_pad(
+                        explode(':', $middleware, 2),
+                        2,
+                        null
+                    );
+
+                    $parameters = $parameterString
+                        ? explode(',', $parameterString)
+                        : [];
+
+                    $middlewareClass = $this->middlewareAliases[$name] ?? $name;
+
+                    return (new $middlewareClass())->handle(
+                        $request,
+                        $next,
+                        ...$parameters
+                    );
                 };
             },
             function (Request $request) use ($route) {
@@ -95,6 +120,28 @@ class Router
     }
 
     /**
+     * @param array $middleware
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function middleware(
+        array $middleware,
+        callable $callback,
+    ): void {
+        $previous = $this->middlewareStack;
+
+        $this->middlewareStack = array_merge(
+            $this->middlewareStack,
+            $middleware
+        );
+
+        $callback($this);
+
+        $this->middlewareStack = $previous;
+    }
+
+    /**
      * @param string $path
      * @param callable|array $handler
      * @param array $middleware
@@ -141,7 +188,10 @@ class Router
 
         $this->routes[$method][$path] = [
             'handler' => $handler,
-            'middleware' => $middleware,
+            'middleware' => array_merge(
+                $this->middlewareStack,
+                $middleware
+            ),
         ];
     }
 }

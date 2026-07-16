@@ -12,5 +12,5 @@ interface MiddlewareInterface
      *
      * @return mixed
      */
-    public function handle(Request $request, callable $next): mixed;
+    public function handle(Request $request, callable $next, mixed ...$parameters): mixed;
 }
