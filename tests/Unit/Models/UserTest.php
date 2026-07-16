@@ -60,4 +60,14 @@ class UserTest extends AbstractTestCase
         $this->assertCount(1, $roles);
         $this->assertEquals(Roles::ADMIN, $roles[0]->name);
     }
+
+    public function testHasRoles(): void
+    {
+        $model = new Role();
+        $role = $model->create(['name' => Roles::ADMIN]);
+
+        $this->user->attachRole($role);
+
+        $this->assertTrue($this->user->hasRole(Roles::ADMIN));
+    }
 }

@@ -42,4 +42,9 @@ class User extends AbstractModel
             ['id', 'name', 'created_at', 'updated_at'],
         )->excludeLocalAttributes()->get();
     }
+
+    public function hasRole($role): bool
+    {
+        return in_array($role, array_map(fn (Role $role) => $role->name, $this->roles()));
+    }
 }
