@@ -2,7 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Unit\Controllers\Health;
 
-use AlexRoden\LibraryApiPhp\Controllers\HealthController;
+use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use PHPUnit\Framework\TestCase;
 
 class HealthEndpointTest extends TestCase

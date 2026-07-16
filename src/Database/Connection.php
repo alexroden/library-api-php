@@ -17,11 +17,11 @@ class Connection
             self::$connection = new PDO(
                 $dsn ?? sprintf(
                 'mysql:host=%s;dbname=%s;charset=utf8mb4',
-                getenv('MYSQL_HOST') ?: 'mysql',
-                getenv('MYSQL_DATABASE'),
+                env('MYSQL_HOST') ?: 'mysql',
+                env('MYSQL_DATABASE'),
             ),
-                getenv('MYSQL_USER') ?? null,
-                getenv('MYSQL_PASSWORD') ?? null,
+                env('MYSQL_USER') ?? null,
+                env('MYSQL_PASSWORD') ?? null,
                 [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

@@ -16,7 +16,10 @@
     "psr-4": {
       "AlexRoden\\LibraryApiPhp\\": "src/",
       "AlexRoden\\LibraryApiPhp\\Database\\Seeders\\": "database/seeders/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {

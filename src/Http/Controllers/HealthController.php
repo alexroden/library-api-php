@@ -1,8 +1,9 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Controllers;
+namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Http\JsonResponse;
+use AlexRoden\LibraryApiPhp\Http\Request;
 use AlexRoden\LibraryApiPhp\Http\Response;
 
 class HealthController

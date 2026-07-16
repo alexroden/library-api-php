@@ -2,7 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
-use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
 /**
@@ -18,7 +18,7 @@ class Role extends AbstractModel
 
     /**
      * @throws UndefinedClassException
-     * @throws NotFountException
+     * @throws ResourceNotFoundException
      */
     public function assignPermission(Permission|string $permission): void
     {
@@ -26,7 +26,7 @@ class Role extends AbstractModel
             $model = new Permission();
             $permission = $model->where('name', '=', $permission)->first();
             if (!$permission) {
-                throw NotFountException::resource("Permission - {$permission}");
+                throw ResourceNotFoundException::resource("Permission - {$permission}");
             }
         }
 

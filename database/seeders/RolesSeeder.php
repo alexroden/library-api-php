@@ -5,7 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 use AlexRoden\LibraryApiPhp\Config\Config;
 use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
-use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\Permission;
 use AlexRoden\LibraryApiPhp\Models\Role;
@@ -13,7 +13,7 @@ use AlexRoden\LibraryApiPhp\Models\Role;
 class RolesSeeder extends AbstractSeeder
 {
     /**
-     * @throws NotFountException
+     * @throws ResourceNotFoundException
      */
     public function run(): void
     {
@@ -35,7 +35,7 @@ class RolesSeeder extends AbstractSeeder
     }
 
     /**
-     * @throws NotFountException|UndefinedClassException
+     * @throws ResourceNotFoundException|UndefinedClassException
      */
     private function linkPermissions(Role $role): void
     {

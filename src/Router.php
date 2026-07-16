@@ -4,6 +4,8 @@ namespace AlexRoden\LibraryApiPhp;
 
 use AlexRoden\LibraryApiPhp\Http\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Request;
+use ReflectionMethod;
+use ReflectionNamedType;
 
 class Router
 {
@@ -14,6 +16,7 @@ class Router
      * @param Request $request
      *
      * @return void
+     * @throws \ReflectionException
      */
     public function dispatch(Request $request): void
     {
@@ -43,7 +46,30 @@ class Router
 
                 [$controller, $action] = $handler;
 
-                return (new $controller())->{$action}($request);
+                $controller = new $controller();
+
+                $reflection = new ReflectionMethod($controller, $action);
+
+                $arguments = [];
+
+                foreach ($reflection->getParameters() as $parameter) {
+                    $type = $parameter->getType();
+
+                    if (! $type instanceof ReflectionNamedType) {
+                        continue;
+                    }
+
+                    $class = $type->getName();
+
+                    if ($request instanceof $class) {
+                        $arguments[] = $request;
+                        continue;
+                    }
+
+                    $arguments[] = new $class();
+                }
+
+                return $reflection->invokeArgs($controller, $arguments);
             }
         );
 

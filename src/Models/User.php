@@ -2,7 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
-use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 
 /**
  * @extends AbstractModel<User>
@@ -10,6 +10,7 @@ use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
 class User extends AbstractModel
 {
     protected string $table = 'users';
+    protected array $hidden = ['password'];
 
     protected array $fillable = [
         'email',
@@ -24,7 +25,7 @@ class User extends AbstractModel
             $model = new Role();
             $role = $model->where('name', '=', $role)->first();
             if (!$role) {
-                throw NotFountException::resource("Role - {$role}");
+                throw ResourceNotFoundException::resource("Role - {$role}");
             }
         }
 
@@ -52,6 +53,23 @@ class User extends AbstractModel
                 'role_id' => $role->id,
             ]);
         }
+    }
+
+    public function create(array $attributes): AbstractModel
+    {
+        if (isset($attributes['password'])) {
+            $attributes['password'] = password_hash(
+                $attributes['password'],
+                PASSWORD_ARGON2ID
+            );
+        }
+
+        return parent::create($attributes);
+    }
+
+    public function authenticate(string $password): bool
+    {
+        return password_verify($password, $this->password);
     }
 
     public function hasRole(string $role): bool
