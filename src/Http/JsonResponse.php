@@ -1,9 +1,13 @@
 <?php
 
-namespace App\Http;
+namespace AlexRoden\LibraryApiPhp\Http;
 
 class JsonResponse
 {
+    /**
+     * @param array $data
+     * @param int $status
+     */
     public function __construct(
         public array $data,
         public int $status = 200
