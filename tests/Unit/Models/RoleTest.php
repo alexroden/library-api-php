@@ -54,7 +54,8 @@ class RoleTest extends AbstractTestCase
 
         $this->role->attachPermission($permission);
 
-        $this->assertCount(1, $this->role->permissions());
-        $this->assertEquals(Permissions::USERS_CREATE, $this->role->permissions()[0]);
+        $permissions = $this->role->permissions();
+        $this->assertCount(1, $permissions);
+        $this->assertEquals(Permissions::USERS_CREATE, $permissions[0]);
     }
 }

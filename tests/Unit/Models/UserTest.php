@@ -2,6 +2,8 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Unit\Models;
 
+use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Models\Role;
 use AlexRoden\LibraryApiPhp\Models\User;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 use AlexRoden\LibraryApiPhp\Tests\Factories\UserFactory;
@@ -45,5 +47,17 @@ class UserTest extends AbstractTestCase
         ]);
 
         $this->assertNotNull($user->id);
+    }
+
+    public function testPermissions(): void
+    {
+        $model = new Role();
+        $role = $model->create(['name' => Roles::ADMIN]);
+
+        $this->user->attachRole($role);
+
+        $roles = $this->user->roles();
+        $this->assertCount(1, $roles);
+        $this->assertEquals(Roles::ADMIN, $roles[0]->name);
     }
 }
