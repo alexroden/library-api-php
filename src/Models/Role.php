@@ -26,8 +26,6 @@ class Role extends AbstractModel
     {
         return array_map(fn(array $row) => $row['name'], $this->DB(
             'role_permissions',
-            null,
-            null,
         )->where(
             'role_id',
             '=',

@@ -151,7 +151,7 @@ class DB
         string $table,
         string $localKey,
         string $foreignKey,
-        ?array $attributes,
+        ?array $attributes = null,
     ): static {
         $this->joins[] = [$table, $localKey, $foreignKey, $attributes];
         return $this;

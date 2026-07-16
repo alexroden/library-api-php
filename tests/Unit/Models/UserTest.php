@@ -2,7 +2,9 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Unit\Models;
 
+use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Models\Permission;
 use AlexRoden\LibraryApiPhp\Models\Role;
 use AlexRoden\LibraryApiPhp\Models\User;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
@@ -49,6 +51,29 @@ class UserTest extends AbstractTestCase
         $this->assertNotNull($user->id);
     }
 
+    public function testHasRoles(): void
+    {
+        $model = new Role();
+        $role = $model->create(['name' => Roles::ADMIN]);
+
+        $this->user->attachRole($role);
+
+        $this->assertTrue($this->user->hasRole(Roles::ADMIN));
+    }
+
+    public function testHasPermissions(): void
+    {
+        $model = new Role();
+        $role = $model->create(['name' => Roles::ADMIN]);
+        $perm = new Permission();
+        $permission = $perm->create(['name' => Permissions::USERS_CREATE]);
+        $role->attachPermission($permission);
+
+        $this->user->attachRole($role);
+
+        $this->assertTrue($this->user->hasPermission(Permissions::USERS_CREATE));
+    }
+
     public function testRoles(): void
     {
         $model = new Role();
@@ -61,13 +86,20 @@ class UserTest extends AbstractTestCase
         $this->assertEquals(Roles::ADMIN, $roles[0]->name);
     }
 
-    public function testHasRoles(): void
+    public function testPermissions(): void
     {
         $model = new Role();
         $role = $model->create(['name' => Roles::ADMIN]);
+        $perm = new Permission();
+        $permission = $perm->create(['name' => Permissions::USERS_CREATE]);
+        $role->attachPermission($permission);
 
         $this->user->attachRole($role);
 
-        $this->assertTrue($this->user->hasRole(Roles::ADMIN));
+        $permissions = $this->user->permissions();
+        $this->assertCount(1, $permissions);
+        $this->assertEquals(Permissions::USERS_CREATE, $permissions[0]);
     }
+
+
 }
