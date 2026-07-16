@@ -49,7 +49,7 @@ class UserTest extends AbstractTestCase
         $this->assertNotNull($user->id);
     }
 
-    public function testPermissions(): void
+    public function testRoles(): void
     {
         $model = new Role();
         $role = $model->create(['name' => Roles::ADMIN]);
