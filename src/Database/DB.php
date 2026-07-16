@@ -7,6 +7,9 @@ use AlexRoden\LibraryApiPhp\Models\AbstractModel;
 use InvalidArgumentException;
 use PDO;
 
+/**
+ * @template TModel of AbstractModel
+ */
 class DB
 {
     private array $conditions = [];
@@ -14,6 +17,9 @@ class DB
 
     private bool $excludeLocalAttributes = false;
 
+    /**
+     * @param class-string<TModel>|null $class
+     */
     public function __construct(
         private string $table,
         private ?string $class = null,
@@ -28,12 +34,19 @@ class DB
         return $this;
     }
 
+    /**
+     * @return TModel|null
+     *
+     * @throws UndefinedClassException
+     */
     public function first(): ?AbstractModel
     {
         return $this->get(1)[0] ?? null;
     }
 
     /**
+     * @return array<TModel>
+     *
      * @throws UndefinedClassException
      */
     public function get(
@@ -105,7 +118,10 @@ class DB
         }
 
         return array_map(function (array $row) {
-            $model = new $this->class(
+            /** @var class-string<TModel> $class */
+            $class = $this->class;
+
+            $model = new $class(
                 new self(
                     $this->table,
                     $this->class,

@@ -10,22 +10,17 @@ use PDO;
 class SeedCommand
 {
     private array $seeders = [
-        RolesSeeder::class,
         PermissionsSeeder::class,
+        RolesSeeder::class,
         SuperAdminSeeder::class,
     ];
-
-    public function __construct(
-        private readonly PDO $db,
-    ) {
-    }
 
     public function run(): void
     {
         foreach ($this->seeders as $seeder) {
             echo "Running {$seeder}...\n";
 
-            (new $seeder($this->db))->run();
+            (new $seeder())->run();
         }
 
         echo "Seeding complete.\n";

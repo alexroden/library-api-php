@@ -56,7 +56,7 @@ class UserTest extends AbstractTestCase
         $model = new Role();
         $role = $model->create(['name' => Roles::ADMIN]);
 
-        $this->user->attachRole($role);
+        $this->user->assignRole($role);
 
         $this->assertTrue($this->user->hasRole(Roles::ADMIN));
     }
@@ -67,9 +67,9 @@ class UserTest extends AbstractTestCase
         $role = $model->create(['name' => Roles::ADMIN]);
         $perm = new Permission();
         $permission = $perm->create(['name' => Permissions::USERS_CREATE]);
-        $role->attachPermission($permission);
+        $role->assignPermission($permission);
 
-        $this->user->attachRole($role);
+        $this->user->assignRole($role);
 
         $this->assertTrue($this->user->hasPermission(Permissions::USERS_CREATE));
     }
@@ -79,7 +79,7 @@ class UserTest extends AbstractTestCase
         $model = new Role();
         $role = $model->create(['name' => Roles::ADMIN]);
 
-        $this->user->attachRole($role);
+        $this->user->assignRole($role);
 
         $roles = $this->user->roles();
         $this->assertCount(1, $roles);
@@ -92,9 +92,9 @@ class UserTest extends AbstractTestCase
         $role = $model->create(['name' => Roles::ADMIN]);
         $perm = new Permission();
         $permission = $perm->create(['name' => Permissions::USERS_CREATE]);
-        $role->attachPermission($permission);
+        $role->assignPermission($permission);
 
-        $this->user->attachRole($role);
+        $this->user->assignRole($role);
 
         $permissions = $this->user->permissions();
         $this->assertCount(1, $permissions);

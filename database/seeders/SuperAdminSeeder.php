@@ -28,18 +28,7 @@ class SuperAdminSeeder extends AbstractSeeder
             'last_name' => $name[1],
         ]);
 
-        $role = new Role();
-        $row = $role->where('name', '=', Roles::SUPER_ADMIN)->first();
-        if (!$row) {
-            throw NotFountException::resource('Role - '.Roles::SUPER_ADMIN);
-        }
-
-        $stmt = $this->db->prepare(
-            'INSERT INTO user_roles (user_id, role_id)
-             VALUES (?, ?)'
-        );
-
-        $stmt->execute([$user->id, $row->id]);
+        $user->assignRole(Roles::SUPER_ADMIN);
 
         echo "Super admin created.\n";
     }

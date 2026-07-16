@@ -2,6 +2,11 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
+use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+
+/**
+ * @extends AbstractModel<User>
+ */
 class User extends AbstractModel
 {
     protected string $table = 'users';
@@ -13,16 +18,40 @@ class User extends AbstractModel
         'last_name',
     ];
 
-    public function attachRole(Role $role): void
+    public function assignRole(Role|string $role): void
     {
-        $this->DB(
-            'user_roles',
-            null,
-            ['user_id', 'role_id'],
-        )->insert([
-            'user_id' => $this->id,
-            'role_id' => $role->id,
-        ]);
+        if (is_string($role)) {
+            $model = new Role();
+            $role = $model->where('name', '=', $role)->first();
+            if (!$role) {
+                throw NotFountException::resource("Role - {$role}");
+            }
+        }
+
+        if (
+            !$this->DB(
+                'user_roles',
+                null,
+                ['user_id', 'role_id'],
+            )->where(
+                'user_id',
+                '=',
+                $this->id,
+            )->where(
+                'role_id',
+                '=',
+                $role->id,
+            )->first()
+        ) {
+            $this->DB(
+                'user_roles',
+                null,
+                ['user_id', 'role_id'],
+            )->insert([
+                'user_id' => $this->id,
+                'role_id' => $role->id,
+            ]);
+        }
     }
 
     public function hasRole(string $role): bool

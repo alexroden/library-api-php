@@ -3,7 +3,6 @@
 namespace AlexRoden\LibraryApiPhp\Database\Seeders;
 
 use AlexRoden\LibraryApiPhp\Database\Connection;
-use PDO;
 
 abstract class AbstractSeeder
 {

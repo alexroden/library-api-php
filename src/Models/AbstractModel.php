@@ -3,12 +3,15 @@
 namespace AlexRoden\LibraryApiPhp\Models;
 
 use AlexRoden\LibraryApiPhp\Database\DB;
+use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use JsonSerializable;
 use PDO;
 
+/**
+ * @template TModel of AbstractModel
+ */
 abstract class AbstractModel implements JsonSerializable
 {
-    protected DB $query;
     protected string $table;
     protected array $fillable = [];
     protected array $attributes = [];
@@ -18,11 +21,14 @@ abstract class AbstractModel implements JsonSerializable
         if (count($fillable) === 0) {
             $fillable = null;
         }
-
-        $this->query = new DB($this->table, static::class, $fillable);
     }
 
-    public function create(array $attributes): static
+    /**
+     * @return TModel
+     *
+     * @throws UndefinedClassException
+     */
+    public function create(array $attributes): AbstractModel
     {
         $id = $this->DB()->insert($this->filterFillable($attributes));
 
@@ -46,6 +52,9 @@ abstract class AbstractModel implements JsonSerializable
         $this->DB()->update($this->filterFillable($attributes));
     }
 
+    /**
+     * @return DB<TModel>
+     */
     public function where(
         string $column,
         string $operator,
@@ -69,7 +78,14 @@ abstract class AbstractModel implements JsonSerializable
         $this->attributes[$key] = $value;
     }
 
-    protected function DB(?string $table = null, ?string $class = null, ?array $fillable = null): DB
+    /**
+     * @return DB<TModel>
+     */
+    protected function DB(
+        ?string $table = null,
+        ?string $class = null,
+        ?array $fillable = null,
+    ): DB
     {
         return new DB(
             $table ?? $this->table,
