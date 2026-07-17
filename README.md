@@ -343,3 +343,51 @@ Any attributes defined in the model's `$hidden` property are automatically exclu
 The `AbstractModel` is intentionally lightweight and provides only the common functionality required by every model.
 
 Individual models are encouraged to define their own domain-specific methods and relationships. For example, the `User` model exposes methods for authentication, retrieving assigned roles, and resolving permissions, while still relying on the shared functionality provided by the base model.
+
+## Roles and Permissions
+
+The project includes a simple role-based access control (RBAC) system to manage API authorisation.
+
+Roles and permissions are defined using PHP constants, providing type safety, IDE auto-completion, and avoiding the use of hard-coded strings throughout the codebase.
+
+### Roles
+
+The following roles are available:
+
+| Role          | Description                                            |
+| ------------- | ------------------------------------------------------ |
+| `SUPER_ADMIN` | Has every permission available within the application. |
+| `ADMIN`       | Full access to user management.                        |
+| `EDITOR`      | Can create, view, list and update users.               |
+| `STAFF`       | Read-only access to user information.                  |
+| `USER`        | Basic access to user information.                      |
+
+### Permissions
+
+The relationship between roles and permissions is configured in `config/role-permissions.php`.
+
+| Permission     | Super Admin | Admin | Editor | Staff | User |
+| -------------- | :---------: | :---: | :----: | :---: | :--: |
+| `users.create` |      ✓      |   ✓   |    ✓   |       |      |
+| `users.get`    |      ✓      |   ✓   |    ✓   |   ✓   |   ✓  |
+| `users.list`   |      ✓      |   ✓   |    ✓   |   ✓   |      |
+| `users.update` |      ✓      |   ✓   |    ✓   |       |      |
+| `users.delete` |      ✓      |   ✓   |        |       |      |
+
+The `SUPER_ADMIN` role is configured using `Permissions::getConstants()`, meaning it automatically receives every permission defined by the application. As new permissions are added, they become available to the `SUPER_ADMIN` role without requiring any changes to the configuration.
+
+### Route Protection
+
+Routes can be protected using the built-in authentication and permission middleware.
+
+For example:
+
+```php
+$router->post(
+    '/users',
+    [UserController::class, 'create'],
+    ['permission:users.create']
+);
+```
+
+When a request reaches a protected route, the permission middleware verifies that the authenticated user has the required permission before allowing the request to continue.
