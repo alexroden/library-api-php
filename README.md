@@ -232,3 +232,114 @@ The query builder also provides convenience methods for common database operatio
 * `delete()` – Deletes matching records.
 
 The query builder is intentionally lightweight and is expected to grow over time as additional functionality is required by the project.
+
+## Models
+
+All application models extend the `AbstractModel` class, which provides a lightweight Active Record-style interface built on top of the project's query builder.
+
+The aim of the model layer is to encapsulate model-specific behaviour while delegating all database interactions to the `DB` query builder.
+
+### Defining a Model
+
+Each model defines the following properties:
+
+* **`$table`** – The database table associated with the model.
+* **`$fillable`** – The attributes that may be mass assigned during create and update operations.
+* **`$hidden`** – Attributes that should be excluded when serialising the model to an array or JSON.
+
+For example:
+
+```php
+class User extends AbstractModel
+{
+    protected string $table = 'users';
+
+    protected array $fillable = [
+        'email',
+        'password',
+        'first_name',
+        'last_name',
+    ];
+
+    protected array $hidden = [
+        'password',
+    ];
+}
+```
+
+### Querying Models
+
+The abstract model exposes convenience methods that internally utilise the query builder.
+
+Finding a model by its primary key:
+
+```php
+$user = User::find(1);
+```
+
+Building a query:
+
+```php
+$user = (new User())
+    ->where('email', '=', 'admin@example.com')
+    ->first();
+```
+
+Because the underlying query builder is returned, all of its functionality—such as joins, pagination, and model mapping—is immediately available.
+
+### Creating Records
+
+Models can be created directly without interacting with the query builder.
+
+```php
+$user = (new User())->create([
+    'email' => 'admin@example.com',
+    'password' => $hashedPassword,
+    'first_name' => 'Admin',
+    'last_name' => 'User',
+]);
+```
+
+Only attributes listed in the model's `$fillable` property will be persisted.
+
+### Updating Records
+
+Existing models can be updated using the `update()` method.
+
+```php
+$user->update([
+    'first_name' => 'Alex',
+]);
+```
+
+As with creation, only fillable attributes are included in the generated SQL.
+
+### Model Attributes
+
+Database columns are stored internally within the model's attribute collection and are exposed through PHP's magic property accessors.
+
+```php
+echo $user->email;
+
+$user->first_name = 'Alex';
+```
+
+This provides a clean and familiar interface without requiring explicit getter and setter methods.
+
+### Serialisation
+
+Models implement PHP's `JsonSerializable` interface, making them straightforward to return in API responses.
+
+The following methods are available:
+
+* `toArray()` – Returns the model as an array.
+* `toJson()` – Returns the model as a JSON string.
+* `jsonSerialize()` – Enables automatic serialisation when passed to `json_encode()`.
+
+Any attributes defined in the model's `$hidden` property are automatically excluded from all serialised output.
+
+### Extending Models
+
+The `AbstractModel` is intentionally lightweight and provides only the common functionality required by every model.
+
+Individual models are encouraged to define their own domain-specific methods and relationships. For example, the `User` model exposes methods for authentication, retrieving assigned roles, and resolving permissions, while still relying on the shared functionality provided by the base model.
