@@ -17,15 +17,55 @@ class Validator
     {
         foreach ($this->rules as $field => $rules) {
             foreach (explode('|', $rules) as $rule) {
-                if ($rule === 'required'
-                    && empty($this->data[$field])) {
-                    $this->errors[$field][] = 'Required.';
+                if (
+                    $rule === 'nullable'
+                    && isset($this->data[$field])
+                ) {
+                    continue;
                 }
 
-                if ($rule === 'email'
+                if (
+                    $rule === 'required'
+                    && empty($this->data[$field])
+                ) {
+                    $this->errors[$field][] = ucfirst($field).' id required.';
+                }
+
+                if (
+                    $rule === 'email'
                     && isset($this->data[$field])
                     && !filter_var($this->data[$field], FILTER_VALIDATE_EMAIL)) {
                     $this->errors[$field][] = 'Invalid email.';
+                }
+
+                if (
+                    (str_starts_with($rule, 'min:') || str_starts_with($rule, 'max:'))
+                    && isset($this->data[$field])
+                ) {
+                    $r = explode(':', $rule);
+                    $len = (int) $r[1];
+                    if (strlen($this->data[$field]) < $len) {
+                        $this->errors[$field][] = ucfirst($r[0])." should be {$len}.";
+                    }
+                }
+
+                if (
+                    $rule === 'confirmed'
+                    && isset($this->data[$field])
+                ) {
+                    if (!isset($this->data['password_confirmation'])) {
+                        $this->errors[$field][] = 'Confirmation not set.';
+                    } else if ($this->data[$field] !== $this->data['password_confirmation']) {
+                        $this->errors[$field][] = 'Confirmation not matched.';
+                    }
+                }
+
+                if (
+                    $rule === 'array'
+                    && isset($this->data[$field])
+                    && !is_array($this->data[$field])
+                ) {
+                    $this->errors[$field][] = ucfirst($field).' must be an array.';
                 }
             }
         }
