@@ -1,0 +1,352 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Library API",
+        "description": "API documentation for the Library API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Local development server"
+        }
+    ],
+    "paths": {
+        "/api/_health": {
+            "get": {
+                "tags": [
+                    "HealthCheck"
+                ],
+                "summary": "API health check",
+                "operationId": "755fc66ab7c26b533854649ff27d7f73",
+                "responses": {
+                    "200": {
+                        "description": "OK response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Authenticate user",
+                "description": "Authenticates a user and returns a JWT token.",
+                "operationId": "99e30b4c93ba64fc7a50e97118b96451",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "alex@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Authenticated user returned",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "alex@example.com"
+                                                },
+                                                "first_name": {
+                                                    "type": "string",
+                                                    "example": "Alex"
+                                                },
+                                                "last_name": {
+                                                    "type": "string",
+                                                    "example": "Roden"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "example": "2026-07-16 11:00:27"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "example": "2026-07-16 11:00:27"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Create user",
+                "description": "Creates a new user account.",
+                "operationId": "06fe67f2868e50293e4b9508f438110e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "newuser@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Authenticated user returned",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "alex@example.com"
+                                                },
+                                                "first_name": {
+                                                    "type": "string",
+                                                    "example": "Alex"
+                                                },
+                                                "last_name": {
+                                                    "type": "string",
+                                                    "example": "Roden"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "example": "2026-07-16 11:00:27"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "example": "2026-07-16 11:00:27"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get authenticated user",
+                "description": "Returns the currently authenticated user.",
+                "operationId": "1ec060ede2c6177b0d63e0c2aa04d8a4",
+                "responses": {
+                    "200": {
+                        "description": "Authenticated user returned",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "alex@example.com"
+                                                },
+                                                "first_name": {
+                                                    "type": "string",
+                                                    "example": "Alex"
+                                                },
+                                                "last_name": {
+                                                    "type": "string",
+                                                    "example": "Roden"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "example": "2026-07-16 11:00:27"
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "example": "2026-07-16 11:00:27"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "HealthCheck",
+            "description": "HealthCheck"
+        },
+        {
+            "name": "Users",
+            "description": "Users"
+        }
+    ]
+}
