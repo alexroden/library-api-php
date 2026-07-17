@@ -1,6 +1,8 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Http;
+namespace AlexRoden\LibraryApiPhp\Http\Foundation;
+
+use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 
 class Response
 {

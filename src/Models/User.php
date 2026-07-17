@@ -2,7 +2,8 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
-use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
+use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
 /**
  * @extends AbstractModel<User>
@@ -10,6 +11,7 @@ use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
 class User extends AbstractModel
 {
     protected string $table = 'users';
+    protected array $hidden = ['password'];
 
     protected array $fillable = [
         'email',
@@ -18,15 +20,13 @@ class User extends AbstractModel
         'last_name',
     ];
 
+    /**
+     * @throws ResourceNotFoundException
+     * @throws UndefinedClassException
+     */
     public function assignRole(Role|string $role): void
     {
-        if (is_string($role)) {
-            $model = new Role();
-            $role = $model->where('name', '=', $role)->first();
-            if (!$role) {
-                throw NotFountException::resource("Role - {$role}");
-            }
-        }
+        $role = $this->getRole($role);
 
         if (
             !$this->DB(
@@ -52,6 +52,23 @@ class User extends AbstractModel
                 'role_id' => $role->id,
             ]);
         }
+    }
+
+    public function create(array $attributes): AbstractModel
+    {
+        if (isset($attributes['password'])) {
+            $attributes['password'] = password_hash(
+                $attributes['password'],
+                PASSWORD_ARGON2ID
+            );
+        }
+
+        return parent::create($attributes);
+    }
+
+    public function authenticate(string $password): bool
+    {
+        return password_verify($password, $this->password);
     }
 
     public function hasRole(string $role): bool
@@ -103,9 +120,43 @@ class User extends AbstractModel
             'id',
             ['name'],
         )->excludeLocalAttributes()->get(
-            null,
-            null,
-            true,
+            excludeModelMapping: true,
         ));
+    }
+
+    /**
+     * @throws UndefinedClassException
+     * @throws ResourceNotFoundException
+     */
+    public function unassignRole(Role|string $role): void
+    {
+        $this->DB(
+            'user_roles',
+        )->where(
+            'user_id',
+            '=',
+            $this->id,
+        )->where(
+            'role_id',
+            '=',
+            $this->getRole($role)->id,
+        )->delete();
+    }
+
+    /**
+     * @throws UndefinedClassException
+     * @throws ResourceNotFoundException
+     */
+    protected function getRole(Role|string $role): Role
+    {
+        if (is_string($role)) {
+            $model = new Role();
+            $role = $model->where('name', '=', $role)->first();
+            if (!$role) {
+                throw ResourceNotFoundException::resource("Role - {$role}");
+            }
+        }
+
+        return $role;
     }
 }

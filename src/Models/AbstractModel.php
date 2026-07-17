@@ -15,6 +15,7 @@ abstract class AbstractModel implements JsonSerializable
     protected string $table;
     protected array $fillable = [];
     protected array $attributes = [];
+    protected array $hidden = [];
 
     public function __construct() {
         $fillable = $this->fillable;
@@ -42,9 +43,35 @@ abstract class AbstractModel implements JsonSerializable
         return $this;
     }
 
+    public static function find(int $id): ?static
+    {
+        $model = new static();
+
+        return $model
+            ->DB()
+            ->where('id', '=', $id)
+            ->first();
+    }
+
     public function jsonSerialize(): array
     {
-        return $this->attributes;
+        return $this->toArray();
+    }
+
+
+    public function toArray(): array
+    {
+        $attributes = $this->attributes;
+        foreach ($this->hidden as $attribute) {
+            unset($attributes[$attribute]);
+        }
+
+        return $attributes;
+    }
+
+    public function toJson(int $flags = 0): string|false
+    {
+        return json_encode($this->toArray(), $flags);
     }
 
     public function update(array $attributes): void

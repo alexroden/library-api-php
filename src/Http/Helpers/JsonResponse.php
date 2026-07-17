@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp\Http;
+namespace AlexRoden\LibraryApiPhp\Http\Helpers;
 
 class JsonResponse
 {
@@ -10,7 +10,8 @@ class JsonResponse
      */
     public function __construct(
         public array $data,
-        public int $status = 200
+        public int $status = 200,
+        public array $headers = [],
     ) {
     }
 
@@ -19,6 +20,9 @@ class JsonResponse
         http_response_code($this->status);
 
         header('Content-Type: application/json');
+        foreach($this->headers as $header => $value) {
+            header(sprintf('%s: %s', $header, $value));
+        }
 
         echo json_encode($this->data);
     }

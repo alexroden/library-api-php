@@ -23,6 +23,23 @@ class DBTest extends AbstractTestCase
         $this->user = new UserFactory()->create();
     }
 
+    public function testDelete(): void
+    {
+        $db = new DB(
+            'users',
+            User::class,
+            ['email', 'password', 'first_name', 'last_name'],
+        );
+
+        $user = $db->where('id', '=', $this->user->id)->first();
+        $this->assertInstanceOf(User::class, $user);
+
+        $db->where('id', '=', $user->id)->delete();
+
+        $user = $db->where('id', '=', $this->user->id)->first();
+        $this->assertNull($user);
+    }
+
     public function testFirst(): void
     {
         $db = new DB(

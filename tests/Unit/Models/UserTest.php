@@ -101,5 +101,15 @@ class UserTest extends AbstractTestCase
         $this->assertEquals(Permissions::USERS_CREATE, $permissions[0]);
     }
 
+    public function testUnassignRole(): void
+    {
+        $model = new Role();
+        $role = $model->create(['name' => Roles::ADMIN]);
 
+        $this->user->assignRole($role);
+        $this->assertTrue($this->user->hasRole(Roles::ADMIN));
+
+        $this->user->unassignRole($role);
+        $this->assertFalse($this->user->hasRole(Roles::ADMIN));
+    }
 }

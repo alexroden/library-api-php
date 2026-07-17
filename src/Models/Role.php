@@ -2,7 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
-use AlexRoden\LibraryApiPhp\Exceptions\NotFountException;
+use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
 /**
@@ -18,17 +18,11 @@ class Role extends AbstractModel
 
     /**
      * @throws UndefinedClassException
-     * @throws NotFountException
+     * @throws ResourceNotFoundException
      */
     public function assignPermission(Permission|string $permission): void
     {
-        if (is_string($permission)) {
-            $model = new Permission();
-            $permission = $model->where('name', '=', $permission)->first();
-            if (!$permission) {
-                throw NotFountException::resource("Permission - {$permission}");
-            }
-        }
+        $permission = $this->getPermission($permission);
 
         if (
             !$this->DB(
@@ -70,9 +64,39 @@ class Role extends AbstractModel
             'id',
             ['name'],
         )->excludeLocalAttributes()->get(
-            null,
-            null,
-            true,
+            excludeModelMapping: true,
         ));
+    }
+
+    public function unassignPermission(Permission|string $permission): void
+    {
+        $this->DB(
+            'role_permissions',
+        )->where(
+            'role_id',
+            '=',
+            $this->id,
+        )->where(
+            'permission_id',
+            '=',
+            $this->getPermission($permission)->id,
+        )->delete();
+    }
+
+    /**
+     * @throws UndefinedClassException
+     * @throws ResourceNotFoundException
+     */
+    protected function getPermission(Permission|string $permission): Permission
+    {
+        if (is_string($permission)) {
+            $model = new Permission();
+            $permission = $model->where('name', '=', $permission)->first();
+            if (!$permission) {
+                throw ResourceNotFoundException::resource("Permission - {$permission}");
+            }
+        }
+
+        return $permission;
     }
 }
