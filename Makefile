@@ -1,15 +1,18 @@
-.PHONY: setup
+.PHONY: start cleanup console
 
-setup:
-	@docker compose -p library-api up -d mysql
-	@sleep 5
-	@docker compose -p library-api up -d migrate
+PROJECT=library-api
+CMD=seed
 
 start:
-	@docker compose -p library-api up -d --build api
+	@docker compose -p $(PROJECT) up -d mysql
+	@docker compose -p $(PROJECT) up migrate
+	@docker compose -p $(PROJECT) up -d --build api
 
 cleanup:
-	@docker compose -p library-api down \
+	@docker compose -p $(PROJECT) down \
 		--volumes \
 		--remove-orphans \
 		--rmi local
+
+console:
+	@docker compose -p $(PROJECT) exec api php bin/console.php $(CMD)

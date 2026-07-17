@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Unit;
+namespace AlexRoden\LibraryApiPhp\Tests\Features;
 
-use App\Controllers\HealthController;
+use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use PHPUnit\Framework\TestCase;
 
-class HealthTest extends TestCase
+class HealthEndpointTest extends TestCase
 {
-    public function testHealthReturnsOk(): void
+    public function testHealthEndpointReturnsOk(): void
     {
         $controller = new HealthController();
 
