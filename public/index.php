@@ -2,7 +2,11 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use AlexRoden\LibraryApiPhp\Bus\CommandBus;
+use AlexRoden\LibraryApiPhp\Bus\EventBus;
+use AlexRoden\LibraryApiPhp\Config\Config;
 use AlexRoden\LibraryApiPhp\Database\Connection;
+use AlexRoden\LibraryApiPhp\Foundation\Container;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\AbstractHttpException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\ValidationException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
@@ -14,7 +18,22 @@ $dotenv->load();
 
 Connection::getConnection();
 
-$router = new Router();
+$container = new Container();
+
+$eventBus = new EventBus();
+$commandBus = new CommandBus();
+
+$container->singleton(EventBus::class, $eventBus);
+$container->singleton(CommandBus::class, $commandBus);
+
+foreach (Config::get('commands') as $command => $handler) {
+    $commandBus->register(
+        $command,
+        $container->make($handler),
+    );
+}
+
+$router = new Router($container);
 require __DIR__ . '/../routes/api.php';
 require __DIR__ . '/../routes/docs.php';
 

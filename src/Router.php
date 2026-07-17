@@ -2,6 +2,11 @@
 
 namespace AlexRoden\LibraryApiPhp;
 
+use AlexRoden\LibraryApiPhp\Bus\CommandBus;
+use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\EventBus;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateUserCommandHandler;
+use AlexRoden\LibraryApiPhp\Foundation\Container;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Middlewares\AuthMiddleware;
@@ -19,6 +24,11 @@ class Router
     private array $routes = [];
     private string $prefix = '';
     private array $middlewareStack = [];
+
+    public function __construct(
+        private readonly Container $container,
+    ) {
+    }
 
     /**
      * @param Request $request
@@ -71,7 +81,7 @@ class Router
 
                 [$controller, $action] = $handler;
 
-                $controller = new $controller();
+                $controller = $this->container->make($controller);
 
                 $reflection = new ReflectionMethod($controller, $action);
 
@@ -91,7 +101,7 @@ class Router
                         continue;
                     }
 
-                    $arguments[] = new $class();
+                    $arguments[] = $this->container->make($class);
                 }
 
                 return $reflection->invokeArgs($controller, $arguments);

@@ -28,7 +28,7 @@ class Validator
                     $rule === 'required'
                     && empty($this->data[$field])
                 ) {
-                    $this->errors[$field][] = ucfirst($field).' id required.';
+                    $this->errors[$field][] = $field.' is required.';
                 }
 
                 if (
@@ -53,9 +53,9 @@ class Validator
                     $rule === 'confirmed'
                     && isset($this->data[$field])
                 ) {
-                    if (!isset($this->data['password_confirmation'])) {
+                    if (!isset($this->data['passwordConfirmation'])) {
                         $this->errors[$field][] = 'Confirmation not set.';
-                    } else if ($this->data[$field] !== $this->data['password_confirmation']) {
+                    } else if ($this->data[$field] !== $this->data['passwordConfirmation']) {
                         $this->errors[$field][] = 'Confirmation not matched.';
                     }
                 }

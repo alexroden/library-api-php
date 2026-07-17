@@ -3,12 +3,15 @@
 namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
+use AlexRoden\LibraryApiPhp\Bus\CommandBus;
+use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\NotFoundException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\UnauthorizedException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
+use AlexRoden\LibraryApiPhp\Http\Requests\CreateUserRequest;
 use AlexRoden\LibraryApiPhp\Models\User;
 use OpenApi\Attributes as OA;
 
@@ -16,7 +19,9 @@ class UserController
 {
     protected Jwt $jwt;
 
-    public function __construct()
+    public function __construct(
+        private readonly CommandBus $commandBus,
+    )
     {
         $this->jwt = new Jwt(env('JWT_SECRET'));
     }
@@ -251,9 +256,22 @@ class UserController
             )
         ]
     )]
-    public function create(Request $request): JsonResponse
+    public function create(CreateUserRequest $request): JsonResponse
     {
-        dd($request);
+        $data = $request->validated();
+        unset($data['passwordConfirmation']);
+
+        try {
+            $user = $this->commandBus->dispatch(
+                new CreateUserCommand(...$data)
+            );
+        } catch (\Exception $e) {
+            dd($e);
+        }
+
+        return new JsonResponse([
+            'data' => $user,
+        ]);
     }
 
     #[OA\Get(
