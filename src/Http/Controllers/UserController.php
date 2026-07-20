@@ -6,6 +6,8 @@ use AlexRoden\LibraryApiPhp\Authentication\Jwt;
 use AlexRoden\LibraryApiPhp\Bus\CommandBus;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\NotFoundException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\UnauthorizedException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
@@ -13,7 +15,10 @@ use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
 use AlexRoden\LibraryApiPhp\Http\Requests\CreateUserRequest;
 use AlexRoden\LibraryApiPhp\Models\User;
+use Exception;
+use JsonException;
 use OpenApi\Attributes as OA;
+use PDOException;
 
 class UserController
 {
@@ -129,7 +134,7 @@ class UserController
     /**
      * @throws NotFoundException
      * @throws UndefinedClassException
-     * @throws UnauthorizedException|\JsonException
+     * @throws UnauthorizedException|JsonException
      */
     public function auth(AuthRequest $request): JsonResponse
     {
@@ -153,6 +158,10 @@ class UserController
         );
     }
 
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
     #[OA\Post(
         path: "/api/users",
         summary: "Create user",
@@ -265,8 +274,10 @@ class UserController
             $user = $this->commandBus->dispatch(
                 new CreateUserCommand(...$data)
             );
-        } catch (\Exception $e) {
-            dd($e);
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
         }
 
         return new JsonResponse([

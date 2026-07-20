@@ -3,11 +3,17 @@
 namespace AlexRoden\LibraryApiPhp\Foundation;
 
 use ReflectionClass;
+use ReflectionException;
 
 class Container
 {
     private array $bindings = [];
     private array $instances = [];
+
+    public function get(string $abstract): object
+    {
+        return $this->instances[$abstract] ?? $this->resolve($abstract);
+    }
 
     public function singleton(string $abstract, object $instance): void
     {
@@ -19,6 +25,9 @@ class Container
         $this->bindings[$abstract] = $factory;
     }
 
+    /**
+     * @throws ReflectionException
+     */
     public function make(string $class): object
     {
         if (isset($this->instances[$class])) {
@@ -32,12 +41,14 @@ class Container
         return $this->resolve($class);
     }
 
+    /**
+     * @throws ReflectionException
+     */
     private function resolve(string $class): object
     {
         $reflection = new ReflectionClass($class);
 
         $constructor = $reflection->getConstructor();
-
         if (!$constructor) {
             return new $class();
         }

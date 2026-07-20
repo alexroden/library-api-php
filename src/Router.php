@@ -74,19 +74,15 @@ class Router
             },
             function (Request $request) use ($route) {
                 $handler = $route['handler'];
-
                 if (is_callable($handler)) {
                     return $handler($request);
                 }
 
                 [$controller, $action] = $handler;
-
                 $controller = $this->container->make($controller);
 
                 $reflection = new ReflectionMethod($controller, $action);
-
                 $arguments = [];
-
                 foreach ($reflection->getParameters() as $parameter) {
                     $type = $parameter->getType();
 
@@ -95,7 +91,6 @@ class Router
                     }
 
                     $class = $type->getName();
-
                     if ($request instanceof $class) {
                         $arguments[] = $request;
                         continue;

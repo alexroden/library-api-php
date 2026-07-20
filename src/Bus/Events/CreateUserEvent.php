@@ -8,5 +8,6 @@ final class CreateUserEvent
 {
     public function __construct(
         public readonly User $user,
-    ) {}
+    ) {
+    }
 }

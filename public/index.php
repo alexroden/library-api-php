@@ -4,9 +4,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use AlexRoden\LibraryApiPhp\Bus\CommandBus;
 use AlexRoden\LibraryApiPhp\Bus\EventBus;
-use AlexRoden\LibraryApiPhp\Config\Config;
 use AlexRoden\LibraryApiPhp\Database\Connection;
 use AlexRoden\LibraryApiPhp\Foundation\Container;
+use AlexRoden\LibraryApiPhp\Foundation\Providers\AppServiceProvider;
+use AlexRoden\LibraryApiPhp\Foundation\Providers\CommandServiceProvider;
+use AlexRoden\LibraryApiPhp\Foundation\Providers\EventServiceProvider;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\AbstractHttpException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\ValidationException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
@@ -20,24 +22,21 @@ Connection::getConnection();
 
 $container = new Container();
 
-$eventBus = new EventBus();
 $commandBus = new CommandBus();
-
-$container->singleton(EventBus::class, $eventBus);
 $container->singleton(CommandBus::class, $commandBus);
 
-foreach (Config::get('commands') as $command => $handler) {
-    $commandBus->register(
-        $command,
-        $container->make($handler),
-    );
-}
+$bus = new EventBus();
+$container->singleton(EventBus::class, $bus);
 
+AppServiceProvider::register($container);
+CommandServiceProvider::register($container);
+EventServiceProvider::register($container);
+
+$request = new Request();
 $router = new Router($container);
 require __DIR__ . '/../routes/api.php';
 require __DIR__ . '/../routes/docs.php';
 
-$request = new Request();
 try {
     $router->dispatch($request);
 }  catch (ValidationException $e) {

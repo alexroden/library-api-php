@@ -33,7 +33,13 @@ services:
         "-c",
         "migrate -path /migrations -database \"$DATABASE_URL?x-migrations-table=schema_migrations\" up"
       ]
-
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - api_network
   api:
     build:
       context: .
