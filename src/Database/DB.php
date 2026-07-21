@@ -76,14 +76,14 @@ class DB
         ?int $offset = null,
         ?bool $excludeModelMapping = false,
     ): array {
-        if (!$this->class) {
+        if (!$this->class && !$excludeModelMapping) {
             throw new UndefinedClassException($this->table);
         }
 
         $pdo = Connection::getConnection();
         $attributes = $this->attributes;
 
-        if (count($attributes) > 0 && $attributes[0] !== '*') {
+        if (count($attributes) > 0 && !str_contains($attributes[0], '*')) {
             $prefix = '';
             if (count($this->joins) > 0) {
                 if ($this->excludeLocalAttributes) $attributes = [];
@@ -130,7 +130,6 @@ class DB
         if ($offset) {
             $sql .= " OFFSET {$offset}";
         }
-
 
         $stmt = $pdo->prepare($sql);
         if (!$stmt->execute($bindings)) {

@@ -27,7 +27,7 @@ class PermissionMiddleware implements MiddlewareInterface
         $payload = $this->jwt->decode($token);
 
         $missing = array_diff($parameters, $payload['permissions']);
-        if (empty($missing)) {
+        if (!empty($missing)) {
             throw new PermissionException();
         }
 

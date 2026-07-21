@@ -95,7 +95,6 @@ class Request
 
     private function getHeaders(array $headers = []): array
     {
-
         if (function_exists('getallheaders')) {
             if (getallheaders()) $headers = array_merge($headers, getallheaders());
         }

@@ -53,9 +53,9 @@ class Validator
                     $rule === 'confirmed'
                     && isset($this->data[$field])
                 ) {
-                    if (!isset($this->data['passwordConfirmation'])) {
+                    if (!isset($this->data[$field.'_confirmation'])) {
                         $this->errors[$field][] = 'Confirmation not set.';
-                    } else if ($this->data[$field] !== $this->data['passwordConfirmation']) {
+                    } else if ($this->data[$field] !== $this->data[$field.'_confirmation']) {
                         $this->errors[$field][] = 'Confirmation not matched.';
                     }
                 }

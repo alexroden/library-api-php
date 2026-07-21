@@ -7,23 +7,23 @@
     },
     "servers": [
         {
-            "url": "http://localhost:8000",
+            "url": "http:\/\/localhost:8000",
             "description": "Local development server"
         }
     ],
     "paths": {
-        "/api/_health": {
+        "\/api\/_health": {
             "get": {
                 "tags": [
                     "HealthCheck"
                 ],
                 "summary": "API health check",
-                "operationId": "755fc66ab7c26b533854649ff27d7f73",
+                "operationId": "523b12bc88b1ab39c1a420cd890a08e7",
                 "responses": {
                     "200": {
                         "description": "OK response",
                         "content": {
-                            "application/json": {
+                            "application\/json": {
                                 "schema": {
                                     "properties": {
                                         "status": {
@@ -38,216 +38,110 @@
                 }
             }
         },
-        "/api/auth": {
+        "\/api\/auth": {
             "post": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Authenticate user",
                 "description": "Authenticates a user and returns a JWT token.",
-                "operationId": "99e30b4c93ba64fc7a50e97118b96451",
+                "operationId": "4c40b5813ca55f529aaed9a6c619605c",
                 "requestBody": {
                     "required": true,
                     "content": {
-                        "application/json": {
+                        "application\/json": {
                             "schema": {
-                                "required": [
-                                    "email",
-                                    "password"
-                                ],
-                                "properties": {
-                                    "email": {
-                                        "type": "string",
-                                        "example": "alex@example.com"
-                                    },
-                                    "password": {
-                                        "type": "string",
-                                        "example": "password"
-                                    }
-                                },
-                                "type": "object"
+                                "$ref": "#\/components\/schemas\/AuthBody"
                             }
                         }
                     }
                 },
                 "responses": {
                     "201": {
-                        "description": "Authenticated user returned",
+                        "description": "User created",
                         "content": {
-                            "application/json": {
+                            "application\/json": {
                                 "schema": {
-                                    "properties": {
-                                        "data": {
-                                            "properties": {
-                                                "id": {
-                                                    "type": "integer",
-                                                    "example": 1
-                                                },
-                                                "email": {
-                                                    "type": "string",
-                                                    "example": "alex@example.com"
-                                                },
-                                                "first_name": {
-                                                    "type": "string",
-                                                    "example": "Alex"
-                                                },
-                                                "last_name": {
-                                                    "type": "string",
-                                                    "example": "Roden"
-                                                },
-                                                "created_at": {
-                                                    "type": "string",
-                                                    "example": "2026-07-16 11:00:27"
-                                                },
-                                                "updated_at": {
-                                                    "type": "string",
-                                                    "example": "2026-07-16 11:00:27"
-                                                }
-                                            },
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
+                                    "$ref": "#\/components\/schemas\/UserResponse"
                                 }
                             }
                         }
                     },
                     "401": {
-                        "description": "Unauthenticated",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/responses\/Unauthorized"
                     },
                     "422": {
-                        "description": "Validation failed",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/responses\/Validation"
                     }
                 }
             }
         },
-        "/api/users": {
+        "\/api\/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "List users",
+                "operationId": "d99225a0d3d75fbc7da3710cc5c8aaa2",
+                "parameters": [
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Users returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/UserCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
             "post": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Create user",
                 "description": "Creates a new user account.",
-                "operationId": "06fe67f2868e50293e4b9508f438110e",
+                "operationId": "f425ff00c1a55507486b9774939cfae9",
                 "requestBody": {
                     "required": true,
                     "content": {
-                        "application/json": {
+                        "application\/json": {
                             "schema": {
-                                "required": [
-                                    "email",
-                                    "password"
-                                ],
-                                "properties": {
-                                    "email": {
-                                        "type": "string",
-                                        "example": "newuser@example.com"
-                                    },
-                                    "password": {
-                                        "type": "string",
-                                        "example": "password"
-                                    }
-                                },
-                                "type": "object"
+                                "$ref": "#\/components\/schemas\/CreateUserRequest"
                             }
                         }
                     }
                 },
                 "responses": {
                     "201": {
-                        "description": "Authenticated user returned",
+                        "description": "User created",
                         "content": {
-                            "application/json": {
+                            "application\/json": {
                                 "schema": {
-                                    "properties": {
-                                        "data": {
-                                            "properties": {
-                                                "id": {
-                                                    "type": "integer",
-                                                    "example": 1
-                                                },
-                                                "email": {
-                                                    "type": "string",
-                                                    "example": "alex@example.com"
-                                                },
-                                                "first_name": {
-                                                    "type": "string",
-                                                    "example": "Alex"
-                                                },
-                                                "last_name": {
-                                                    "type": "string",
-                                                    "example": "Roden"
-                                                },
-                                                "created_at": {
-                                                    "type": "string",
-                                                    "example": "2026-07-16 11:00:27"
-                                                },
-                                                "updated_at": {
-                                                    "type": "string",
-                                                    "example": "2026-07-16 11:00:27"
-                                                }
-                                            },
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthenticated",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
+                                    "$ref": "#\/components\/schemas\/UserResponse"
                                 }
                             }
                         }
                     },
                     "422": {
-                        "description": "Validation failed",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/responses\/Validation"
                     }
                 },
                 "security": [
@@ -257,70 +151,27 @@
                 ]
             }
         },
-        "/api/user": {
+        "\/api\/me": {
             "get": {
                 "tags": [
                     "Users"
                 ],
-                "summary": "Get authenticated user",
-                "description": "Returns the currently authenticated user.",
-                "operationId": "1ec060ede2c6177b0d63e0c2aa04d8a4",
+                "summary": "Get current user",
+                "description": "Returns the current user.",
+                "operationId": "8c419114dec72feeadccc98cfc4c6079",
                 "responses": {
                     "200": {
                         "description": "Authenticated user returned",
                         "content": {
-                            "application/json": {
+                            "application\/json": {
                                 "schema": {
-                                    "properties": {
-                                        "data": {
-                                            "properties": {
-                                                "id": {
-                                                    "type": "integer",
-                                                    "example": 1
-                                                },
-                                                "email": {
-                                                    "type": "string",
-                                                    "example": "alex@example.com"
-                                                },
-                                                "first_name": {
-                                                    "type": "string",
-                                                    "example": "Alex"
-                                                },
-                                                "last_name": {
-                                                    "type": "string",
-                                                    "example": "Roden"
-                                                },
-                                                "created_at": {
-                                                    "type": "string",
-                                                    "example": "2026-07-16 11:00:27"
-                                                },
-                                                "updated_at": {
-                                                    "type": "string",
-                                                    "example": "2026-07-16 11:00:27"
-                                                }
-                                            },
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
+                                    "$ref": "#\/components\/schemas\/UserResponse"
                                 }
                             }
                         }
                     },
                     "401": {
-                        "description": "Unauthenticated",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/responses\/Unauthorized"
                     }
                 },
                 "security": [
@@ -332,9 +183,201 @@
         }
     },
     "components": {
+        "schemas": {
+            "Pagination": {
+                "properties": {
+                    "total": {
+                        "type": "integer"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "has_more": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "AuthBody": {
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "example": "alex@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "password"
+                    }
+                },
+                "type": "object"
+            },
+            "CreateUserRequest": {
+                "required": [
+                    "email",
+                    "password",
+                    "passwordConfirmation",
+                    "first_name",
+                    "last_name"
+                ],
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "alex@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "format": "password",
+                        "example": "password123",
+                        "minLength": 8
+                    },
+                    "passwordConfirmation": {
+                        "type": "string",
+                        "format": "password",
+                        "example": "password123"
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "example": "Alex"
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Roden"
+                    }
+                },
+                "type": "object"
+            },
+            "UserCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/User"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "UserResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/User"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "responses": {
+            "Unauthorized": {
+                "description": "Unauthenticated",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "Validation": {
+                "description": "Validation failed",
+                "content": {
+                    "application\/json": {
+                        "schema": {
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "The given data was invalid."
+                                },
+                                "errors": {
+                                    "type": "object",
+                                    "example": {
+                                        "password": [
+                                            "password is required."
+                                        ],
+                                        "firstName": [
+                                            "firstName is required."
+                                        ],
+                                        "lastName": [
+                                            "lastName is required."
+                                        ]
+                                    },
+                                    "additionalProperties": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "Limit": {
+                "name": "limit",
+                "in": "query",
+                "schema": {
+                    "type": "integer",
+                    "default": 10
+                }
+            },
+            "Offset": {
+                "name": "offset",
+                "in": "query",
+                "schema": {
+                    "type": "integer",
+                    "default": 0
+                }
+            }
+        },
         "securitySchemes": {
             "bearerAuth": {
                 "type": "http",
+                "bearerFormat": "JWT",
                 "scheme": "bearer"
             }
         }

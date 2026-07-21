@@ -48,6 +48,23 @@ abstract class FormRequest extends Request
 
     public function validated(): array
     {
-        return $this->all();
+        return $this->camelCaseKeys($this->all());
+    }
+
+    protected function camelCaseKeys(array $array): array
+    {
+        $result = [];
+
+        foreach ($array as $key => $value) {
+            $newKey = is_string($key)
+                ? lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $key))))
+                : $key;
+
+            $result[$newKey] = is_array($value)
+                ? $this->camelCaseKeys($value)
+                : $value;
+        }
+
+        return $result;
     }
 }

@@ -53,6 +53,17 @@ abstract class AbstractModel implements JsonSerializable
             ->first();
     }
 
+    public static function get(
+        ?int $limit = null,
+        ?int $offset = null,
+    ): array {
+        $model = new static();
+
+        return $model
+            ->DB()
+            ->get($limit, $offset);
+    }
+
     public function jsonSerialize(): array
     {
         return $this->toArray();

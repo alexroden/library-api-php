@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexRoden\LibraryApiPhp;
+namespace AlexRoden\LibraryApiPhp\OpenApi;
 
 use OpenApi\Attributes as OA;
 
@@ -16,7 +16,8 @@ use OpenApi\Attributes as OA;
 #[OA\SecurityScheme(
     securityScheme: "bearerAuth",
     type: "http",
-    scheme: "bearer"
+    scheme: "bearer",
+    bearerFormat: "JWT"
 )]
 class OpenApi
 {

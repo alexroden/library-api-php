@@ -39,21 +39,18 @@ require __DIR__ . '/../routes/docs.php';
 
 try {
     $router->dispatch($request);
-}  catch (ValidationException $e) {
-    http_response_code(422);
-
-    header('Content-Type: application/json');
-
-    echo json_encode([
-        'message' => $e->getMessage(),
-        'errors' => $e->errors(),
-    ]);
-} catch (AbstractHttpException $e) {
+} catch (AbstractHttpException|ValidationException $e) {
     http_response_code($e->statusCode());
 
     header('Content-Type: application/json');
 
-    echo json_encode(['message' => $e->getMessage()]);
+    $response = ['message' => $e->getMessage()];
+
+    if ($e instanceof ValidationException && count($e->errors()) > 0) {
+        $response['errors'] = $e->errors();
+    }
+
+    echo json_encode($response);
 } catch (Throwable $e) {
     http_response_code(500);
 

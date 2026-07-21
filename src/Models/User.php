@@ -5,6 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Models;
 use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
+
 /**
  * @extends AbstractModel<User>
  */
