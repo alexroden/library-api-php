@@ -2,39 +2,26 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Features\Users;
 
-use AlexRoden\LibraryApiPhp\Bus\CommandBus;
-use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
-use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
-use AlexRoden\LibraryApiPhp\Models\User;
-use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
-use AlexRoden\LibraryApiPhp\Tests\Factories\UserFactory;
-use PHPUnit\Framework\MockObject\MockObject;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use AlexRoden\LibraryApiPhp\Tests\Features\AbstractFeaturesTestCase;
 
-class MeTest extends AbstractTestCase
+class MeTest extends AbstractFeaturesTestCase
 {
-    private CommandBus|MockObject $commandBus;
-    protected User $user;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->commandBus = $this->createMock(CommandBus::class);
-        $this->user = new UserFactory()->create();
-    }
-
     public function testMe(): void
     {
-        $request = $this->createMock(AuthRequest::class);
-        $request
-            ->method('getUser')
-            ->willReturn($this->user);
+        $this->asAuthorizedUser();
 
-        $controller = new UserController(
-            $this->commandBus
+        $response = $this->handle(
+            Request::create(
+                method: 'GET',
+                uri: '/api/users',
+            )
         );
-        $resp = $controller->me($request);
 
-        $this->assertJson($this->user->toJson(), json_encode($resp->data));
+        $this->assertEquals(200, $response->status());
+        $this->assertSame(
+            $this->currentUser->toArray(),
+            $response->json()['data'][0]->toArray()
+        );
     }
 }

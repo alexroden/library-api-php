@@ -14,7 +14,7 @@ class PermissionTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->permission = new PermissionFactory()->create();
+        $this->permission = PermissionFactory::create();
     }
 
     public function testGet(): void

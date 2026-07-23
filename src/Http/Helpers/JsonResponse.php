@@ -7,6 +7,7 @@ class JsonResponse
     /**
      * @param array $data
      * @param int $status
+     * @param array $headers
      */
     public function __construct(
         public array $data,
@@ -25,5 +26,20 @@ class JsonResponse
         }
 
         echo json_encode($this->data);
+    }
+
+    public function status(): int
+    {
+        return $this->status;
+    }
+
+    public function headers(): array
+    {
+        return $this->headers;
+    }
+
+    public function json(): array
+    {
+        return $this->data;
     }
 }

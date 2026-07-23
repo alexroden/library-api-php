@@ -10,9 +10,22 @@ use AlexRoden\LibraryApiPhp\Http\Middlewares\Validator\Validator;
 
 abstract class FormRequest extends Request
 {
-    public function __construct()
-    {
-        parent::__construct();
+    public function __construct(
+        ?string $method = null,
+        ?string $uri = null,
+        ?array $query = null,
+        ?array $body = null,
+        ?array $headers = [],
+        ?array $files = null,
+    ) {
+        parent::__construct(
+            method: $method,
+            uri: $uri,
+            query: $query,
+            body: $body,
+            headers: $headers,
+            files: $files,
+        );
 
         $this->validateResolved();
     }
@@ -33,6 +46,7 @@ abstract class FormRequest extends Request
         if (!$this->authorize()) {
             throw new UnauthorizedException();
         }
+
 
         $validator = new Validator(
             $this->all(),

@@ -5,7 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Mail;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
-final class Mail
+final class Mail implements Mailer
 {
     /**
      * @throws Exception

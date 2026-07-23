@@ -22,7 +22,7 @@ class PermissionMiddlewareTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->user = new UserFactory()->create();
+        $this->user = UserFactory::create();
     }
 
     public function testPermissionMiddleware(): void
@@ -30,9 +30,9 @@ class PermissionMiddlewareTest extends AbstractTestCase
         $rolePermissions = Config::get('role-permissions');
 
         foreach ($rolePermissions as $role => $permissions) {
-            $role = new RoleFactory()->create(['name' => $role]);
+            $role = RoleFactory::create(['name' => $role]);
             foreach ($permissions as $permission) {
-                new PermissionFactory()->create(['name' => $permission]);
+                PermissionFactory::create(['name' => $permission]);
                 $role->assignPermission($permission);
             }
 

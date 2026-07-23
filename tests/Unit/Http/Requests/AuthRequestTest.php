@@ -23,36 +23,36 @@ class AuthRequestTest extends AbstractTestCase
 
     public function testRulesPassed(): void
     {
-        $_POST = [
+        $body = [
             'email' => $this->user->email,
             'password' => $this->factory->plainPassword,
         ];
 
-        $req = new AuthRequest();
+        $req = new AuthRequest(body: $body);
 
-        $this->assertEquals($_POST, $req->validated());
+        $this->assertEquals($body, $req->validated());
     }
 
     public function testEmailMustBeValid(): void
     {
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => 'password',
         ];
 
         $this->expectException(ValidationException::class);
 
-        new AuthRequest();
+        new AuthRequest(body: $body);
     }
 
     public function testEmailIsRequired(): void
     {
-        $_POST = [
+        $body = [
             'password' => 'password',
         ];
 
         $this->expectException(ValidationException::class);
 
-        new AuthRequest();
+        new AuthRequest(body: $body);
     }
 }

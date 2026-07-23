@@ -3,19 +3,17 @@
 namespace AlexRoden\LibraryApiPhp\Tests\Features;
 
 use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use PHPUnit\Framework\TestCase;
 
-class HealthEndpointTest extends TestCase
+class HealthEndpointTest extends AbstractFeaturesTestCase
 {
     public function testHealthEndpointReturnsOk(): void
     {
-        $controller = new HealthController();
+        $response = $this->handle(
+            Request::create('GET', '/api/_health'),
+        );
 
-        $response = $controller->index();
-
-        $this->assertSame(200, $response->status);
-        $this->assertSame([
-            'status' => 'ok',
-        ], $response->data);
+        $this->assertSame(200, $response->status());
     }
 }

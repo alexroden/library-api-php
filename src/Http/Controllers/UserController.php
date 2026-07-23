@@ -39,7 +39,7 @@ class UserController
      */
     public function auth(AuthRequest $request): JsonResponse
     {
-        $user = new User()->where('email', '=', $request->input('email'))->first();
+        $user = User::where('email', '=', $request->input('email'))->first();
         if (!$user) {
             throw new NotFoundException('User not found');
         }
@@ -102,6 +102,13 @@ class UserController
                 'has_more' => ($offset + $limit) < $total,
             ],
             'data' => $users,
+        ]);
+    }
+
+    public function get(Request $request, User $user): JsonResponse
+    {
+        return new JsonResponse([
+            'data' => $user,
         ]);
     }
 

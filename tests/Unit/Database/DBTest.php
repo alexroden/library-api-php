@@ -20,7 +20,7 @@ class DBTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->user = new UserFactory()->create();
+        $this->user = UserFactory::create();
     }
 
     public function testDelete(): void

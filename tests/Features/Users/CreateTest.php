@@ -2,58 +2,40 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Features\Users;
 
-use AlexRoden\LibraryApiPhp\Bus\CommandBus;
-use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
-use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
-use AlexRoden\LibraryApiPhp\Http\Requests\CreateUserRequest;
-use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
-use AlexRoden\LibraryApiPhp\Tests\Factories\UserFactory;
-use PHPUnit\Framework\MockObject\MockObject;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use AlexRoden\LibraryApiPhp\Models\User;
+use AlexRoden\LibraryApiPhp\Tests\Features\AbstractFeaturesTestCase;
 
-class CreateTest extends AbstractTestCase
+class CreateTest extends AbstractFeaturesTestCase
 {
-    private CommandBus|MockObject $commandBus;
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->commandBus = $this->createMock(CommandBus::class);
-    }
-
     public function testCreateUser(): void
     {
-        $user = new UserFactory()->create();
+        $this->asAuthorizedUser();
 
-        $this->commandBus
-            ->expects($this->once())
-            ->method('dispatch')
-            ->with($this->callback(function ($command) {
-                return $command instanceof CreateUserCommand
-                    && $command->email === 'test@example.com';
-            }))
-            ->willReturn($user);
+        $email = $this->faker->email;
+        $password = $this->faker->password;
 
-        $request = $this->createMock(CreateUserRequest::class);
-
-        $request
-            ->method('validated')
-            ->willReturn([
-                'email' => 'test@example.com',
-                'password' => 'password',
-                'firstName' => 'Test',
-                'lastName' => 'User',
-                'passwordConfirmation' => 'password',
-            ]);
-
-        $controller = new UserController(
-            $this->commandBus
+        $response = $this->handle(
+            Request::create(
+                method: 'POST',
+                uri: '/api/users',
+                body: [
+                    "email" => $email,
+                    "password" => $password,
+                    "password_confirmation" => $password,
+                    'first_name' => $this->faker->firstName,
+                    'last_name' => $this->faker->lastName,
+                    'roles' => [Roles::USER],
+                ]
+            )
         );
 
-        $response = $controller->create($request);
+        $this->assertEquals(200, $response->status());
 
-        $this->assertSame(
-            $user,
-            $response->data['data']
-        );
+        $user = User::where('email', '=', $email)->first();
+
+        $this->assertNotNull($user);
+        $this->assertEquals($email, $user->email);
     }
 }

@@ -93,13 +93,14 @@ abstract class AbstractModel implements JsonSerializable
     /**
      * @return DB<TModel>
      */
-    public function where(
+    public static function where(
         string $column,
         string $operator,
         mixed $value,
-    ): DB
-    {
-        return $this->DB()->where(
+    ): DB {
+        $model = new static();
+
+        return $model->DB()->where(
             $column,
             $operator,
             $value,

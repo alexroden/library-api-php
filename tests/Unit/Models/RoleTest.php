@@ -17,7 +17,7 @@ class RoleTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->role = new RoleFactory()->create();
+        $this->role = RoleFactory::create();
     }
 
     public function testGet(): void

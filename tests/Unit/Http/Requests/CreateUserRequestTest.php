@@ -13,7 +13,7 @@ class CreateUserRequestTest extends AbstractTestCase
     {
         $password = $this->faker->password();
 
-        $_POST = [
+        $body = [
             'email' => $this->faker->email,
             'password' => $password,
             'password_confirmation' => $password,
@@ -22,16 +22,24 @@ class CreateUserRequestTest extends AbstractTestCase
             'roles' => [Roles::ADMIN],
         ];
 
-        $req = new CreateUserRequest();
+        $req = new CreateUserRequest(body: $body);
 
-        $this->assertEquals($_POST, $req->validated());
+        $valid = $req->validated();
+        $this->assertEquals($body, [
+            'email' => $valid['email'],
+            'password' => $valid['password'],
+            'password_confirmation' => $valid['passwordConfirmation'],
+            'first_name' => $valid['firstName'],
+            'last_name' => $valid['lastName'],
+            'roles' => [Roles::ADMIN],
+        ]);
     }
 
     public function testEmailMustBeValid(): void
     {
         $password = $this->faker->password();
 
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => $password,
             'password_confirmation' => $password,
@@ -42,14 +50,14 @@ class CreateUserRequestTest extends AbstractTestCase
 
         $this->expectException(ValidationException::class);
 
-        new CreateUserRequest();
+        new CreateUserRequest(body: $body);
     }
 
     public function testPasswordMustBeValid(): void
     {
         $password = 'foo';
 
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => $password,
             'password_confirmation' => $password,
@@ -60,14 +68,14 @@ class CreateUserRequestTest extends AbstractTestCase
 
         $this->expectException(ValidationException::class);
 
-        new CreateUserRequest();
+        new CreateUserRequest(body: $body);
     }
 
     public function testPasswordMustBeConfirmed(): void
     {
         $password = $this->faker->password();
 
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => $password,
             'first_name' => $this->faker->firstName,
@@ -77,14 +85,14 @@ class CreateUserRequestTest extends AbstractTestCase
 
         $this->expectException(ValidationException::class);
 
-        new CreateUserRequest();
+        new CreateUserRequest(body: $body);
     }
 
     public function testFirstNameIsRequired(): void
     {
         $password = $this->faker->password();
 
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => $password,
             'password_confirmation' => $password,
@@ -94,14 +102,14 @@ class CreateUserRequestTest extends AbstractTestCase
 
         $this->expectException(ValidationException::class);
 
-        new CreateUserRequest();
+        new CreateUserRequest(body: $body);
     }
 
     public function testLastNameIsRequired(): void
     {
         $password = $this->faker->password();
 
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => $password,
             'password_confirmation' => $password,
@@ -111,14 +119,14 @@ class CreateUserRequestTest extends AbstractTestCase
 
         $this->expectException(ValidationException::class);
 
-        new CreateUserRequest();
+        new CreateUserRequest(body: $body);
     }
 
     public function testRolesMustBeAnArray(): void
     {
         $password = $this->faker->password();
 
-        $_POST = [
+        $body = [
             'email' => 'not-an-email',
             'password' => $password,
             'password_confirmation' => $password,
@@ -129,6 +137,6 @@ class CreateUserRequestTest extends AbstractTestCase
 
         $this->expectException(ValidationException::class);
 
-        new CreateUserRequest();
+        new CreateUserRequest(body: $body);
     }
 }
