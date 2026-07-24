@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Models\Permission;
 use AlexRoden\LibraryApiPhp\Models\Role;
+use AlexRoden\LibraryApiPhp\Models\User;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 use AlexRoden\LibraryApiPhp\Tests\Factories\RoleFactory;
 
@@ -20,37 +21,41 @@ class RoleTest extends AbstractTestCase
         $this->role = RoleFactory::create();
     }
 
-    public function testGet(): void
-    {
-        $model = new Role();
-        $roles = $model->where('id', '=', $this->role->id)->get();
-
-        $this->assertCount(1, $roles);
-    }
-
-    public function testFirst(): void
-    {
-        $model = new Role();
-        $role = $model->where('id', '=', $this->role->id)->first();
-
-        $this->assertEquals($this->role->id, $role->id);
-    }
-
     public function testCreate(): void
     {
-        $model = new Role();
-
-        $role = $model->create([
+        $role = Role::create([
             'name' => Roles::ADMIN,
         ]);
 
         $this->assertNotNull($role->id);
     }
 
+    public function testGet(): void
+    {
+        $roles = Role::where('id', '=', $this->role->id)->get();
+
+        $this->assertCount(1, $roles);
+    }
+
+    public function testDelete(): void
+    {
+        $this->role->delete();
+
+        $role = Role::where('id', '=', $this->role->id)->first();
+
+        $this->assertNull($role);
+    }
+
+    public function testFirst(): void
+    {
+        $role = Role::where('id', '=', $this->role->id)->first();
+
+        $this->assertEquals($this->role->id, $role->id);
+    }
+
     public function testPermissions(): void
     {
-        $model = new Permission();
-        $permission = $model->create(['name' => Permissions::USERS_CREATE]);
+        $permission = Permission::create(['name' => Permissions::USERS_CREATE]);
 
         $this->role->assignPermission($permission);
 
@@ -61,8 +66,7 @@ class RoleTest extends AbstractTestCase
 
     public function testUnassignPermissions(): void
     {
-        $model = new Permission();
-        $permission = $model->create(['name' => Permissions::USERS_CREATE]);
+        $permission = Permission::create(['name' => Permissions::USERS_CREATE]);
 
         $this->role->assignPermission($permission);
 
@@ -74,5 +78,22 @@ class RoleTest extends AbstractTestCase
 
         $permissions = $this->role->permissions();
         $this->assertEmpty($permissions);
+    }
+
+    public function testUpdate(): void
+    {
+        $name = Roles::SUPER_ADMIN;
+
+        $this->role->update([
+            'name' => $name,
+        ]);
+
+        $role = $this->role->refresh();
+
+        $this->assertSame([
+            'name' => $name,
+        ], [
+            'name' => $role->name,
+        ]);
     }
 }

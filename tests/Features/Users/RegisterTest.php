@@ -21,9 +21,9 @@ class RegisterTest extends AbstractFeaturesTestCase
                 method: 'POST',
                 uri: '/api/register',
                 body: [
-                    "email" => $email,
-                    "password" => $password,
-                    "password_confirmation" => $password,
+                    'email' => $email,
+                    'password' => $password,
+                    'password_confirmation' => $password,
                     'first_name' => $this->faker->firstName,
                     'last_name' => $this->faker->lastName,
                 ]

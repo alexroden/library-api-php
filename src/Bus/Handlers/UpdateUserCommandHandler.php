@@ -4,17 +4,12 @@ namespace AlexRoden\LibraryApiPhp\Bus\Handlers;
 
 use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
-use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Events\UpdateUserEvent;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\User;
 
-readonly class UpdateUserCommandHandler implements CommandHandler
+class UpdateUserCommandHandler extends AbstractCommandHandler implements CommandHandler
 {
-    public function __construct(
-        private EventBus $events,
-    ) {}
-
     /**
      * @throws UndefinedClassException
      */

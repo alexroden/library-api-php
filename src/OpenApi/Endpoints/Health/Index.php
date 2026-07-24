@@ -7,7 +7,7 @@ use OpenApi\Attributes as OA;
 #[OA\Get(
     path: "/api/_health",
     summary: "API health check",
-    tags: ["HealthCheck"],
+    tags: ["_Health"],
     responses: [
         new OA\Response(
             response: 200,

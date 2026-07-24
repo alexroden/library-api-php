@@ -4,18 +4,13 @@ namespace AlexRoden\LibraryApiPhp\Bus\Handlers;
 
 use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
-use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
 use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\User;
 
-readonly class CreateUserCommandHandler implements CommandHandler
+class CreateUserCommandHandler extends AbstractCommandHandler implements CommandHandler
 {
-    public function __construct(
-        private EventBus $events,
-    ) {}
-
     /**
      * @throws UndefinedClassException
      * @throws ResourceNotFoundException

@@ -27,8 +27,8 @@ class AuthTest extends AbstractFeaturesTestCase
                 method: 'POST',
                 uri: '/api/auth',
                 body: [
-                    "email" => $this->user->email,
-                    "password" => $this->factory->plainPassword,
+                    'email' => $this->user->email,
+                    'password' => $this->factory->plainPassword,
                 ]
             )
         );

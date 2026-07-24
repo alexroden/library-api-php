@@ -25,14 +25,14 @@ use JsonException;
 use PDOException;
 
 
-class UserController
+class UserController extends AbstractController
 {
     protected Jwt $jwt;
 
-    public function __construct(
-        private readonly CommandBus $commandBus,
-    )
+    public function __construct(CommandBus $commandBus)
     {
+        parent::__construct($commandBus);
+
         $this->jwt = new Jwt(env('JWT_SECRET'));
     }
 
@@ -106,6 +106,13 @@ class UserController
         return new JsonResponse(null, 204);
     }
 
+    public function get(Request $request, User $user): JsonResponse
+    {
+        return new JsonResponse([
+            'data' => $user,
+        ]);
+    }
+
     public function list(Request $request): JsonResponse
     {
         $limit = (int) $request->input('limit', 10);
@@ -125,13 +132,6 @@ class UserController
                 'has_more' => ($offset + $limit) < $total,
             ],
             'data' => $users,
-        ]);
-    }
-
-    public function get(Request $request, User $user): JsonResponse
-    {
-        return new JsonResponse([
-            'data' => $user,
         ]);
     }
 
@@ -168,7 +168,7 @@ class UserController
 
     /**
      * @throws DatabaseException
-     * @throws InternalServiceException
+     * @throws InternalServiceException|JsonException
      */
     public function register(CreateUserRequest $request): JsonResponse
     {
