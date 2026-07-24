@@ -22,6 +22,7 @@ $router->prefix('/api', function ($router) {
         });
         $router->group(['prefix' => '/councils'], function ($router) {
             $router->post('/', [CouncilController::class, 'create'], ['permission:'.Permissions::COUNCILS_CREATE]);
+            $router->get('/{council}', [CouncilController::class, 'get'], ['permission:'.Permissions::COUNCILS_GET]);
         });
     });
 });

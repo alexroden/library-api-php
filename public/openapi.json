@@ -55,6 +55,36 @@
                 ]
             }
         },
+        "\/api\/councils\/{council}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get a given council",
+                "description": "Returns a given council.",
+                "operationId": "a5a3b6b94ce0caa91a64ff10299c9a70",
+                "responses": {
+                    "200": {
+                        "description": "Authenticated council returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CouncilResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "\/api\/_health": {
             "get": {
                 "tags": [
@@ -257,6 +287,36 @@
                 "responses": {
                     "204": {
                         "description": "User created"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/user\/{user}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get a given user",
+                "description": "Returns a given user.",
+                "operationId": "32ebdbbf9e5111382f5ddcf53cb16778",
+                "responses": {
+                    "200": {
+                        "description": "Authenticated user returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/UserResponse"
+                                }
+                            }
+                        }
                     },
                     "401": {
                         "$ref": "#\/components\/responses\/Unauthorized"

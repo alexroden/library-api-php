@@ -106,6 +106,13 @@ class UserController extends AbstractController
         return new JsonResponse(null, 204);
     }
 
+    public function get(Request $request, User $user): JsonResponse
+    {
+        return new JsonResponse([
+            'data' => $user,
+        ]);
+    }
+
     public function list(Request $request): JsonResponse
     {
         $limit = (int) $request->input('limit', 10);
@@ -125,13 +132,6 @@ class UserController extends AbstractController
                 'has_more' => ($offset + $limit) < $total,
             ],
             'data' => $users,
-        ]);
-    }
-
-    public function get(Request $request, User $user): JsonResponse
-    {
-        return new JsonResponse([
-            'data' => $user,
         ]);
     }
 
