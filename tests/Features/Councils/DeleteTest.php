@@ -7,7 +7,7 @@ use AlexRoden\LibraryApiPhp\Models\Council;
 use AlexRoden\LibraryApiPhp\Tests\Factories\CouncilFactory;
 use AlexRoden\LibraryApiPhp\Tests\Features\AbstractFeaturesTestCase;
 
-class ListTest extends AbstractFeaturesTestCase
+class DeleteTest extends AbstractFeaturesTestCase
 {
     private Council $council;
 
@@ -18,21 +18,20 @@ class ListTest extends AbstractFeaturesTestCase
         $this->council = CouncilFactory::create();
     }
 
-    public function testListCouncils(): void
+    public function testDeleteCouncil(): void
     {
         $this->asAuthorizedUser();
 
         $response = $this->handle(
             Request::create(
-                method: 'GET',
-                uri: '/api/councils',
+                method: 'DELETE',
+                uri: "/api/councils/{$this->council->id}",
             )
         );
 
-        $this->assertEquals(200, $response->status());
-        $this->assertSame(
-            $this->council->toArray(),
-            $response->json()['data'][0]->toArray()
-        );
+        $this->assertEquals(204, $response->status());
+
+        $council = Council::where('id', '=', $this->council->id)->first();
+        $this->assertNull($council);
     }
 }

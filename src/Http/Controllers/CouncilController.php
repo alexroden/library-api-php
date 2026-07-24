@@ -3,6 +3,7 @@
 namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCouncilCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
@@ -36,6 +37,25 @@ class CouncilController extends AbstractController
         return new JsonResponse([
             'data' => $user,
         ], 201);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function delete(Request $request, Council $council): JsonResponse
+    {
+        try {
+            $this->commandBus->dispatch(
+                new DeleteCouncilCommand($council)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse(null, 204);
     }
 
     public function get(Request $request, Council $council): JsonResponse

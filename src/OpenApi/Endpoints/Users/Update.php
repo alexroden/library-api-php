@@ -5,7 +5,7 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Endpoints\Users;
 use OpenApi\Attributes as OA;
 
 #[OA\Put(
-    path: "/api/users/{id}",
+    path: "/api/users/{user}",
     description: "Update a given user",
     summary: "Update user",
     security: [

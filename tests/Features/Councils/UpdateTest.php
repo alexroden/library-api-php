@@ -26,7 +26,7 @@ class UpdateTest extends AbstractFeaturesTestCase
 
         $response = $this->handle(
             Request::create(
-                method: 'Put',
+                method: 'PUT',
                 uri: "/api/councils/{$this->council->id}",
                 body: [
                     'name' => $name,

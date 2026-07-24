@@ -5,7 +5,7 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Endpoints\Users;
 use OpenApi\Attributes as OA;
 
 #[OA\Delete(
-    path: "/api/users/{id}",
+    path: "/api/users/{user}",
     description: "delete a given user",
     summary: "Delete user",
     security: [
@@ -15,7 +15,7 @@ use OpenApi\Attributes as OA;
     responses: [
         new OA\Response(
             response: 204,
-            description: "User created",
+            description: "Empty response",
         ),
         new OA\Response(ref: "#/components/responses/Unauthorized", response: 401),
     ]

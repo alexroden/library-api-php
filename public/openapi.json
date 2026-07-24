@@ -146,6 +146,27 @@
                         "bearerAuth": []
                     }
                 ]
+            },
+            "delete": {
+                "tags": [
+                    "Councils"
+                ],
+                "summary": "Delete a given council",
+                "description": "Delete a given council.",
+                "operationId": "951d7672ed62ec76f30e651149be40ec",
+                "responses": {
+                    "204": {
+                        "description": "Empty response"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "\/api\/_health": {
@@ -298,14 +319,14 @@
                 ]
             }
         },
-        "\/api\/users\/{id}": {
+        "\/api\/users\/{user}": {
             "put": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Update user",
                 "description": "Update a given user",
-                "operationId": "80cca7235fd88a30663f9953fdb24fe8",
+                "operationId": "1d571d7b324fd9c328c8f598665575d5",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -346,10 +367,10 @@
                 ],
                 "summary": "Delete user",
                 "description": "delete a given user",
-                "operationId": "83fac0169deaa6ebfabbfaf837b592b4",
+                "operationId": "432e4f08a24526d8be8b394268346e1b",
                 "responses": {
                     "204": {
-                        "description": "User created"
+                        "description": "Empty response"
                     },
                     "401": {
                         "$ref": "#\/components\/responses\/Unauthorized"
