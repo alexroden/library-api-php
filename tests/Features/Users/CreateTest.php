@@ -31,7 +31,7 @@ class CreateTest extends AbstractFeaturesTestCase
             )
         );
 
-        $this->assertEquals(200, $response->status());
+        $this->assertEquals(201, $response->status());
 
         $user = User::where('email', '=', $email)->first();
         $this->assertNotNull($user);

@@ -5,14 +5,7 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Requests;
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(
-    schema: "CreateUserRequest",
-    required: [
-        "email",
-        "password",
-        "password_confirmation",
-        "first_name",
-        "last_name",
-    ],
+    schema: "UpdateUserRequest",
     properties: [
         new OA\Property(
             property: "email",
@@ -54,7 +47,7 @@ use OpenApi\Attributes as OA;
         ),
     ]
 )]
-class CreateUserRequest
+class UpdateUserRequest
 {
 
 }

@@ -4,23 +4,23 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Endpoints\Users;
 
 use OpenApi\Attributes as OA;
 
-#[OA\Post(
-    path: "/api/users",
-    summary: "Create user",
-    description: "Creates a new user account.",
-    tags: ["Users"],
+#[OA\Put(
+    path: "/api/users/{id}",
+    description: "Update a given user",
+    summary: "Update user",
     security: [
         ["bearerAuth" => []]
     ],
     requestBody: new OA\RequestBody(
         required: true,
         content: new OA\JsonContent(
-            ref: "#/components/schemas/CreateUserRequest"
+            ref: "#/components/schemas/UpdateUserRequest"
         )
     ),
+    tags: ["Users"],
     responses: [
         new OA\Response(
-            response: 201,
+            response: 200,
             description: "User created",
             content: new OA\JsonContent(
                 ref: "#/components/schemas/UserResponse"
@@ -30,6 +30,6 @@ use OpenApi\Attributes as OA;
         new OA\Response(response: 422, ref: "#/components/responses/Validation"),
     ]
 )]
-class Create
+class Update
 {
 }

@@ -83,7 +83,7 @@ class UserController
 
         return new JsonResponse([
             'data' => $user,
-        ]);
+        ], 201);
     }
 
     /**
@@ -93,7 +93,7 @@ class UserController
     public function delete(Request $request, User $user): JsonResponse
     {
         try {
-            $user = $this->commandBus->dispatch(
+            $this->commandBus->dispatch(
                 new DeleteUserCommand($user)
             );
         } catch (PDOException $e) {

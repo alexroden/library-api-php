@@ -140,8 +140,75 @@
                             }
                         }
                     },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
                     "422": {
                         "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/users\/{id}": {
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Update user",
+                "description": "Update a given user",
+                "operationId": "80cca7235fd88a30663f9953fdb24fe8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/UpdateUserRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User created",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/UserResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Delete user",
+                "description": "delete a given user",
+                "operationId": "83fac0169deaa6ebfabbfaf837b592b4",
+                "responses": {
+                    "204": {
+                        "description": "User created"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
                     }
                 },
                 "security": [
@@ -225,7 +292,7 @@
                 "required": [
                     "email",
                     "password",
-                    "passwordConfirmation",
+                    "password_confirmation",
                     "first_name",
                     "last_name"
                 ],
@@ -239,20 +306,65 @@
                         "type": "string",
                         "format": "password",
                         "example": "password123",
-                        "minLength": 8
+                        "minLength": 6
                     },
-                    "passwordConfirmation": {
+                    "password_confirmation": {
                         "type": "string",
                         "format": "password",
                         "example": "password123"
                     },
                     "first_name": {
                         "type": "string",
-                        "example": "Alex"
+                        "example": "Alex",
+                        "minLength": 3
                     },
                     "last_name": {
                         "type": "string",
-                        "example": "Roden"
+                        "example": "Roden",
+                        "minLength": 3
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateUserRequest": {
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "alex@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "format": "password",
+                        "example": "password123",
+                        "minLength": 6
+                    },
+                    "password_confirmation": {
+                        "type": "string",
+                        "format": "password",
+                        "example": "password123"
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "example": "Alex",
+                        "minLength": 3
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Roden",
+                        "minLength": 3
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 },
                 "type": "object"
