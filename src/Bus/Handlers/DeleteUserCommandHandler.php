@@ -4,17 +4,12 @@ namespace AlexRoden\LibraryApiPhp\Bus\Handlers;
 
 use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteUserCommand;
-use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteUserEvent;
 use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
-readonly class DeleteUserCommandHandler implements CommandHandler
+class DeleteUserCommandHandler extends AbstractCommandHandler implements CommandHandler
 {
-    public function __construct(
-        private EventBus $events,
-    ) {}
-
     /**
      * @throws UndefinedClassException|ResourceNotFoundException
      */

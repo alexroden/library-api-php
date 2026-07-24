@@ -33,9 +33,9 @@ class UpdateTest extends AbstractFeaturesTestCase
                 method: 'PUT',
                 uri: "/api/users/{$this->user->id}",
                 body: [
-                    "email" => $email,
-                    "password" => $password,
-                    "password_confirmation" => $password,
+                    'email' => $email,
+                    'password' => $password,
+                    'password_confirmation' => $password,
                     'first_name' => $firstName,
                     'last_name' => $lastName,
                     'roles' => [Roles::USER],
@@ -47,9 +47,15 @@ class UpdateTest extends AbstractFeaturesTestCase
 
         $user = User::where('email', '=', $email)->first();
         $this->assertNotNull($user);
-        $this->assertEquals($email, $user->email);
-        $this->assertEquals($firstName, $user->first_name);
-        $this->assertEquals($lastName, $user->last_name);
+        $this->assertSame([
+            'email' => $email,
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+        ], [
+            'email' => $user->email,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
+        ]);
         $this->assertNotEmpty($user->roles());
     }
 }

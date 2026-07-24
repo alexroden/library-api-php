@@ -2,6 +2,7 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Unit\Models;
 
+use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Models\Permission;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 use AlexRoden\LibraryApiPhp\Tests\Factories\PermissionFactory;
@@ -17,30 +18,52 @@ class PermissionTest extends AbstractTestCase
         $this->permission = PermissionFactory::create();
     }
 
+    public function testCreate(): void
+    {
+        $permission = Permission::create([
+            'name' => Permissions::USERS_CREATE,
+        ]);
+
+        $this->assertNotNull($permission->id);
+    }
+
+    public function testDelete(): void
+    {
+        $this->permission->delete();
+
+        $permission = Permission::where('id', '=', $this->permission->id)->first();
+
+        $this->assertNull($permission);
+    }
+
     public function testGet(): void
     {
-        $model = new Permission();
-        $permissions = $model->where('id', '=', $this->permission->id)->get();
+        $permissions = Permission::where('id', '=', $this->permission->id)->get();
 
         $this->assertCount(1, $permissions);
     }
 
     public function testFirst(): void
     {
-        $model = new Permission();
-        $permission = $model->where('id', '=', $this->permission->id)->first();
+        $permission = Permission::where('id', '=', $this->permission->id)->first();
 
         $this->assertEquals($this->permission->id, $permission->id);
     }
 
-    public function testCreate(): void
+    public function testUpdate(): void
     {
-        $model = new Permission();
+        $name = Permissions::USERS_DELETE;
 
-        $permission = $model->create([
-            'name' => 'admin',
+        $this->permission->update([
+            'name' => $name,
         ]);
 
-        $this->assertNotNull($permission->id);
+        $permission = $this->permission->refresh();
+
+        $this->assertSame([
+            'name' => $name,
+        ], [
+            'name' => $permission->name,
+        ]);
     }
 }

@@ -21,27 +21,9 @@ class UserTest extends AbstractTestCase
         $this->user = UserFactory::create();
     }
 
-    public function testGet(): void
-    {
-        $model = new User();
-        $users = $model->where('id', '=', $this->user->id)->get();
-
-        $this->assertCount(1, $users);
-    }
-
-    public function testFirst(): void
-    {
-        $model = new User();
-        $user = $model->where('id', '=', $this->user->id)->first();
-
-        $this->assertEquals($this->user->id, $user->id);
-    }
-
     public function testCreate(): void
     {
-        $model = new User();
-
-        $user = $model->create([
+        $user = User::create([
             'email' => 'john.smith@example.com',
             'password' => 'password',
             'first_name' => 'John',
@@ -51,10 +33,32 @@ class UserTest extends AbstractTestCase
         $this->assertNotNull($user->id);
     }
 
+    public function testGet(): void
+    {
+        $users = User::where('id', '=', $this->user->id)->get();
+
+        $this->assertCount(1, $users);
+    }
+
+    public function testDelete(): void
+    {
+        $this->user->delete();
+
+        $user = User::where('id', '=', $this->user->id)->first();
+
+        $this->assertNull($user);
+    }
+
+    public function testFirst(): void
+    {
+        $user = User::where('id', '=', $this->user->id)->first();
+
+        $this->assertEquals($this->user->id, $user->id);
+    }
+
     public function testHasRoles(): void
     {
-        $model = new Role();
-        $role = $model->create(['name' => Roles::ADMIN]);
+        $role = Role::create(['name' => Roles::ADMIN]);
 
         $this->user->assignRole($role);
 
@@ -63,10 +67,8 @@ class UserTest extends AbstractTestCase
 
     public function testHasPermissions(): void
     {
-        $model = new Role();
-        $role = $model->create(['name' => Roles::ADMIN]);
-        $perm = new Permission();
-        $permission = $perm->create(['name' => Permissions::USERS_CREATE]);
+        $role = Role::create(['name' => Roles::ADMIN]);
+        $permission = Permission::create(['name' => Permissions::USERS_CREATE]);
         $role->assignPermission($permission);
 
         $this->user->assignRole($role);
@@ -76,8 +78,7 @@ class UserTest extends AbstractTestCase
 
     public function testRoles(): void
     {
-        $model = new Role();
-        $role = $model->create(['name' => Roles::ADMIN]);
+        $role = Role::create(['name' => Roles::ADMIN]);
 
         $this->user->assignRole($role);
 
@@ -88,10 +89,8 @@ class UserTest extends AbstractTestCase
 
     public function testPermissions(): void
     {
-        $model = new Role();
-        $role = $model->create(['name' => Roles::ADMIN]);
-        $perm = new Permission();
-        $permission = $perm->create(['name' => Permissions::USERS_CREATE]);
+        $role = Role::create(['name' => Roles::ADMIN]);
+        $permission = Permission::create(['name' => Permissions::USERS_CREATE]);
         $role->assignPermission($permission);
 
         $this->user->assignRole($role);
@@ -103,13 +102,37 @@ class UserTest extends AbstractTestCase
 
     public function testUnassignRole(): void
     {
-        $model = new Role();
-        $role = $model->create(['name' => Roles::ADMIN]);
+        $role = Role::create(['name' => Roles::ADMIN]);
 
         $this->user->assignRole($role);
         $this->assertTrue($this->user->hasRole(Roles::ADMIN));
 
         $this->user->unassignRole($role);
         $this->assertFalse($this->user->hasRole(Roles::ADMIN));
+    }
+
+    public function testUpdate(): void
+    {
+        $email = 'john.smith@example.com';
+        $firstName = 'John';
+        $lastName = 'Smith';
+
+        $this->user->update([
+            'email' => $email,
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+        ]);
+
+        $user = $this->user->refresh();
+
+        $this->assertSame([
+            'email' => $email,
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+        ], [
+            'email' => $user->email,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
+        ]);
     }
 }

@@ -12,6 +12,49 @@
         }
     ],
     "paths": {
+        "\/api\/councils": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Create council",
+                "description": "Creates a new council.",
+                "operationId": "f2af4a935fb408d7d080eaa703667ba1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CreateCouncilRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Council created",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CouncilResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "\/api\/_health": {
             "get": {
                 "tags": [
@@ -347,6 +390,18 @@
                 },
                 "type": "object"
             },
+            "CreateCouncilRequest": {
+                "required": [
+                    "name",
+                    "last_name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "CreateUserRequest": {
                 "required": [
                     "email",
@@ -428,6 +483,14 @@
                 },
                 "type": "object"
             },
+            "CouncilResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/Council"
+                    }
+                },
+                "type": "object"
+            },
             "UserCollection": {
                 "properties": {
                     "meta": {
@@ -446,6 +509,23 @@
                 "properties": {
                     "data": {
                         "$ref": "#\/components\/schemas\/User"
+                    }
+                },
+                "type": "object"
+            },
+            "Council": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -555,12 +635,12 @@
     },
     "tags": [
         {
-            "name": "HealthCheck",
-            "description": "HealthCheck"
-        },
-        {
             "name": "Users",
             "description": "Users"
+        },
+        {
+            "name": "HealthCheck",
+            "description": "HealthCheck"
         }
     ]
 }

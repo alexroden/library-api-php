@@ -25,14 +25,14 @@ use JsonException;
 use PDOException;
 
 
-class UserController
+class UserController extends AbstractController
 {
     protected Jwt $jwt;
 
-    public function __construct(
-        private readonly CommandBus $commandBus,
-    )
+    public function __construct(CommandBus $commandBus)
     {
+        parent::__construct($commandBus);
+
         $this->jwt = new Jwt(env('JWT_SECRET'));
     }
 
@@ -168,7 +168,7 @@ class UserController
 
     /**
      * @throws DatabaseException
-     * @throws InternalServiceException
+     * @throws InternalServiceException|JsonException
      */
     public function register(CreateUserRequest $request): JsonResponse
     {

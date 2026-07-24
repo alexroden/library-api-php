@@ -13,6 +13,11 @@ return [
     */
 
     Roles::ADMIN => [
+        Permissions::COUNCILS_CREATE,
+        Permissions::COUNCILS_GET,
+        Permissions::COUNCILS_LIST,
+        Permissions::COUNCILS_UPDATE,
+        Permissions::COUNCILS_DELETE,
         Permissions::USERS_CREATE,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,
@@ -28,6 +33,8 @@ return [
     */
 
     Roles::STAFF => [
+        Permissions::COUNCILS_GET,
+        Permissions::COUNCILS_LIST,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,
     ],
@@ -39,6 +46,10 @@ return [
     */
 
     Roles::EDITOR => [
+        Permissions::COUNCILS_CREATE,
+        Permissions::COUNCILS_GET,
+        Permissions::COUNCILS_LIST,
+        Permissions::COUNCILS_UPDATE,
         Permissions::USERS_CREATE,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,
@@ -52,6 +63,8 @@ return [
     */
 
     Roles::USER => [
+        Permissions::COUNCILS_GET,
+        Permissions::COUNCILS_LIST,
         Permissions::USERS_GET,
     ],
 

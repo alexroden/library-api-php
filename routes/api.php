@@ -3,6 +3,7 @@
 /** @var AlexRoden\LibraryApiPhp\Router $router */
 
 use AlexRoden\LibraryApiPhp\Enums\Permissions;
+use AlexRoden\LibraryApiPhp\Http\Controllers\CouncilController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
 
@@ -18,6 +19,9 @@ $router->prefix('/api', function ($router) {
             $router->get('/{user}', [UserController::class, 'get'], ['permission:'.Permissions::USERS_GET]);
             $router->put('/{user}', [UserController::class, 'update'], ['permission:'.Permissions::USERS_UPDATE]);
             $router->delete('{user}', [UserController::class, 'delete'], ['permission:'.Permissions::USERS_DELETE]);
+        });
+        $router->group(['prefix' => '/councils'], function ($router) {
+            $router->post('/', [CouncilController::class, 'create'], ['permission:'.Permissions::COUNCILS_CREATE]);
         });
     });
 });
