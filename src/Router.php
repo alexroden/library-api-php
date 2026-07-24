@@ -206,6 +206,34 @@ class Router
     }
 
     /**
+     * @param array $options
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function group(array $options, callable $callback): void
+    {
+        $previousPrefix = $this->prefix;
+        $previousMiddleware = $this->middlewareStack;
+
+        if (isset($options['prefix'])) {
+            $this->prefix .= $options['prefix'];
+        }
+
+        if (isset($options['middleware'])) {
+            $this->middlewareStack = array_merge(
+                $this->middlewareStack,
+                (array) $options['middleware']
+            );
+        }
+
+        $callback($this);
+
+        $this->prefix = $previousPrefix;
+        $this->middlewareStack = $previousMiddleware;
+    }
+
+    /**
      * @param array $middleware
      * @param callable $callback
      *
@@ -274,6 +302,14 @@ class Router
     }
 
     /**
+     * @return array
+     */
+    public function routes(): array
+    {
+        return $this->routes;
+    }
+
+    /**
      * @param string $method
      * @param string $path
      * @param callable|array $handler
@@ -287,10 +323,9 @@ class Router
         callable|array $handler,
         array $middleware = [],
     ): void {
-        $path = preg_replace('#/+#', '/', $this->prefix . $path);
+        $path = $this->normalizePath($path);
 
         $parameters = [];
-
         $regex = preg_replace_callback(
             '/\{([^}]+)\}/',
             function ($matches) use (&$parameters) {
@@ -310,5 +345,16 @@ class Router
                 $middleware
             ),
         ];
+    }
+
+    private function normalizePath(string $path): string
+    {
+        $path = preg_replace(
+            '#/+#',
+            '/',
+            $this->prefix . '/' . ltrim($path, '/')
+        );
+
+        return rtrim($path, '/') ?: '/';
     }
 }

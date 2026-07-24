@@ -7,10 +7,10 @@ use OpenApi\Attributes as OA;
 #[OA\Get(
     path: "/api/users",
     summary: "List users",
-    tags: ["Users"],
     security: [
         ["bearerAuth" => []]
     ],
+    tags: ["Users"],
     parameters: [
         new OA\Parameter(ref: "#/components/parameters/Limit"),
         new OA\Parameter(ref: "#/components/parameters/Offset"),
@@ -23,7 +23,7 @@ use OpenApi\Attributes as OA;
                 ref: "#/components/schemas/UserCollection"
             )
         ),
-        new OA\Response(response: 401, ref: "#/components/responses/Unauthorized")
+        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401)
     ]
 )]
 class ListUsers

@@ -6,12 +6,12 @@ use OpenApi\Attributes as OA;
 
 #[OA\Get(
     path: "/api/me",
-    summary: "Get current user",
     description: "Returns the current user.",
-    tags: ["Users"],
+    summary: "Get current user",
     security: [
         ["bearerAuth" => []]
     ],
+    tags: ["Users"],
     responses: [
         new OA\Response(
             response: 200,
@@ -20,7 +20,7 @@ use OpenApi\Attributes as OA;
                 ref: "#/components/schemas/UserResponse"
             )
         ),
-        new OA\Response(response: 401, ref: "#/components/responses/Unauthorized")
+        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401)
     ]
 )]
 class Me

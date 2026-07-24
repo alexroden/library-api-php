@@ -13,13 +13,13 @@ use OpenApi\Attributes as OA;
             response: 200,
             description: "OK response",
             content: new OA\JsonContent(
-                type: "object",
                 properties: [
                     new OA\Property(
                         property: "status",
                         type: "string",
                     )
-                ]
+                ],
+                type: "object"
             )
         ),
     ]

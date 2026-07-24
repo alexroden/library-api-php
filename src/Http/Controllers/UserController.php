@@ -8,6 +8,7 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Database\DB;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
@@ -163,5 +164,36 @@ class UserController
         return new JsonResponse([
             'data' => $user,
         ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function register(CreateUserRequest $request): JsonResponse
+    {
+        $data = $request->validated();
+        $data['roles'] = [Roles::USER];
+        unset($data['passwordConfirmation']);
+
+        try {
+            $user = $this->commandBus->dispatch(
+                new CreateUserCommand(...$data)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse(
+            ['data' => $user],
+            201,
+            ['Authorization' => $this->jwt->encode([
+                'sub' => $user->id,
+                'email' => $user->email,
+                'permissions' => $user->permissions(),
+            ])],
+        );
     }
 }

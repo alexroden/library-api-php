@@ -6,9 +6,8 @@ use OpenApi\Attributes as OA;
 
 #[OA\Post(
     path: "/api/users",
-    summary: "Create user",
     description: "Creates a new user account.",
-    tags: ["Users"],
+    summary: "Create user",
     security: [
         ["bearerAuth" => []]
     ],
@@ -18,6 +17,7 @@ use OpenApi\Attributes as OA;
             ref: "#/components/schemas/CreateUserRequest"
         )
     ),
+    tags: ["Users"],
     responses: [
         new OA\Response(
             response: 201,
@@ -26,8 +26,8 @@ use OpenApi\Attributes as OA;
                 ref: "#/components/schemas/UserResponse"
             )
         ),
-        new OA\Response(response: 401, ref: "#/components/responses/Unauthorized"),
-        new OA\Response(response: 422, ref: "#/components/responses/Validation"),
+        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401),
+        new OA\Response(ref: "#/components/responses/Validation", response: 422),
     ]
 )]
 class Create

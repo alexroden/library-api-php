@@ -4,6 +4,7 @@ namespace AlexRoden\LibraryApiPhp\Tests\Features;
 
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
 use AlexRoden\LibraryApiPhp\Config\Config;
+use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Foundation\Container;
 use AlexRoden\LibraryApiPhp\Foundation\Providers\EventServiceProvider;
@@ -51,13 +52,7 @@ class AbstractFeaturesTestCase extends AbstractTestCase
     {
         $this->currentUser = UserFactory::create();
 
-        foreach (Config::get('role-permissions') as $role => $permissions) {
-            $role = RoleFactory::create(['name' => $role]);
-            foreach ($permissions as $permission) {
-                PermissionFactory::create(['name' => $permission]);
-                $role->assignPermission($permission);
-            }
-        }
+        $this->createRolesAndPermissions();
 
         $this->currentUser->assignRole(Roles::SUPER_ADMIN);
 
@@ -65,10 +60,21 @@ class AbstractFeaturesTestCase extends AbstractTestCase
         $token = $jwt->encode([
             'sub' => $this->currentUser->id,
             'email' => $this->currentUser->email,
-            'permissions' => $permissions,
+            'permissions' => Permissions::getConstants(),
         ]);
 
         $this->headers = array_merge($this->headers, ['Authorization' => 'Bearer ' . $token]);
+    }
+
+    public function createRolesAndPermissions(): void
+    {
+        foreach (Config::get('role-permissions') as $role => $permissions) {
+            $role = RoleFactory::create(['name' => $role]);
+            foreach ($permissions as $permission) {
+                PermissionFactory::create(['name' => $permission]);
+                $role->assignPermission($permission);
+            }
+        }
     }
 
     public function handle(Request $request): JsonResponse

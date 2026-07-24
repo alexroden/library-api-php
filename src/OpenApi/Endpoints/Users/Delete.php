@@ -17,7 +17,7 @@ use OpenApi\Attributes as OA;
             response: 204,
             description: "User created",
         ),
-        new OA\Response(response: 401, ref: "#/components/responses/Unauthorized"),
+        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401),
     ]
 )]
 class Delete

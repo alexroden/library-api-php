@@ -6,19 +6,28 @@ use OpenApi\Attributes as OA;
 
 #[OA\Post(
     path: "/api/auth",
-    summary: "Authenticate user",
     description: "Authenticates a user and returns a JWT token.",
-    tags: ["Users"],
+    summary: "Authenticate user",
     requestBody: new OA\RequestBody(
         required: true,
         content: new OA\JsonContent(
             ref: "#/components/schemas/AuthBody"
         )
     ),
+    tags: ["Users"],
     responses: [
         new OA\Response(
             response: 201,
             description: "User created",
+            headers: [
+                new OA\Header(
+                    header: "Authorization",
+                    description: "The authorization token.",
+                    schema: new OA\Schema(
+                        type: "string"
+                    )
+                ),
+            ],
             content: new OA\JsonContent(
                 ref: "#/components/schemas/UserResponse"
             )

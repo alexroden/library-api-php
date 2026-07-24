@@ -95,7 +95,7 @@ class DBTest extends AbstractTestCase
         );
 
         $email = 'user@example.com';
-        $db->update($this->user->id, [
+        $db->where('id', '=', $this->user->id)->update([
             'email' => $email,
         ]);
 
