@@ -4,5 +4,5 @@ CREATE TABLE councils (
    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-   INDEX idx_permissions_name (name)
+   CONSTRAINT uk_councils_name UNIQUE (name)
 );

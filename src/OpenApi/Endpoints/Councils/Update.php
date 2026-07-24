@@ -4,10 +4,10 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Endpoints\Councils;
 
 use OpenApi\Attributes as OA;
 
-#[OA\Get(
+#[OA\Put(
     path: "/api/councils/{council}",
-    description: "Returns a given council.",
-    summary: "Get a given council",
+    description: "Update a given council.",
+    summary: "Update council",
     security: [
         ["bearerAuth" => []]
     ],
@@ -23,6 +23,6 @@ use OpenApi\Attributes as OA;
         new OA\Response(ref: "#/components/responses/Unauthorized", response: 401)
     ]
 )]
-class Get
+class Update
 {
 }

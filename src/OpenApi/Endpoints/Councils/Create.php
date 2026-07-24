@@ -17,7 +17,7 @@ use OpenApi\Attributes as OA;
             ref: "#/components/schemas/CreateCouncilRequest"
         )
     ),
-    tags: ["Users"],
+    tags: ["Councils"],
     responses: [
         new OA\Response(
             response: 201,

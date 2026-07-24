@@ -15,7 +15,7 @@
         "\/api\/councils": {
             "get": {
                 "tags": [
-                    "Users"
+                    "Councils"
                 ],
                 "summary": "List councils",
                 "operationId": "222c56894e20ade6749677813d0c6dd1",
@@ -50,7 +50,7 @@
             },
             "post": {
                 "tags": [
-                    "Users"
+                    "Councils"
                 ],
                 "summary": "Create council",
                 "description": "Creates a new council.",
@@ -93,14 +93,42 @@
         "\/api\/councils\/{council}": {
             "get": {
                 "tags": [
-                    "Users"
+                    "Councils"
                 ],
                 "summary": "Get a given council",
                 "description": "Returns a given council.",
                 "operationId": "a5a3b6b94ce0caa91a64ff10299c9a70",
                 "responses": {
                     "200": {
-                        "description": "Authenticated council returned",
+                        "description": "Council returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CouncilResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Councils"
+                ],
+                "summary": "Update council",
+                "description": "Update a given council.",
+                "operationId": "bdbb7892a6373372208563a6858c4df1",
+                "responses": {
+                    "200": {
+                        "description": "Council returned",
                         "content": {
                             "application\/json": {
                                 "schema": {
@@ -123,7 +151,7 @@
         "\/api\/_health": {
             "get": {
                 "tags": [
-                    "HealthCheck"
+                    "_Health"
                 ],
                 "summary": "API health check",
                 "operationId": "523b12bc88b1ab39c1a420cd890a08e7",
@@ -744,12 +772,16 @@
     },
     "tags": [
         {
-            "name": "Users",
-            "description": "Users"
+            "name": "Councils",
+            "description": "Councils"
         },
         {
-            "name": "HealthCheck",
-            "description": "HealthCheck"
+            "name": "_Health",
+            "description": "_Health"
+        },
+        {
+            "name": "Users",
+            "description": "Users"
         }
     ]
 }

@@ -3,13 +3,13 @@
 namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCouncilCommand;
-use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
-use AlexRoden\LibraryApiPhp\Http\Requests\CreateCouncilRequest;
+use AlexRoden\LibraryApiPhp\Http\Requests\CouncilRequest;
 use AlexRoden\LibraryApiPhp\Models\Council;
 use Exception;
 use PDOException;
@@ -21,7 +21,7 @@ class CouncilController extends AbstractController
      * @throws DatabaseException
      * @throws InternalServiceException
      */
-    public function create(CreateCouncilRequest $request): JsonResponse
+    public function create(CouncilRequest $request): JsonResponse
     {
         try {
             $user = $this->commandBus->dispatch(
@@ -64,6 +64,27 @@ class CouncilController extends AbstractController
                 'has_more' => ($offset + $limit) < $total,
             ],
             'data' => $councils,
+        ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function update(CouncilRequest $request, Council $council): JsonResponse
+    {
+        try {
+            $council = $this->commandBus->dispatch(
+                new UpdateCouncilCommand($council, ...$request->validated())
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse([
+            'data' => $council,
         ]);
     }
 }

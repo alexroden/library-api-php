@@ -58,7 +58,7 @@ class CreateUserRequestTest extends AbstractTestCase
         $password = 'foo';
 
         $body = [
-            'email' => 'not-an-email',
+            'email' => $this->faker->email,
             'password' => $password,
             'password_confirmation' => $password,
             'first_name' => $this->faker->firstName,
@@ -76,7 +76,7 @@ class CreateUserRequestTest extends AbstractTestCase
         $password = $this->faker->password();
 
         $body = [
-            'email' => 'not-an-email',
+            'email' => $this->faker->email,
             'password' => $password,
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
@@ -93,7 +93,7 @@ class CreateUserRequestTest extends AbstractTestCase
         $password = $this->faker->password();
 
         $body = [
-            'email' => 'not-an-email',
+            'email' => $this->faker->email,
             'password' => $password,
             'password_confirmation' => $password,
             'last_name' => $this->faker->lastName,
@@ -110,7 +110,7 @@ class CreateUserRequestTest extends AbstractTestCase
         $password = $this->faker->password();
 
         $body = [
-            'email' => 'not-an-email',
+            'email' => $this->faker->email,
             'password' => $password,
             'password_confirmation' => $password,
             'first_name' => $this->faker->firstName,
@@ -127,7 +127,7 @@ class CreateUserRequestTest extends AbstractTestCase
         $password = $this->faker->password();
 
         $body = [
-            'email' => 'not-an-email',
+            'email' => $this->faker->email,
             'password' => $password,
             'password_confirmation' => $password,
             'first_name' => $this->faker->firstName,

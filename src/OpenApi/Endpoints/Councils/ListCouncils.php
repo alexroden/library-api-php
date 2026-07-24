@@ -10,7 +10,7 @@ use OpenApi\Attributes as OA;
     security: [
         ["bearerAuth" => []]
     ],
-    tags: ["Users"],
+    tags: ["Councils"],
     parameters: [
         new OA\Parameter(ref: "#/components/parameters/Limit"),
         new OA\Parameter(ref: "#/components/parameters/Offset"),
