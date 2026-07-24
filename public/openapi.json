@@ -13,6 +13,41 @@
     ],
     "paths": {
         "\/api\/councils": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "List councils",
+                "operationId": "222c56894e20ade6749677813d0c6dd1",
+                "parameters": [
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Councils returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CouncilCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
             "post": {
                 "tags": [
                     "Users"
@@ -538,6 +573,20 @@
                         "type": "array",
                         "items": {
                             "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "CouncilCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Council"
                         }
                     }
                 },

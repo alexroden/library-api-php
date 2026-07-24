@@ -4,6 +4,7 @@ namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
@@ -44,4 +45,25 @@ class CouncilController extends AbstractController
         ]);
     }
 
+    public function list(Request $request): JsonResponse
+    {
+        $limit = (int) $request->input('limit', 10);
+        $offset = (int) $request->input('offset', 0);
+        $res = new DB(table: 'councils', attributes: ["COUNT(*) AS total"])->get(excludeModelMapping: true);
+        $total = (int) $res[0]['total'];
+
+        $councils = Council::get($limit, $offset);
+
+
+        return new JsonResponse([
+            'meta' => [
+                'total' => $total,
+                'limit' => $limit,
+                'offset' => $offset,
+                'count' => count($councils),
+                'has_more' => ($offset + $limit) < $total,
+            ],
+            'data' => $councils,
+        ]);
+    }
 }
