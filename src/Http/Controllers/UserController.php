@@ -5,6 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
 use AlexRoden\LibraryApiPhp\Bus\CommandBus;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
@@ -83,6 +84,25 @@ class UserController
         return new JsonResponse([
             'data' => $user,
         ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function delete(Request $request, User $user): JsonResponse
+    {
+        try {
+            $user = $this->commandBus->dispatch(
+                new DeleteUserCommand($user)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse(null, 204);
     }
 
     public function list(Request $request): JsonResponse

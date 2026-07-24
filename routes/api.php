@@ -15,5 +15,6 @@ $router->prefix('/api', function ($router) {
         $router->get('/users', [UserController::class, 'list'], ['permission:'.Permissions::USERS_LIST]);
         $router->get('/users/{user}', [UserController::class, 'get'], ['permission:'.Permissions::USERS_GET]);
         $router->put('/users/{user}', [UserController::class, 'update'], ['permission:'.Permissions::USERS_UPDATE]);
+        $router->delete('/users/{user}', [UserController::class, 'delete'], ['permission:'.Permissions::USERS_DELETE]);
     });
 });

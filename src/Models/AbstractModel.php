@@ -37,6 +37,11 @@ abstract class AbstractModel implements JsonSerializable
         return $model->where('id', '=', $id)->first();
     }
 
+    public function delete(): void
+    {
+        $this->DB()->where('id' , '=', $this->attributes['id'])->delete();
+    }
+
     public function fill(array $attributes): static
     {
         $this->attributes = $attributes;
@@ -102,7 +107,7 @@ abstract class AbstractModel implements JsonSerializable
 
     public function update(array $attributes): void
     {
-        $this->DB()->update($this->attributes['id'], $this->filterFillable($attributes));
+        $this->DB()->where('id' , '=', $this->attributes['id'])->update($this->filterFillable($attributes));
     }
 
     /**

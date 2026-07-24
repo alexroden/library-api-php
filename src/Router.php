@@ -30,11 +30,26 @@ class Router
     }
 
     /**
+     * @param string $path
+     * @param callable|array $handler
+     * @param array $middleware
+     *
+     * @return void
+     */
+    public function delete(
+        string $path,
+        callable|array $handler,
+        array $middleware = [],
+    ): void {
+        $this->addRoute('DELETE', $path, $handler, $middleware);
+    }
+
+    /**
      * @param Request $request
      *
      * @return JsonResponse
      * @throws NotFoundException
-     * @throws ReflectionException
+     * @throws ReflectionException|Exceptions\UndefinedClassException
      */
     public function dispatch(Request $request): JsonResponse
     {

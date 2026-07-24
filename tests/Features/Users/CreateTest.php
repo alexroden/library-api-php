@@ -34,7 +34,6 @@ class CreateTest extends AbstractFeaturesTestCase
         $this->assertEquals(200, $response->status());
 
         $user = User::where('email', '=', $email)->first();
-
         $this->assertNotNull($user);
         $this->assertEquals($email, $user->email);
         $this->assertNotEmpty($user->roles());

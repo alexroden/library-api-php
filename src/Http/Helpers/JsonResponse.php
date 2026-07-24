@@ -10,7 +10,7 @@ class JsonResponse
      * @param array $headers
      */
     public function __construct(
-        public array $data,
+        public ?array $data,
         public int $status = 200,
         public array $headers = [],
     ) {

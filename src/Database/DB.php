@@ -245,7 +245,7 @@ class DB
         return $this;
     }
 
-    public function update(int $id, array $attributes = []): void
+    public function update(array $attributes = []): void
     {
         $pdo = Connection::getConnection();
         $columns = $attributes
@@ -253,14 +253,13 @@ class DB
                 |> (fn($x) => array_map(fn($column) => "{$column} = ?", $x))
                 |> (fn($x) => implode(', ', $x));
 
-        $query = 'UPDATE %s SET %s WHERE %s = ?';
-        $bindings = array_merge(array_values($attributes), $this->applyConditions($query), [$id]);
+        $query = 'UPDATE %s SET %s';
+        $bindings = array_merge(array_values($attributes), $this->applyConditions($query));
 
         $sql = sprintf(
             $query,
             $this->table,
             $columns,
-            'id'
         );
 
         $stmt = $pdo->prepare($sql);
