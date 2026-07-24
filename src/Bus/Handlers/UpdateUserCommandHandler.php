@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Events\UpdateUserEvent;
+use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\User;
 
 readonly class UpdateUserCommandHandler implements CommandHandler
@@ -14,6 +15,9 @@ readonly class UpdateUserCommandHandler implements CommandHandler
         private EventBus $events,
     ) {}
 
+    /**
+     * @throws UndefinedClassException
+     */
     public function handle(object $command): User
     {
         /** @var UpdateUserCommand $command */
@@ -25,6 +29,12 @@ readonly class UpdateUserCommandHandler implements CommandHandler
         ]);
 
         $user = $command->user->refresh();
+
+        if (count($command->roles) > 0) {
+            foreach ($command->roles as $role) {
+                $user->assignRole($role);
+            }
+        }
 
         $this->events->dispatch(
             new UpdateUserEvent($user)

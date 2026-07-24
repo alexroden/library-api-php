@@ -30,8 +30,10 @@ readonly class CreateUserCommandHandler implements CommandHandler
             'last_name' => $command->lastName,
         ]);
 
-        foreach ($command->roles as $role) {
-            $user->assignRole($role);
+        if (count($command->roles) > 0) {
+            foreach ($command->roles as $role) {
+                $user->assignRole($role);
+            }
         }
 
         $this->events->dispatch(

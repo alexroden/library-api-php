@@ -25,6 +25,8 @@ class UpdateTest extends AbstractFeaturesTestCase
 
         $email = $this->faker->email;
         $password = $this->faker->password;
+        $firstName = $this->faker->firstName;
+        $lastName = $this->faker->lastName;
 
         $response = $this->handle(
             Request::create(
@@ -34,8 +36,8 @@ class UpdateTest extends AbstractFeaturesTestCase
                     "email" => $email,
                     "password" => $password,
                     "password_confirmation" => $password,
-                    'first_name' => $this->faker->firstName,
-                    'last_name' => $this->faker->lastName,
+                    'first_name' => $firstName,
+                    'last_name' => $lastName,
                     'roles' => [Roles::USER],
                 ]
             )
@@ -47,5 +49,8 @@ class UpdateTest extends AbstractFeaturesTestCase
 
         $this->assertNotNull($user);
         $this->assertEquals($email, $user->email);
+        $this->assertEquals($firstName, $user->first_name);
+        $this->assertEquals($lastName, $user->last_name);
+        $this->assertNotEmpty($user->roles());
     }
 }

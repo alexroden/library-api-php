@@ -37,5 +37,6 @@ class CreateTest extends AbstractFeaturesTestCase
 
         $this->assertNotNull($user);
         $this->assertEquals($email, $user->email);
+        $this->assertNotEmpty($user->roles());
     }
 }
