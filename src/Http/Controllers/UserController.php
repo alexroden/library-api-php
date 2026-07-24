@@ -5,6 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
 use AlexRoden\LibraryApiPhp\Bus\CommandBus;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
@@ -15,6 +16,7 @@ use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
 use AlexRoden\LibraryApiPhp\Http\Requests\CreateUserRequest;
+use AlexRoden\LibraryApiPhp\Http\Requests\UpdateUserRequest;
 use AlexRoden\LibraryApiPhp\Models\User;
 use Exception;
 use JsonException;
@@ -116,6 +118,30 @@ class UserController
     {
         return new JsonResponse([
             'data' => $request->getUser(),
+        ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function update(UpdateUserRequest $request, User $user): JsonResponse
+    {
+        $data = $request->validated();
+        unset($data['passwordConfirmation']);
+
+        try {
+            $user = $this->commandBus->dispatch(
+                new UpdateUserCommand($user, ...$data)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse([
+            'data' => $user,
         ]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
+use AlexRoden\LibraryApiPhp\Bus\Events\UpdateUserEvent;
 use AlexRoden\LibraryApiPhp\Bus\Listeners\SendWelcomeEmailListener;
 
 /*
@@ -9,5 +10,8 @@ use AlexRoden\LibraryApiPhp\Bus\Listeners\SendWelcomeEmailListener;
 |--------------------------------------------------------------------------
 */
 return [
-    CreateUserEvent::class => SendWelcomeEmailListener::class,
+    CreateUserEvent::class => [
+        SendWelcomeEmailListener::class
+    ],
+    UpdateUserEvent::class => [],
 ];

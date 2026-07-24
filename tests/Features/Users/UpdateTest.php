@@ -1,0 +1,51 @@
+<?php
+
+namespace AlexRoden\LibraryApiPhp\Tests\Features\Users;
+
+use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use AlexRoden\LibraryApiPhp\Models\User;
+use AlexRoden\LibraryApiPhp\Tests\Factories\UserFactory;
+use AlexRoden\LibraryApiPhp\Tests\Features\AbstractFeaturesTestCase;
+
+class UpdateTest extends AbstractFeaturesTestCase
+{
+    protected User $user;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->user = UserFactory::create();
+    }
+
+    public function testUpdateUser(): void
+    {
+        $this->asAuthorizedUser();
+
+        $email = $this->faker->email;
+        $password = $this->faker->password;
+
+        $response = $this->handle(
+            Request::create(
+                method: 'PUT',
+                uri: "/api/users/{$this->user->id}",
+                body: [
+                    "email" => $email,
+                    "password" => $password,
+                    "password_confirmation" => $password,
+                    'first_name' => $this->faker->firstName,
+                    'last_name' => $this->faker->lastName,
+                    'roles' => [Roles::USER],
+                ]
+            )
+        );
+
+        $this->assertEquals(200, $response->status());
+
+        $user = User::where('email', '=', $email)->first();
+
+        $this->assertNotNull($user);
+        $this->assertEquals($email, $user->email);
+    }
+}

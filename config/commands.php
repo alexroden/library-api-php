@@ -2,7 +2,9 @@
 
 
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateUserCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateUserCommandHandler;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,4 +13,5 @@ use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateUserCommandHandler;
 */
 return [
     CreateUserCommand::class => CreateUserCommandHandler::class,
+    UpdateUserCommand::class => UpdateUserCommandHandler::class,
 ];

@@ -14,5 +14,6 @@ $router->prefix('/api', function ($router) {
         $router->post('/users', [UserController::class, 'create'], ['permission:'.Permissions::USERS_CREATE]);
         $router->get('/users', [UserController::class, 'list'], ['permission:'.Permissions::USERS_LIST]);
         $router->get('/users/{user}', [UserController::class, 'get'], ['permission:'.Permissions::USERS_GET]);
+        $router->put('/users/{user}', [UserController::class, 'update'], ['permission:'.Permissions::USERS_UPDATE]);
     });
 });

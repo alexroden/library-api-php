@@ -228,6 +228,21 @@ class Router
     }
 
     /**
+     * @param string $path
+     * @param callable|array $handler
+     * @param array $middleware
+     *
+     * @return void
+     */
+    public function put(
+        string $path,
+        callable|array $handler,
+        array $middleware = [],
+    ): void {
+        $this->addRoute('PUT', $path, $handler, $middleware);
+    }
+
+    /**
      * @param string $prefix
      * @param callable $callback
      *

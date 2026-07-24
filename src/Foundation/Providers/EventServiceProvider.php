@@ -10,11 +10,13 @@ class EventServiceProvider
 {
     public static function register(Container $container): void {
         $bus = $container->get(EventBus::class);
-        foreach (Config::get('events') as $event => $listener) {
-            $bus->listen(
-                $event,
-                $container->make($listener)
-            );
+        foreach (Config::get('events') as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                $bus->listen(
+                    $event,
+                    $container->make($listener)
+                );
+            }
         }
     }
 }

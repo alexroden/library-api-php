@@ -2,9 +2,12 @@
 
 namespace AlexRoden\LibraryApiPhp\Bus\Commands;
 
-readonly class CreateUserCommand
+use AlexRoden\LibraryApiPhp\Models\User;
+
+readonly class UpdateUserCommand
 {
     public function __construct(
+        public User $user,
         public string $email,
         public string $password,
         public string $firstName,

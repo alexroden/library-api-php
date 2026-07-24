@@ -29,11 +29,13 @@ abstract class AbstractModel implements JsonSerializable
      *
      * @throws UndefinedClassException
      */
-    public function create(array $attributes): AbstractModel
+    public static function create(array $attributes): AbstractModel
     {
-        $id = $this->DB()->insert($this->filterFillable($attributes));
+        $model = new static();
 
-        return $this->where('id', '=', $id)->first();
+        $id = $model->DB()->insert($model->filterFillable($attributes));
+
+        return $model->where('id', '=', $id)->first();
     }
 
     public function fill(array $attributes): static
@@ -69,6 +71,11 @@ abstract class AbstractModel implements JsonSerializable
         return $this->toArray();
     }
 
+    public function refresh(): AbstractModel
+    {
+        return $this->where('id', '=', $this->attributes['id'])->first();
+    }
+
 
     public function toArray(): array
     {
@@ -87,7 +94,7 @@ abstract class AbstractModel implements JsonSerializable
 
     public function update(array $attributes): void
     {
-        $this->DB()->update($this->filterFillable($attributes));
+        $this->DB()->update($this->attributes['id'], $this->filterFillable($attributes));
     }
 
     /**

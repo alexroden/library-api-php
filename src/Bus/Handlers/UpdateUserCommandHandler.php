@@ -3,13 +3,13 @@
 namespace AlexRoden\LibraryApiPhp\Bus\Handlers;
 
 use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
-use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\EventBus;
-use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
+use AlexRoden\LibraryApiPhp\Bus\Events\UpdateUserEvent;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\User;
 
-class CreateUserCommandHandler implements CommandHandler
+class UpdateUserCommandHandler implements CommandHandler
 {
     public function __construct(
         private readonly EventBus $events,
@@ -20,16 +20,18 @@ class CreateUserCommandHandler implements CommandHandler
      */
     public function handle(object $command): User
     {
-        /** @var CreateUserCommand $command */
-        $user = User::create([
+        /** @var UpdateUserCommand $command */
+        $command->user->update([
             'email' => $command->email,
             'password' =>$command->password,
             'first_name' => $command->firstName,
             'last_name' => $command->lastName,
         ]);
 
+        $user = $command->user->refresh();
+
         $this->events->dispatch(
-            new CreateUserEvent($user)
+            new UpdateUserEvent($user)
         );
 
         return $user;
