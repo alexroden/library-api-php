@@ -7,8 +7,8 @@ class Validator
     private array $errors = [];
 
     public function __construct(
-        private array $data,
-        private array $rules
+        private readonly array $data,
+        private readonly array $rules
     ) {
         $this->validate();
     }

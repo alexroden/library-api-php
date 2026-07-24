@@ -6,17 +6,19 @@ use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
+use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\User;
 
-class CreateUserCommandHandler implements CommandHandler
+readonly class CreateUserCommandHandler implements CommandHandler
 {
     public function __construct(
-        private readonly EventBus $events,
+        private EventBus $events,
     ) {}
 
     /**
      * @throws UndefinedClassException
+     * @throws ResourceNotFoundException
      */
     public function handle(object $command): User
     {
@@ -27,6 +29,10 @@ class CreateUserCommandHandler implements CommandHandler
             'first_name' => $command->firstName,
             'last_name' => $command->lastName,
         ]);
+
+        foreach ($command->roles as $role) {
+            $user->assignRole($role);
+        }
 
         $this->events->dispatch(
             new CreateUserEvent($user)

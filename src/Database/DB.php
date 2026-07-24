@@ -22,9 +22,9 @@ class DB
      * @param class-string<TModel>|null $class
      */
     public function __construct(
-        private string $table,
-        private ?string $class = null,
-        private array $attributes = ['*']
+        private readonly string  $table,
+        private readonly ?string $class = null,
+        private readonly array $attributes = ['*']
     ) {
     }
 
@@ -177,10 +177,10 @@ class DB
         $pdo = Connection::getConnection();
         $columns = implode(', ', array_keys($attributes));
 
-        $placeholders = implode(
-            ', ',
-            array_fill(0, count($attributes), '?')
-        );
+        $placeholders = $attributes
+                |> count(...)
+                |> (fn($x) => array_fill(0, $x, '?'))
+                |> (fn($x) => implode(', ', $x));
 
         $sql = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
@@ -248,13 +248,10 @@ class DB
     public function update(int $id, array $attributes = []): void
     {
         $pdo = Connection::getConnection();
-        $columns = implode(
-            ', ',
-            array_map(
-                fn ($column) => "{$column} = ?",
-                array_keys($attributes)
-            )
-        );
+        $columns = $attributes
+                |> array_keys(...)
+                |> (fn($x) => array_map(fn($column) => "{$column} = ?", $x))
+                |> (fn($x) => implode(', ', $x));
 
         $query = 'UPDATE %s SET %s WHERE %s = ?';
         $bindings = array_merge(array_values($attributes), $this->applyConditions($query), [$id]);

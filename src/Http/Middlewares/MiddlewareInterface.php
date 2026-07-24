@@ -9,7 +9,7 @@ interface MiddlewareInterface
     /**
      * @param Request $request
      * @param callable $next
-     *
+     * @param mixed ...$parameters
      * @return mixed
      */
     public function handle(Request $request, callable $next, mixed ...$parameters): mixed;

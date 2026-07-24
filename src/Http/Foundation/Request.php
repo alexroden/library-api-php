@@ -182,11 +182,10 @@ class Request
 
         foreach ($_SERVER as $key => $value) {
             if (str_starts_with($key, 'HTTP_')) {
-                $header = str_replace(
-                    '_',
-                    '-',
-                    ucwords(strtolower(substr($key, 5)), '_')
-                );
+                $header = substr($key, 5)
+                        |> strtolower(...)
+                        |> (fn($x) => ucwords($x, '_'))
+                        |> (fn($x) => str_replace('_', '-', $x));
 
                 $headers[$header] = $value;
             }

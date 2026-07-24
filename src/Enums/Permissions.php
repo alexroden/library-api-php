@@ -8,9 +8,9 @@ final class Permissions
 {
     use ConstantsTrait;
 
-    const USERS_CREATE = 'users.create';
-    const USERS_GET = 'users.get';
-    const USERS_LIST = 'users.list';
-    const USERS_UPDATE = 'users.update';
-    const USERS_DELETE = 'users.delete';
+    const string USERS_CREATE = 'users.create';
+    const string USERS_GET = 'users.get';
+    const string USERS_LIST = 'users.list';
+    const string USERS_UPDATE = 'users.update';
+    const string USERS_DELETE = 'users.delete';
 }

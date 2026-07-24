@@ -5,7 +5,6 @@ namespace AlexRoden\LibraryApiPhp\Models;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use JsonSerializable;
-use PDO;
 
 /**
  * @template TModel of AbstractModel
@@ -45,6 +44,9 @@ abstract class AbstractModel implements JsonSerializable
         return $this;
     }
 
+    /**
+     * @throws UndefinedClassException
+     */
     public static function find(int $id): ?static
     {
         $model = new static();
@@ -55,6 +57,9 @@ abstract class AbstractModel implements JsonSerializable
             ->first();
     }
 
+    /**
+     * @throws UndefinedClassException
+     */
     public static function get(
         ?int $limit = null,
         ?int $offset = null,
@@ -71,6 +76,9 @@ abstract class AbstractModel implements JsonSerializable
         return $this->toArray();
     }
 
+    /**
+     * @throws UndefinedClassException
+     */
     public function refresh(): AbstractModel
     {
         return $this->where('id', '=', $this->attributes['id'])->first();
