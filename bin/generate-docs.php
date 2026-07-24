@@ -1,16 +1,14 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use OpenApi\Generator;
 
-$generator = new Generator();
-
-$openapi = $generator->generate([
-    __DIR__ . '/../src',
+$openapi = (new Generator())->generate([
+    __DIR__ . '/../src/OpenApi',
 ]);
 
 file_put_contents(
     __DIR__ . '/../public/openapi.json',
-    $openapi->toJson()
+    $openapi->toJson(JSON_PRETTY_PRINT)
 );

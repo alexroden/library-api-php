@@ -54,7 +54,7 @@ class User extends AbstractModel
         }
     }
 
-    public function create(array $attributes): AbstractModel
+    public static function create(array $attributes): AbstractModel
     {
         if (isset($attributes['password'])) {
             $attributes['password'] = password_hash(
@@ -141,6 +141,18 @@ class User extends AbstractModel
             '=',
             $this->getRole($role)->id,
         )->delete();
+    }
+
+    public function update(array $attributes): void
+    {
+        if (isset($attributes['password'])) {
+            $attributes['password'] = password_hash(
+                $attributes['password'],
+                PASSWORD_ARGON2ID
+            );
+        }
+
+        parent::update($attributes);
     }
 
     /**

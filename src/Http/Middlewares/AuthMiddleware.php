@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Authentication\Jwt;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\JwtException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Models\User;
+use JsonException;
 
 class AuthMiddleware implements MiddlewareInterface
 {
@@ -18,7 +19,7 @@ class AuthMiddleware implements MiddlewareInterface
 
     /**
      * @throws JwtException
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function handle(Request $request, callable $next, mixed ... $parameters): mixed
     {

@@ -22,9 +22,9 @@ class DB
      * @param class-string<TModel>|null $class
      */
     public function __construct(
-        private string $table,
-        private ?string $class = null,
-        private array $attributes = ['*']
+        private readonly string  $table,
+        private readonly ?string $class = null,
+        private readonly array $attributes = ['*']
     ) {
     }
 
@@ -76,14 +76,14 @@ class DB
         ?int $offset = null,
         ?bool $excludeModelMapping = false,
     ): array {
-        if (!$this->class) {
+        if (!$this->class && !$excludeModelMapping) {
             throw new UndefinedClassException($this->table);
         }
 
         $pdo = Connection::getConnection();
         $attributes = $this->attributes;
 
-        if (count($attributes) > 0 && $attributes[0] !== '*') {
+        if (count($attributes) > 0 && !str_contains($attributes[0], '*')) {
             $prefix = '';
             if (count($this->joins) > 0) {
                 if ($this->excludeLocalAttributes) $attributes = [];
@@ -131,7 +131,6 @@ class DB
             $sql .= " OFFSET {$offset}";
         }
 
-
         $stmt = $pdo->prepare($sql);
         if (!$stmt->execute($bindings)) {
             $error = $stmt->errorInfo();
@@ -178,10 +177,10 @@ class DB
         $pdo = Connection::getConnection();
         $columns = implode(', ', array_keys($attributes));
 
-        $placeholders = implode(
-            ', ',
-            array_fill(0, count($attributes), '?')
-        );
+        $placeholders = $attributes
+                |> count(...)
+                |> (fn($x) => array_fill(0, $x, '?'))
+                |> (fn($x) => implode(', ', $x));
 
         $sql = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
@@ -249,26 +248,21 @@ class DB
     public function update(array $attributes = []): void
     {
         $pdo = Connection::getConnection();
-        $columns = implode(
-            ', ',
-            array_map(
-                fn ($column) => "{$column} = ?",
-                array_keys($attributes)
-            )
-        );
+        $columns = $attributes
+                |> array_keys(...)
+                |> (fn($x) => array_map(fn($column) => "{$column} = ?", $x))
+                |> (fn($x) => implode(', ', $x));
 
         $query = 'UPDATE %s SET %s';
         $bindings = array_merge(array_values($attributes), $this->applyConditions($query));
 
-        $foo = sprintf(
+        $sql = sprintf(
             $query,
             $this->table,
             $columns,
         );
 
-        $stmt = $pdo->prepare(
-            $foo,
-        );
+        $stmt = $pdo->prepare($sql);
 
         $stmt->execute($bindings);
     }

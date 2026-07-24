@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Authentication\Jwt;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\JwtException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\PermissionException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
+use JsonException;
 
 class PermissionMiddleware implements MiddlewareInterface
 {
@@ -18,7 +19,7 @@ class PermissionMiddleware implements MiddlewareInterface
 
     /**
      * @throws JwtException
-     * @throws \JsonException
+     * @throws JsonException
      * @throws PermissionException
      */
     public function handle(Request $request, callable $next, mixed ... $parameters): mixed
@@ -27,7 +28,7 @@ class PermissionMiddleware implements MiddlewareInterface
         $payload = $this->jwt->decode($token);
 
         $missing = array_diff($parameters, $payload['permissions']);
-        if (! empty($missing)) {
+        if (!empty($missing)) {
             throw new PermissionException();
         }
 

@@ -2,10 +2,14 @@
 
 namespace AlexRoden\LibraryApiPhp;
 
+use AlexRoden\LibraryApiPhp\Foundation\Container;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\NotFoundException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Middlewares\AuthMiddleware;
 use AlexRoden\LibraryApiPhp\Http\Middlewares\PermissionMiddleware;
+use AlexRoden\LibraryApiPhp\Models\AbstractModel;
+use ReflectionException;
 use ReflectionMethod;
 use ReflectionNamedType;
 
@@ -20,22 +24,60 @@ class Router
     private string $prefix = '';
     private array $middlewareStack = [];
 
+    public function __construct(
+        private readonly Container $container,
+    ) {
+    }
+
+    /**
+     * @param string $path
+     * @param callable|array $handler
+     * @param array $middleware
+     *
+     * @return void
+     */
+    public function delete(
+        string $path,
+        callable|array $handler,
+        array $middleware = [],
+    ): void {
+        $this->addRoute('DELETE', $path, $handler, $middleware);
+    }
+
     /**
      * @param Request $request
      *
-     * @return void
-     * @throws \ReflectionException
+     * @return JsonResponse
+     * @throws NotFoundException
+     * @throws ReflectionException|Exceptions\UndefinedClassException
      */
-    public function dispatch(Request $request): void
+    public function dispatch(Request $request): JsonResponse
     {
-        $method = $_SERVER['REQUEST_METHOD'];
-        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $method = $request->method();
+        $uri = $request->uri();
 
-        $route = $this->routes[$method][$uri] ?? null;
+        $route = null;
+        $routeParameters = [];
+        foreach ($this->routes[$method] ?? [] as $registeredRoute) {
+            if (preg_match($registeredRoute['regex'], $uri, $matches)) {
+                $route = $registeredRoute;
+
+                array_shift($matches);
+
+                $routeParameters = array_combine(
+                    $registeredRoute['parameters'],
+                    $matches
+                );
+
+                break;
+            }
+        }
+
         if ($route === null) {
             http_response_code(404);
-            echo "404 Not Found";
-            return;
+            throw new NotFoundException(
+                "{$route} not found"
+            );
         }
 
         $pipeline = array_reduce(
@@ -62,46 +104,90 @@ class Router
                     );
                 };
             },
-            function (Request $request) use ($route) {
+            function (Request $request) use ($route, $routeParameters) {
                 $handler = $route['handler'];
-
                 if (is_callable($handler)) {
                     return $handler($request);
                 }
 
                 [$controller, $action] = $handler;
+                $controller = $this->container->make($controller);
 
-                $controller = new $controller();
+                $reflection = new ReflectionMethod(
+                    $controller,
+                    $action
+                );
 
-                $reflection = new ReflectionMethod($controller, $action);
 
                 $arguments = [];
-
                 foreach ($reflection->getParameters() as $parameter) {
+                    $class = null;
+
+                    $parameterName = $parameter->getName();
                     $type = $parameter->getType();
+                    if ($type instanceof ReflectionNamedType) {
+                        if ($type->isBuiltin()) {
+                            continue;
+                        }
 
-                    if (! $type instanceof ReflectionNamedType) {
+                        $class = $type->getName();
+
+                        /*
+                         * Route model binding
+                         */
+                        if (
+                            array_key_exists($parameterName, $routeParameters)
+                            && is_subclass_of($class, AbstractModel::class)
+                        ) {
+                            $model = $class::find(
+                                (int) $routeParameters[$parameterName]
+                            );
+
+                            if ($model === null) {
+                                throw new NotFoundException(
+                                    "{$class} not found"
+                                );
+                            }
+
+                            $arguments[] = $model;
+                            continue;
+                        }
+
+                        /*
+                         * Request injection
+                         */
+                        if (is_a($class, Request::class, true)) {
+                            if ($request instanceof $class) {
+                                $arguments[] = $request;
+                            } else {
+                                $arguments[] = $class::fromRequest($request);
+                            }
+
+                            continue;
+                        }
+                    }
+
+                    /*
+                     * Raw route parameters
+                     */
+                    if (array_key_exists($parameterName, $routeParameters)) {
+                        $arguments[] = $routeParameters[$parameterName];
                         continue;
                     }
 
-                    $class = $type->getName();
-
-                    if ($request instanceof $class) {
-                        $arguments[] = $request;
-                        continue;
+                    if ($class !== null) {
+                        $arguments[] = $this->container->make($class);
                     }
-
-                    $arguments[] = new $class();
                 }
 
-                return $reflection->invokeArgs($controller, $arguments);
+                return $reflection->invokeArgs(
+                    $controller,
+                    $arguments
+                );
             }
         );
 
-        $response = $pipeline($request);
-        if ($response instanceof JsonResponse) {
-            $response->send();
-        }
+        return $pipeline($request);
     }
 
     /**
@@ -157,6 +243,21 @@ class Router
     }
 
     /**
+     * @param string $path
+     * @param callable|array $handler
+     * @param array $middleware
+     *
+     * @return void
+     */
+    public function put(
+        string $path,
+        callable|array $handler,
+        array $middleware = [],
+    ): void {
+        $this->addRoute('PUT', $path, $handler, $middleware);
+    }
+
+    /**
      * @param string $prefix
      * @param callable $callback
      *
@@ -188,7 +289,21 @@ class Router
     ): void {
         $path = preg_replace('#/+#', '/', $this->prefix . $path);
 
-        $this->routes[$method][$path] = [
+        $parameters = [];
+
+        $regex = preg_replace_callback(
+            '/\{([^}]+)\}/',
+            function ($matches) use (&$parameters) {
+                $parameters[] = $matches[1];
+                return '([^/]+)';
+            },
+            $path
+        );
+
+        $this->routes[$method][] = [
+            'path' => $path,
+            'regex' => '#^'.$regex.'$#',
+            'parameters' => $parameters,
             'handler' => $handler,
             'middleware' => array_merge(
                 $this->middlewareStack,

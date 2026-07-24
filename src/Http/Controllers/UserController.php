@@ -3,132 +3,46 @@
 namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Authentication\Jwt;
+use AlexRoden\LibraryApiPhp\Bus\CommandBus;
+use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteUserCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
+use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
+use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\NotFoundException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\UnauthorizedException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\AuthRequest;
+use AlexRoden\LibraryApiPhp\Http\Requests\CreateUserRequest;
+use AlexRoden\LibraryApiPhp\Http\Requests\UpdateUserRequest;
 use AlexRoden\LibraryApiPhp\Models\User;
-use OpenApi\Attributes as OA;
+use Exception;
+use JsonException;
+use PDOException;
+
 
 class UserController
 {
     protected Jwt $jwt;
 
-    public function __construct()
+    public function __construct(
+        private readonly CommandBus $commandBus,
+    )
     {
         $this->jwt = new Jwt(env('JWT_SECRET'));
     }
 
-    #[OA\Post(
-        path: "/api/auth",
-        summary: "Authenticate user",
-        description: "Authenticates a user and returns a JWT token.",
-        tags: ["Users"],
-        requestBody: new OA\RequestBody(
-            required: true,
-            content: new OA\JsonContent(
-                required: [
-                    "email",
-                    "password"
-                ],
-                properties: [
-                    new OA\Property(
-                        property: "email",
-                        type: "string",
-                        example: "alex@example.com"
-                    ),
-                    new OA\Property(
-                        property: "password",
-                        type: "string",
-                        example: "password"
-                    )
-                ]
-            )
-        ),
-        responses: [
-            new OA\Response(
-                response: 201,
-                description: "Authenticated user returned",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "data",
-                            type: "object",
-                            properties: [
-                                new OA\Property(
-                                    property: "id",
-                                    type: "integer",
-                                    example: 1
-                                ),
-                                new OA\Property(
-                                    property: "email",
-                                    type: "string",
-                                    example: "alex@example.com"
-                                ),
-                                new OA\Property(
-                                    property: "first_name",
-                                    type: "string",
-                                    example: "Alex"
-                                ),
-                                new OA\Property(
-                                    property: "last_name",
-                                    type: "string",
-                                    example: "Roden"
-                                ),
-                                new OA\Property(
-                                    property: "created_at",
-                                    type: "string",
-                                    example: "2026-07-16 11:00:27"
-                                ),
-                                new OA\Property(
-                                    property: "updated_at",
-                                    type: "string",
-                                    example: "2026-07-16 11:00:27"
-                                ),
-                            ]
-                        )
-                    ]
-                )
-            ),
-            new OA\Response(
-                response: 401,
-                description: "Unauthenticated",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "message",
-                            type: "string",
-                        )
-                    ]
-                )
-            ),
-            new OA\Response(
-                response: 422,
-                description: "Validation failed",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "message",
-                            type: "string",
-                        )
-                    ]
-                )
-            )
-        ]
-    )]
     /**
      * @throws NotFoundException
      * @throws UndefinedClassException
-     * @throws UnauthorizedException|\JsonException
+     * @throws UnauthorizedException|JsonException
      */
     public function auth(AuthRequest $request): JsonResponse
     {
-        $user = new User()->where('email', '=', $request->input('email'))->first();
+        $user = User::where('email', '=', $request->input('email'))->first();
         if (!$user) {
             throw new NotFoundException('User not found');
         }
@@ -148,187 +62,106 @@ class UserController
         );
     }
 
-    #[OA\Post(
-        path: "/api/users",
-        summary: "Create user",
-        description: "Creates a new user account.",
-        tags: ["Users"],
-        security: [
-            ["bearerAuth" => []]
-        ],
-        requestBody: new OA\RequestBody(
-            required: true,
-            content: new OA\JsonContent(
-                required: [
-                    "email",
-                    "password"
-                ],
-                properties: [
-                    new OA\Property(
-                        property: "email",
-                        type: "string",
-                        example: "newuser@example.com"
-                    ),
-                    new OA\Property(
-                        property: "password",
-                        type: "string",
-                        example: "password"
-                    )
-                ]
-            )
-        ),
-        responses: [
-            new OA\Response(
-                response: 201,
-                description: "Authenticated user returned",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "data",
-                            type: "object",
-                            properties: [
-                                new OA\Property(
-                                    property: "id",
-                                    type: "integer",
-                                    example: 1
-                                ),
-                                new OA\Property(
-                                    property: "email",
-                                    type: "string",
-                                    example: "alex@example.com"
-                                ),
-                                new OA\Property(
-                                    property: "first_name",
-                                    type: "string",
-                                    example: "Alex"
-                                ),
-                                new OA\Property(
-                                    property: "last_name",
-                                    type: "string",
-                                    example: "Roden"
-                                ),
-                                new OA\Property(
-                                    property: "created_at",
-                                    type: "string",
-                                    example: "2026-07-16 11:00:27"
-                                ),
-                                new OA\Property(
-                                    property: "updated_at",
-                                    type: "string",
-                                    example: "2026-07-16 11:00:27"
-                                ),
-                            ]
-                        )
-                    ]
-                )
-            ),
-            new OA\Response(
-                response: 401,
-                description: "Unauthenticated",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "message",
-                            type: "string",
-                        )
-                    ]
-                )
-            ),
-            new OA\Response(
-                response: 422,
-                description: "Validation failed",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "message",
-                            type: "string",
-                        )
-                    ]
-                )
-            )
-        ]
-    )]
-    public function create(Request $request): JsonResponse
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function create(CreateUserRequest $request): JsonResponse
     {
-        dd($request);
+        $data = $request->validated();
+        unset($data['passwordConfirmation']);
+
+        try {
+            $user = $this->commandBus->dispatch(
+                new CreateUserCommand(...$data)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse([
+            'data' => $user,
+        ], 201);
     }
 
-    #[OA\Get(
-        path: "/api/user",
-        summary: "Get authenticated user",
-        description: "Returns the currently authenticated user.",
-        tags: ["Users"],
-        security: [
-            ["bearerAuth" => []]
-        ],
-        responses: [
-            new OA\Response(
-                response: 200,
-                description: "Authenticated user returned",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "data",
-                            type: "object",
-                            properties: [
-                                new OA\Property(
-                                    property: "id",
-                                    type: "integer",
-                                    example: 1
-                                ),
-                                new OA\Property(
-                                    property: "email",
-                                    type: "string",
-                                    example: "alex@example.com"
-                                ),
-                                new OA\Property(
-                                    property: "first_name",
-                                    type: "string",
-                                    example: "Alex"
-                                ),
-                                new OA\Property(
-                                    property: "last_name",
-                                    type: "string",
-                                    example: "Roden"
-                                ),
-                                new OA\Property(
-                                    property: "created_at",
-                                    type: "string",
-                                    example: "2026-07-16 11:00:27"
-                                ),
-                                new OA\Property(
-                                    property: "updated_at",
-                                    type: "string",
-                                    example: "2026-07-16 11:00:27"
-                                ),
-                            ]
-                        )
-                    ]
-                )
-            ),
-            new OA\Response(
-                response: 401,
-                description: "Unauthenticated",
-                content: new OA\JsonContent(
-                    type: "object",
-                    properties: [
-                        new OA\Property(
-                            property: "message",
-                            type: "string",
-                        )
-                    ]
-                )
-            )
-        ]
-    )]
-    public function getAuthenticatedUser(Request $request): JsonResponse
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function delete(Request $request, User $user): JsonResponse
+    {
+        try {
+            $this->commandBus->dispatch(
+                new DeleteUserCommand($user)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse(null, 204);
+    }
+
+    public function list(Request $request): JsonResponse
+    {
+        $limit = (int) $request->input('limit', 10);
+        $offset = (int) $request->input('offset', 0);
+        $res = new DB(table: 'users', attributes: ["COUNT(*) AS total"])->get(excludeModelMapping: true);
+        $total = (int) $res[0]['total'];
+
+        $users = User::get($limit, $offset);
+
+
+        return new JsonResponse([
+            'meta' => [
+                'total' => $total,
+                'limit' => $limit,
+                'offset' => $offset,
+                'count' => count($users),
+                'has_more' => ($offset + $limit) < $total,
+            ],
+            'data' => $users,
+        ]);
+    }
+
+    public function get(Request $request, User $user): JsonResponse
+    {
+        return new JsonResponse([
+            'data' => $user,
+        ]);
+    }
+
+    public function me(Request $request): JsonResponse
     {
         return new JsonResponse([
             'data' => $request->getUser(),
+        ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function update(UpdateUserRequest $request, User $user): JsonResponse
+    {
+        $data = $request->validated();
+        unset($data['passwordConfirmation']);
+
+        try {
+            $user = $this->commandBus->dispatch(
+                new UpdateUserCommand($user, ...$data)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse([
+            'data' => $user,
         ]);
     }
 }

@@ -20,7 +20,7 @@ class DBTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->user = new UserFactory()->create();
+        $this->user = UserFactory::create();
     }
 
     public function testDelete(): void
@@ -95,7 +95,7 @@ class DBTest extends AbstractTestCase
         );
 
         $email = 'user@example.com';
-        $db->where('id', '=', $this->user->id)->update([
+        $db->update($this->user->id, [
             'email' => $email,
         ]);
 

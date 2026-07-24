@@ -7,6 +7,7 @@ start:
 	@docker compose -p $(PROJECT) up -d mysql
 	@docker compose -p $(PROJECT) up migrate
 	@docker compose -p $(PROJECT) up -d --build api
+	@docker compose -p $(PROJECT) up mailpit
 
 cleanup:
 	@docker compose -p $(PROJECT) down \

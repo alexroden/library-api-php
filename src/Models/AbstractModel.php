@@ -5,7 +5,6 @@ namespace AlexRoden\LibraryApiPhp\Models;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use JsonSerializable;
-use PDO;
 
 /**
  * @template TModel of AbstractModel
@@ -29,11 +28,18 @@ abstract class AbstractModel implements JsonSerializable
      *
      * @throws UndefinedClassException
      */
-    public function create(array $attributes): AbstractModel
+    public static function create(array $attributes): AbstractModel
     {
-        $id = $this->DB()->insert($this->filterFillable($attributes));
+        $model = new static();
 
-        return $this->where('id', '=', $id)->first();
+        $id = $model->DB()->insert($model->filterFillable($attributes));
+
+        return $model->where('id', '=', $id)->first();
+    }
+
+    public function delete(): void
+    {
+        $this->DB()->where('id' , '=', $this->attributes['id'])->delete();
     }
 
     public function fill(array $attributes): static
@@ -43,6 +49,9 @@ abstract class AbstractModel implements JsonSerializable
         return $this;
     }
 
+    /**
+     * @throws UndefinedClassException
+     */
     public static function find(int $id): ?static
     {
         $model = new static();
@@ -53,9 +62,31 @@ abstract class AbstractModel implements JsonSerializable
             ->first();
     }
 
+    /**
+     * @throws UndefinedClassException
+     */
+    public static function get(
+        ?int $limit = null,
+        ?int $offset = null,
+    ): array {
+        $model = new static();
+
+        return $model
+            ->DB()
+            ->get($limit, $offset);
+    }
+
     public function jsonSerialize(): array
     {
         return $this->toArray();
+    }
+
+    /**
+     * @throws UndefinedClassException
+     */
+    public function refresh(): AbstractModel
+    {
+        return $this->where('id', '=', $this->attributes['id'])->first();
     }
 
 
@@ -76,19 +107,20 @@ abstract class AbstractModel implements JsonSerializable
 
     public function update(array $attributes): void
     {
-        $this->DB()->update($this->filterFillable($attributes));
+        $this->DB()->where('id' , '=', $this->attributes['id'])->update($this->filterFillable($attributes));
     }
 
     /**
      * @return DB<TModel>
      */
-    public function where(
+    public static function where(
         string $column,
         string $operator,
         mixed $value,
-    ): DB
-    {
-        return $this->DB()->where(
+    ): DB {
+        $model = new static();
+
+        return $model->DB()->where(
             $column,
             $operator,
             $value,

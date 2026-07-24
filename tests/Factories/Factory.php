@@ -19,10 +19,12 @@ abstract class Factory
 
     abstract protected function definition(): array;
 
-    public function create(array $attributes = []): ?AbstractModel
+    public static function create(array $attributes = []): ?AbstractModel
     {
-        return $this->model()->create(array_replace(
-            $this->definition(),
+        $class = new static();
+
+        return $class->model()->create(array_replace(
+            $class->definition(),
             $attributes
         ));
     }

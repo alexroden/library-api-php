@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use AlexRoden\LibraryApiPhp\Commands\SeedCommand;
 use Dotenv\Dotenv;

@@ -5,10 +5,13 @@ namespace AlexRoden\LibraryApiPhp\Tests;
 use AlexRoden\LibraryApiPhp\Database\Connection;
 use AlexRoden\LibraryApiPhp\Database\DB;
 use AlexRoden\LibraryApiPhp\Models\User;
+use Faker\Factory as FakerFactory;
+use Faker\Generator;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractTestCase extends TestCase
 {
+    protected Generator $faker;
 
     protected function setUp(): void
     {
@@ -18,14 +21,14 @@ abstract class AbstractTestCase extends TestCase
         Connection::getConnection('sqlite::memory:');
 
         $this->createSchema();
+
+        $this->faker = FakerFactory::create();
     }
 
     private function createSchema(): void
     {
         $files = glob(dirname(__DIR__) . '/database/migrations/*.up.sql');
-
         sort($files);
-
         foreach ($files as $file) {
             $sql = $file
                     |> file_get_contents(...)
