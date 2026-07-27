@@ -14,7 +14,7 @@ use OpenApi\Attributes as OA;
     requestBody: new OA\RequestBody(
         required: true,
         content: new OA\JsonContent(
-            ref: "#/components/schemas/AuthorRequest"
+            ref: "#/components/schemas/UpdateAuthorRequest"
         )
     ),
     tags: ["Authors"],

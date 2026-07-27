@@ -5,7 +5,7 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Schemas;
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(
-    schema: "Authpr",
+    schema: "Author",
     properties: [
         new OA\Property(property: "id", type: "integer"),
         new OA\Property(property: "first_name", type: "string"),

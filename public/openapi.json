@@ -12,6 +12,176 @@
         }
     ],
     "paths": {
+        "\/api\/authors": {
+            "get": {
+                "tags": [
+                    "Councils"
+                ],
+                "summary": "List authors",
+                "operationId": "e44d11632f79579722b182b0527f8cde",
+                "parameters": [
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Authors returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/AuthorCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Authors"
+                ],
+                "summary": "Create author",
+                "description": "Creates a new author.",
+                "operationId": "02354239c4cd08d1c70f0177a019e397",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CreateAuthorRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Author created",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/AuthorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/authors\/{author}": {
+            "get": {
+                "tags": [
+                    "Authors"
+                ],
+                "summary": "Get a given author",
+                "description": "Returns a given author.",
+                "operationId": "857d0fca31182fdac6f54420c1586829",
+                "responses": {
+                    "200": {
+                        "description": "Author returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/AuthorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Authors"
+                ],
+                "summary": "Update author",
+                "description": "Update a given author.",
+                "operationId": "09a90b73e89ac32e7528b0f0a790f32c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/UpdateAuthorRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Author returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/AuthorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Authors"
+                ],
+                "summary": "Delete a given author",
+                "description": "Delete a given author.",
+                "operationId": "64fc80351301c48242fd267705acb445",
+                "responses": {
+                    "204": {
+                        "description": "Empty response"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "\/api\/councils": {
             "get": {
                 "tags": [
@@ -60,7 +230,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateCouncilRequest"
+                                "$ref": "#\/components\/schemas\/CouncilRequest"
                             }
                         }
                     }
@@ -126,6 +296,16 @@
                 "summary": "Update council",
                 "description": "Update a given council.",
                 "operationId": "bdbb7892a6373372208563a6858c4df1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CouncilRequest"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Council returned",
@@ -139,6 +319,9 @@
                     },
                     "401": {
                         "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
                     }
                 },
                 "security": [
@@ -193,6 +376,176 @@
                         }
                     }
                 }
+            }
+        },
+        "\/api\/libraries": {
+            "get": {
+                "tags": [
+                    "Libraries"
+                ],
+                "summary": "List councils",
+                "operationId": "e2789e6f567910371eb4210901594da7",
+                "parameters": [
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Libraries returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/LibraryCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Libraries"
+                ],
+                "summary": "Create library",
+                "description": "Creates a new library.",
+                "operationId": "2e7dbecfa35940232e6cccb006147a40",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/LibraryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Library created",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/LibraryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/libraries\/{library}": {
+            "get": {
+                "tags": [
+                    "Libraries"
+                ],
+                "summary": "Get a given library",
+                "description": "Returns a given library.",
+                "operationId": "9a632c2248ad9a30f53574334fe10e16",
+                "responses": {
+                    "200": {
+                        "description": "Library returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/LibraryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Libraries"
+                ],
+                "summary": "Update library",
+                "description": "Update a given library.",
+                "operationId": "a88b6d6f942a24216bccf186429f0db1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/LibraryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Library returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/LibraryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Libraries"
+                ],
+                "summary": "Delete a given library",
+                "description": "Delete a given library.",
+                "operationId": "b70f48e1a492ac7b063e0d5880305640",
+                "responses": {
+                    "204": {
+                        "description": "Empty response"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "\/api\/auth": {
@@ -534,14 +887,32 @@
                 },
                 "type": "object"
             },
-            "CreateCouncilRequest": {
+            "CouncilRequest": {
                 "required": [
-                    "name",
-                    "last_name"
+                    "name"
                 ],
                 "properties": {
                     "name": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreateAuthorRequest": {
+                "required": [
+                    "first_name",
+                    "last_name"
+                ],
+                "properties": {
+                    "first_name": {
+                        "type": "string",
+                        "example": "Alex",
+                        "minLength": 3
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Roden",
+                        "minLength": 3
                     }
                 },
                 "type": "object"
@@ -590,6 +961,32 @@
                 },
                 "type": "object"
             },
+            "LibraryRequest": {
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateAuthorRequest": {
+                "properties": {
+                    "first_name": {
+                        "type": "string",
+                        "example": "Alex",
+                        "minLength": 3
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Roden",
+                        "minLength": 3
+                    }
+                },
+                "type": "object"
+            },
             "UpdateUserRequest": {
                 "properties": {
                     "email": {
@@ -627,6 +1024,28 @@
                 },
                 "type": "object"
             },
+            "AuthorCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Author"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "AuthorResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/Author"
+                    }
+                },
+                "type": "object"
+            },
             "CouncilCollection": {
                 "properties": {
                     "meta": {
@@ -645,6 +1064,28 @@
                 "properties": {
                     "data": {
                         "$ref": "#\/components\/schemas\/Council"
+                    }
+                },
+                "type": "object"
+            },
+            "LibraryCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Library"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "LibraryResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/Library"
                     }
                 },
                 "type": "object"
@@ -671,7 +1112,44 @@
                 },
                 "type": "object"
             },
+            "Author": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "first_name": {
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "Council": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Library": {
                 "properties": {
                     "id": {
                         "type": "integer"
@@ -793,12 +1271,20 @@
     },
     "tags": [
         {
+            "name": "Authors",
+            "description": "Authors"
+        },
+        {
             "name": "Councils",
             "description": "Councils"
         },
         {
             "name": "_Health",
             "description": "_Health"
+        },
+        {
+            "name": "Libraries",
+            "description": "Libraries"
         },
         {
             "name": "Users",
