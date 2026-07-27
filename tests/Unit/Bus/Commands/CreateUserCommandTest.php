@@ -32,9 +32,9 @@ class CreateUserCommandTest extends AbstractTestCase
 
         $command = new CreateUserCommand(
             email: 'test@example.com',
+            password: 'password',
             firstName: 'Alex',
-            lastName: 'Roden',
-            password: 'password'
+            lastName: 'Roden'
         );
 
         $user = $handler->handle($command);

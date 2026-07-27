@@ -10,9 +10,6 @@ use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 
 class DeleteCouncilCommandHandler extends AbstractCommandHandler implements CommandHandler
 {
-    /**
-     * @throws UndefinedClassException|ResourceNotFoundException
-     */
     public function handle(object $command): null
     {
         /** @var DeleteCouncilCommand $command */

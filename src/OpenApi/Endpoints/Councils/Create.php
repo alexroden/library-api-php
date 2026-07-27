@@ -14,7 +14,7 @@ use OpenApi\Attributes as OA;
     requestBody: new OA\RequestBody(
         required: true,
         content: new OA\JsonContent(
-            ref: "#/components/schemas/CreateCouncilRequest"
+            ref: "#/components/schemas/CouncilRequest"
         )
     ),
     tags: ["Councils"],

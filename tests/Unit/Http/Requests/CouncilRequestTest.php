@@ -2,10 +2,8 @@
 
 namespace AlexRoden\LibraryApiPhp\Tests\Unit\Http\Requests;
 
-use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\ValidationException;
 use AlexRoden\LibraryApiPhp\Http\Requests\CouncilRequest;
-use AlexRoden\LibraryApiPhp\Http\Requests\CreateUserRequest;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 
 class CouncilRequestTest extends AbstractTestCase
@@ -32,5 +30,4 @@ class CouncilRequestTest extends AbstractTestCase
 
         new CouncilRequest(body: $body);
     }
-
 }

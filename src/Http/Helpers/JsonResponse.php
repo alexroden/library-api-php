@@ -5,7 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Http\Helpers;
 class JsonResponse
 {
     /**
-     * @param array $data
+     * @param array|null $data
      * @param int $status
      * @param array $headers
      */

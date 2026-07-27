@@ -24,7 +24,6 @@ use Exception;
 use JsonException;
 use PDOException;
 
-
 class UserController extends AbstractController
 {
     protected Jwt $jwt;

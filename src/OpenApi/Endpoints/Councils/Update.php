@@ -11,6 +11,12 @@ use OpenApi\Attributes as OA;
     security: [
         ["bearerAuth" => []]
     ],
+    requestBody: new OA\RequestBody(
+        required: true,
+        content: new OA\JsonContent(
+            ref: "#/components/schemas/CouncilRequest"
+        )
+    ),
     tags: ["Councils"],
     responses: [
         new OA\Response(
@@ -20,7 +26,8 @@ use OpenApi\Attributes as OA;
                 ref: "#/components/schemas/CouncilResponse"
             )
         ),
-        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401)
+        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401),
+        new OA\Response(ref: "#/components/responses/Validation", response: 422),
     ]
 )]
 class Update

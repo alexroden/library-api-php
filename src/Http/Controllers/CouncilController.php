@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Database\DB;
+use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
@@ -25,7 +26,7 @@ class CouncilController extends AbstractController
     public function create(CouncilRequest $request): JsonResponse
     {
         try {
-            $user = $this->commandBus->dispatch(
+            $council = $this->commandBus->dispatch(
                 new CreateCouncilCommand(...$request->validated())
             );
         } catch (PDOException $e) {
@@ -35,7 +36,7 @@ class CouncilController extends AbstractController
         }
 
         return new JsonResponse([
-            'data' => $user,
+            'data' => $council,
         ], 201);
     }
 
@@ -65,6 +66,9 @@ class CouncilController extends AbstractController
         ]);
     }
 
+    /**
+     * @throws UndefinedClassException
+     */
     public function list(Request $request): JsonResponse
     {
         $limit = (int) $request->input('limit', 10);

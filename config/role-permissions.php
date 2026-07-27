@@ -13,11 +13,21 @@ return [
     */
 
     Roles::ADMIN => [
+        Permissions::AUTHORS_CREATE,
+        Permissions::AUTHORS_GET,
+        Permissions::AUTHORS_LIST,
+        Permissions::AUTHORS_UPDATE,
+        Permissions::AUTHORS_DELETE,
         Permissions::COUNCILS_CREATE,
         Permissions::COUNCILS_GET,
         Permissions::COUNCILS_LIST,
         Permissions::COUNCILS_UPDATE,
         Permissions::COUNCILS_DELETE,
+        Permissions::LIBRARIES_CREATE,
+        Permissions::LIBRARIES_GET,
+        Permissions::LIBRARIES_LIST,
+        Permissions::LIBRARIES_UPDATE,
+        Permissions::LIBRARIES_DELETE,
         Permissions::USERS_CREATE,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,
@@ -33,8 +43,12 @@ return [
     */
 
     Roles::STAFF => [
+        Permissions::AUTHORS_GET,
+        Permissions::AUTHORS_LIST,
         Permissions::COUNCILS_GET,
         Permissions::COUNCILS_LIST,
+        Permissions::LIBRARIES_GET,
+        Permissions::LIBRARIES_LIST,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,
     ],
@@ -46,10 +60,18 @@ return [
     */
 
     Roles::EDITOR => [
+        Permissions::AUTHORS_CREATE,
+        Permissions::AUTHORS_GET,
+        Permissions::AUTHORS_LIST,
+        Permissions::AUTHORS_UPDATE,
         Permissions::COUNCILS_CREATE,
         Permissions::COUNCILS_GET,
         Permissions::COUNCILS_LIST,
         Permissions::COUNCILS_UPDATE,
+        Permissions::LIBRARIES_CREATE,
+        Permissions::LIBRARIES_GET,
+        Permissions::LIBRARIES_LIST,
+        Permissions::LIBRARIES_UPDATE,
         Permissions::USERS_CREATE,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,
@@ -63,8 +85,12 @@ return [
     */
 
     Roles::USER => [
+        Permissions::AUTHORS_GET,
+        Permissions::AUTHORS_LIST,
         Permissions::COUNCILS_GET,
         Permissions::COUNCILS_LIST,
+        Permissions::LIBRARIES_GET,
+        Permissions::LIBRARIES_LIST,
         Permissions::USERS_GET,
     ],
 

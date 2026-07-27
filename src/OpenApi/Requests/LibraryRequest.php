@@ -5,10 +5,9 @@ namespace AlexRoden\LibraryApiPhp\OpenApi\Requests;
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(
-    schema: "CreateCouncilRequest",
+    schema: "LibraryRequest",
     required: [
         "name",
-        "last_name",
     ],
     properties: [
         new OA\Property(
@@ -17,7 +16,7 @@ use OpenApi\Attributes as OA;
         ),
     ]
 )]
-class CreateCouncilRequest
+class LibraryRequest
 {
 
 }

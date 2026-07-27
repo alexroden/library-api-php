@@ -14,6 +14,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->safeLoad();
 
+/**
+ * @throws ReflectionException
+ */
 function createApplication(bool $testing = false) : Container
 {
     Connection::getConnection();
