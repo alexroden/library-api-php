@@ -4,6 +4,8 @@
 
 use AlexRoden\LibraryApiPhp\Enums\Permissions;
 use AlexRoden\LibraryApiPhp\Http\Controllers\AuthorController;
+use AlexRoden\LibraryApiPhp\Http\Controllers\BookController;
+use AlexRoden\LibraryApiPhp\Http\Controllers\CategoryController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\CouncilController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\LibraryController;
@@ -42,6 +44,20 @@ $router->prefix('/api', function ($router) {
             $router->get('/{author}', [AuthorController::class, 'get', ['permission:'.Permissions::AUTHORS_GET]]);
             $router->put('/{author}', [AuthorController::class, 'update', ['permission:'.Permissions::AUTHORS_UPDATE]]);
             $router->delete('/{author}', [AuthorController::class, 'delete', ['permission:'.Permissions::AUTHORS_DELETE]]);
+        });
+        $router->group(['prefix' => '/categories'], function ($router) {
+            $router->post('/', [CategoryController::class, 'create', ['permission:'.Permissions::CATEGORIES_CREATE]]);
+            $router->get('/', [CategoryController::class, 'list', ['permission:'.Permissions::CATEGORIES_LIST]]);
+            $router->get('/{category}', [CategoryController::class, 'get', ['permission:'.Permissions::CATEGORIES_GET]]);
+            $router->put('/{category}', [CategoryController::class, 'update', ['permission:'.Permissions::CATEGORIES_UPDATE]]);
+            $router->delete('/{category}', [CategoryController::class, 'delete', ['permission:'.Permissions::CATEGORIES_DELETE]]);
+        });
+        $router->group(['prefix' => '/books'], function ($router) {
+            $router->post('/', [BookController::class, 'create', ['permission:'.Permissions::BOOKS_CREATE]]);
+            $router->get('/', [BookController::class, 'list', ['permission:'.Permissions::BOOKS_LIST]]);
+            $router->get('/{book}', [BookController::class, 'get', ['permission:'.Permissions::BOOKS_GET]]);
+            $router->put('/{book}', [BookController::class, 'update', ['permission:'.Permissions::BOOKS_UPDATE]]);
+            $router->delete('/{book}', [BookController::class, 'delete', ['permission:'.Permissions::BOOKS_DELETE]]);
         });
     });
 });

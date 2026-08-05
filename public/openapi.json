@@ -15,7 +15,7 @@
         "\/api\/authors": {
             "get": {
                 "tags": [
-                    "Councils"
+                    "Authors"
                 ],
                 "summary": "List authors",
                 "operationId": "e44d11632f79579722b182b0527f8cde",
@@ -167,6 +167,346 @@
                 "summary": "Delete a given author",
                 "description": "Delete a given author.",
                 "operationId": "64fc80351301c48242fd267705acb445",
+                "responses": {
+                    "204": {
+                        "description": "Empty response"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/books": {
+            "get": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "List books",
+                "operationId": "325ec6d4b275685d8cf98f0e5d18c333",
+                "parameters": [
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Books returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/BookCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Create book",
+                "description": "Creates a new book.",
+                "operationId": "10297868d80f37be2844a2471e1028cc",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CreateBookRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Book created",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/BookResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/books\/{book}": {
+            "get": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Get a given book",
+                "description": "Returns a given book.",
+                "operationId": "85e4ea381d944e17f0044b564e6180d6",
+                "responses": {
+                    "200": {
+                        "description": "Book returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/BookResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Update book",
+                "description": "Update a given book.",
+                "operationId": "4056aa849eb12f367e36ed288391f24c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/UpdateBookRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Book returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/BookResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Delete a given book",
+                "description": "Delete a given book.",
+                "operationId": "11801ba9b19efa075b8dbe5b9d4eca31",
+                "responses": {
+                    "204": {
+                        "description": "Empty response"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/categories": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "List categories",
+                "operationId": "5bdeee49c47982c83d812dc53585230a",
+                "parameters": [
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Categories returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CategoryCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Create category",
+                "description": "Creates a new category.",
+                "operationId": "b9a5b67ea671acde0ad98d4dc821cbda",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Category created",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CategoryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/categories\/{category}": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Get a given category",
+                "description": "Returns a given category.",
+                "operationId": "e3efa9cd8b32c9955ab668a3a0c538bc",
+                "responses": {
+                    "200": {
+                        "description": "Category returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CategoryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Update category",
+                "description": "Update a given category.",
+                "operationId": "2377fede24cb7d075c4cc826d6ab5521",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CategoryRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Category returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CategoryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Delete a given category",
+                "description": "Delete a given category.",
+                "operationId": "f77756d1d425e778ab245c63ee22578d",
                 "responses": {
                     "204": {
                         "description": "Empty response"
@@ -887,6 +1227,17 @@
                 },
                 "type": "object"
             },
+            "CategoryRequest": {
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "CouncilRequest": {
                 "required": [
                     "name"
@@ -913,6 +1264,37 @@
                         "type": "string",
                         "example": "Roden",
                         "minLength": 3
+                    }
+                },
+                "type": "object"
+            },
+            "CreateBookRequest": {
+                "required": [
+                    "title",
+                    "description"
+                ],
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "example": "Pride and Prejudice",
+                        "minLength": 3
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "In early nineteenth-century England, a spirited young woman copes with the suit of a snobbish gentleman, as well as the romantic entanglements of her four sisters",
+                        "minLength": 3
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authors": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
                     }
                 },
                 "type": "object"
@@ -987,6 +1369,33 @@
                 },
                 "type": "object"
             },
+            "UpdateBookRequest": {
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "example": "Pride and Prejudice",
+                        "minLength": 3
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "In early nineteenth-century England, a spirited young woman copes with the suit of a snobbish gentleman, as well as the romantic entanglements of her four sisters",
+                        "minLength": 3
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authors": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "type": "object"
+            },
             "UpdateUserRequest": {
                 "properties": {
                     "email": {
@@ -1042,6 +1451,50 @@
                 "properties": {
                     "data": {
                         "$ref": "#\/components\/schemas\/Author"
+                    }
+                },
+                "type": "object"
+            },
+            "BookCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Book"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "BookResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/Book"
+                    }
+                },
+                "type": "object"
+            },
+            "CategoryCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Category"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "CategoryResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/Category"
                     }
                 },
                 "type": "object"
@@ -1121,6 +1574,49 @@
                         "type": "string"
                     },
                     "last_name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Book": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Category": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
                         "type": "string"
                     },
                     "created_at": {
@@ -1273,6 +1769,14 @@
         {
             "name": "Authors",
             "description": "Authors"
+        },
+        {
+            "name": "Books",
+            "description": "Books"
+        },
+        {
+            "name": "Categories",
+            "description": "Categories"
         },
         {
             "name": "Councils",

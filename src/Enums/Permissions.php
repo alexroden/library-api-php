@@ -13,6 +13,16 @@ final class Permissions
     const string AUTHORS_LIST = 'authors.list';
     const string AUTHORS_UPDATE = 'authors.update';
     const string AUTHORS_DELETE = 'authors.delete';
+    const string BOOKS_CREATE = 'books.create';
+    const string BOOKS_GET = 'books.get';
+    const string BOOKS_LIST = 'books.list';
+    const string BOOKS_UPDATE = 'books.update';
+    const string BOOKS_DELETE = 'books.delete';
+    const string CATEGORIES_CREATE = 'categories.create';
+    const string CATEGORIES_GET = 'categories.get';
+    const string CATEGORIES_LIST = 'categories.list';
+    const string CATEGORIES_UPDATE = 'categories.update';
+    const string CATEGORIES_DELETE = 'categories.delete';
     const string COUNCILS_CREATE = 'councils.create';
     const string COUNCILS_GET = 'councils.get';
     const string COUNCILS_LIST = 'councils.list';
