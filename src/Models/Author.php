@@ -14,4 +14,21 @@ class Author extends AbstractModel
         'first_name',
         'last_name',
     ];
+
+    public function books(): array
+    {
+        return $this->DB(
+            'book_authors',
+            Book::class,
+        )->where(
+            'author_id',
+            '=',
+            $this->id,
+        )->join(
+            'books',
+            'book_id',
+            'id',
+            ['id', 'title', 'description', 'tags'],
+        )->excludeLocalAttributes()->get();
+    }
 }
