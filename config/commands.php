@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\CreateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCategoryCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateLibraryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\CreateStockCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteAuthorCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteBookCommand;
@@ -24,6 +25,7 @@ use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateCategoryCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateCouncilCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateLibraryCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateStockCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateUserCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteAuthorCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteBookCommandHandler;
@@ -49,6 +51,7 @@ return [
     CreateCategoryCommand::class => CreateCategoryCommandHandler::class,
     CreateCouncilCommand::class => CreateCouncilCommandHandler::class,
     CreateLibraryCommand::class => CreateLibraryCommandHandler::class,
+    CreateStockCommand::class => CreateStockCommandHandler::class,
     CreateUserCommand::class => CreateUserCommandHandler::class,
     DeleteAuthorCommand::class => DeleteAuthorCommandHandler::class,
     DeleteBookCommand::class => DeleteBookCommandHandler::class,

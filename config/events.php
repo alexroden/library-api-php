@@ -5,6 +5,7 @@ use AlexRoden\LibraryApiPhp\Bus\Events\CreateBookEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateCategoryEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateCouncilEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateLibraryEvent;
+use AlexRoden\LibraryApiPhp\Bus\Events\CreateStockEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteCategoryEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteCouncilEvent;
@@ -30,6 +31,7 @@ return [
     CreateCategoryEvent::class => [],
     CreateCouncilEvent::class => [],
     CreateLibraryEvent::class => [],
+    CreateStockEvent::class => [],
     CreateUserEvent::class => [
         SendWelcomeEmailListener::class,
     ],

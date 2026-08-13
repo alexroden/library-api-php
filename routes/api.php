@@ -9,6 +9,7 @@ use AlexRoden\LibraryApiPhp\Http\Controllers\CategoryController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\CouncilController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\LibraryController;
+use AlexRoden\LibraryApiPhp\Http\Controllers\StockController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
 
 $router->prefix('/api', function ($router) {
@@ -58,6 +59,9 @@ $router->prefix('/api', function ($router) {
             $router->get('/{book}', [BookController::class, 'get', ['permission:'.Permissions::BOOKS_GET]]);
             $router->put('/{book}', [BookController::class, 'update', ['permission:'.Permissions::BOOKS_UPDATE]]);
             $router->delete('/{book}', [BookController::class, 'delete', ['permission:'.Permissions::BOOKS_DELETE]]);
+        });
+        $router->group(['prefix' => '/stocks'], function ($router) {
+            $router->post('/', [StockController::class, 'create'], ['permission:'.Permissions::STOCKS_CREATE]);
         });
     });
 });
