@@ -90,12 +90,37 @@ services:
   runner:
     build:
       context: .
-      dockerfile: Dockerfile.runner
+      dockerfile: Dockerfile.importers
     restart: "no"
     env_file:
       - .env
-    container_name: php_runner
+    # No container_name: compose then names the containers itself as
+    # <project>-runner-<n>, which is also what allows more than one at a time.
     depends_on:
+      api:
+        condition: service_started
+      seed-sqs:
+        condition: service_completed_successfully
+    networks:
+      - api_network
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.importers
+    restart: "no"
+    env_file:
+      - .env
+    # As with the runner, leaving the name to compose gives
+    # <project>-worker-<n> and lets the service be scaled to several workers.
+    command: [ "php", "importers/worker/main.php" ]
+    # The worker waits on the queue rather than exiting, so it is stopped by a
+    # signal. Long enough for the poll in flight to return and the current
+    # batch to finish before docker escalates to SIGKILL.
+    stop_grace_period: 30s
+    depends_on:
+      mysql:
+        condition: service_healthy
       api:
         condition: service_started
       seed-sqs:

@@ -3,6 +3,7 @@
 namespace AlexRoden\Importers\Queue;
 
 use Aws\Sqs\SqsClient;
+use JsonException;
 use RuntimeException;
 
 class SqsPublisher
@@ -34,7 +35,7 @@ class SqsPublisher
      * SendMessageBatch requests as SQS allows.
      *
      * @param array<int, array> $payloads
-     * @throws \JsonException
+     * @throws JsonException
      */
     public function publish(array $payloads): void
     {
@@ -45,7 +46,7 @@ class SqsPublisher
 
     /**
      * @param array<int, array> $payloads
-     * @throws \JsonException
+     * @throws JsonException
      */
     private function send(array $payloads): void
     {

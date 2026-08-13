@@ -26,11 +26,13 @@ The project is organised into a number of directories, each with a clearly defin
 │   └── seeders/
 ├── importers/
 │   ├── bootstrap.php      # Standalone importer bootstrap
-│   ├── runner/            # Importer entry points
+│   ├── runner/            # Runner entry point
+│   ├── worker/            # Worker entry point
 │   └── src/
-│       ├── Queue/         # Queue publishing
-│       ├── Runner/        # Importer orchestration
-│       └── Soap/          # SOAP api clients
+│       ├── Queue/         # Queue publishing and consuming
+│       ├── Runner/        # Runner orchestration
+│       ├── Soap/          # SOAP api clients
+│       └── Worker/        # Worker orchestration
 ├── public/
 │   ├── index.php          # Application entry point
 │   └── openapi.json       # Generated OpenAPI specification
@@ -151,6 +153,31 @@ Each queue message contains a batch of ids:
 ```
 
 The batch size is controlled by `IMPORT_BATCH_SIZE` in the `.env` file and defaults to `25`. The queue itself is a local [ElasticMQ](https://github.com/softwaremill/elasticmq) container, which speaks the SQS protocol, so the runner uses the AWS SDK and can be pointed at a real SQS queue by changing `SQS_ENDPOINT` and `SQS_QUEUE_URL`.
+
+### Running the worker
+
+```bash
+make trigger-worker            # one worker
+make trigger-worker WORKERS=3  # three, sharing the queue between them
+```
+
+Neither importer service sets a `container_name`, so docker compose names the containers itself — `library-api-runner-1`, `library-api-worker-1`, `library-api-worker-2` and so on. That is what allows the worker to be scaled: a fixed name can only ever belong to one container.
+
+The worker long-polls the queue, and for every id in a batch it calls `getBook` and writes the full record. It is a long lived process: an empty queue means there is no work *yet*, not that the import is finished, so the worker keeps polling and picks up whatever the next runner publishes.
+
+Because it never stops on its own, it is stopped with a signal — `docker compose stop worker`, or ctrl-c when run in the foreground. `SIGTERM` and `SIGINT` are handled rather than fatal, so the batch in flight is finished and deleted from the queue instead of becoming visible again and being imported a second time.
+
+Unlike the runner, the worker writes to the database, so it boots the application container and dispatches `CreateAuthorCommand`, `CreateCategoryCommand` and `CreateBookCommand` through the command bus. An imported book therefore takes exactly the same path — and raises the same events — as one created through the api.
+
+#### Authors
+
+The api exposes the author as a single string, but the `authors` table stores a first and last name separately. The first word is taken as the first name and everything after it as the last name, so a name such as `Jean de la Fontaine` keeps `de la Fontaine` together rather than losing part of it.
+
+#### Repeated imports
+
+Authors, categories and books are all looked up before they are created, so running the import more than once reuses what is already there instead of failing on the unique constraints. A book that already exists is left as it is, but its author and category links are still checked and filled in.
+
+That also makes a batch safe to retry. If a book fails, the failure is logged, the rest of the batch carries on, and the message is deliberately left on the queue so it becomes visible again after the visibility timeout. The retry re-imports the whole batch, and the books that already landed are picked up by those same lookups rather than duplicated.
 
 ## Database Migrations
 

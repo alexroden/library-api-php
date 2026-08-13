@@ -1,3 +1,5 @@
+# The image behind both importer processes. The runner is the default; the
+# worker service overrides the command.
 FROM php:8.5-fpm
 
 # Install common extensions
@@ -11,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         zip \
         pdo_mysql \
         soap \
+        pcntl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
@@ -33,6 +36,9 @@ RUN composer install \
 COPY src/ ./src/
 COPY config/ ./config/
 COPY importers/ ./importers/
+
+# The worker writes to the database, so it needs the application bootstrap
+COPY bootstrap/ ./bootstrap/
 
 # Useful while debugging
 RUN ls -la

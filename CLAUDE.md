@@ -22,6 +22,7 @@ composer docs                      # regenerate public/openapi.json from src/Ope
 make start                         # mysql + golang-migrate + api (:8080) + mailpit (:8025)
 make console CMD="seed"            # run a console command in the api container
 make trigger-runner                # create the SQS queue and run the book import runner once
+make trigger-worker WORKERS=3      # start N book import workers; ctrl-c stops them
 make cleanup                       # tear down containers, volumes and local images
 ```
 
@@ -130,17 +131,39 @@ connection outside `AbstractTestCase` must reset it.
 
 ## Importers
 
-Separate autoload root (`AlexRoden\Importers\` → `importers/src`) and separate entry point —
-importers do **not** use `bootstrap/app.php`, the container, or the buses. `importers/bootstrap.php`
-loads the autoloader and optionally `.env` (in Docker the values arrive as real env vars). They
-reuse only `LibraryApiPhp\Config`.
+Separate autoload root (`AlexRoden\Importers\` → `importers/src`) with its own entry points.
+`importers/bootstrap.php` loads the autoloader and optionally `.env` (in Docker the values arrive as
+real env vars). Both processes build their dependencies by hand in `main.php` rather than resolving
+them from the container.
 
 `importers/runner/main.php` wires `BookClient` (SOAP, against `public/soap.php`) + `SqsPublisher`
-into `BookImportRunner`, which fetches book summaries and publishes batches of ids to ElasticMQ.
-**Only the runner exists** — the worker that consumes batches and calls `getBook` is described in
-the README but not yet implemented.
+into `BookImportRunner`, which fetches book summaries and publishes batches of ids to ElasticMQ. It
+never touches the database, so it does not load `bootstrap/app.php`.
 
-This is the active work on `feature/importers`; the queue/runner files are still uncommitted.
+`importers/worker/main.php` wires `BookClient` + `SqsConsumer` into `BookImportWorker`, which
+long-polls, calls `getBook` per id, and writes the records. **The worker is the one importer that
+does load `bootstrap/app.php`** — it needs a `CommandBus` with the handlers registered, so writes go
+through `CreateAuthorCommand` / `CreateCategoryCommand` / `CreateBookCommand` exactly like the api.
+Because of that, `Dockerfile.importers` (shared by both services) also copies `bootstrap/`.
+
+Worker invariants worth preserving:
+
+- Every lookup is first-or-create (`Author` by first+last name, `Category` by name, `Book` by
+  title), which is what makes the import re-runnable against the unique constraints.
+- `assignAuthor`/`assignCategory` are called even for a book that already existed, and both ignore a
+  link that is already there — that repairs a partial earlier import.
+- A batch is deleted from the queue only if every id in it succeeded; otherwise it is left to become
+  visible again and be retried in full.
+- An empty receive is not a stop condition — the worker keeps long-polling. It only returns from
+  `run()` when `stop()` is called, which `worker/main.php` wires to `SIGTERM`/`SIGINT` via
+  `pcntl_async_signals` (hence `pcntl` in `Dockerfile.importers`), and it finishes the batch it is
+  holding first. Unit tests wrap the consumer in a decorator that calls `stop()` on the first empty
+  receive, so a test that drives its own consumer must arrange its own stop or it will hang.
+- `AuthorName::fromString()` splits on the first word only, so multi-word last names survive.
+
+Both processes only echo progress; `main.php` is where fatal errors go to STDERR and exit non-zero.
+
+This is the active work on `feature/importers` and most of it is still uncommitted.
 
 ## Conventions
 

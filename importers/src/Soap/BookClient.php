@@ -32,6 +32,19 @@ class BookClient
     }
 
     /**
+     * The full record for a single book, including the description, tags and
+     * category the list method leaves out.
+     *
+     * @throws SoapFault
+     */
+    public function getBook(int $id): BookDetail
+    {
+        $response = $this->client->getBook(['id' => $id]);
+
+        return BookDetail::fromResponse($response->book);
+    }
+
+    /**
      * @return BookSummary[]
      *
      * @throws SoapFault
