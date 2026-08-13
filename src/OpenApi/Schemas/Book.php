@@ -15,6 +15,12 @@ use OpenApi\Attributes as OA;
             type: "array",
             items: new OA\Items(type: "string")
         ),
+        new OA\Property(
+            property: "published_at",
+            type: "string",
+            format: "date",
+            nullable: true,
+        ),
         new OA\Property(property: "created_at", type: "string"),
         new OA\Property(property: "updated_at", type: "string"),
     ]

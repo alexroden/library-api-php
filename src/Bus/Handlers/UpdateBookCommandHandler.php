@@ -21,6 +21,7 @@ class UpdateBookCommandHandler extends AbstractCommandHandler implements Command
             'title' => $command->title,
             'description' => $command->description,
             'tags' => implode(',', $command->tags),
+            'published_at' => $command->publishedAt,
         ]);
 
         $book = $command->book->refresh();

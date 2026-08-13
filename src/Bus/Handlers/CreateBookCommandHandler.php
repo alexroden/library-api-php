@@ -20,6 +20,7 @@ class CreateBookCommandHandler extends AbstractCommandHandler implements Command
             'title' => $command->title,
             'description' => $command->description,
             'tags' => implode(',', $command->tags),
+            'published_at' => $command->publishedAt,
         ]);
 
         if (count($command->authors) > 0) {

@@ -152,6 +152,10 @@ Worker invariants worth preserving:
   title), which is what makes the import re-runnable against the unique constraints.
 - `assignAuthor`/`assignCategory` are called even for a book that already existed, and both ignore a
   link that is already there — that repairs a partial earlier import.
+- A `Book` that already exists is diffed against the `BookDetail` (description, tags, published
+  date) and updated via `UpdateBookCommand` when they differ; identical records are not written at
+  all, and a field the feed has no value for falls back to what is on the record instead of clearing
+  it. `Author`/`Category` have nothing to diff — their only columns are the lookup key.
 - A batch is deleted from the queue only if every id in it succeeded; otherwise it is left to become
   visible again and be retried in full.
 - An empty receive is not a stop condition — the worker keeps long-polling. It only returns from

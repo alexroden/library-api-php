@@ -17,6 +17,7 @@ readonly class BookDetail
         public array $tags,
         public string $category,
         public string $author,
+        public ?string $publishedAt = null,
     ) {}
 
     public static function fromResponse(object $book): self
@@ -41,6 +42,11 @@ readonly class BookDetail
             array_map(strval(...), $tags),
             (string) ($book->category ?? ''),
             (string) $book->author,
+            /*
+             * publishedAt was added to the feed after the first books were
+             * imported, so a record without one is still accepted.
+             */
+            isset($book->publishedAt) ? (string) $book->publishedAt : null,
         );
     }
 }

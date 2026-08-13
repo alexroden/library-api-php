@@ -125,7 +125,7 @@ This command stops and removes all containers, networks and Docker volumes creat
 Book records are imported from the SOAP api exposed by `public/soap.php`. That api offers two methods:
 
 * **getBooks** – returns a summary of every book (id, title, author).
-* **getBook** – returns the full record for a single book, including its description, tags and category.
+* **getBook** – returns the full record for a single book, including its description, tags, category and published date.
 
 Because the list method only returns a summary, the import is split into two processes:
 
@@ -175,7 +175,9 @@ The api exposes the author as a single string, but the `authors` table stores a 
 
 #### Repeated imports
 
-Authors, categories and books are all looked up before they are created, so running the import more than once reuses what is already there instead of failing on the unique constraints. A book that already exists is left as it is, but its author and category links are still checked and filled in.
+Authors, categories and books are all looked up before they are created, so running the import more than once reuses what is already there instead of failing on the unique constraints. Its author and category links are checked and filled in either way.
+
+A book that already exists is compared against the api rather than skipped. If the description, tags or published date have drifted apart the existing row is updated through `UpdateBookCommand`, which is how a book imported before published dates existed picks one up on the next run. Nothing is written when the two already agree, and a field the api has no value for is left alone rather than clearing what is on the record.
 
 That also makes a batch safe to retry. If a book fails, the failure is logged, the rest of the batch carries on, and the message is deliberately left on the queue so it becomes visible again after the visibility timeout. The retry re-imports the whole batch, and the books that already landed are picked up by those same lookups rather than duplicated.
 

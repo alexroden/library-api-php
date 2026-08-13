@@ -8,13 +8,16 @@ use AlexRoden\Importers\Soap\BookClient;
 use AlexRoden\Importers\Soap\BookDetail;
 use AlexRoden\Importers\Worker\BookImportWorker;
 use AlexRoden\LibraryApiPhp\Bus\CommandBus;
+use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateAuthorCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCategoryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateAuthorCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateCategoryCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Models\Author;
 use AlexRoden\LibraryApiPhp\Models\Book;
 use AlexRoden\LibraryApiPhp\Models\Category;
@@ -50,6 +53,7 @@ class BookImportWorkerTest extends AbstractTestCase
         $this->assertNotNull($book);
         $this->assertEquals('The Secret Embers is a book.', $book->description);
         $this->assertEquals(['magic', 'quest'], $book->tags());
+        $this->assertEquals('1907-03-24', $book->published_at);
 
         $authors = $book->authors();
         $this->assertCount(1, $authors);
@@ -59,6 +63,21 @@ class BookImportWorkerTest extends AbstractTestCase
         $categories = $book->categories();
         $this->assertCount(1, $categories);
         $this->assertEquals('fantasy', $categories[0]->name);
+    }
+
+    public function testImportsABookWithoutAPublishedDate(): void
+    {
+        $client = $this->client([
+            1 => $this->detail(1, 'The Glass Orchard', 'Ada Vance', 'drama', null),
+        ]);
+
+        $this->work($client, $this->consumer(
+            new Message('batch-1', 'receipt-1', ['ids' => [1]])
+        ));
+
+        $book = Book::where('title', '=', 'The Glass Orchard')->first();
+        $this->assertNotNull($book);
+        $this->assertNull($book->published_at);
     }
 
     public function testSplitsAMultiWordLastName(): void
@@ -99,10 +118,11 @@ class BookImportWorkerTest extends AbstractTestCase
             'last_name' => 'Langley',
         ]);
         CategoryFactory::create(['name' => 'fantasy']);
-        BookFactory::create([
+        $existing = BookFactory::create([
             'title' => 'The Secret Embers',
             'description' => 'Imported on a previous run.',
             'tags' => 'magic',
+            'published_at' => null,
         ]);
 
         $client = $this->client([
@@ -120,10 +140,14 @@ class BookImportWorkerTest extends AbstractTestCase
         $book = Book::where('title', '=', 'The Secret Embers')->first();
 
         /*
-         * The existing book is reused rather than overwritten, but its links
-         * are still filled in.
+         * The existing row is reused rather than duplicated, and the fields
+         * the api owns are brought up to date on it — including the published
+         * date, which an earlier import had no way of setting.
          */
-        $this->assertEquals('Imported on a previous run.', $book->description);
+        $this->assertEquals($existing->id, $book->id);
+        $this->assertEquals('The Secret Embers is a book.', $book->description);
+        $this->assertEquals(['magic', 'quest'], $book->tags());
+        $this->assertEquals('1907-03-24', $book->published_at);
 
         $this->assertEquals(
             [$author->id],
@@ -133,6 +157,61 @@ class BookImportWorkerTest extends AbstractTestCase
             ['fantasy'],
             array_map(static fn (Category $linked): string => $linked->name, $book->categories())
         );
+    }
+
+    public function testKeepsAPublishedDateTheApiDoesNotHave(): void
+    {
+        BookFactory::create([
+            'title' => 'The Secret Embers',
+            'description' => 'The Secret Embers is a book.',
+            'tags' => 'magic,quest',
+            'published_at' => '1902-05-06',
+        ]);
+
+        $client = $this->client([
+            1 => $this->detail(1, 'The Secret Embers', 'Elias Langley', 'fantasy', null),
+        ]);
+
+        $this->work($client, $this->consumer(
+            new Message('batch-1', 'receipt-1', ['ids' => [1]])
+        ));
+
+        $book = Book::where('title', '=', 'The Secret Embers')->first();
+        $this->assertEquals('1902-05-06', $book->published_at);
+    }
+
+    public function testDoesNotUpdateABookThatIsAlreadyCurrent(): void
+    {
+        BookFactory::create([
+            'title' => 'The Secret Embers',
+            'description' => 'The Secret Embers is a book.',
+            'tags' => 'magic,quest',
+            'published_at' => '1907-03-24',
+        ]);
+
+        $updates = new class implements CommandHandler {
+            public int $handled = 0;
+
+            public function handle(object $command): mixed
+            {
+                $this->handled++;
+
+                /** @var UpdateBookCommand $command */
+                return $command->book;
+            }
+        };
+
+        $client = $this->client([
+            1 => $this->detail(1, 'The Secret Embers', 'Elias Langley', 'fantasy'),
+        ]);
+
+        $this->work(
+            $client,
+            $this->consumer(new Message('batch-1', 'receipt-1', ['ids' => [1]])),
+            $updates,
+        );
+
+        $this->assertSame(0, $updates->handled);
     }
 
     public function testDoesNotLinkABookTwiceWhenTheBatchIsRetried(): void
@@ -290,6 +369,7 @@ class BookImportWorkerTest extends AbstractTestCase
         string $title,
         string $author,
         string $category,
+        ?string $publishedAt = '1907-03-24',
     ): BookDetail {
         return new BookDetail(
             id: $id,
@@ -298,17 +378,25 @@ class BookImportWorkerTest extends AbstractTestCase
             tags: ['magic', 'quest'],
             category: $category,
             author: $author,
+            publishedAt: $publishedAt,
         );
     }
 
-    private function worker(BookClient $client, SqsConsumer $consumer): BookImportWorker
-    {
+    private function worker(
+        BookClient $client,
+        SqsConsumer $consumer,
+        ?CommandHandler $updateBook = null,
+    ): BookImportWorker {
         $events = new EventBus();
 
         $commands = new CommandBus();
         $commands->register(CreateAuthorCommand::class, new CreateAuthorCommandHandler($events));
         $commands->register(CreateBookCommand::class, new CreateBookCommandHandler($events));
         $commands->register(CreateCategoryCommand::class, new CreateCategoryCommandHandler($events));
+        $commands->register(
+            UpdateBookCommand::class,
+            $updateBook ?? new UpdateBookCommandHandler($events)
+        );
 
         return new BookImportWorker($client, $consumer, $commands);
     }
@@ -318,8 +406,11 @@ class BookImportWorkerTest extends AbstractTestCase
      * drive a fixed set of batches wrap the consumer in one that stops the
      * worker as soon as the queue runs dry.
      */
-    private function work(BookClient $client, SqsConsumer $consumer): void
-    {
+    private function work(
+        BookClient $client,
+        SqsConsumer $consumer,
+        ?CommandHandler $updateBook = null,
+    ): void {
         $stopping = new class ($consumer) extends SqsConsumer {
             public BookImportWorker $worker;
 
@@ -342,7 +433,7 @@ class BookImportWorkerTest extends AbstractTestCase
             }
         };
 
-        $worker = $this->worker($client, $stopping);
+        $worker = $this->worker($client, $stopping, $updateBook);
         $stopping->worker = $worker;
 
         $this->runQuietly($worker);

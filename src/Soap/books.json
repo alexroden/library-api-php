@@ -2,2801 +2,3001 @@
   {
     "id": 1,
     "title": "The Secret Embers",
-    "shortDescription": "When an unexpected discovery changes everything, the secret embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "shortDescription": "After a letter arrives without a return address, a reluctant historian is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
+      "kingdom",
       "magic",
-      "quest",
+      "prophecy",
       "mythology",
-      "dragons",
-      "adventure"
+      "enchanted"
     ],
     "category": "fantasy",
-    "author": "Elias Langley"
+    "author": "Elias Langley",
+    "publishedAt": "1907-03-24"
   },
   {
     "id": 2,
     "title": "A Map of Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, a map of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "shortDescription": "Set against a university filled with old secrets, the story follows a travelling musician as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
       "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "expedition",
+      "discovery",
+      "friendship",
+      "survival"
     ],
     "category": "adventure",
-    "author": "Lydia Blackwood"
+    "author": "Lydia Blackwood",
+    "publishedAt": "1958-01-01"
   },
   {
     "id": 3,
-    "title": "The Secret Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the secret dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Glass Kingdom",
+    "shortDescription": "When an ancient object is discovered in an ordinary place, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "love",
+      "relationships",
+      "heartbreak",
+      "destiny",
+      "second-chance"
     ],
-    "category": "fiction",
-    "author": "Theodore North"
+    "category": "romance",
+    "author": "Edgar Allan Poe",
+    "publishedAt": "1900-12-21"
   },
   {
     "id": 4,
-    "title": "A River of Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, a river of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Beneath Hollow Stars",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a journalist with something to prove finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "isolation",
+      "mystery",
+      "haunting",
+      "supernatural",
+      "nightmare"
     ],
-    "category": "drama",
-    "author": "Celia Dawson"
+    "category": "horror",
+    "author": "Mary Wollstonecraft Shelley",
+    "publishedAt": "2000-05-26"
   },
   {
     "id": 5,
-    "title": "The Last Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the last whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Lantern",
+    "shortDescription": "The story begins with a simple promise, but a mysterious visitor appears at the door changes its meaning completely. As a disgraced detective travels through a rain-soaked harbour, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "suspense",
+      "detective",
+      "crime",
+      "investigation",
+      "murder"
     ],
-    "category": "romance",
-    "author": "Daniel Prescott"
+    "category": "mystery",
+    "author": "Nathaniel Hawthorne",
+    "publishedAt": "1921-03-07"
   },
   {
     "id": 6,
-    "title": "The Book of Bells",
-    "shortDescription": "When an unexpected discovery changes everything, the book of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A River of Ashes",
+    "shortDescription": "Years after a trusted friend disappears without explanation, the consequences remain buried beneath ordinary life. When the truth resurfaces, an ambitious scholar must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "relationships",
+      "identity",
+      "family",
+      "betrayal",
+      "loss"
     ],
-    "category": "horror",
-    "author": "Iris Fairchild"
+    "category": "drama",
+    "author": "Oscar Wilde",
+    "publishedAt": "1874-06-28"
   },
   {
     "id": 7,
-    "title": "The Lost Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, the lost ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Clockmaker's Daughter",
+    "shortDescription": "Part mystery and character study, this novel follows a curious archivist through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "future",
+      "artificial-intelligence",
+      "time-travel",
+      "space",
+      "dystopia"
     ],
-    "category": "mystery",
-    "author": "Samuel Redmond"
+    "category": "science-fiction",
+    "author": "Arthur Conan Doyle",
+    "publishedAt": "1967-09-04"
   },
   {
     "id": 8,
-    "title": "The Road to Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, the road to echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "House of Crows",
+    "shortDescription": "A chance meeting in a country recovering from conflict sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
+      "tradition",
+      "history",
+      "politics",
+      "empire",
       "survival"
     ],
-    "category": "science fiction",
-    "author": "Alice Hawthorne"
+    "category": "historical",
+    "author": "Charlotte Brontë",
+    "publishedAt": "2008-06-19"
   },
   {
     "id": 9,
-    "title": "The Song of Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, the song of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Orchard at Midnight",
+    "shortDescription": "After a family secret is revealed at a funeral, a lighthouse keeper is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "identity",
+      "loss",
+      "friendship",
+      "ambition",
+      "family"
     ],
-    "category": "thriller",
-    "author": "Caleb Thorne"
+    "category": "fiction",
+    "author": "Emily Brontë",
+    "publishedAt": "1908-05-03"
   },
   {
     "id": 10,
-    "title": "Under the Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, under the ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Letters from the North",
+    "shortDescription": "Set against a kingdom on the edge of war, the story follows a retired soldier as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "prophecy",
+      "dragons",
+      "magic",
+      "quest",
+      "kingdom"
     ],
-    "category": "historical fiction",
-    "author": "Grace Kensington"
+    "category": "fantasy",
+    "author": "Charles Dickens",
+    "publishedAt": "1966-11-27"
   },
   {
     "id": 11,
-    "title": "The Shadow of Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silent Compass",
+    "shortDescription": "When a letter arrives without a return address, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "survival",
+      "exploration",
+      "friendship",
+      "discovery",
+      "journey"
     ],
-    "category": "fantasy",
-    "author": "Oliver Bellamy"
+    "category": "adventure",
+    "author": "George Eliot",
+    "publishedAt": "2021-05-23"
   },
   {
     "id": 12,
-    "title": "The City of Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the city of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Crimson Garden",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a travelling musician finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "heartbreak",
+      "destiny",
+      "love",
+      "relationships",
+      "second-chance"
     ],
-    "category": "adventure",
-    "author": "Zoe Mercer"
+    "category": "romance",
+    "author": "Louisa May Alcott",
+    "publishedAt": "1912-03-15"
   },
   {
     "id": 13,
-    "title": "The Secret Moonlight",
-    "shortDescription": "When an unexpected discovery changes everything, the secret moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A City Made of Rain",
+    "shortDescription": "The story begins with a simple promise, but an ancient object is discovered in an ordinary place changes its meaning completely. As a runaway heir travels through a sprawling future metropolis, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "haunting",
+      "fear",
+      "mystery",
+      "supernatural",
+      "isolation"
     ],
-    "category": "fiction",
-    "author": "Arthur Caldwell"
+    "category": "horror",
+    "author": "Herman Melville",
+    "publishedAt": "1933-01-08"
   },
   {
     "id": 14,
-    "title": "The Shadow of Memory",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Moonlit Archive",
+    "shortDescription": "Years after a long-forgotten photograph is found, the consequences remain buried beneath ordinary life. When the truth resurfaces, a journalist with something to prove must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
+      "suspense",
+      "detective",
       "secrets",
-      "love"
+      "investigation",
+      "crime"
     ],
-    "category": "drama",
-    "author": "Fiona Oakley"
+    "category": "mystery",
+    "author": "Robert Louis Stevenson",
+    "publishedAt": "1866-04-19"
   },
   {
     "id": 15,
-    "title": "The Silent Tides",
-    "shortDescription": "When an unexpected discovery changes everything, the silent tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Whispering Tower",
+    "shortDescription": "Part mystery and character study, this novel follows a disgraced detective through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "love",
-      "family",
+      "redemption",
       "identity",
-      "secrets",
-      "friendship"
+      "loss",
+      "ambition",
+      "betrayal"
     ],
-    "category": "romance",
-    "author": "Marcus Ellington"
+    "category": "drama",
+    "author": "Washington Irving",
+    "publishedAt": "2014-08-05"
   },
   {
     "id": 16,
-    "title": "A River of Tides",
-    "shortDescription": "When an unexpected discovery changes everything, a river of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Thirteenth Door",
+    "shortDescription": "A chance meeting in a forgotten island sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "future",
+      "technology",
+      "dystopia",
+      "time-travel",
+      "aliens"
     ],
-    "category": "horror",
-    "author": "Violet Quincy"
+    "category": "science-fiction",
+    "author": "Alexandre Dumas",
+    "publishedAt": "1999-07-19"
   },
   {
     "id": 17,
-    "title": "A Tale of Stars",
-    "shortDescription": "When an unexpected discovery changes everything, a tale of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Sea Between Worlds",
+    "shortDescription": "After a sealed room is opened for the first time in decades, a curious archivist is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "tradition",
+      "empire",
+      "war",
+      "politics",
+      "society"
     ],
-    "category": "mystery",
-    "author": "David Grayson"
+    "category": "historical",
+    "author": "Victor Hugo",
+    "publishedAt": "1976-02-25"
   },
   {
     "id": 18,
-    "title": "A River of Starlight",
-    "shortDescription": "When an unexpected discovery changes everything, a river of starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Winter Crown",
+    "shortDescription": "Set against a country recovering from conflict, the story follows a young cartographer as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
+      "friendship",
+      "discovery",
       "identity",
-      "survival"
+      "ambition",
+      "family"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Sterling"
+    "category": "fiction",
+    "author": "Fyodor Dostoevsky",
+    "publishedAt": "1958-10-03"
   },
   {
     "id": 19,
-    "title": "The Garden of Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten Road",
+    "shortDescription": "When a family secret is revealed at a funeral, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "quest",
+      "prophecy",
+      "enchanted",
+      "kingdom",
+      "mythology"
     ],
-    "category": "thriller",
-    "author": "Julian Iverson"
+    "category": "fantasy",
+    "author": "Leo Tolstoy",
+    "publishedAt": "1914-09-28"
   },
   {
     "id": 20,
-    "title": "A Winter of Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Song for Ravens",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a retired soldier finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "journey",
+      "expedition",
+      "friendship",
+      "survival",
+      "quest"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Ashford"
+    "category": "adventure",
+    "author": "Jane Austen",
+    "publishedAt": "1937-02-10"
   },
   {
     "id": 21,
-    "title": "The Edge of Storms",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Emerald Hour",
+    "shortDescription": "The story begins with a simple promise, but a letter arrives without a return address changes its meaning completely. As a reluctant historian travels through a remote coastal town, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "secrets",
+      "relationships",
+      "destiny",
+      "love",
+      "second-chance"
     ],
-    "category": "fantasy",
-    "author": "Benjamin Langley"
+    "category": "romance",
+    "author": "George Orwell",
+    "publishedAt": "1917-09-25"
   },
   {
     "id": 22,
-    "title": "The Shadow of Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Book of Lost Names",
+    "shortDescription": "Years after a missing person suddenly comes home, the consequences remain buried beneath ordinary life. When the truth resurfaces, a travelling musician must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "supernatural",
+      "mystery",
+      "darkness",
+      "fear",
+      "haunting"
     ],
-    "category": "adventure",
-    "author": "Clara Blackwood"
+    "category": "horror",
+    "author": "Aldous Leonard Huxley",
+    "publishedAt": "1979-10-07"
   },
   {
     "id": 23,
-    "title": "A River of Bells",
-    "shortDescription": "When an unexpected discovery changes everything, a river of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Lighthouse Keeper",
+    "shortDescription": "Part mystery and character study, this novel follows a runaway heir through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
+      "crime",
       "secrets",
-      "coming of age"
+      "suspense",
+      "detective",
+      "clues"
     ],
-    "category": "fiction",
-    "author": "Henry North"
+    "category": "mystery",
+    "author": "Gabriel García Márquez",
+    "publishedAt": "1932-08-01"
   },
   {
     "id": 24,
-    "title": "The Road to Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, the road to fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Iron Orchard",
+    "shortDescription": "A chance meeting in a crowded Victorian city sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
       "family",
-      "betrayal",
       "identity",
-      "secrets",
-      "love"
+      "redemption",
+      "loss",
+      "relationships"
     ],
     "category": "drama",
-    "author": "Phoebe Dawson"
+    "author": "Isabel Allende",
+    "publishedAt": "1911-10-03"
   },
   {
     "id": 25,
-    "title": "The Silent Ashes",
-    "shortDescription": "When an unexpected discovery changes everything, the silent ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Shadow Merchant",
+    "shortDescription": "After a mysterious visitor appears at the door, a disgraced detective is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "space",
+      "dystopia",
+      "aliens",
+      "time-travel",
+      "future"
     ],
-    "category": "romance",
-    "author": "Adrian Prescott"
+    "category": "science-fiction",
+    "author": "Haruki Murakami",
+    "publishedAt": "1882-03-22"
   },
   {
     "id": 26,
-    "title": "The Road to Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the road to wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Golden Shore",
+    "shortDescription": "Set against a forgotten island, the story follows an ambitious scholar as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
+      "tradition",
+      "politics",
+      "war",
+      "empire",
       "survival"
     ],
-    "category": "horror",
-    "author": "Beatrice Fairchild"
+    "category": "historical",
+    "author": "Ursula K. Le Guin",
+    "publishedAt": "2005-07-07"
   },
   {
     "id": 27,
-    "title": "A House of Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, a house of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hollow King",
+    "shortDescription": "When a sealed room is opened for the first time in decades, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "ambition",
+      "loss",
+      "identity",
+      "family",
+      "discovery"
     ],
-    "category": "mystery",
-    "author": "Gabriel Redmond"
+    "category": "fiction",
+    "author": "Terry Pratchett",
+    "publishedAt": "2021-11-12"
   },
   {
     "id": 28,
-    "title": "The City of Ashes",
-    "shortDescription": "When an unexpected discovery changes everything, the city of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Painted Moon",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a young cartographer finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "quest",
+      "enchanted",
+      "prophecy",
+      "magic",
+      "kingdom"
     ],
-    "category": "science fiction",
-    "author": "Nora Hawthorne"
+    "category": "fantasy",
+    "author": "Neil Gaiman",
+    "publishedAt": "1907-02-11"
   },
   {
     "id": 29,
-    "title": "The Lost Dawn",
-    "shortDescription": "When an unexpected discovery changes everything, the lost dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House Beyond the Pines",
+    "shortDescription": "The story begins with a simple promise, but a family secret is revealed at a funeral changes its meaning completely. As a lighthouse keeper travels through a railway crossing the wilderness, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "journey",
+      "discovery",
+      "expedition",
+      "exploration",
+      "survival"
     ],
-    "category": "thriller",
-    "author": "William Thorne"
+    "category": "adventure",
+    "author": "Ray Bradbury",
+    "publishedAt": "1906-01-03"
   },
   {
     "id": 30,
-    "title": "The City of Secrets",
-    "shortDescription": "When an unexpected discovery changes everything, the city of secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Cartographer's Secret",
+    "shortDescription": "Years after a storm exposes something that was never meant to be seen, the consequences remain buried beneath ordinary life. When the truth resurfaces, a retired soldier must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "war",
-      "family",
+      "heartbreak",
+      "destiny",
       "love",
-      "politics",
-      "identity"
+      "relationships",
+      "family"
     ],
-    "category": "historical fiction",
-    "author": "Amelia Kensington"
+    "category": "romance",
+    "author": "Arthur C. Clarke",
+    "publishedAt": "1858-06-03"
   },
   {
     "id": 31,
-    "title": "A Winter of Stars",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Burning Library",
+    "shortDescription": "Part mystery and character study, this novel follows a reluctant historian through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "mystery",
+      "supernatural",
+      "fear",
+      "haunting",
+      "darkness"
     ],
-    "category": "fantasy",
-    "author": "Elias Bellamy"
+    "category": "horror",
+    "author": "Frank Herbert",
+    "publishedAt": "1988-03-24"
   },
   {
     "id": 32,
-    "title": "Beyond the Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Voyage Home",
+    "shortDescription": "A chance meeting in a university filled with old secrets sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "murder",
+      "suspense",
+      "investigation",
+      "crime",
+      "clues"
     ],
-    "category": "adventure",
-    "author": "Lydia Mercer"
+    "category": "mystery",
+    "author": "Philip K. Dick",
+    "publishedAt": "1954-04-04"
   },
   {
     "id": 33,
-    "title": "The Road to Tides",
-    "shortDescription": "When an unexpected discovery changes everything, the road to tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Midnight Circus",
+    "shortDescription": "After an ancient object is discovered in an ordinary place, a runaway heir is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "identity",
       "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "redemption",
+      "ambition",
+      "identity",
+      "loss"
     ],
-    "category": "fiction",
-    "author": "Theodore Caldwell"
+    "category": "drama",
+    "author": "Octavia Estelle Butler",
+    "publishedAt": "1955-08-28"
   },
   {
     "id": 34,
-    "title": "The Song of Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, the song of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silver Mask",
+    "shortDescription": "Set against a crowded Victorian city, the story follows a journalist with something to prove as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "dystopia",
+      "space",
+      "time-travel",
+      "artificial-intelligence",
+      "technology"
     ],
-    "category": "drama",
-    "author": "Celia Oakley"
+    "category": "science-fiction",
+    "author": "Agatha Christie",
+    "publishedAt": "1936-02-08"
   },
   {
     "id": 35,
-    "title": "The Edge of Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Garden of Bones",
+    "shortDescription": "When a mysterious visitor appears at the door, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "war",
+      "survival",
+      "politics",
+      "tradition",
+      "history"
     ],
-    "category": "romance",
-    "author": "Daniel Ellington"
+    "category": "historical",
+    "author": "Dorothy Leigh Sayers",
+    "publishedAt": "1958-03-09"
   },
   {
     "id": 36,
-    "title": "The Forgotten Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Pocketful of Thunder",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when an ambitious scholar finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "change",
+      "identity",
+      "friendship",
+      "discovery",
+      "family"
     ],
-    "category": "horror",
-    "author": "Iris Quincy"
+    "category": "fiction",
+    "author": "Wilkie Collins",
+    "publishedAt": "1875-01-21"
   },
   {
     "id": 37,
-    "title": "The Secret Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, the secret dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Fox and the Flame",
+    "shortDescription": "The story begins with a simple promise, but a sealed room is opened for the first time in decades changes its meaning completely. As a curious archivist travels through an isolated mountain village, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "enchanted",
+      "magic",
+      "kingdom",
+      "dragons",
+      "prophecy"
     ],
-    "category": "mystery",
-    "author": "Samuel Grayson"
+    "category": "fantasy",
+    "author": "Stephen King",
+    "publishedAt": "1954-08-16"
   },
   {
     "id": 38,
-    "title": "The Clockwork Bells",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Starless Sea",
+    "shortDescription": "Years after a strange message is broadcast across the city, the consequences remain buried beneath ordinary life. When the truth resurfaces, a young cartographer must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "space",
-      "time travel",
       "exploration",
-      "identity",
-      "survival"
+      "quest",
+      "journey",
+      "friendship",
+      "expedition"
     ],
-    "category": "science fiction",
-    "author": "Alice Sterling"
+    "category": "adventure",
+    "author": "Shirley Jackson",
+    "publishedAt": "1850-07-09"
   },
   {
     "id": 39,
-    "title": "A Winter of Bells",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Raven's Daughter",
+    "shortDescription": "Part mystery and character study, this novel follows a lighthouse keeper through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "destiny",
+      "secrets",
+      "second-chance",
+      "heartbreak",
+      "family"
     ],
-    "category": "thriller",
-    "author": "Caleb Iverson"
+    "category": "romance",
+    "author": "Daphne du Maurier",
+    "publishedAt": "1992-11-23"
   },
   {
     "id": 40,
-    "title": "The Shadow of Tides",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The City Under Glass",
+    "shortDescription": "A chance meeting in a kingdom on the edge of war sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "haunting",
+      "supernatural",
+      "isolation",
+      "fear",
+      "darkness"
     ],
-    "category": "historical fiction",
-    "author": "Grace Ashford"
+    "category": "horror",
+    "author": "Ernest Hemingway",
+    "publishedAt": "1864-10-24"
   },
   {
     "id": 41,
-    "title": "The Road to Destiny",
-    "shortDescription": "When an unexpected discovery changes everything, the road to destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Long Way Home",
+    "shortDescription": "After a letter arrives without a return address, a reluctant historian is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "murder",
+      "detective",
+      "secrets",
+      "clues",
+      "investigation"
     ],
-    "category": "fantasy",
-    "author": "Oliver Langley"
+    "category": "mystery",
+    "author": "Francis Scott Fitzgerald",
+    "publishedAt": "1999-08-17"
   },
   {
     "id": 42,
-    "title": "The Garden of Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House of Seven Bells",
+    "shortDescription": "Set against a university filled with old secrets, the story follows a travelling musician as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "relationships",
+      "betrayal",
+      "loss",
+      "family",
+      "identity"
     ],
-    "category": "adventure",
-    "author": "Zoe Blackwood"
+    "category": "drama",
+    "author": "Virginia Woolf",
+    "publishedAt": "1870-03-03"
   },
   {
     "id": 43,
-    "title": "The Last Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, the last fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Red Winter",
+    "shortDescription": "When an ancient object is discovered in an ordinary place, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "artificial-intelligence",
+      "space",
+      "technology",
+      "aliens",
+      "dystopia"
     ],
-    "category": "fiction",
-    "author": "Arthur North"
+    "category": "science-fiction",
+    "author": "James Joyce",
+    "publishedAt": "1995-04-19"
   },
   {
     "id": 44,
-    "title": "The Book of Destiny",
-    "shortDescription": "When an unexpected discovery changes everything, the book of destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Island of Echoes",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a journalist with something to prove finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "politics",
+      "history",
+      "survival",
+      "society",
+      "war"
     ],
-    "category": "drama",
-    "author": "Fiona Dawson"
+    "category": "historical",
+    "author": "William Faulkner",
+    "publishedAt": "2018-10-19"
   },
   {
     "id": 45,
-    "title": "The Secret Silence",
-    "shortDescription": "When an unexpected discovery changes everything, the secret silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Dream Collector",
+    "shortDescription": "The story begins with a simple promise, but a mysterious visitor appears at the door changes its meaning completely. As a disgraced detective travels through a rain-soaked harbour, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "love",
+      "ambition",
       "family",
+      "loss",
       "identity",
-      "secrets",
-      "friendship"
+      "discovery"
     ],
-    "category": "romance",
-    "author": "Marcus Prescott"
+    "category": "fiction",
+    "author": "John Steinbeck",
+    "publishedAt": "1930-04-09"
   },
   {
     "id": 46,
-    "title": "The Lost Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, the lost dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Black River",
+    "shortDescription": "Years after a trusted friend disappears without explanation, the consequences remain buried beneath ordinary life. When the truth resurfaces, an ambitious scholar must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "quest",
+      "dragons",
+      "mythology",
+      "prophecy",
+      "kingdom"
     ],
-    "category": "horror",
-    "author": "Violet Fairchild"
+    "category": "fantasy",
+    "author": "Jules Verne",
+    "publishedAt": "1868-01-15"
   },
   {
     "id": 47,
-    "title": "Under the Tides",
-    "shortDescription": "When an unexpected discovery changes everything, under the tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Saltwater Crown",
+    "shortDescription": "Part mystery and character study, this novel follows a curious archivist through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "discovery",
+      "friendship",
+      "journey",
+      "expedition",
+      "survival"
     ],
-    "category": "mystery",
-    "author": "David Redmond"
+    "category": "adventure",
+    "author": "Herbert George Wells",
+    "publishedAt": "1904-09-09"
   },
   {
     "id": 48,
-    "title": "The Last Bells",
-    "shortDescription": "When an unexpected discovery changes everything, the last bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten King",
+    "shortDescription": "A chance meeting in a country recovering from conflict sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "relationships",
+      "second-chance",
+      "love",
+      "destiny",
+      "secrets"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Hawthorne"
+    "category": "romance",
+    "author": "Bram Stoker",
+    "publishedAt": "1922-03-15"
   },
   {
     "id": 49,
-    "title": "The Last Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the last kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Amber Room",
+    "shortDescription": "After a family secret is revealed at a funeral, a lighthouse keeper is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
+      "nightmare",
       "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "fear",
+      "darkness",
+      "isolation"
     ],
-    "category": "thriller",
-    "author": "Julian Thorne"
+    "category": "horror",
+    "author": "William Shakespeare",
+    "publishedAt": "1991-05-22"
   },
   {
     "id": 50,
-    "title": "The Garden of Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hour Before Dawn",
+    "shortDescription": "Set against a kingdom on the edge of war, the story follows a retired soldier as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "detective",
+      "crime",
+      "secrets",
+      "suspense",
+      "investigation"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Kensington"
+    "category": "mystery",
+    "author": "Elias Langley",
+    "publishedAt": "1991-03-09"
   },
   {
     "id": 51,
-    "title": "The Song of Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the song of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Secret Embers 2",
+    "shortDescription": "When a letter arrives without a return address, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "identity",
+      "betrayal",
+      "loss",
+      "relationships",
+      "family"
     ],
-    "category": "fantasy",
-    "author": "Benjamin Bellamy"
+    "category": "drama",
+    "author": "Lydia Blackwood",
+    "publishedAt": "2025-11-28"
   },
   {
     "id": 52,
-    "title": "The Forgotten Fire",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Map of Wolves 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a travelling musician finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "future",
+      "artificial-intelligence",
+      "aliens",
+      "time-travel",
+      "space"
     ],
-    "category": "adventure",
-    "author": "Clara Mercer"
+    "category": "science-fiction",
+    "author": "Edgar Allan Poe",
+    "publishedAt": "1873-11-14"
   },
   {
     "id": 53,
-    "title": "Beyond the Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Glass Kingdom 2",
+    "shortDescription": "The story begins with a simple promise, but an ancient object is discovered in an ordinary place changes its meaning completely. As a runaway heir travels through a sprawling future metropolis, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "survival",
+      "empire",
+      "history",
+      "politics",
+      "war"
     ],
-    "category": "fiction",
-    "author": "Henry Caldwell"
+    "category": "historical",
+    "author": "Mary Wollstonecraft Shelley",
+    "publishedAt": "1883-11-09"
   },
   {
     "id": 54,
-    "title": "The Road to Storms",
-    "shortDescription": "When an unexpected discovery changes everything, the road to storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Beneath Hollow Stars 2",
+    "shortDescription": "Years after a long-forgotten photograph is found, the consequences remain buried beneath ordinary life. When the truth resurfaces, a journalist with something to prove must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "family",
-      "betrayal",
       "identity",
-      "secrets",
-      "love"
+      "loss",
+      "change",
+      "ambition",
+      "family"
     ],
-    "category": "drama",
-    "author": "Phoebe Oakley"
+    "category": "fiction",
+    "author": "Nathaniel Hawthorne",
+    "publishedAt": "1852-02-03"
   },
   {
     "id": 55,
-    "title": "A Tale of Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, a tale of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Lantern 2",
+    "shortDescription": "Part mystery and character study, this novel follows a disgraced detective through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "kingdom",
+      "dragons",
+      "enchanted",
+      "magic",
+      "prophecy"
     ],
-    "category": "romance",
-    "author": "Adrian Ellington"
+    "category": "fantasy",
+    "author": "Oscar Wilde",
+    "publishedAt": "1999-09-05"
   },
   {
     "id": 56,
-    "title": "The Garden of Ashes",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A River of Ashes 2",
+    "shortDescription": "A chance meeting in a forgotten island sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "quest",
+      "exploration",
+      "journey",
+      "survival",
+      "expedition"
     ],
-    "category": "horror",
-    "author": "Beatrice Quincy"
+    "category": "adventure",
+    "author": "Arthur Conan Doyle",
+    "publishedAt": "1860-06-07"
   },
   {
     "id": 57,
-    "title": "The Edge of Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Clockmaker's Daughter 2",
+    "shortDescription": "After a sealed room is opened for the first time in decades, a curious archivist is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "heartbreak",
+      "relationships",
+      "love",
+      "second-chance",
+      "secrets"
     ],
-    "category": "mystery",
-    "author": "Gabriel Grayson"
+    "category": "romance",
+    "author": "Charlotte Brontë",
+    "publishedAt": "1954-10-24"
   },
   {
     "id": 58,
-    "title": "The Secret Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the secret wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "House of Crows 2",
+    "shortDescription": "Set against a country recovering from conflict, the story follows a young cartographer as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "supernatural",
+      "nightmare",
+      "isolation",
+      "mystery",
+      "haunting"
     ],
-    "category": "science fiction",
-    "author": "Nora Sterling"
+    "category": "horror",
+    "author": "Emily Brontë",
+    "publishedAt": "1856-03-24"
   },
   {
     "id": 59,
-    "title": "The City of Embers",
-    "shortDescription": "When an unexpected discovery changes everything, the city of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Orchard at Midnight 2",
+    "shortDescription": "When a family secret is revealed at a funeral, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "secrets",
+      "investigation",
+      "crime",
+      "suspense",
+      "detective"
     ],
-    "category": "thriller",
-    "author": "William Iverson"
+    "category": "mystery",
+    "author": "Charles Dickens",
+    "publishedAt": "1877-07-28"
   },
   {
     "id": 60,
-    "title": "A Map of Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, a map of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Letters from the North 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a retired soldier finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "war",
       "family",
-      "love",
-      "politics",
-      "identity"
+      "ambition",
+      "loss",
+      "betrayal",
+      "redemption"
     ],
-    "category": "historical fiction",
-    "author": "Amelia Ashford"
+    "category": "drama",
+    "author": "George Eliot",
+    "publishedAt": "1939-05-27"
   },
   {
     "id": 61,
-    "title": "A River of Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, a river of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silent Compass 2",
+    "shortDescription": "The story begins with a simple promise, but a letter arrives without a return address changes its meaning completely. As a reluctant historian travels through a remote coastal town, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "time-travel",
+      "technology",
+      "dystopia",
+      "space",
+      "future"
     ],
-    "category": "fantasy",
-    "author": "Elias Langley"
+    "category": "science-fiction",
+    "author": "Louisa May Alcott",
+    "publishedAt": "1899-07-11"
   },
   {
     "id": 62,
-    "title": "A Map of Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, a map of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Crimson Garden 2",
+    "shortDescription": "Years after a missing person suddenly comes home, the consequences remain buried beneath ordinary life. When the truth resurfaces, a travelling musician must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "journey",
-      "exploration",
+      "empire",
+      "history",
       "survival",
-      "quest",
-      "friendship"
+      "politics",
+      "tradition"
     ],
-    "category": "adventure",
-    "author": "Lydia Blackwood"
+    "category": "historical",
+    "author": "Herman Melville",
+    "publishedAt": "1980-07-22"
   },
   {
     "id": 63,
-    "title": "A River of Giants",
-    "shortDescription": "When an unexpected discovery changes everything, a river of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A City Made of Rain 2",
+    "shortDescription": "Part mystery and character study, this novel follows a runaway heir through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "identity",
+      "discovery",
+      "ambition",
       "family",
       "friendship",
-      "secrets",
-      "coming of age"
+      "change"
     ],
     "category": "fiction",
-    "author": "Theodore North"
+    "author": "Robert Louis Stevenson",
+    "publishedAt": "1916-03-19"
   },
   {
     "id": 64,
-    "title": "The Forgotten Secrets",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Moonlit Archive 2",
+    "shortDescription": "A chance meeting in a crowded Victorian city sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "mythology",
+      "magic",
+      "kingdom",
+      "quest",
+      "dragons"
     ],
-    "category": "drama",
-    "author": "Celia Dawson"
+    "category": "fantasy",
+    "author": "Washington Irving",
+    "publishedAt": "1930-07-20"
   },
   {
     "id": 65,
-    "title": "The Song of Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, the song of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Whispering Tower 2",
+    "shortDescription": "After a mysterious visitor appears at the door, a disgraced detective is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
+      "discovery",
+      "journey",
+      "quest",
+      "exploration",
       "friendship"
     ],
-    "category": "romance",
-    "author": "Daniel Prescott"
+    "category": "adventure",
+    "author": "Alexandre Dumas",
+    "publishedAt": "1861-12-14"
   },
   {
     "id": 66,
-    "title": "The Forgotten Memory",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Thirteenth Door 2",
+    "shortDescription": "Set against a forgotten island, the story follows an ambitious scholar as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "love",
+      "family",
+      "heartbreak",
+      "relationships",
+      "secrets"
     ],
-    "category": "horror",
-    "author": "Iris Fairchild"
+    "category": "romance",
+    "author": "Victor Hugo",
+    "publishedAt": "1960-02-22"
   },
   {
     "id": 67,
-    "title": "The Secret Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the secret kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Sea Between Worlds 2",
+    "shortDescription": "When a sealed room is opened for the first time in decades, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
+      "fear",
       "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "nightmare",
+      "darkness",
+      "isolation"
     ],
-    "category": "mystery",
-    "author": "Samuel Redmond"
+    "category": "horror",
+    "author": "Fyodor Dostoevsky",
+    "publishedAt": "1926-09-10"
   },
   {
     "id": 68,
-    "title": "The Edge of Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Winter Crown 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a young cartographer finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "clues",
+      "investigation",
+      "secrets",
+      "suspense",
+      "murder"
     ],
-    "category": "science fiction",
-    "author": "Alice Hawthorne"
+    "category": "mystery",
+    "author": "Leo Tolstoy",
+    "publishedAt": "1925-09-05"
   },
   {
     "id": 69,
-    "title": "A House of Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, a house of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten Road 2",
+    "shortDescription": "The story begins with a simple promise, but a family secret is revealed at a funeral changes its meaning completely. As a lighthouse keeper travels through a railway crossing the wilderness, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "loss",
+      "ambition",
+      "redemption",
+      "relationships",
+      "identity"
     ],
-    "category": "thriller",
-    "author": "Caleb Thorne"
+    "category": "drama",
+    "author": "Jane Austen",
+    "publishedAt": "1995-05-13"
   },
   {
     "id": 70,
-    "title": "A House of Ashes",
-    "shortDescription": "When an unexpected discovery changes everything, a house of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Song for Ravens 2",
+    "shortDescription": "Years after a storm exposes something that was never meant to be seen, the consequences remain buried beneath ordinary life. When the truth resurfaces, a retired soldier must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "artificial-intelligence",
+      "space",
+      "future",
+      "time-travel",
+      "dystopia"
     ],
-    "category": "historical fiction",
-    "author": "Grace Kensington"
+    "category": "science-fiction",
+    "author": "George Orwell",
+    "publishedAt": "1960-10-20"
   },
   {
     "id": 71,
-    "title": "The Lost Secrets",
-    "shortDescription": "When an unexpected discovery changes everything, the lost secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Emerald Hour 2",
+    "shortDescription": "Part mystery and character study, this novel follows a reluctant historian through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "society",
+      "empire",
+      "tradition",
+      "politics",
+      "war"
     ],
-    "category": "fantasy",
-    "author": "Oliver Bellamy"
+    "category": "historical",
+    "author": "Aldous Leonard Huxley",
+    "publishedAt": "2022-04-17"
   },
   {
     "id": 72,
-    "title": "Beyond the Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Book of Lost Names 2",
+    "shortDescription": "A chance meeting in a university filled with old secrets sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "change",
+      "loss",
+      "identity",
+      "friendship",
+      "ambition"
     ],
-    "category": "adventure",
-    "author": "Zoe Mercer"
+    "category": "fiction",
+    "author": "Gabriel García Márquez",
+    "publishedAt": "1981-11-21"
   },
   {
     "id": 73,
-    "title": "The Silent Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the silent wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Lighthouse Keeper 2",
+    "shortDescription": "After an ancient object is discovered in an ordinary place, a runaway heir is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "enchanted",
+      "mythology",
+      "magic",
+      "dragons",
+      "kingdom"
     ],
-    "category": "fiction",
-    "author": "Arthur Caldwell"
+    "category": "fantasy",
+    "author": "Isabel Allende",
+    "publishedAt": "1929-04-26"
   },
   {
     "id": 74,
-    "title": "The Road to Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the road to kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Iron Orchard 2",
+    "shortDescription": "Set against a crowded Victorian city, the story follows a journalist with something to prove as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "exploration",
+      "friendship",
+      "journey",
+      "discovery",
+      "quest"
     ],
-    "category": "drama",
-    "author": "Fiona Oakley"
+    "category": "adventure",
+    "author": "Haruki Murakami",
+    "publishedAt": "1971-10-28"
   },
   {
     "id": 75,
-    "title": "The Road to Fire",
-    "shortDescription": "When an unexpected discovery changes everything, the road to fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Shadow Merchant 2",
+    "shortDescription": "When a mysterious visitor appears at the door, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
+      "destiny",
       "love",
-      "family",
-      "identity",
       "secrets",
-      "friendship"
+      "family",
+      "second-chance"
     ],
     "category": "romance",
-    "author": "Marcus Ellington"
+    "author": "Ursula K. Le Guin",
+    "publishedAt": "1997-04-23"
   },
   {
     "id": 76,
-    "title": "A Map of Storms",
-    "shortDescription": "When an unexpected discovery changes everything, a map of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Golden Shore 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when an ambitious scholar finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "isolation",
+      "haunting",
+      "nightmare",
+      "mystery",
+      "darkness"
     ],
     "category": "horror",
-    "author": "Violet Quincy"
+    "author": "Terry Pratchett",
+    "publishedAt": "1887-11-23"
   },
   {
     "id": 77,
-    "title": "A House of Storms",
-    "shortDescription": "When an unexpected discovery changes everything, a house of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hollow King 2",
+    "shortDescription": "The story begins with a simple promise, but a sealed room is opened for the first time in decades changes its meaning completely. As a curious archivist travels through an isolated mountain village, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
       "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "suspense",
+      "investigation",
+      "crime",
+      "clues"
     ],
     "category": "mystery",
-    "author": "David Grayson"
+    "author": "Neil Gaiman",
+    "publishedAt": "1982-08-02"
   },
   {
     "id": 78,
-    "title": "The Silent Ravens",
-    "shortDescription": "When an unexpected discovery changes everything, the silent ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Painted Moon 2",
+    "shortDescription": "Years after a strange message is broadcast across the city, the consequences remain buried beneath ordinary life. When the truth resurfaces, a young cartographer must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "betrayal",
+      "loss",
+      "family",
+      "ambition",
+      "relationships"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Sterling"
+    "category": "drama",
+    "author": "Ray Bradbury",
+    "publishedAt": "1968-11-17"
   },
   {
     "id": 79,
-    "title": "The Road to Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the road to dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House Beyond the Pines 2",
+    "shortDescription": "Part mystery and character study, this novel follows a lighthouse keeper through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "artificial-intelligence",
+      "time-travel",
+      "future",
+      "aliens",
+      "dystopia"
     ],
-    "category": "thriller",
-    "author": "Julian Iverson"
+    "category": "science-fiction",
+    "author": "Arthur C. Clarke",
+    "publishedAt": "1979-07-27"
   },
   {
     "id": 80,
-    "title": "Beyond the Secrets",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Cartographer's Secret 2",
+    "shortDescription": "A chance meeting in a kingdom on the edge of war sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "war",
-      "family",
-      "love",
       "politics",
-      "identity"
+      "tradition",
+      "war",
+      "society",
+      "survival"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Ashford"
+    "category": "historical",
+    "author": "Frank Herbert",
+    "publishedAt": "1916-04-27"
   },
   {
     "id": 81,
-    "title": "A House of Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, a house of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Burning Library 2",
+    "shortDescription": "After a letter arrives without a return address, a reluctant historian is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "loss",
+      "family",
+      "ambition",
+      "change",
+      "discovery"
     ],
-    "category": "fantasy",
-    "author": "Benjamin Langley"
+    "category": "fiction",
+    "author": "Philip K. Dick",
+    "publishedAt": "1911-05-15"
   },
   {
     "id": 82,
-    "title": "A House of Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, a house of fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Voyage Home 2",
+    "shortDescription": "Set against a university filled with old secrets, the story follows a travelling musician as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "magic",
+      "kingdom",
+      "mythology",
+      "dragons",
+      "quest"
     ],
-    "category": "adventure",
-    "author": "Clara Blackwood"
+    "category": "fantasy",
+    "author": "Octavia Estelle Butler",
+    "publishedAt": "1935-06-18"
   },
   {
     "id": 83,
-    "title": "The Forgotten Giants",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Midnight Circus 2",
+    "shortDescription": "When an ancient object is discovered in an ordinary place, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "journey",
+      "exploration",
+      "expedition",
+      "discovery",
+      "quest"
     ],
-    "category": "fiction",
-    "author": "Henry North"
+    "category": "adventure",
+    "author": "Agatha Christie",
+    "publishedAt": "1889-12-07"
   },
   {
     "id": 84,
-    "title": "A House of Giants",
-    "shortDescription": "When an unexpected discovery changes everything, a house of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silver Mask 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a journalist with something to prove finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
+      "love",
       "secrets",
-      "love"
+      "heartbreak",
+      "second-chance",
+      "family"
     ],
-    "category": "drama",
-    "author": "Phoebe Dawson"
+    "category": "romance",
+    "author": "Dorothy Leigh Sayers",
+    "publishedAt": "1969-07-02"
   },
   {
     "id": 85,
-    "title": "A River of Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, a river of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Garden of Bones 2",
+    "shortDescription": "The story begins with a simple promise, but a mysterious visitor appears at the door changes its meaning completely. As a disgraced detective travels through a rain-soaked harbour, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "supernatural",
+      "haunting",
+      "isolation",
+      "darkness",
+      "fear"
     ],
-    "category": "romance",
-    "author": "Adrian Prescott"
+    "category": "horror",
+    "author": "Wilkie Collins",
+    "publishedAt": "1947-08-01"
   },
   {
     "id": 86,
-    "title": "The Secret Stars",
-    "shortDescription": "When an unexpected discovery changes everything, the secret stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Pocketful of Thunder 2",
+    "shortDescription": "Years after a trusted friend disappears without explanation, the consequences remain buried beneath ordinary life. When the truth resurfaces, an ambitious scholar must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
       "secrets",
-      "survival"
+      "suspense",
+      "investigation",
+      "murder",
+      "clues"
     ],
-    "category": "horror",
-    "author": "Beatrice Fairchild"
+    "category": "mystery",
+    "author": "Stephen King",
+    "publishedAt": "1989-10-08"
   },
   {
     "id": 87,
-    "title": "The Song of Bells",
-    "shortDescription": "When an unexpected discovery changes everything, the song of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Fox and the Flame 2",
+    "shortDescription": "Part mystery and character study, this novel follows a curious archivist through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "ambition",
+      "loss",
+      "identity",
+      "relationships",
+      "redemption"
     ],
-    "category": "mystery",
-    "author": "Gabriel Redmond"
+    "category": "drama",
+    "author": "Shirley Jackson",
+    "publishedAt": "1857-07-11"
   },
   {
     "id": 88,
-    "title": "A River of Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, a river of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Starless Sea 2",
+    "shortDescription": "A chance meeting in a country recovering from conflict sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "dystopia",
+      "time-travel",
+      "aliens",
+      "technology",
+      "artificial-intelligence"
     ],
-    "category": "science fiction",
-    "author": "Nora Hawthorne"
+    "category": "science-fiction",
+    "author": "Daphne du Maurier",
+    "publishedAt": "1882-10-18"
   },
   {
     "id": 89,
-    "title": "The Song of Giants",
-    "shortDescription": "When an unexpected discovery changes everything, the song of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Raven's Daughter 2",
+    "shortDescription": "After a family secret is revealed at a funeral, a lighthouse keeper is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
+      "history",
+      "tradition",
+      "politics",
       "survival",
-      "secrets"
+      "society"
     ],
-    "category": "thriller",
-    "author": "William Thorne"
+    "category": "historical",
+    "author": "Ernest Hemingway",
+    "publishedAt": "2014-07-05"
   },
   {
     "id": 90,
-    "title": "The Lost Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the lost dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The City Under Glass 2",
+    "shortDescription": "Set against a kingdom on the edge of war, the story follows a retired soldier as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "discovery",
+      "change",
+      "identity",
+      "friendship",
+      "ambition"
     ],
-    "category": "historical fiction",
-    "author": "Amelia Kensington"
+    "category": "fiction",
+    "author": "Francis Scott Fitzgerald",
+    "publishedAt": "1947-06-07"
   },
   {
     "id": 91,
-    "title": "A Map of Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, a map of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Long Way Home 2",
+    "shortDescription": "When a letter arrives without a return address, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "magic",
       "quest",
       "mythology",
-      "dragons",
-      "adventure"
+      "kingdom",
+      "prophecy",
+      "dragons"
     ],
     "category": "fantasy",
-    "author": "Elias Bellamy"
+    "author": "Virginia Woolf",
+    "publishedAt": "1957-05-27"
   },
   {
     "id": 92,
-    "title": "The Garden of Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House of Seven Bells 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a travelling musician finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
       "journey",
-      "exploration",
-      "survival",
       "quest",
-      "friendship"
+      "friendship",
+      "discovery",
+      "exploration"
     ],
     "category": "adventure",
-    "author": "Lydia Mercer"
+    "author": "James Joyce",
+    "publishedAt": "1907-11-03"
   },
   {
     "id": 93,
-    "title": "A River of Embers",
-    "shortDescription": "When an unexpected discovery changes everything, a river of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Red Winter 2",
+    "shortDescription": "The story begins with a simple promise, but an ancient object is discovered in an ordinary place changes its meaning completely. As a runaway heir travels through a sprawling future metropolis, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "identity",
+      "destiny",
+      "heartbreak",
+      "love",
       "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "secrets"
     ],
-    "category": "fiction",
-    "author": "Theodore Caldwell"
+    "category": "romance",
+    "author": "William Faulkner",
+    "publishedAt": "1901-01-20"
   },
   {
     "id": 94,
-    "title": "The Song of Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the song of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Island of Echoes 2",
+    "shortDescription": "Years after a long-forgotten photograph is found, the consequences remain buried beneath ordinary life. When the truth resurfaces, a journalist with something to prove must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "supernatural",
+      "nightmare",
+      "isolation",
+      "haunting",
+      "fear"
     ],
-    "category": "drama",
-    "author": "Celia Oakley"
+    "category": "horror",
+    "author": "John Steinbeck",
+    "publishedAt": "1879-10-07"
   },
   {
     "id": 95,
-    "title": "The Lost Giants",
-    "shortDescription": "When an unexpected discovery changes everything, the lost giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Dream Collector 2",
+    "shortDescription": "Part mystery and character study, this novel follows a disgraced detective through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "love",
-      "family",
-      "identity",
+      "investigation",
+      "clues",
       "secrets",
-      "friendship"
+      "murder",
+      "detective"
     ],
-    "category": "romance",
-    "author": "Daniel Ellington"
+    "category": "mystery",
+    "author": "Jules Verne",
+    "publishedAt": "2005-10-24"
   },
   {
     "id": 96,
-    "title": "The Edge of Stars",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Black River 2",
+    "shortDescription": "A chance meeting in a forgotten island sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "redemption",
+      "family",
+      "loss",
+      "identity",
+      "relationships"
     ],
-    "category": "horror",
-    "author": "Iris Quincy"
+    "category": "drama",
+    "author": "Herbert George Wells",
+    "publishedAt": "1998-01-10"
   },
   {
     "id": 97,
-    "title": "The Edge of Ravens",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Saltwater Crown 2",
+    "shortDescription": "After a sealed room is opened for the first time in decades, a curious archivist is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "artificial-intelligence",
+      "dystopia",
+      "aliens",
+      "time-travel",
+      "future"
     ],
-    "category": "mystery",
-    "author": "Samuel Grayson"
+    "category": "science-fiction",
+    "author": "Bram Stoker",
+    "publishedAt": "1900-02-19"
   },
   {
     "id": 98,
-    "title": "The Road to Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, the road to ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten King 2",
+    "shortDescription": "Set against a country recovering from conflict, the story follows a young cartographer as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "society",
+      "survival",
+      "war",
+      "history",
+      "empire"
     ],
-    "category": "science fiction",
-    "author": "Alice Sterling"
+    "category": "historical",
+    "author": "William Shakespeare",
+    "publishedAt": "1927-11-20"
   },
   {
     "id": 99,
-    "title": "The Book of Embers",
-    "shortDescription": "When an unexpected discovery changes everything, the book of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Amber Room 2",
+    "shortDescription": "When a family secret is revealed at a funeral, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "discovery",
+      "friendship",
+      "ambition",
+      "loss",
+      "identity"
     ],
-    "category": "thriller",
-    "author": "Caleb Iverson"
+    "category": "fiction",
+    "author": "Elias Langley",
+    "publishedAt": "1986-07-22"
   },
   {
     "id": 100,
-    "title": "The Garden of Dawn",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hour Before Dawn 2",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a retired soldier finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "mythology",
+      "magic",
+      "enchanted",
+      "prophecy",
+      "kingdom"
     ],
-    "category": "historical fiction",
-    "author": "Grace Ashford"
+    "category": "fantasy",
+    "author": "Lydia Blackwood",
+    "publishedAt": "1957-08-04"
   },
   {
     "id": 101,
-    "title": "The Secret Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, the secret fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Secret Embers 3",
+    "shortDescription": "The story begins with a simple promise, but a letter arrives without a return address changes its meaning completely. As a reluctant historian travels through a remote coastal town, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "magic",
       "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "survival",
+      "friendship",
+      "exploration",
+      "discovery"
     ],
-    "category": "fantasy",
-    "author": "Oliver Langley"
+    "category": "adventure",
+    "author": "Edgar Allan Poe",
+    "publishedAt": "1895-12-17"
   },
   {
     "id": 102,
-    "title": "The Shadow of Ravens",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Map of Wolves 3",
+    "shortDescription": "Years after a missing person suddenly comes home, the consequences remain buried beneath ordinary life. When the truth resurfaces, a travelling musician must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "heartbreak",
+      "second-chance",
+      "family",
+      "secrets",
+      "relationships"
     ],
-    "category": "adventure",
-    "author": "Zoe Blackwood"
+    "category": "romance",
+    "author": "Mary Wollstonecraft Shelley",
+    "publishedAt": "1961-12-19"
   },
   {
     "id": 103,
-    "title": "The Shadow of Giants",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Glass Kingdom 3",
+    "shortDescription": "Part mystery and character study, this novel follows a runaway heir through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "fear",
+      "nightmare",
+      "supernatural",
+      "darkness",
+      "mystery"
     ],
-    "category": "fiction",
-    "author": "Arthur North"
+    "category": "horror",
+    "author": "Nathaniel Hawthorne",
+    "publishedAt": "1965-04-25"
   },
   {
     "id": 104,
-    "title": "A House of Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, a house of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Beneath Hollow Stars 3",
+    "shortDescription": "A chance meeting in a crowded Victorian city sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "investigation",
+      "murder",
+      "clues",
+      "suspense",
+      "crime"
     ],
-    "category": "drama",
-    "author": "Fiona Dawson"
+    "category": "mystery",
+    "author": "Oscar Wilde",
+    "publishedAt": "1857-08-28"
   },
   {
     "id": 105,
-    "title": "The Shadow of Starlight",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Lantern 3",
+    "shortDescription": "After a mysterious visitor appears at the door, a disgraced detective is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "love",
-      "family",
       "identity",
-      "secrets",
-      "friendship"
+      "loss",
+      "ambition",
+      "redemption",
+      "betrayal"
     ],
-    "category": "romance",
-    "author": "Marcus Prescott"
+    "category": "drama",
+    "author": "Arthur Conan Doyle",
+    "publishedAt": "1916-06-09"
   },
   {
     "id": 106,
-    "title": "Beyond the Roses",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the roses follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A River of Ashes 3",
+    "shortDescription": "Set against a forgotten island, the story follows an ambitious scholar as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "artificial-intelligence",
+      "dystopia",
+      "future",
+      "space",
+      "time-travel"
     ],
-    "category": "horror",
-    "author": "Violet Fairchild"
+    "category": "science-fiction",
+    "author": "Charlotte Brontë",
+    "publishedAt": "1898-02-08"
   },
   {
     "id": 107,
-    "title": "The Clockwork Tides",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Clockmaker's Daughter 3",
+    "shortDescription": "When a sealed room is opened for the first time in decades, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "society",
+      "tradition",
+      "survival",
+      "war",
+      "empire"
     ],
-    "category": "mystery",
-    "author": "David Redmond"
+    "category": "historical",
+    "author": "Emily Brontë",
+    "publishedAt": "1971-11-23"
   },
   {
     "id": 108,
-    "title": "A River of Stars",
-    "shortDescription": "When an unexpected discovery changes everything, a river of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "House of Crows 3",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a young cartographer finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "change",
+      "discovery",
+      "friendship",
+      "ambition",
+      "identity"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Hawthorne"
+    "category": "fiction",
+    "author": "Charles Dickens",
+    "publishedAt": "1906-07-23"
   },
   {
     "id": 109,
-    "title": "The Road to Starlight",
-    "shortDescription": "When an unexpected discovery changes everything, the road to starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Orchard at Midnight 3",
+    "shortDescription": "The story begins with a simple promise, but a family secret is revealed at a funeral changes its meaning completely. As a lighthouse keeper travels through a railway crossing the wilderness, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "dragons",
+      "mythology",
+      "enchanted",
+      "kingdom",
+      "prophecy"
     ],
-    "category": "thriller",
-    "author": "Julian Thorne"
+    "category": "fantasy",
+    "author": "George Eliot",
+    "publishedAt": "1991-09-12"
   },
   {
     "id": 110,
-    "title": "The Road to Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, the road to dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Letters from the North 3",
+    "shortDescription": "Years after a storm exposes something that was never meant to be seen, the consequences remain buried beneath ordinary life. When the truth resurfaces, a retired soldier must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "quest",
+      "expedition",
+      "discovery",
+      "survival",
+      "exploration"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Kensington"
+    "category": "adventure",
+    "author": "Louisa May Alcott",
+    "publishedAt": "1966-05-10"
   },
   {
     "id": 111,
-    "title": "A House of Ravens",
-    "shortDescription": "When an unexpected discovery changes everything, a house of ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silent Compass 3",
+    "shortDescription": "Part mystery and character study, this novel follows a reluctant historian through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "second-chance",
+      "relationships",
+      "love",
+      "heartbreak",
+      "secrets"
     ],
-    "category": "fantasy",
-    "author": "Benjamin Bellamy"
+    "category": "romance",
+    "author": "Herman Melville",
+    "publishedAt": "1880-12-18"
   },
   {
     "id": 112,
-    "title": "A House of Stars",
-    "shortDescription": "When an unexpected discovery changes everything, a house of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Crimson Garden 3",
+    "shortDescription": "A chance meeting in a university filled with old secrets sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "nightmare",
+      "isolation",
+      "supernatural",
+      "mystery",
+      "darkness"
     ],
-    "category": "adventure",
-    "author": "Clara Mercer"
+    "category": "horror",
+    "author": "Robert Louis Stevenson",
+    "publishedAt": "1973-05-24"
   },
   {
     "id": 113,
-    "title": "A Map of Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, a map of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A City Made of Rain 3",
+    "shortDescription": "After an ancient object is discovered in an ordinary place, a runaway heir is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
+      "murder",
+      "suspense",
+      "clues",
       "secrets",
-      "coming of age"
+      "detective"
     ],
-    "category": "fiction",
-    "author": "Henry Caldwell"
+    "category": "mystery",
+    "author": "Washington Irving",
+    "publishedAt": "1899-05-08"
   },
   {
     "id": 114,
-    "title": "The Road to Stars",
-    "shortDescription": "When an unexpected discovery changes everything, the road to stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Moonlit Archive 3",
+    "shortDescription": "Set against a crowded Victorian city, the story follows a journalist with something to prove as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "family",
-      "betrayal",
       "identity",
-      "secrets",
-      "love"
+      "loss",
+      "relationships",
+      "family",
+      "betrayal"
     ],
     "category": "drama",
-    "author": "Phoebe Oakley"
+    "author": "Alexandre Dumas",
+    "publishedAt": "1986-03-09"
   },
   {
     "id": 115,
-    "title": "Beyond the Dawn",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Whispering Tower 3",
+    "shortDescription": "When a mysterious visitor appears at the door, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "space",
+      "time-travel",
+      "artificial-intelligence",
+      "future",
+      "aliens"
     ],
-    "category": "romance",
-    "author": "Adrian Ellington"
+    "category": "science-fiction",
+    "author": "Victor Hugo",
+    "publishedAt": "1882-11-28"
   },
   {
     "id": 116,
-    "title": "Under the Stars",
-    "shortDescription": "When an unexpected discovery changes everything, under the stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Thirteenth Door 3",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when an ambitious scholar finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "survival",
+      "tradition",
+      "history",
+      "politics",
+      "empire"
     ],
-    "category": "horror",
-    "author": "Beatrice Quincy"
+    "category": "historical",
+    "author": "Fyodor Dostoevsky",
+    "publishedAt": "1922-08-16"
   },
   {
     "id": 117,
-    "title": "Under the Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, under the fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Sea Between Worlds 3",
+    "shortDescription": "The story begins with a simple promise, but a sealed room is opened for the first time in decades changes its meaning completely. As a curious archivist travels through an isolated mountain village, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "change",
+      "family",
+      "identity",
+      "friendship",
+      "ambition"
     ],
-    "category": "mystery",
-    "author": "Gabriel Grayson"
+    "category": "fiction",
+    "author": "Leo Tolstoy",
+    "publishedAt": "1972-02-27"
   },
   {
     "id": 118,
-    "title": "The Clockwork Memory",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Winter Crown 3",
+    "shortDescription": "Years after a strange message is broadcast across the city, the consequences remain buried beneath ordinary life. When the truth resurfaces, a young cartographer must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "magic",
+      "quest",
+      "kingdom",
+      "prophecy",
+      "mythology"
     ],
-    "category": "science fiction",
-    "author": "Nora Sterling"
+    "category": "fantasy",
+    "author": "Jane Austen",
+    "publishedAt": "2011-11-02"
   },
   {
     "id": 119,
-    "title": "Under the Memory",
-    "shortDescription": "When an unexpected discovery changes everything, under the memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten Road 3",
+    "shortDescription": "Part mystery and character study, this novel follows a lighthouse keeper through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
+      "exploration",
+      "friendship",
+      "discovery",
       "survival",
-      "secrets"
+      "journey"
     ],
-    "category": "thriller",
-    "author": "William Iverson"
+    "category": "adventure",
+    "author": "George Orwell",
+    "publishedAt": "1913-02-18"
   },
   {
     "id": 120,
-    "title": "A Winter of Silence",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Song for Ravens 3",
+    "shortDescription": "A chance meeting in a kingdom on the edge of war sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "war",
+      "destiny",
+      "secrets",
       "family",
-      "love",
-      "politics",
-      "identity"
+      "relationships",
+      "second-chance"
     ],
-    "category": "historical fiction",
-    "author": "Amelia Ashford"
+    "category": "romance",
+    "author": "Aldous Leonard Huxley",
+    "publishedAt": "1947-08-15"
   },
   {
     "id": 121,
-    "title": "A Map of Secrets",
-    "shortDescription": "When an unexpected discovery changes everything, a map of secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Emerald Hour 3",
+    "shortDescription": "After a letter arrives without a return address, a reluctant historian is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "fear",
+      "mystery",
+      "haunting",
+      "nightmare",
+      "isolation"
     ],
-    "category": "fantasy",
-    "author": "Elias Langley"
+    "category": "horror",
+    "author": "Gabriel García Márquez",
+    "publishedAt": "2008-01-20"
   },
   {
     "id": 122,
-    "title": "The Garden of Fire",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Book of Lost Names 3",
+    "shortDescription": "Set against a university filled with old secrets, the story follows a travelling musician as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "clues",
+      "detective",
+      "crime",
+      "murder",
+      "investigation"
     ],
-    "category": "adventure",
-    "author": "Lydia Blackwood"
+    "category": "mystery",
+    "author": "Isabel Allende",
+    "publishedAt": "2019-02-06"
   },
   {
     "id": 123,
-    "title": "A Map of Embers",
-    "shortDescription": "When an unexpected discovery changes everything, a map of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Lighthouse Keeper 3",
+    "shortDescription": "When an ancient object is discovered in an ordinary place, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "identity",
+      "loss",
+      "relationships",
+      "betrayal",
       "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "ambition"
     ],
-    "category": "fiction",
-    "author": "Theodore North"
+    "category": "drama",
+    "author": "Haruki Murakami",
+    "publishedAt": "1850-07-15"
   },
   {
     "id": 124,
-    "title": "A Winter of Thieves",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of thieves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Iron Orchard 3",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a journalist with something to prove finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "dystopia",
+      "artificial-intelligence",
+      "aliens",
+      "future",
+      "space"
     ],
-    "category": "drama",
-    "author": "Celia Dawson"
+    "category": "science-fiction",
+    "author": "Ursula K. Le Guin",
+    "publishedAt": "1909-05-23"
   },
   {
     "id": 125,
-    "title": "The Shadow of Moonlight",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Shadow Merchant 3",
+    "shortDescription": "The story begins with a simple promise, but a mysterious visitor appears at the door changes its meaning completely. As a disgraced detective travels through a rain-soaked harbour, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "empire",
+      "society",
+      "tradition",
+      "history",
+      "survival"
     ],
-    "category": "romance",
-    "author": "Daniel Prescott"
+    "category": "historical",
+    "author": "Terry Pratchett",
+    "publishedAt": "1909-05-26"
   },
   {
     "id": 126,
-    "title": "A Winter of Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Golden Shore 3",
+    "shortDescription": "Years after a trusted friend disappears without explanation, the consequences remain buried beneath ordinary life. When the truth resurfaces, an ambitious scholar must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "discovery",
+      "loss",
+      "ambition",
+      "identity",
+      "change"
     ],
-    "category": "horror",
-    "author": "Iris Fairchild"
+    "category": "fiction",
+    "author": "Neil Gaiman",
+    "publishedAt": "1879-09-08"
   },
   {
     "id": 127,
-    "title": "The Shadow of Storms",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hollow King 3",
+    "shortDescription": "Part mystery and character study, this novel follows a curious archivist through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "kingdom",
+      "dragons",
+      "mythology",
+      "prophecy",
+      "magic"
     ],
-    "category": "mystery",
-    "author": "Samuel Redmond"
+    "category": "fantasy",
+    "author": "Ray Bradbury",
+    "publishedAt": "1865-03-26"
   },
   {
     "id": 128,
-    "title": "A House of Kings",
-    "shortDescription": "When an unexpected discovery changes everything, a house of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Painted Moon 3",
+    "shortDescription": "A chance meeting in a country recovering from conflict sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "survival",
+      "discovery",
+      "expedition",
+      "friendship",
+      "exploration"
     ],
-    "category": "science fiction",
-    "author": "Alice Hawthorne"
+    "category": "adventure",
+    "author": "Arthur C. Clarke",
+    "publishedAt": "1881-08-23"
   },
   {
     "id": 129,
-    "title": "The Edge of Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House Beyond the Pines 3",
+    "shortDescription": "After a family secret is revealed at a funeral, a lighthouse keeper is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "second-chance",
+      "heartbreak",
+      "secrets",
+      "destiny",
+      "family"
     ],
-    "category": "thriller",
-    "author": "Caleb Thorne"
+    "category": "romance",
+    "author": "Frank Herbert",
+    "publishedAt": "1988-08-15"
   },
   {
     "id": 130,
-    "title": "The Book of Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the book of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Cartographer's Secret 3",
+    "shortDescription": "Set against a kingdom on the edge of war, the story follows a retired soldier as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "darkness",
+      "mystery",
+      "nightmare",
+      "haunting",
+      "fear"
     ],
-    "category": "historical fiction",
-    "author": "Grace Kensington"
+    "category": "horror",
+    "author": "Philip K. Dick",
+    "publishedAt": "1932-10-09"
   },
   {
     "id": 131,
-    "title": "The Lost Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, the lost mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Burning Library 3",
+    "shortDescription": "When a letter arrives without a return address, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "detective",
+      "suspense",
+      "crime",
+      "clues",
+      "secrets"
     ],
-    "category": "fantasy",
-    "author": "Oliver Bellamy"
+    "category": "mystery",
+    "author": "Octavia Estelle Butler",
+    "publishedAt": "1918-10-02"
   },
   {
     "id": 132,
-    "title": "The Clockwork Embers",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Voyage Home 3",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a travelling musician finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "relationships",
+      "loss",
+      "ambition",
+      "betrayal",
+      "redemption"
     ],
-    "category": "adventure",
-    "author": "Zoe Mercer"
+    "category": "drama",
+    "author": "Agatha Christie",
+    "publishedAt": "1896-10-14"
   },
   {
     "id": 133,
-    "title": "The Lost Moonlight",
-    "shortDescription": "When an unexpected discovery changes everything, the lost moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Midnight Circus 3",
+    "shortDescription": "The story begins with a simple promise, but an ancient object is discovered in an ordinary place changes its meaning completely. As a runaway heir travels through a sprawling future metropolis, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "dystopia",
+      "aliens",
+      "space",
+      "time-travel",
+      "technology"
     ],
-    "category": "fiction",
-    "author": "Arthur Caldwell"
+    "category": "science-fiction",
+    "author": "Dorothy Leigh Sayers",
+    "publishedAt": "1954-06-11"
   },
   {
     "id": 134,
-    "title": "The City of Bells",
-    "shortDescription": "When an unexpected discovery changes everything, the city of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silver Mask 3",
+    "shortDescription": "Years after a long-forgotten photograph is found, the consequences remain buried beneath ordinary life. When the truth resurfaces, a journalist with something to prove must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "society",
+      "history",
+      "war",
+      "empire",
+      "politics"
     ],
-    "category": "drama",
-    "author": "Fiona Oakley"
+    "category": "historical",
+    "author": "Wilkie Collins",
+    "publishedAt": "1976-05-22"
   },
   {
     "id": 135,
-    "title": "The Garden of Giants",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Garden of Bones 3",
+    "shortDescription": "Part mystery and character study, this novel follows a disgraced detective through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "change",
+      "ambition",
+      "friendship",
+      "discovery",
+      "loss"
     ],
-    "category": "romance",
-    "author": "Marcus Ellington"
+    "category": "fiction",
+    "author": "Stephen King",
+    "publishedAt": "1930-05-11"
   },
   {
     "id": 136,
-    "title": "The Clockwork Thieves",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork thieves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Pocketful of Thunder 3",
+    "shortDescription": "A chance meeting in a forgotten island sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "magic",
+      "quest",
+      "enchanted",
+      "prophecy",
+      "mythology"
     ],
-    "category": "horror",
-    "author": "Violet Quincy"
+    "category": "fantasy",
+    "author": "Shirley Jackson",
+    "publishedAt": "1988-08-14"
   },
   {
     "id": 137,
-    "title": "The Garden of Tides",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Fox and the Flame 3",
+    "shortDescription": "After a sealed room is opened for the first time in decades, a curious archivist is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "journey",
+      "exploration",
+      "discovery",
+      "survival",
+      "quest"
     ],
-    "category": "mystery",
-    "author": "David Grayson"
+    "category": "adventure",
+    "author": "Daphne du Maurier",
+    "publishedAt": "1977-11-15"
   },
   {
     "id": 138,
-    "title": "The Clockwork Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Starless Sea 3",
+    "shortDescription": "Set against a country recovering from conflict, the story follows a young cartographer as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "destiny",
+      "love",
+      "relationships",
+      "second-chance",
+      "secrets"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Sterling"
+    "category": "romance",
+    "author": "Ernest Hemingway",
+    "publishedAt": "1883-05-15"
   },
   {
     "id": 139,
-    "title": "Under the Bells",
-    "shortDescription": "When an unexpected discovery changes everything, under the bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Raven's Daughter 3",
+    "shortDescription": "When a family secret is revealed at a funeral, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
+      "isolation",
+      "haunting",
+      "darkness",
       "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "fear"
     ],
-    "category": "thriller",
-    "author": "Julian Iverson"
+    "category": "horror",
+    "author": "Francis Scott Fitzgerald",
+    "publishedAt": "2005-04-23"
   },
   {
     "id": 140,
-    "title": "A Winter of Tides",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The City Under Glass 3",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a retired soldier finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "crime",
+      "secrets",
+      "murder",
+      "detective",
+      "clues"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Ashford"
+    "category": "mystery",
+    "author": "Virginia Woolf",
+    "publishedAt": "1954-02-08"
   },
   {
     "id": 141,
-    "title": "The Garden of Secrets",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Long Way Home 3",
+    "shortDescription": "The story begins with a simple promise, but a letter arrives without a return address changes its meaning completely. As a reluctant historian travels through a remote coastal town, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "relationships",
+      "family",
+      "ambition",
+      "redemption",
+      "identity"
     ],
-    "category": "fantasy",
-    "author": "Benjamin Langley"
+    "category": "drama",
+    "author": "James Joyce",
+    "publishedAt": "1889-08-23"
   },
   {
     "id": 142,
-    "title": "The City of Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the city of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House of Seven Bells 3",
+    "shortDescription": "Years after a missing person suddenly comes home, the consequences remain buried beneath ordinary life. When the truth resurfaces, a travelling musician must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "future",
+      "artificial-intelligence",
+      "time-travel",
+      "aliens",
+      "technology"
     ],
-    "category": "adventure",
-    "author": "Clara Blackwood"
+    "category": "science-fiction",
+    "author": "William Faulkner",
+    "publishedAt": "1970-04-15"
   },
   {
     "id": 143,
-    "title": "Under the Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, under the dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Red Winter 3",
+    "shortDescription": "Part mystery and character study, this novel follows a runaway heir through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "politics",
+      "war",
+      "tradition",
+      "society",
+      "empire"
     ],
-    "category": "fiction",
-    "author": "Henry North"
+    "category": "historical",
+    "author": "John Steinbeck",
+    "publishedAt": "1980-12-05"
   },
   {
     "id": 144,
-    "title": "The Book of Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the book of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Island of Echoes 3",
+    "shortDescription": "A chance meeting in a crowded Victorian city sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
+      "discovery",
+      "friendship",
       "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "change",
+      "identity"
     ],
-    "category": "drama",
-    "author": "Phoebe Dawson"
+    "category": "fiction",
+    "author": "Jules Verne",
+    "publishedAt": "1979-05-27"
   },
   {
     "id": 145,
-    "title": "The City of Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the city of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Dream Collector 3",
+    "shortDescription": "After a mysterious visitor appears at the door, a disgraced detective is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "magic",
+      "mythology",
+      "kingdom",
+      "quest",
+      "prophecy"
     ],
-    "category": "romance",
-    "author": "Adrian Prescott"
+    "category": "fantasy",
+    "author": "Herbert George Wells",
+    "publishedAt": "1964-09-16"
   },
   {
     "id": 146,
-    "title": "The Last Starlight",
-    "shortDescription": "When an unexpected discovery changes everything, the last starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Black River 3",
+    "shortDescription": "Set against a forgotten island, the story follows an ambitious scholar as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "survival",
+      "friendship",
+      "discovery",
+      "quest",
+      "exploration"
     ],
-    "category": "horror",
-    "author": "Beatrice Fairchild"
+    "category": "adventure",
+    "author": "Bram Stoker",
+    "publishedAt": "1932-04-23"
   },
   {
     "id": 147,
-    "title": "A Tale of Silence",
-    "shortDescription": "When an unexpected discovery changes everything, a tale of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Saltwater Crown 3",
+    "shortDescription": "When a sealed room is opened for the first time in decades, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "detective",
+      "relationships",
+      "family",
       "secrets",
-      "betrayal",
-      "revenge"
+      "destiny",
+      "heartbreak"
     ],
-    "category": "mystery",
-    "author": "Gabriel Redmond"
+    "category": "romance",
+    "author": "William Shakespeare",
+    "publishedAt": "1861-06-24"
   },
   {
     "id": 148,
-    "title": "The Silent Echoes",
-    "shortDescription": "When an unexpected discovery changes everything, the silent echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten King 3",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a young cartographer finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "haunting",
+      "isolation",
+      "nightmare",
+      "mystery",
+      "fear"
     ],
-    "category": "science fiction",
-    "author": "Nora Hawthorne"
+    "category": "horror",
+    "author": "Elias Langley",
+    "publishedAt": "2016-03-16"
   },
   {
     "id": 149,
-    "title": "A Winter of Shadows",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of shadows follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Amber Room 3",
+    "shortDescription": "The story begins with a simple promise, but a family secret is revealed at a funeral changes its meaning completely. As a lighthouse keeper travels through a railway crossing the wilderness, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "detective",
+      "crime",
+      "murder",
+      "secrets",
+      "suspense"
     ],
-    "category": "thriller",
-    "author": "William Thorne"
+    "category": "mystery",
+    "author": "Lydia Blackwood",
+    "publishedAt": "1962-02-17"
   },
   {
     "id": 150,
-    "title": "The Last Stars",
-    "shortDescription": "When an unexpected discovery changes everything, the last stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hour Before Dawn 3",
+    "shortDescription": "Years after a storm exposes something that was never meant to be seen, the consequences remain buried beneath ordinary life. When the truth resurfaces, a retired soldier must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "war",
+      "ambition",
       "family",
-      "love",
-      "politics",
+      "loss",
+      "relationships",
       "identity"
     ],
-    "category": "historical fiction",
-    "author": "Amelia Kensington"
+    "category": "drama",
+    "author": "Edgar Allan Poe",
+    "publishedAt": "1889-02-16"
   },
   {
     "id": 151,
-    "title": "The Clockwork Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Secret Embers 4",
+    "shortDescription": "Part mystery and character study, this novel follows a reluctant historian through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "time-travel",
+      "future",
+      "dystopia",
+      "aliens",
+      "artificial-intelligence"
     ],
-    "category": "fantasy",
-    "author": "Elias Bellamy"
+    "category": "science-fiction",
+    "author": "Mary Wollstonecraft Shelley",
+    "publishedAt": "1870-06-28"
   },
   {
     "id": 152,
-    "title": "The Book of Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the book of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Map of Wolves 4",
+    "shortDescription": "A chance meeting in a university filled with old secrets sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "society",
+      "politics",
+      "tradition",
+      "empire",
+      "survival"
     ],
-    "category": "adventure",
-    "author": "Lydia Mercer"
+    "category": "historical",
+    "author": "Nathaniel Hawthorne",
+    "publishedAt": "1974-09-02"
   },
   {
     "id": 153,
-    "title": "A Map of Dawn",
-    "shortDescription": "When an unexpected discovery changes everything, a map of dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Glass Kingdom 4",
+    "shortDescription": "After an ancient object is discovered in an ordinary place, a runaway heir is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
+      "ambition",
+      "friendship",
       "identity",
       "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "loss"
     ],
     "category": "fiction",
-    "author": "Theodore Caldwell"
+    "author": "Oscar Wilde",
+    "publishedAt": "1873-07-04"
   },
   {
     "id": 154,
-    "title": "Beyond the Memory",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Beneath Hollow Stars 4",
+    "shortDescription": "Set against a crowded Victorian city, the story follows a journalist with something to prove as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "prophecy",
+      "kingdom",
+      "magic",
+      "quest",
+      "enchanted"
     ],
-    "category": "drama",
-    "author": "Celia Oakley"
+    "category": "fantasy",
+    "author": "Arthur Conan Doyle",
+    "publishedAt": "1926-01-02"
   },
   {
     "id": 155,
-    "title": "The Book of Tides",
-    "shortDescription": "When an unexpected discovery changes everything, the book of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Lantern 4",
+    "shortDescription": "When a mysterious visitor appears at the door, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "survival",
+      "journey",
+      "friendship",
+      "discovery",
+      "exploration"
     ],
-    "category": "romance",
-    "author": "Daniel Ellington"
+    "category": "adventure",
+    "author": "Charlotte Brontë",
+    "publishedAt": "1960-03-08"
   },
   {
     "id": 156,
-    "title": "The Silent Bells",
-    "shortDescription": "When an unexpected discovery changes everything, the silent bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A River of Ashes 4",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when an ambitious scholar finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
+      "family",
       "secrets",
-      "survival"
+      "destiny",
+      "relationships",
+      "love"
     ],
-    "category": "horror",
-    "author": "Iris Quincy"
+    "category": "romance",
+    "author": "Emily Brontë",
+    "publishedAt": "1894-02-20"
   },
   {
     "id": 157,
-    "title": "The Clockwork Fire",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Clockmaker's Daughter 4",
+    "shortDescription": "The story begins with a simple promise, but a sealed room is opened for the first time in decades changes its meaning completely. As a curious archivist travels through an isolated mountain village, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
+      "nightmare",
+      "haunting",
       "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "supernatural",
+      "isolation"
     ],
-    "category": "mystery",
-    "author": "Samuel Grayson"
+    "category": "horror",
+    "author": "Charles Dickens",
+    "publishedAt": "1999-03-08"
   },
   {
     "id": 158,
-    "title": "The Forgotten Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "House of Crows 4",
+    "shortDescription": "Years after a strange message is broadcast across the city, the consequences remain buried beneath ordinary life. When the truth resurfaces, a young cartographer must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "investigation",
+      "clues",
+      "secrets",
+      "suspense",
+      "crime"
     ],
-    "category": "science fiction",
-    "author": "Alice Sterling"
+    "category": "mystery",
+    "author": "George Eliot",
+    "publishedAt": "2020-01-26"
   },
   {
     "id": 159,
-    "title": "A Map of Fire",
-    "shortDescription": "When an unexpected discovery changes everything, a map of fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Orchard at Midnight 4",
+    "shortDescription": "Part mystery and character study, this novel follows a lighthouse keeper through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
+      "ambition",
+      "identity",
       "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "loss",
+      "family"
     ],
-    "category": "thriller",
-    "author": "Caleb Iverson"
+    "category": "drama",
+    "author": "Louisa May Alcott",
+    "publishedAt": "1963-06-19"
   },
   {
     "id": 160,
-    "title": "The Book of Shadows",
-    "shortDescription": "When an unexpected discovery changes everything, the book of shadows follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "Letters from the North 4",
+    "shortDescription": "A chance meeting in a kingdom on the edge of war sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "future",
+      "dystopia",
+      "aliens",
+      "time-travel",
+      "technology"
     ],
-    "category": "historical fiction",
-    "author": "Grace Ashford"
+    "category": "science-fiction",
+    "author": "Herman Melville",
+    "publishedAt": "1927-04-13"
   },
   {
     "id": 161,
-    "title": "The Shadow of Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silent Compass 4",
+    "shortDescription": "After a letter arrives without a return address, a reluctant historian is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "survival",
+      "tradition",
+      "history",
+      "war",
+      "society"
     ],
-    "category": "fantasy",
-    "author": "Oliver Langley"
+    "category": "historical",
+    "author": "Robert Louis Stevenson",
+    "publishedAt": "1996-06-19"
   },
   {
     "id": 162,
-    "title": "The Shadow of Thieves",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of thieves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Crimson Garden 4",
+    "shortDescription": "Set against a university filled with old secrets, the story follows a travelling musician as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "family",
+      "loss",
+      "discovery",
+      "friendship",
+      "ambition"
     ],
-    "category": "adventure",
-    "author": "Zoe Blackwood"
+    "category": "fiction",
+    "author": "Washington Irving",
+    "publishedAt": "1951-05-01"
   },
   {
     "id": 163,
-    "title": "A River of Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, a river of dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A City Made of Rain 4",
+    "shortDescription": "When an ancient object is discovered in an ordinary place, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "enchanted",
+      "kingdom",
+      "magic",
+      "quest",
+      "dragons"
     ],
-    "category": "fiction",
-    "author": "Arthur North"
+    "category": "fantasy",
+    "author": "Alexandre Dumas",
+    "publishedAt": "1908-10-26"
   },
   {
     "id": 164,
-    "title": "A Winter of Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Moonlit Archive 4",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a journalist with something to prove finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "survival",
+      "exploration",
+      "expedition",
+      "friendship",
+      "quest"
     ],
-    "category": "drama",
-    "author": "Fiona Dawson"
+    "category": "adventure",
+    "author": "Victor Hugo",
+    "publishedAt": "2018-11-27"
   },
   {
     "id": 165,
-    "title": "The Lost Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the lost whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Whispering Tower 4",
+    "shortDescription": "The story begins with a simple promise, but a mysterious visitor appears at the door changes its meaning completely. As a disgraced detective travels through a rain-soaked harbour, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
+      "relationships",
+      "heartbreak",
       "love",
       "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "destiny"
     ],
     "category": "romance",
-    "author": "Marcus Prescott"
+    "author": "Fyodor Dostoevsky",
+    "publishedAt": "1962-01-19"
   },
   {
     "id": 166,
-    "title": "The Road to Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the road to wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Thirteenth Door 4",
+    "shortDescription": "Years after a trusted friend disappears without explanation, the consequences remain buried beneath ordinary life. When the truth resurfaces, an ambitious scholar must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "dark",
-      "ghosts",
+      "fear",
+      "isolation",
       "supernatural",
-      "secrets",
-      "survival"
+      "darkness",
+      "mystery"
     ],
     "category": "horror",
-    "author": "Violet Fairchild"
+    "author": "Leo Tolstoy",
+    "publishedAt": "1933-12-14"
   },
   {
     "id": 167,
-    "title": "The Lost Fire",
-    "shortDescription": "When an unexpected discovery changes everything, the lost fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Sea Between Worlds 4",
+    "shortDescription": "Part mystery and character study, this novel follows a curious archivist through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "detective",
+      "crime",
+      "suspense",
+      "clues",
       "secrets",
-      "betrayal",
-      "revenge"
+      "investigation"
     ],
     "category": "mystery",
-    "author": "David Redmond"
+    "author": "Jane Austen",
+    "publishedAt": "1978-05-27"
   },
   {
     "id": 168,
-    "title": "The Song of Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, the song of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Winter Crown 4",
+    "shortDescription": "A chance meeting in a country recovering from conflict sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
+      "loss",
       "identity",
-      "survival"
+      "ambition",
+      "redemption",
+      "betrayal"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Hawthorne"
+    "category": "drama",
+    "author": "George Orwell",
+    "publishedAt": "1936-02-15"
   },
   {
     "id": 169,
-    "title": "The Song of Ashes",
-    "shortDescription": "When an unexpected discovery changes everything, the song of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten Road 4",
+    "shortDescription": "After a family secret is revealed at a funeral, a lighthouse keeper is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "space",
+      "technology",
+      "dystopia",
+      "aliens",
+      "future"
     ],
-    "category": "thriller",
-    "author": "Julian Thorne"
+    "category": "science-fiction",
+    "author": "Aldous Leonard Huxley",
+    "publishedAt": "1943-02-26"
   },
   {
     "id": 170,
-    "title": "The Road to Memory",
-    "shortDescription": "When an unexpected discovery changes everything, the road to memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Song for Ravens 4",
+    "shortDescription": "Set against a kingdom on the edge of war, the story follows a retired soldier as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "tradition",
+      "history",
+      "empire",
+      "society",
+      "war"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Kensington"
+    "category": "historical",
+    "author": "Gabriel García Márquez",
+    "publishedAt": "1944-11-24"
   },
   {
     "id": 171,
-    "title": "The Forgotten Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Emerald Hour 4",
+    "shortDescription": "When a letter arrives without a return address, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "loss",
+      "family",
+      "ambition",
+      "change",
+      "discovery"
     ],
-    "category": "fantasy",
-    "author": "Benjamin Bellamy"
+    "category": "fiction",
+    "author": "Isabel Allende",
+    "publishedAt": "1945-02-22"
   },
   {
     "id": 172,
-    "title": "The Forgotten Embers",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Book of Lost Names 4",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a travelling musician finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
+      "dragons",
       "quest",
-      "friendship"
+      "magic",
+      "mythology",
+      "kingdom"
     ],
-    "category": "adventure",
-    "author": "Clara Mercer"
+    "category": "fantasy",
+    "author": "Haruki Murakami",
+    "publishedAt": "1906-11-03"
   },
   {
     "id": 173,
-    "title": "A Winter of Fortune",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Lighthouse Keeper 4",
+    "shortDescription": "The story begins with a simple promise, but an ancient object is discovered in an ordinary place changes its meaning completely. As a runaway heir travels through a sprawling future metropolis, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "identity",
-      "family",
+      "expedition",
+      "quest",
+      "survival",
       "friendship",
-      "secrets",
-      "coming of age"
+      "journey"
     ],
-    "category": "fiction",
-    "author": "Henry Caldwell"
+    "category": "adventure",
+    "author": "Ursula K. Le Guin",
+    "publishedAt": "1885-01-02"
   },
   {
     "id": 174,
-    "title": "Beyond the Bells",
-    "shortDescription": "When an unexpected discovery changes everything, beyond the bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Iron Orchard 4",
+    "shortDescription": "Years after a long-forgotten photograph is found, the consequences remain buried beneath ordinary life. When the truth resurfaces, a journalist with something to prove must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
+      "second-chance",
       "secrets",
-      "love"
+      "love",
+      "family",
+      "heartbreak"
     ],
-    "category": "drama",
-    "author": "Phoebe Oakley"
+    "category": "romance",
+    "author": "Terry Pratchett",
+    "publishedAt": "1987-03-13"
   },
   {
     "id": 175,
-    "title": "A Winter of Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, a winter of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Shadow Merchant 4",
+    "shortDescription": "Part mystery and character study, this novel follows a disgraced detective through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "haunting",
+      "fear",
+      "mystery",
+      "nightmare",
+      "isolation"
     ],
-    "category": "romance",
-    "author": "Adrian Ellington"
+    "category": "horror",
+    "author": "Neil Gaiman",
+    "publishedAt": "1889-07-21"
   },
   {
     "id": 176,
-    "title": "The Clockwork Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Golden Shore 4",
+    "shortDescription": "A chance meeting in a forgotten island sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "detective",
+      "investigation",
+      "murder",
+      "clues",
+      "crime"
     ],
-    "category": "horror",
-    "author": "Beatrice Quincy"
+    "category": "mystery",
+    "author": "Ray Bradbury",
+    "publishedAt": "1858-12-12"
   },
   {
     "id": 177,
-    "title": "A House of Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, a house of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hollow King 4",
+    "shortDescription": "After a sealed room is opened for the first time in decades, a curious archivist is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "loss",
+      "ambition",
+      "redemption",
+      "relationships",
+      "betrayal"
     ],
-    "category": "mystery",
-    "author": "Gabriel Grayson"
+    "category": "drama",
+    "author": "Arthur C. Clarke",
+    "publishedAt": "1875-11-12"
   },
   {
     "id": 178,
-    "title": "The Lost Wonders",
-    "shortDescription": "When an unexpected discovery changes everything, the lost wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Painted Moon 4",
+    "shortDescription": "Set against a country recovering from conflict, the story follows a young cartographer as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
+      "artificial-intelligence",
+      "dystopia",
+      "future",
       "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "technology"
     ],
-    "category": "science fiction",
-    "author": "Nora Sterling"
+    "category": "science-fiction",
+    "author": "Frank Herbert",
+    "publishedAt": "1920-04-04"
   },
   {
     "id": 179,
-    "title": "The Clockwork Mirrors",
-    "shortDescription": "When an unexpected discovery changes everything, the clockwork mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House Beyond the Pines 4",
+    "shortDescription": "When a family secret is revealed at a funeral, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
       "survival",
-      "secrets"
+      "tradition",
+      "history",
+      "war",
+      "empire"
     ],
-    "category": "thriller",
-    "author": "William Iverson"
+    "category": "historical",
+    "author": "Philip K. Dick",
+    "publishedAt": "2013-10-01"
   },
   {
     "id": 180,
-    "title": "A River of Destiny",
-    "shortDescription": "When an unexpected discovery changes everything, a river of destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Cartographer's Secret 4",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a retired soldier finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "war",
+      "friendship",
       "family",
-      "love",
-      "politics",
-      "identity"
+      "identity",
+      "ambition",
+      "loss"
     ],
-    "category": "historical fiction",
-    "author": "Amelia Ashford"
+    "category": "fiction",
+    "author": "Octavia Estelle Butler",
+    "publishedAt": "1902-02-27"
   },
   {
     "id": 181,
-    "title": "The Last Wolves",
-    "shortDescription": "When an unexpected discovery changes everything, the last wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Burning Library 4",
+    "shortDescription": "The story begins with a simple promise, but a letter arrives without a return address changes its meaning completely. As a reluctant historian travels through a remote coastal town, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "magic",
-      "quest",
-      "mythology",
+      "prophecy",
+      "enchanted",
       "dragons",
-      "adventure"
+      "kingdom",
+      "magic"
     ],
     "category": "fantasy",
-    "author": "Elias Langley"
+    "author": "Agatha Christie",
+    "publishedAt": "1934-03-26"
   },
   {
     "id": 182,
-    "title": "A Tale of Dreams",
-    "shortDescription": "When an unexpected discovery changes everything, a tale of dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Last Voyage Home 4",
+    "shortDescription": "Years after a missing person suddenly comes home, the consequences remain buried beneath ordinary life. When the truth resurfaces, a travelling musician must confront an old wound while navigating a world that has changed without them.",
     "tags": [
+      "discovery",
       "journey",
-      "exploration",
       "survival",
-      "quest",
-      "friendship"
+      "exploration",
+      "expedition"
     ],
     "category": "adventure",
-    "author": "Lydia Blackwood"
+    "author": "Dorothy Leigh Sayers",
+    "publishedAt": "1988-05-26"
   },
   {
     "id": 183,
-    "title": "The Forgotten Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Midnight Circus 4",
+    "shortDescription": "Part mystery and character study, this novel follows a runaway heir through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "relationships",
+      "love",
+      "heartbreak",
+      "destiny",
+      "family"
     ],
-    "category": "fiction",
-    "author": "Theodore North"
+    "category": "romance",
+    "author": "Wilkie Collins",
+    "publishedAt": "1941-04-19"
   },
   {
     "id": 184,
-    "title": "The Shadow of Destiny",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Silver Mask 4",
+    "shortDescription": "A chance meeting in a crowded Victorian city sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
-      "secrets",
-      "love"
+      "fear",
+      "darkness",
+      "supernatural",
+      "nightmare",
+      "isolation"
     ],
-    "category": "drama",
-    "author": "Celia Dawson"
+    "category": "horror",
+    "author": "Stephen King",
+    "publishedAt": "1882-12-14"
   },
   {
     "id": 185,
-    "title": "A Tale of Bells",
-    "shortDescription": "When an unexpected discovery changes everything, a tale of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Garden of Bones 4",
+    "shortDescription": "After a mysterious visitor appears at the door, a disgraced detective is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "love",
-      "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "murder",
+      "detective",
+      "clues",
+      "investigation",
+      "crime"
     ],
-    "category": "romance",
-    "author": "Daniel Prescott"
+    "category": "mystery",
+    "author": "Shirley Jackson",
+    "publishedAt": "1942-09-19"
   },
   {
     "id": 186,
-    "title": "The Secret Destiny",
-    "shortDescription": "When an unexpected discovery changes everything, the secret destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "A Pocketful of Thunder 4",
+    "shortDescription": "Set against a forgotten island, the story follows an ambitious scholar as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "family",
+      "ambition",
+      "betrayal",
+      "loss",
+      "identity"
     ],
-    "category": "horror",
-    "author": "Iris Fairchild"
+    "category": "drama",
+    "author": "Daphne du Maurier",
+    "publishedAt": "1861-12-26"
   },
   {
     "id": 187,
-    "title": "The Secret Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, the secret lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Fox and the Flame 4",
+    "shortDescription": "When a sealed room is opened for the first time in decades, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "time-travel",
+      "dystopia",
+      "artificial-intelligence",
+      "future",
+      "technology"
     ],
-    "category": "mystery",
-    "author": "Samuel Redmond"
+    "category": "science-fiction",
+    "author": "Ernest Hemingway",
+    "publishedAt": "2014-01-02"
   },
   {
     "id": 188,
-    "title": "The Song of Dragons",
-    "shortDescription": "When an unexpected discovery changes everything, the song of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Starless Sea 4",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when a young cartographer finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
-      "identity",
-      "survival"
+      "tradition",
+      "survival",
+      "society",
+      "history",
+      "war"
     ],
-    "category": "science fiction",
-    "author": "Alice Hawthorne"
+    "category": "historical",
+    "author": "Francis Scott Fitzgerald",
+    "publishedAt": "1963-02-03"
   },
   {
     "id": 189,
-    "title": "A Map of Kings",
-    "shortDescription": "When an unexpected discovery changes everything, a map of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Raven's Daughter 4",
+    "shortDescription": "The story begins with a simple promise, but a family secret is revealed at a funeral changes its meaning completely. As a lighthouse keeper travels through a railway crossing the wilderness, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "family",
+      "ambition",
+      "identity",
+      "friendship",
+      "change"
     ],
-    "category": "thriller",
-    "author": "Caleb Thorne"
+    "category": "fiction",
+    "author": "Virginia Woolf",
+    "publishedAt": "1920-10-21"
   },
   {
     "id": 190,
-    "title": "The Garden of Silence",
-    "shortDescription": "When an unexpected discovery changes everything, the garden of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The City Under Glass 4",
+    "shortDescription": "Years after a storm exposes something that was never meant to be seen, the consequences remain buried beneath ordinary life. When the truth resurfaces, a retired soldier must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "enchanted",
+      "prophecy",
+      "mythology",
+      "quest",
+      "kingdom"
     ],
-    "category": "historical fiction",
-    "author": "Grace Kensington"
+    "category": "fantasy",
+    "author": "James Joyce",
+    "publishedAt": "1985-05-15"
   },
   {
     "id": 191,
-    "title": "The Secret Memory",
-    "shortDescription": "When an unexpected discovery changes everything, the secret memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Long Way Home 4",
+    "shortDescription": "Part mystery and character study, this novel follows a reluctant historian through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "magic",
+      "discovery",
+      "friendship",
       "quest",
-      "mythology",
-      "dragons",
-      "adventure"
+      "journey",
+      "survival"
     ],
-    "category": "fantasy",
-    "author": "Oliver Bellamy"
+    "category": "adventure",
+    "author": "William Faulkner",
+    "publishedAt": "1879-11-21"
   },
   {
     "id": 192,
-    "title": "A House of Moonlight",
-    "shortDescription": "When an unexpected discovery changes everything, a house of moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The House of Seven Bells 4",
+    "shortDescription": "A chance meeting in a university filled with old secrets sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "journey",
-      "exploration",
-      "survival",
-      "quest",
-      "friendship"
+      "destiny",
+      "family",
+      "relationships",
+      "secrets",
+      "heartbreak"
     ],
-    "category": "adventure",
-    "author": "Zoe Mercer"
+    "category": "romance",
+    "author": "John Steinbeck",
+    "publishedAt": "1908-07-11"
   },
   {
     "id": 193,
-    "title": "The Edge of Whispers",
-    "shortDescription": "When an unexpected discovery changes everything, the edge of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Red Winter 4",
+    "shortDescription": "After an ancient object is discovered in an ordinary place, a runaway heir is forced to reconsider everything they believed about memory. What begins as a personal dilemma soon draws them into a much larger conflict.",
     "tags": [
-      "identity",
-      "family",
-      "friendship",
-      "secrets",
-      "coming of age"
+      "nightmare",
+      "haunting",
+      "isolation",
+      "mystery",
+      "fear"
     ],
-    "category": "fiction",
-    "author": "Arthur Caldwell"
+    "category": "horror",
+    "author": "Jules Verne",
+    "publishedAt": "1874-06-14"
   },
   {
     "id": 194,
-    "title": "The Forgotten Kings",
-    "shortDescription": "When an unexpected discovery changes everything, the forgotten kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Island of Echoes 4",
+    "shortDescription": "Set against a crowded Victorian city, the story follows a journalist with something to prove as they uncover a truth that has been carefully hidden for years. Every answer creates another question, and the cost of walking away becomes impossible to ignore.",
     "tags": [
-      "family",
-      "betrayal",
-      "identity",
       "secrets",
-      "love"
+      "clues",
+      "suspense",
+      "murder",
+      "detective"
     ],
-    "category": "drama",
-    "author": "Fiona Oakley"
+    "category": "mystery",
+    "author": "Herbert George Wells",
+    "publishedAt": "2025-08-03"
   },
   {
     "id": 195,
-    "title": "The Silent Ghosts",
-    "shortDescription": "When an unexpected discovery changes everything, the silent ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Dream Collector 4",
+    "shortDescription": "When a mysterious visitor appears at the door, an unlikely group is brought together by circumstances none of them expected. Their journey tests old loyalties and reveals how much they are willing to sacrifice for one another.",
     "tags": [
-      "love",
       "family",
-      "identity",
-      "secrets",
-      "friendship"
+      "relationships",
+      "redemption",
+      "ambition",
+      "betrayal"
     ],
-    "category": "romance",
-    "author": "Marcus Ellington"
+    "category": "drama",
+    "author": "Bram Stoker",
+    "publishedAt": "1945-03-18"
   },
   {
     "id": 196,
-    "title": "The Book of Roses",
-    "shortDescription": "When an unexpected discovery changes everything, the book of roses follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Black River 4",
+    "shortDescription": "A quiet discovery turns into a dangerous pursuit when an ambitious scholar finds evidence connected to betrayal. With time running short, they must decide whom to trust before the past catches up with them.",
     "tags": [
-      "dark",
-      "ghosts",
-      "supernatural",
-      "secrets",
-      "survival"
+      "space",
+      "artificial-intelligence",
+      "dystopia",
+      "future",
+      "aliens"
     ],
-    "category": "horror",
-    "author": "Violet Quincy"
+    "category": "science-fiction",
+    "author": "William Shakespeare",
+    "publishedAt": "1881-07-12"
   },
   {
     "id": 197,
-    "title": "The City of Silence",
-    "shortDescription": "When an unexpected discovery changes everything, the city of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Saltwater Crown 4",
+    "shortDescription": "The story begins with a simple promise, but a sealed room is opened for the first time in decades changes its meaning completely. As a curious archivist travels through an isolated mountain village, they encounter people whose secrets challenge their understanding of home, loyalty, and courage.",
     "tags": [
-      "mystery",
-      "detective",
-      "secrets",
-      "betrayal",
-      "revenge"
+      "survival",
+      "society",
+      "tradition",
+      "history",
+      "war"
     ],
-    "category": "mystery",
-    "author": "David Grayson"
+    "category": "historical",
+    "author": "Elias Langley",
+    "publishedAt": "2003-05-12"
   },
   {
     "id": 198,
-    "title": "The Shadow of Stars",
-    "shortDescription": "When an unexpected discovery changes everything, the shadow of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Forgotten King 4",
+    "shortDescription": "Years after a strange message is broadcast across the city, the consequences remain buried beneath ordinary life. When the truth resurfaces, a young cartographer must confront an old wound while navigating a world that has changed without them.",
     "tags": [
-      "space",
-      "time travel",
-      "exploration",
+      "friendship",
+      "ambition",
+      "loss",
       "identity",
-      "survival"
+      "discovery"
     ],
-    "category": "science fiction",
-    "author": "Eleanor Sterling"
+    "category": "fiction",
+    "author": "Lydia Blackwood",
+    "publishedAt": "2018-08-08"
   },
   {
     "id": 199,
-    "title": "The Silent Lanterns",
-    "shortDescription": "When an unexpected discovery changes everything, the silent lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Amber Room 4",
+    "shortDescription": "Part mystery and character study, this novel follows a lighthouse keeper through a series of choices involving memory. The deeper they investigate, the less certain they become that the truth will set anyone free.",
     "tags": [
-      "mystery",
-      "betrayal",
-      "revenge",
-      "survival",
-      "secrets"
+      "prophecy",
+      "magic",
+      "mythology",
+      "enchanted",
+      "kingdom"
     ],
-    "category": "thriller",
-    "author": "Julian Iverson"
+    "category": "fantasy",
+    "author": "Edgar Allan Poe",
+    "publishedAt": "1921-10-08"
   },
   {
     "id": 200,
-    "title": "The Last Shadows",
-    "shortDescription": "When an unexpected discovery changes everything, the last shadows follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "title": "The Hour Before Dawn 4",
+    "shortDescription": "A chance meeting in a kingdom on the edge of war sets an unexpected chain of events in motion. What follows is a story about betrayal, difficult choices, and the fragile bonds that survive when everything familiar begins to disappear.",
     "tags": [
-      "war",
-      "family",
-      "love",
-      "politics",
-      "identity"
+      "friendship",
+      "quest",
+      "discovery",
+      "journey",
+      "survival"
     ],
-    "category": "historical fiction",
-    "author": "Sofia Ashford"
+    "category": "adventure",
+    "author": "Mary Wollstonecraft Shelley",
+    "publishedAt": "2018-12-09"
   }
 ]

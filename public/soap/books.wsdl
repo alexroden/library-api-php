@@ -20,6 +20,7 @@
                     <xsd:element name="tags" type="tns:StringArray"/>
                     <xsd:element name="category" type="xsd:string"/>
                     <xsd:element name="author" type="xsd:string"/>
+                    <xsd:element name="publishedAt" type="xsd:date"/>
                 </xsd:sequence>
             </xsd:complexType>
 

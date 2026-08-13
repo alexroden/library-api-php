@@ -11,6 +11,7 @@ use AlexRoden\LibraryApiPhp\Bus\CommandBus;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateAuthorCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCategoryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateBookCommand;
 use AlexRoden\LibraryApiPhp\Models\Author;
 use AlexRoden\LibraryApiPhp\Models\Book;
 use AlexRoden\LibraryApiPhp\Models\Category;
@@ -23,7 +24,9 @@ use Throwable;
  *
  * Records are written through the command bus, so an imported book takes the
  * same path as one created through the api and raises the same events. Every
- * lookup is a first-or-create, which is what makes a batch safe to retry.
+ * lookup is a first-or-create, which is what makes a batch safe to retry, and
+ * a book that already exists is compared against the api and updated when the
+ * two have drifted apart.
  *
  * The worker is a long lived process: an empty queue means there is nothing to
  * do *yet*, not that the work is finished, so it keeps polling until it is
@@ -179,7 +182,7 @@ class BookImportWorker
         $existing = Book::where('title', '=', $detail->title)->first();
 
         if ($existing !== null) {
-            return $existing;
+            return $this->updateBook($existing, $detail);
         }
 
         return $this->commands->dispatch(
@@ -188,6 +191,52 @@ class BookImportWorker
                 description: $detail->description,
                 tags: $detail->tags,
                 authors: [$author->id],
+                publishedAt: $detail->publishedAt,
+            )
+        );
+    }
+
+    /**
+     * A book that was imported before is no longer left as it is. The api is
+     * the source of truth for the fields it owns, so anything that has changed
+     * since — or that was missing from an earlier import, which is how a book
+     * imported before published dates existed gets one — is written back.
+     *
+     * A field the api has no value for is not a change: a gap in the feed
+     * leaves what is already on the record alone rather than clearing it.
+     *
+     * The write is skipped entirely when nothing differs, so re-running the
+     * import over books that are already current costs a read and no more.
+     */
+    private function updateBook(Book $book, BookDetail $detail): Book
+    {
+        $description = $detail->description !== ''
+            ? $detail->description
+            : $book->description;
+
+        $tags = count($detail->tags) > 0
+            ? $detail->tags
+            : $book->tags();
+
+        $publishedAt = $detail->publishedAt ?? $book->published_at;
+
+        if (
+            $description === $book->description
+            && $tags === $book->tags()
+            && $publishedAt === $book->published_at
+        ) {
+            return $book;
+        }
+
+        echo "Book {$detail->id} ({$detail->title}) has changed, updating it.\n";
+
+        return $this->commands->dispatch(
+            new UpdateBookCommand(
+                book: $book,
+                title: $detail->title,
+                description: $description,
+                tags: $tags,
+                publishedAt: $publishedAt,
             )
         );
     }

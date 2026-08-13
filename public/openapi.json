@@ -1295,6 +1295,12 @@
                         "items": {
                             "type": "integer"
                         }
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "1813-01-28",
+                        "nullable": true
                     }
                 },
                 "type": "object"
@@ -1392,6 +1398,12 @@
                         "items": {
                             "type": "integer"
                         }
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "1813-01-28",
+                        "nullable": true
                     }
                 },
                 "type": "object"
@@ -1601,6 +1613,11 @@
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "format": "date",
+                        "nullable": true
                     },
                     "created_at": {
                         "type": "string"

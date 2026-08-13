@@ -13,6 +13,7 @@ class Book extends AbstractModel
         'title',
         'description',
         'tags',
+        'published_at',
     ];
 
     public function authors(): array
