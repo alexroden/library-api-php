@@ -17,6 +17,7 @@ class BookFactory extends Factory
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
             'tags' => implode(',', $this->faker->words(2)),
+            'published_at' => $this->faker->date(),
         ];
     }
 }

@@ -4,9 +4,11 @@ namespace AlexRoden\LibraryApiPhp\Tests\Unit\Models;
 
 use AlexRoden\LibraryApiPhp\Models\Author;
 use AlexRoden\LibraryApiPhp\Models\Book;
+use AlexRoden\LibraryApiPhp\Models\Category;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 use AlexRoden\LibraryApiPhp\Tests\Factories\AuthorFactory;
 use AlexRoden\LibraryApiPhp\Tests\Factories\BookFactory;
+use AlexRoden\LibraryApiPhp\Tests\Factories\CategoryFactory;
 
 class BookTest extends AbstractTestCase
 {
@@ -87,5 +89,16 @@ class BookTest extends AbstractTestCase
         $authors = $this->book->authors();
         $this->assertCount(1, $authors);
         $this->assertJson($author->toJson(), $authors[0]->toJson());
+    }
+
+    public function testCategories(): void
+    {
+        /** @var Category $category */
+        $category = CategoryFactory::create();
+        $this->book->assignCategory($category);
+
+        $categories = $this->book->categories();
+        $this->assertCount(1, $categories);
+        $this->assertJson($category->toJson(), $categories[0]->toJson());
     }
 }

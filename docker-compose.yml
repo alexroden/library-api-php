@@ -15,6 +15,7 @@ services:
       timeout: 5s
       retries: 20
       start_period: 20s
+
   migrate:
     image: migrate/migrate:v4.17.1
     restart: "no"
@@ -33,6 +34,7 @@ services:
         "-c",
         "migrate -path /migrations -database \"$DATABASE_URL?x-migrations-table=schema_migrations\" up"
       ]
+
   mailpit:
     image: axllent/mailpit:latest
     ports:
@@ -40,6 +42,7 @@ services:
       - "8025:8025"
     networks:
       - api_network
+
   api:
     build:
       context: .
@@ -52,6 +55,76 @@ services:
     volumes:
       - .:/api
     working_dir: /api
+    networks:
+      - api_network
+
+  sqs:
+    image: softwaremill/elasticmq:latest
+    container_name: elasticmq
+    ports:
+      - "9324:9324"
+      - "9325:9325"
+    networks:
+      - api_network
+
+  seed-sqs:
+    image: amazon/aws-cli
+    depends_on:
+      - sqs
+    entrypoint:
+      - aws
+      - --endpoint-url=${SQS_URL}
+      - sqs
+      - create-queue
+      - --queue-name
+      - ${QUEUE_NAME}
+      - --region
+      - ${AWS_DEFAULT_REGION}
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+    networks:
+      - api_network
+
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.importers
+    restart: "no"
+    env_file:
+      - .env
+    # No container_name: compose then names the containers itself as
+    # <project>-runner-<n>, which is also what allows more than one at a time.
+    depends_on:
+      api:
+        condition: service_started
+      seed-sqs:
+        condition: service_completed_successfully
+    networks:
+      - api_network
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.importers
+    restart: "no"
+    env_file:
+      - .env
+    # As with the runner, leaving the name to compose gives
+    # <project>-worker-<n> and lets the service be scaled to several workers.
+    command: [ "php", "importers/worker/main.php" ]
+    # The worker waits on the queue rather than exiting, so it is stopped by a
+    # signal. Long enough for the poll in flight to return and the current
+    # batch to finish before docker escalates to SIGKILL.
+    stop_grace_period: 30s
+    depends_on:
+      mysql:
+        condition: service_healthy
+      api:
+        condition: service_started
+      seed-sqs:
+        condition: service_completed_successfully
     networks:
       - api_network
 

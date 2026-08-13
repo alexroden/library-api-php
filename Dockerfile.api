@@ -6,26 +6,22 @@ RUN apt-get update && apt-get install -y \
         unzip \
         zip \
         libzip-dev \
-    && docker-php-ext-install zip pdo_mysql \
+        libxml2-dev \
+    && docker-php-ext-install zip pdo_mysql soap \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Set the working directory
 WORKDIR /api
 
-# Copy composer files first for better layer caching
+# Install Composer
 COPY composer.json composer.lock* ./
 
-# Install dependencies if composer.json exists
 RUN if [ -f composer.json ]; then composer install; fi
 
-# Copy the application
 COPY . .
 
-# Expose the PHP built-in web server
 EXPOSE 8080
 
-# Start the server
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "public"]

@@ -9,7 +9,7 @@ CREATE TABLE book_authors (
        FOREIGN KEY (book_id) REFERENCES books(id)
            ON DELETE CASCADE,
 
-   CONSTRAINT book_authors_author
+   CONSTRAINT fk_book_authors_author
        FOREIGN KEY (author_id) REFERENCES authors(id)
            ON DELETE CASCADE,
 

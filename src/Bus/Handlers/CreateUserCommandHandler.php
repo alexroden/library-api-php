@@ -5,6 +5,7 @@ namespace AlexRoden\LibraryApiPhp\Bus\Handlers;
 use AlexRoden\LibraryApiPhp\Bus\CommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
 use AlexRoden\LibraryApiPhp\Exceptions\ResourceNotFoundException;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Models\User;
@@ -25,11 +26,12 @@ class CreateUserCommandHandler extends AbstractCommandHandler implements Command
             'last_name' => $command->lastName,
         ]);
 
-        if (count($command->roles) > 0) {
-            foreach ($command->roles as $role) {
-                $user->assignRole($role);
-            }
+        $roles = $command->roles;
+        if (count($roles) === 0) {
+            $roles[] = Roles::USER;
         }
+
+        $user->assignRole(...$roles);
 
         $this->events->dispatch(
             new CreateUserEvent($user)

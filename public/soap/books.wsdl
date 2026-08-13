@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://alexroden.com/library"
+        targetNamespace="http://alexroden.com/library">
+
+    <types>
+        <xsd:schema
+                targetNamespace="http://alexroden.com/library"
+                elementFormDefault="qualified">
+
+            <!-- Full Book -->
+            <xsd:complexType name="Book">
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int"/>
+                    <xsd:element name="title" type="xsd:string"/>
+                    <xsd:element name="shortDescription" type="xsd:string"/>
+                    <xsd:element name="tags" type="tns:StringArray"/>
+                    <xsd:element name="category" type="xsd:string"/>
+                    <xsd:element name="author" type="xsd:string"/>
+                    <xsd:element name="publishedAt" type="xsd:date"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <!-- Book summary -->
+            <xsd:complexType name="BookSummary">
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int"/>
+                    <xsd:element name="title" type="xsd:string"/>
+                    <xsd:element name="author" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <!-- String array -->
+            <xsd:complexType name="StringArray">
+                <xsd:sequence>
+                    <xsd:element
+                            name="tag"
+                            type="xsd:string"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                    />
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <!-- getBooks request -->
+            <xsd:element name="getBooksRequest">
+                <xsd:complexType/>
+            </xsd:element>
+
+            <!-- getBooks response -->
+            <xsd:element name="getBooksResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element
+                                name="book"
+                                type="tns:BookSummary"
+                                minOccurs="0"
+                                maxOccurs="unbounded"
+                        />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- getBook request -->
+            <xsd:element name="getBookRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element
+                                name="id"
+                                type="xsd:int"
+                        />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- getBook response -->
+            <xsd:element name="getBookResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element
+                                name="book"
+                                type="tns:Book"
+                        />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:schema>
+    </types>
+
+    <!-- getBooks request message -->
+    <message name="getBooksRequest">
+        <part
+                name="parameters"
+                element="tns:getBooksRequest"
+        />
+    </message>
+
+    <!-- getBooks response message -->
+    <message name="getBooksResponse">
+        <part
+                name="parameters"
+                element="tns:getBooksResponse"
+        />
+    </message>
+
+    <!-- getBook request message -->
+    <message name="getBookRequest">
+        <part
+                name="parameters"
+                element="tns:getBookRequest"
+        />
+    </message>
+
+    <!-- getBook response message -->
+    <message name="getBookResponse">
+        <part
+                name="parameters"
+                element="tns:getBookResponse"
+        />
+    </message>
+
+    <!-- Service interface -->
+    <portType name="BookServicePortType">
+
+        <!-- Get all books -->
+        <operation name="getBooks">
+            <input message="tns:getBooksRequest"/>
+            <output message="tns:getBooksResponse"/>
+        </operation>
+
+        <!-- Get a single book -->
+        <operation name="getBook">
+            <input message="tns:getBookRequest"/>
+            <output message="tns:getBookResponse"/>
+        </operation>
+
+    </portType>
+
+    <!-- SOAP binding -->
+    <binding
+            name="BookServiceBinding"
+            type="tns:BookServicePortType">
+
+        <soap:binding
+                style="document"
+                transport="http://schemas.xmlsoap.org/soap/http"
+        />
+
+        <!-- getBooks -->
+        <operation name="getBooks">
+
+            <soap:operation soapAction="getBooks"/>
+
+            <input>
+                <soap:body use="literal"/>
+            </input>
+
+            <output>
+                <soap:body use="literal"/>
+            </output>
+
+        </operation>
+
+        <!-- getBook -->
+        <operation name="getBook">
+
+            <soap:operation soapAction="getBook"/>
+
+            <input>
+                <soap:body use="literal"/>
+            </input>
+
+            <output>
+                <soap:body use="literal"/>
+            </output>
+
+        </operation>
+
+    </binding>
+
+    <!-- Service -->
+    <service name="BookService">
+
+        <port
+                name="BookServicePort"
+                binding="tns:BookServiceBinding">
+
+            <soap:address
+                    location="http://localhost:8080/soap.php"
+            />
+
+        </port>
+
+    </service>
+
+</definitions>

@@ -33,6 +33,13 @@ use OpenApi\Attributes as OA;
                 type: "integer",
             )
         ),
+        new OA\Property(
+            property: "published_at",
+            type: "string",
+            format: "date",
+            example: "1813-01-28",
+            nullable: true,
+        ),
     ]
 )]
 class UpdateBookRequest

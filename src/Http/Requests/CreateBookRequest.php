@@ -11,6 +11,7 @@ class CreateBookRequest extends FormRequest
             'description' => 'min:3|nullable',
             'tags' => 'array|nullable',
             'authors' => 'array|nullable',
+            'published_at' => 'date|nullable',
         ];
     }
 }

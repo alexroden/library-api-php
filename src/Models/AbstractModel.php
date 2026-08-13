@@ -160,4 +160,13 @@ abstract class AbstractModel implements JsonSerializable
             array_flip($this->fillable)
         );
     }
+
+    protected function getModelId(AbstractModel|int $model): int
+    {
+        if (!is_int($model)) {
+            return $model->id;
+        }
+
+        return $model;
+    }
 }

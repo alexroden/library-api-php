@@ -10,7 +10,9 @@
     "symfony/var-dumper": "^8.1",
     "zircote/swagger-php": "^6.4",
     "symfony/mailer": "^8.1",
-    "phpmailer/phpmailer": "^7.1"
+    "phpmailer/phpmailer": "^7.1",
+    "ext-soap": "*",
+    "aws/aws-sdk-php": "^3.392"
   },
   "require-dev": {
     "phpunit/phpunit": "^12.0",
@@ -20,6 +22,7 @@
   "autoload": {
     "psr-4": {
       "AlexRoden\\LibraryApiPhp\\": "src/",
+      "AlexRoden\\Importers\\": "importers/src",
       "AlexRoden\\LibraryApiPhp\\Database\\Seeders\\": "database/seeders/"
     },
     "files": [

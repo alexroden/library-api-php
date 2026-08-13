@@ -5,6 +5,8 @@ namespace AlexRoden\LibraryApiPhp\Tests\Unit\Bus\Commands;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\EventBus;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateUserCommandHandler;
+use AlexRoden\LibraryApiPhp\Enums\Roles;
+use AlexRoden\LibraryApiPhp\Models\Role;
 use AlexRoden\LibraryApiPhp\Models\User;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -16,6 +18,8 @@ class CreateUserCommandTest extends AbstractTestCase
     protected function setUp(): void
     {
         parent::setUp();
+
+        Role::create(['name' => Roles::USER]);
 
         $this->events = $this->createMock(EventBus::class);
     }

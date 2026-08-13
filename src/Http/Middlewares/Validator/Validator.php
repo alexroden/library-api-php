@@ -2,8 +2,12 @@
 
 namespace AlexRoden\LibraryApiPhp\Http\Middlewares\Validator;
 
+use DateTimeImmutable;
+
 class Validator
 {
+    private const string DATE_FORMAT = 'Y-m-d';
+
     private array $errors = [];
 
     public function __construct(
@@ -67,8 +71,31 @@ class Validator
                 ) {
                     $this->errors[$field][] = ucfirst($field).' must be an array.';
                 }
+
+                if (
+                    $rule === 'date'
+                    && isset($this->data[$field])
+                    && !$this->isDate($this->data[$field])
+                ) {
+                    $this->errors[$field][] = ucfirst($field).' must be a '.self::DATE_FORMAT.' date.';
+                }
             }
         }
+    }
+
+    /**
+     * A date is only valid if it round-trips through the expected format, which
+     * rejects both a wrong shape (01/02/2020) and an impossible day (2020-02-31).
+     */
+    private function isDate(mixed $value): bool
+    {
+        if (!is_string($value)) {
+            return false;
+        }
+
+        $date = DateTimeImmutable::createFromFormat(self::DATE_FORMAT, $value);
+
+        return $date !== false && $date->format(self::DATE_FORMAT) === $value;
     }
 
     public function fails(): bool
