@@ -1,25 +1,32 @@
 <?php
 
-
-require __DIR__ . '/../../vendor/autoload.php';
-
-
+use AlexRoden\Importers\Queue\SqsPublisher;
+use AlexRoden\Importers\Runner\BookImportRunner;
 use AlexRoden\Importers\Soap\BookClient;
 use AlexRoden\LibraryApiPhp\Config\Config;
 
-$config = Config::get('soap');
+require __DIR__ . '/../bootstrap.php';
+
+$soap = Config::get('soap');
+$queue = Config::get('queue');
 
 try {
-    $client = new BookClient($config['baseUrl'], $config['username'], $config['password']);
+    $runner = new BookImportRunner(
+        new BookClient(
+            $soap['baseUrl'],
+            $soap['username'],
+            $soap['password'],
+        ),
+        new SqsPublisher(
+            $queue['books']['url'],
+            $queue,
+        ),
+        $queue['books']['batchSize'],
+    );
 
-    $books = $client->getBooks();
+    $runner->run();
+} catch (Throwable $e) {
+    fwrite(STDERR, 'Import failed: ' . $e->getMessage() . PHP_EOL);
 
-    dd($books);
-
-    foreach ($books as $book) {
-        echo $book->id . ': ' . $book->title . PHP_EOL;
-    }
-} catch (SoapFault $e) {
-    dd($e);
+    exit(1);
 }
-

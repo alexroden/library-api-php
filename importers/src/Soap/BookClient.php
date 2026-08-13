@@ -3,13 +3,14 @@
 namespace AlexRoden\Importers\Soap;
 
 use SoapClient;
+use SoapFault;
 
 class BookClient
 {
     private SoapClient $client;
 
     /**
-     * @throws \SoapFault
+     * @throws SoapFault
      */
     public function __construct(string $baseUrl, string $username, string $password)
     {
@@ -19,17 +20,39 @@ class BookClient
                 'login' => $username,
                 'password' => $password,
                 'authentication' => SOAP_AUTHENTICATION_BASIC,
-                'location' => 'http://api:8080/soap.php',
+                /*
+                 * The WSDL advertises localhost, which is not reachable from
+                 * another container, so the endpoint is overridden here.
+                 */
+                'location' => "{$baseUrl}/soap.php",
                 'exceptions' => true,
                 'trace' => true,
             ]
         );
     }
 
+    /**
+     * @return BookSummary[]
+     *
+     * @throws SoapFault
+     */
     public function getBooks(): array
     {
         $response = $this->client->getBooks();
 
-        return $response->book ?? [];
+        $books = $response->book ?? [];
+
+        /*
+         * A single repeated element comes back as an object rather than an
+         * array, so it is normalised before mapping.
+         */
+        if (!is_array($books)) {
+            $books = [$books];
+        }
+
+        return array_map(
+            static fn (object $book): BookSummary => BookSummary::fromResponse($book),
+            $books
+        );
     }
 }

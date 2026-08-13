@@ -24,6 +24,13 @@ The project is organised into a number of directories, each with a clearly defin
 ├── database/
 │   ├── migrations/
 │   └── seeders/
+├── importers/
+│   ├── bootstrap.php      # Standalone importer bootstrap
+│   ├── runner/            # Importer entry points
+│   └── src/
+│       ├── Queue/         # Queue publishing
+│       ├── Runner/        # Importer orchestration
+│       └── Soap/          # SOAP api clients
 ├── public/
 │   ├── index.php          # Application entry point
 │   └── openapi.json       # Generated OpenAPI specification
@@ -59,6 +66,7 @@ The project is organised into a number of directories, each with a clearly defin
 | **bin**      | Contains executable scripts such as console commands, database seeders, and the OpenAPI documentation generator.                                                      |
 | **config**   | Stores application configuration files. This includes configuration for features such as roles, permissions, and other application settings.                          |
 | **database** | Contains database migrations and seeders used to create and populate the application's schema.                                                                        |
+| **importers**| Standalone processes that read records from the SOAP api and feed them into the application via a queue.                                                              |
 | **public**   | The web root of the application. It contains the `index.php` bootstrap file along with generated public assets such as the OpenAPI specification.                     |
 | **routes**   | Defines the application's HTTP routes, keeping routing separate from controller logic.                                                                                |
 | **src**      | Contains the application's source code, organised into logical components such as authentication, database access, HTTP handling, routing, models, and configuration. |
@@ -109,6 +117,40 @@ make cleanup
 ```
 
 This command stops and removes all containers, networks and Docker volumes created by the project, leaving your system in a clean state.
+
+## Importers
+
+Book records are imported from the SOAP api exposed by `public/soap.php`. That api offers two methods:
+
+* **getBooks** – returns a summary of every book (id, title, author).
+* **getBook** – returns the full record for a single book, including its description, tags and category.
+
+Because the list method only returns a summary, the import is split into two processes:
+
+| Process    | Responsibility                                                                                       |
+| ---------- | ---------------------------------------------------------------------------------------------------- |
+| **Runner** | Calls `getBooks`, chunks the returned ids into batches, and publishes each batch to the queue.       |
+| **Worker** | Reads a batch from the queue, calls `getBook` for each id, and writes the full record to the database. |
+
+Splitting the work this way keeps the runner cheap and short-lived, while the slower per-book calls are spread across workers that can be scaled and retried independently.
+
+### Running the importer
+
+```bash
+make trigger-runner
+```
+
+This starts the queue, creates it if needed, and runs the book import runner as a one-off container.
+
+Each queue message contains a batch of ids:
+
+```json
+{
+  "ids": [1, 2, 3, "..."]
+}
+```
+
+The batch size is controlled by `IMPORT_BATCH_SIZE` in the `.env` file and defaults to `25`. The queue itself is a local [ElasticMQ](https://github.com/softwaremill/elasticmq) container, which speaks the SQS protocol, so the runner uses the AWS SDK and can be pointed at a real SQS queue by changing `SQS_ENDPOINT` and `SQS_QUEUE_URL`.
 
 ## Database Migrations
 

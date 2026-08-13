@@ -19,4 +19,4 @@ console:
 	@docker compose -p $(PROJECT) exec api php bin/console.php $(CMD)
 
 trigger-runner:
-	@docker compose -p $(PROJECT) up -d --build runner
+	@docker compose -p $(PROJECT) run --rm --build runner

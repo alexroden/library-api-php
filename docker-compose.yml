@@ -91,9 +91,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.runner
+    restart: "no"
     env_file:
       - .env
     container_name: php_runner
+    depends_on:
+      api:
+        condition: service_started
+      seed-sqs:
+        condition: service_completed_successfully
     networks:
       - api_network
 
