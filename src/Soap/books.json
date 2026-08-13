@@ -1,0 +1,2802 @@
+[
+  {
+    "id": 1,
+    "title": "The Secret Embers",
+    "shortDescription": "When an unexpected discovery changes everything, the secret embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Langley"
+  },
+  {
+    "id": 2,
+    "title": "A Map of Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, a map of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Blackwood"
+  },
+  {
+    "id": 3,
+    "title": "The Secret Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the secret dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore North"
+  },
+  {
+    "id": 4,
+    "title": "A River of Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, a river of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Dawson"
+  },
+  {
+    "id": 5,
+    "title": "The Last Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the last whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Prescott"
+  },
+  {
+    "id": 6,
+    "title": "The Book of Bells",
+    "shortDescription": "When an unexpected discovery changes everything, the book of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Fairchild"
+  },
+  {
+    "id": 7,
+    "title": "The Lost Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, the lost ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Redmond"
+  },
+  {
+    "id": 8,
+    "title": "The Road to Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, the road to echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Hawthorne"
+  },
+  {
+    "id": 9,
+    "title": "The Song of Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, the song of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Thorne"
+  },
+  {
+    "id": 10,
+    "title": "Under the Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, under the ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Kensington"
+  },
+  {
+    "id": 11,
+    "title": "The Shadow of Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Bellamy"
+  },
+  {
+    "id": 12,
+    "title": "The City of Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the city of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Mercer"
+  },
+  {
+    "id": 13,
+    "title": "The Secret Moonlight",
+    "shortDescription": "When an unexpected discovery changes everything, the secret moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur Caldwell"
+  },
+  {
+    "id": 14,
+    "title": "The Shadow of Memory",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Oakley"
+  },
+  {
+    "id": 15,
+    "title": "The Silent Tides",
+    "shortDescription": "When an unexpected discovery changes everything, the silent tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Ellington"
+  },
+  {
+    "id": 16,
+    "title": "A River of Tides",
+    "shortDescription": "When an unexpected discovery changes everything, a river of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Quincy"
+  },
+  {
+    "id": 17,
+    "title": "A Tale of Stars",
+    "shortDescription": "When an unexpected discovery changes everything, a tale of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Grayson"
+  },
+  {
+    "id": 18,
+    "title": "A River of Starlight",
+    "shortDescription": "When an unexpected discovery changes everything, a river of starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Sterling"
+  },
+  {
+    "id": 19,
+    "title": "The Garden of Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Iverson"
+  },
+  {
+    "id": 20,
+    "title": "A Winter of Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Ashford"
+  },
+  {
+    "id": 21,
+    "title": "The Edge of Storms",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Benjamin Langley"
+  },
+  {
+    "id": 22,
+    "title": "The Shadow of Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Clara Blackwood"
+  },
+  {
+    "id": 23,
+    "title": "A River of Bells",
+    "shortDescription": "When an unexpected discovery changes everything, a river of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Henry North"
+  },
+  {
+    "id": 24,
+    "title": "The Road to Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, the road to fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Phoebe Dawson"
+  },
+  {
+    "id": 25,
+    "title": "The Silent Ashes",
+    "shortDescription": "When an unexpected discovery changes everything, the silent ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Adrian Prescott"
+  },
+  {
+    "id": 26,
+    "title": "The Road to Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the road to wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Beatrice Fairchild"
+  },
+  {
+    "id": 27,
+    "title": "A House of Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, a house of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Gabriel Redmond"
+  },
+  {
+    "id": 28,
+    "title": "The City of Ashes",
+    "shortDescription": "When an unexpected discovery changes everything, the city of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Nora Hawthorne"
+  },
+  {
+    "id": 29,
+    "title": "The Lost Dawn",
+    "shortDescription": "When an unexpected discovery changes everything, the lost dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "William Thorne"
+  },
+  {
+    "id": 30,
+    "title": "The City of Secrets",
+    "shortDescription": "When an unexpected discovery changes everything, the city of secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Amelia Kensington"
+  },
+  {
+    "id": 31,
+    "title": "A Winter of Stars",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Bellamy"
+  },
+  {
+    "id": 32,
+    "title": "Beyond the Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Mercer"
+  },
+  {
+    "id": 33,
+    "title": "The Road to Tides",
+    "shortDescription": "When an unexpected discovery changes everything, the road to tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore Caldwell"
+  },
+  {
+    "id": 34,
+    "title": "The Song of Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, the song of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Oakley"
+  },
+  {
+    "id": 35,
+    "title": "The Edge of Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Ellington"
+  },
+  {
+    "id": 36,
+    "title": "The Forgotten Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Quincy"
+  },
+  {
+    "id": 37,
+    "title": "The Secret Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, the secret dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Grayson"
+  },
+  {
+    "id": 38,
+    "title": "The Clockwork Bells",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Sterling"
+  },
+  {
+    "id": 39,
+    "title": "A Winter of Bells",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Iverson"
+  },
+  {
+    "id": 40,
+    "title": "The Shadow of Tides",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Ashford"
+  },
+  {
+    "id": 41,
+    "title": "The Road to Destiny",
+    "shortDescription": "When an unexpected discovery changes everything, the road to destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Langley"
+  },
+  {
+    "id": 42,
+    "title": "The Garden of Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Blackwood"
+  },
+  {
+    "id": 43,
+    "title": "The Last Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, the last fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur North"
+  },
+  {
+    "id": 44,
+    "title": "The Book of Destiny",
+    "shortDescription": "When an unexpected discovery changes everything, the book of destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Dawson"
+  },
+  {
+    "id": 45,
+    "title": "The Secret Silence",
+    "shortDescription": "When an unexpected discovery changes everything, the secret silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Prescott"
+  },
+  {
+    "id": 46,
+    "title": "The Lost Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, the lost dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Fairchild"
+  },
+  {
+    "id": 47,
+    "title": "Under the Tides",
+    "shortDescription": "When an unexpected discovery changes everything, under the tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Redmond"
+  },
+  {
+    "id": 48,
+    "title": "The Last Bells",
+    "shortDescription": "When an unexpected discovery changes everything, the last bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Hawthorne"
+  },
+  {
+    "id": 49,
+    "title": "The Last Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the last kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Thorne"
+  },
+  {
+    "id": 50,
+    "title": "The Garden of Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Kensington"
+  },
+  {
+    "id": 51,
+    "title": "The Song of Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the song of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Benjamin Bellamy"
+  },
+  {
+    "id": 52,
+    "title": "The Forgotten Fire",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Clara Mercer"
+  },
+  {
+    "id": 53,
+    "title": "Beyond the Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Henry Caldwell"
+  },
+  {
+    "id": 54,
+    "title": "The Road to Storms",
+    "shortDescription": "When an unexpected discovery changes everything, the road to storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Phoebe Oakley"
+  },
+  {
+    "id": 55,
+    "title": "A Tale of Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, a tale of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Adrian Ellington"
+  },
+  {
+    "id": 56,
+    "title": "The Garden of Ashes",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Beatrice Quincy"
+  },
+  {
+    "id": 57,
+    "title": "The Edge of Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Gabriel Grayson"
+  },
+  {
+    "id": 58,
+    "title": "The Secret Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the secret wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Nora Sterling"
+  },
+  {
+    "id": 59,
+    "title": "The City of Embers",
+    "shortDescription": "When an unexpected discovery changes everything, the city of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "William Iverson"
+  },
+  {
+    "id": 60,
+    "title": "A Map of Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, a map of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Amelia Ashford"
+  },
+  {
+    "id": 61,
+    "title": "A River of Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, a river of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Langley"
+  },
+  {
+    "id": 62,
+    "title": "A Map of Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, a map of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Blackwood"
+  },
+  {
+    "id": 63,
+    "title": "A River of Giants",
+    "shortDescription": "When an unexpected discovery changes everything, a river of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore North"
+  },
+  {
+    "id": 64,
+    "title": "The Forgotten Secrets",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Dawson"
+  },
+  {
+    "id": 65,
+    "title": "The Song of Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, the song of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Prescott"
+  },
+  {
+    "id": 66,
+    "title": "The Forgotten Memory",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Fairchild"
+  },
+  {
+    "id": 67,
+    "title": "The Secret Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the secret kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Redmond"
+  },
+  {
+    "id": 68,
+    "title": "The Edge of Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Hawthorne"
+  },
+  {
+    "id": 69,
+    "title": "A House of Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, a house of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Thorne"
+  },
+  {
+    "id": 70,
+    "title": "A House of Ashes",
+    "shortDescription": "When an unexpected discovery changes everything, a house of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Kensington"
+  },
+  {
+    "id": 71,
+    "title": "The Lost Secrets",
+    "shortDescription": "When an unexpected discovery changes everything, the lost secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Bellamy"
+  },
+  {
+    "id": 72,
+    "title": "Beyond the Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Mercer"
+  },
+  {
+    "id": 73,
+    "title": "The Silent Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the silent wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur Caldwell"
+  },
+  {
+    "id": 74,
+    "title": "The Road to Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the road to kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Oakley"
+  },
+  {
+    "id": 75,
+    "title": "The Road to Fire",
+    "shortDescription": "When an unexpected discovery changes everything, the road to fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Ellington"
+  },
+  {
+    "id": 76,
+    "title": "A Map of Storms",
+    "shortDescription": "When an unexpected discovery changes everything, a map of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Quincy"
+  },
+  {
+    "id": 77,
+    "title": "A House of Storms",
+    "shortDescription": "When an unexpected discovery changes everything, a house of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Grayson"
+  },
+  {
+    "id": 78,
+    "title": "The Silent Ravens",
+    "shortDescription": "When an unexpected discovery changes everything, the silent ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Sterling"
+  },
+  {
+    "id": 79,
+    "title": "The Road to Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the road to dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Iverson"
+  },
+  {
+    "id": 80,
+    "title": "Beyond the Secrets",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Ashford"
+  },
+  {
+    "id": 81,
+    "title": "A House of Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, a house of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Benjamin Langley"
+  },
+  {
+    "id": 82,
+    "title": "A House of Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, a house of fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Clara Blackwood"
+  },
+  {
+    "id": 83,
+    "title": "The Forgotten Giants",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Henry North"
+  },
+  {
+    "id": 84,
+    "title": "A House of Giants",
+    "shortDescription": "When an unexpected discovery changes everything, a house of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Phoebe Dawson"
+  },
+  {
+    "id": 85,
+    "title": "A River of Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, a river of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Adrian Prescott"
+  },
+  {
+    "id": 86,
+    "title": "The Secret Stars",
+    "shortDescription": "When an unexpected discovery changes everything, the secret stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Beatrice Fairchild"
+  },
+  {
+    "id": 87,
+    "title": "The Song of Bells",
+    "shortDescription": "When an unexpected discovery changes everything, the song of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Gabriel Redmond"
+  },
+  {
+    "id": 88,
+    "title": "A River of Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, a river of echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Nora Hawthorne"
+  },
+  {
+    "id": 89,
+    "title": "The Song of Giants",
+    "shortDescription": "When an unexpected discovery changes everything, the song of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "William Thorne"
+  },
+  {
+    "id": 90,
+    "title": "The Lost Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the lost dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Amelia Kensington"
+  },
+  {
+    "id": 91,
+    "title": "A Map of Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, a map of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Bellamy"
+  },
+  {
+    "id": 92,
+    "title": "The Garden of Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Mercer"
+  },
+  {
+    "id": 93,
+    "title": "A River of Embers",
+    "shortDescription": "When an unexpected discovery changes everything, a river of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore Caldwell"
+  },
+  {
+    "id": 94,
+    "title": "The Song of Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the song of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Oakley"
+  },
+  {
+    "id": 95,
+    "title": "The Lost Giants",
+    "shortDescription": "When an unexpected discovery changes everything, the lost giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Ellington"
+  },
+  {
+    "id": 96,
+    "title": "The Edge of Stars",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Quincy"
+  },
+  {
+    "id": 97,
+    "title": "The Edge of Ravens",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Grayson"
+  },
+  {
+    "id": 98,
+    "title": "The Road to Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, the road to ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Sterling"
+  },
+  {
+    "id": 99,
+    "title": "The Book of Embers",
+    "shortDescription": "When an unexpected discovery changes everything, the book of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Iverson"
+  },
+  {
+    "id": 100,
+    "title": "The Garden of Dawn",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Ashford"
+  },
+  {
+    "id": 101,
+    "title": "The Secret Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, the secret fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Langley"
+  },
+  {
+    "id": 102,
+    "title": "The Shadow of Ravens",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Blackwood"
+  },
+  {
+    "id": 103,
+    "title": "The Shadow of Giants",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur North"
+  },
+  {
+    "id": 104,
+    "title": "A House of Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, a house of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Dawson"
+  },
+  {
+    "id": 105,
+    "title": "The Shadow of Starlight",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Prescott"
+  },
+  {
+    "id": 106,
+    "title": "Beyond the Roses",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the roses follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Fairchild"
+  },
+  {
+    "id": 107,
+    "title": "The Clockwork Tides",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Redmond"
+  },
+  {
+    "id": 108,
+    "title": "A River of Stars",
+    "shortDescription": "When an unexpected discovery changes everything, a river of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Hawthorne"
+  },
+  {
+    "id": 109,
+    "title": "The Road to Starlight",
+    "shortDescription": "When an unexpected discovery changes everything, the road to starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Thorne"
+  },
+  {
+    "id": 110,
+    "title": "The Road to Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, the road to dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Kensington"
+  },
+  {
+    "id": 111,
+    "title": "A House of Ravens",
+    "shortDescription": "When an unexpected discovery changes everything, a house of ravens follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Benjamin Bellamy"
+  },
+  {
+    "id": 112,
+    "title": "A House of Stars",
+    "shortDescription": "When an unexpected discovery changes everything, a house of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Clara Mercer"
+  },
+  {
+    "id": 113,
+    "title": "A Map of Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, a map of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Henry Caldwell"
+  },
+  {
+    "id": 114,
+    "title": "The Road to Stars",
+    "shortDescription": "When an unexpected discovery changes everything, the road to stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Phoebe Oakley"
+  },
+  {
+    "id": 115,
+    "title": "Beyond the Dawn",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Adrian Ellington"
+  },
+  {
+    "id": 116,
+    "title": "Under the Stars",
+    "shortDescription": "When an unexpected discovery changes everything, under the stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Beatrice Quincy"
+  },
+  {
+    "id": 117,
+    "title": "Under the Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, under the fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Gabriel Grayson"
+  },
+  {
+    "id": 118,
+    "title": "The Clockwork Memory",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Nora Sterling"
+  },
+  {
+    "id": 119,
+    "title": "Under the Memory",
+    "shortDescription": "When an unexpected discovery changes everything, under the memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "William Iverson"
+  },
+  {
+    "id": 120,
+    "title": "A Winter of Silence",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Amelia Ashford"
+  },
+  {
+    "id": 121,
+    "title": "A Map of Secrets",
+    "shortDescription": "When an unexpected discovery changes everything, a map of secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Langley"
+  },
+  {
+    "id": 122,
+    "title": "The Garden of Fire",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Blackwood"
+  },
+  {
+    "id": 123,
+    "title": "A Map of Embers",
+    "shortDescription": "When an unexpected discovery changes everything, a map of embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore North"
+  },
+  {
+    "id": 124,
+    "title": "A Winter of Thieves",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of thieves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Dawson"
+  },
+  {
+    "id": 125,
+    "title": "The Shadow of Moonlight",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Prescott"
+  },
+  {
+    "id": 126,
+    "title": "A Winter of Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Fairchild"
+  },
+  {
+    "id": 127,
+    "title": "The Shadow of Storms",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of storms follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Redmond"
+  },
+  {
+    "id": 128,
+    "title": "A House of Kings",
+    "shortDescription": "When an unexpected discovery changes everything, a house of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Hawthorne"
+  },
+  {
+    "id": 129,
+    "title": "The Edge of Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Thorne"
+  },
+  {
+    "id": 130,
+    "title": "The Book of Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the book of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Kensington"
+  },
+  {
+    "id": 131,
+    "title": "The Lost Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, the lost mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Bellamy"
+  },
+  {
+    "id": 132,
+    "title": "The Clockwork Embers",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Mercer"
+  },
+  {
+    "id": 133,
+    "title": "The Lost Moonlight",
+    "shortDescription": "When an unexpected discovery changes everything, the lost moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur Caldwell"
+  },
+  {
+    "id": 134,
+    "title": "The City of Bells",
+    "shortDescription": "When an unexpected discovery changes everything, the city of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Oakley"
+  },
+  {
+    "id": 135,
+    "title": "The Garden of Giants",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of giants follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Ellington"
+  },
+  {
+    "id": 136,
+    "title": "The Clockwork Thieves",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork thieves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Quincy"
+  },
+  {
+    "id": 137,
+    "title": "The Garden of Tides",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Grayson"
+  },
+  {
+    "id": 138,
+    "title": "The Clockwork Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Sterling"
+  },
+  {
+    "id": 139,
+    "title": "Under the Bells",
+    "shortDescription": "When an unexpected discovery changes everything, under the bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Iverson"
+  },
+  {
+    "id": 140,
+    "title": "A Winter of Tides",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Ashford"
+  },
+  {
+    "id": 141,
+    "title": "The Garden of Secrets",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of secrets follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Benjamin Langley"
+  },
+  {
+    "id": 142,
+    "title": "The City of Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the city of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Clara Blackwood"
+  },
+  {
+    "id": 143,
+    "title": "Under the Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, under the dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Henry North"
+  },
+  {
+    "id": 144,
+    "title": "The Book of Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the book of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Phoebe Dawson"
+  },
+  {
+    "id": 145,
+    "title": "The City of Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the city of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Adrian Prescott"
+  },
+  {
+    "id": 146,
+    "title": "The Last Starlight",
+    "shortDescription": "When an unexpected discovery changes everything, the last starlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Beatrice Fairchild"
+  },
+  {
+    "id": 147,
+    "title": "A Tale of Silence",
+    "shortDescription": "When an unexpected discovery changes everything, a tale of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Gabriel Redmond"
+  },
+  {
+    "id": 148,
+    "title": "The Silent Echoes",
+    "shortDescription": "When an unexpected discovery changes everything, the silent echoes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Nora Hawthorne"
+  },
+  {
+    "id": 149,
+    "title": "A Winter of Shadows",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of shadows follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "William Thorne"
+  },
+  {
+    "id": 150,
+    "title": "The Last Stars",
+    "shortDescription": "When an unexpected discovery changes everything, the last stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Amelia Kensington"
+  },
+  {
+    "id": 151,
+    "title": "The Clockwork Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Bellamy"
+  },
+  {
+    "id": 152,
+    "title": "The Book of Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the book of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Mercer"
+  },
+  {
+    "id": 153,
+    "title": "A Map of Dawn",
+    "shortDescription": "When an unexpected discovery changes everything, a map of dawn follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore Caldwell"
+  },
+  {
+    "id": 154,
+    "title": "Beyond the Memory",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Oakley"
+  },
+  {
+    "id": 155,
+    "title": "The Book of Tides",
+    "shortDescription": "When an unexpected discovery changes everything, the book of tides follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Ellington"
+  },
+  {
+    "id": 156,
+    "title": "The Silent Bells",
+    "shortDescription": "When an unexpected discovery changes everything, the silent bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Quincy"
+  },
+  {
+    "id": 157,
+    "title": "The Clockwork Fire",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Grayson"
+  },
+  {
+    "id": 158,
+    "title": "The Forgotten Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Sterling"
+  },
+  {
+    "id": 159,
+    "title": "A Map of Fire",
+    "shortDescription": "When an unexpected discovery changes everything, a map of fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Iverson"
+  },
+  {
+    "id": 160,
+    "title": "The Book of Shadows",
+    "shortDescription": "When an unexpected discovery changes everything, the book of shadows follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Ashford"
+  },
+  {
+    "id": 161,
+    "title": "The Shadow of Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Langley"
+  },
+  {
+    "id": 162,
+    "title": "The Shadow of Thieves",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of thieves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Blackwood"
+  },
+  {
+    "id": 163,
+    "title": "A River of Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, a river of dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur North"
+  },
+  {
+    "id": 164,
+    "title": "A Winter of Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Dawson"
+  },
+  {
+    "id": 165,
+    "title": "The Lost Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the lost whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Prescott"
+  },
+  {
+    "id": 166,
+    "title": "The Road to Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the road to wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Fairchild"
+  },
+  {
+    "id": 167,
+    "title": "The Lost Fire",
+    "shortDescription": "When an unexpected discovery changes everything, the lost fire follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Redmond"
+  },
+  {
+    "id": 168,
+    "title": "The Song of Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, the song of ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Hawthorne"
+  },
+  {
+    "id": 169,
+    "title": "The Song of Ashes",
+    "shortDescription": "When an unexpected discovery changes everything, the song of ashes follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Thorne"
+  },
+  {
+    "id": 170,
+    "title": "The Road to Memory",
+    "shortDescription": "When an unexpected discovery changes everything, the road to memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Kensington"
+  },
+  {
+    "id": 171,
+    "title": "The Forgotten Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Benjamin Bellamy"
+  },
+  {
+    "id": 172,
+    "title": "The Forgotten Embers",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten embers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Clara Mercer"
+  },
+  {
+    "id": 173,
+    "title": "A Winter of Fortune",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of fortune follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Henry Caldwell"
+  },
+  {
+    "id": 174,
+    "title": "Beyond the Bells",
+    "shortDescription": "When an unexpected discovery changes everything, beyond the bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Phoebe Oakley"
+  },
+  {
+    "id": 175,
+    "title": "A Winter of Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, a winter of lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Adrian Ellington"
+  },
+  {
+    "id": 176,
+    "title": "The Clockwork Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Beatrice Quincy"
+  },
+  {
+    "id": 177,
+    "title": "A House of Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, a house of mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Gabriel Grayson"
+  },
+  {
+    "id": 178,
+    "title": "The Lost Wonders",
+    "shortDescription": "When an unexpected discovery changes everything, the lost wonders follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Nora Sterling"
+  },
+  {
+    "id": 179,
+    "title": "The Clockwork Mirrors",
+    "shortDescription": "When an unexpected discovery changes everything, the clockwork mirrors follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "William Iverson"
+  },
+  {
+    "id": 180,
+    "title": "A River of Destiny",
+    "shortDescription": "When an unexpected discovery changes everything, a river of destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Amelia Ashford"
+  },
+  {
+    "id": 181,
+    "title": "The Last Wolves",
+    "shortDescription": "When an unexpected discovery changes everything, the last wolves follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Elias Langley"
+  },
+  {
+    "id": 182,
+    "title": "A Tale of Dreams",
+    "shortDescription": "When an unexpected discovery changes everything, a tale of dreams follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Lydia Blackwood"
+  },
+  {
+    "id": 183,
+    "title": "The Forgotten Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Theodore North"
+  },
+  {
+    "id": 184,
+    "title": "The Shadow of Destiny",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Celia Dawson"
+  },
+  {
+    "id": 185,
+    "title": "A Tale of Bells",
+    "shortDescription": "When an unexpected discovery changes everything, a tale of bells follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Daniel Prescott"
+  },
+  {
+    "id": 186,
+    "title": "The Secret Destiny",
+    "shortDescription": "When an unexpected discovery changes everything, the secret destiny follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Iris Fairchild"
+  },
+  {
+    "id": 187,
+    "title": "The Secret Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, the secret lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "Samuel Redmond"
+  },
+  {
+    "id": 188,
+    "title": "The Song of Dragons",
+    "shortDescription": "When an unexpected discovery changes everything, the song of dragons follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Alice Hawthorne"
+  },
+  {
+    "id": 189,
+    "title": "A Map of Kings",
+    "shortDescription": "When an unexpected discovery changes everything, a map of kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Caleb Thorne"
+  },
+  {
+    "id": 190,
+    "title": "The Garden of Silence",
+    "shortDescription": "When an unexpected discovery changes everything, the garden of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Grace Kensington"
+  },
+  {
+    "id": 191,
+    "title": "The Secret Memory",
+    "shortDescription": "When an unexpected discovery changes everything, the secret memory follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "magic",
+      "quest",
+      "mythology",
+      "dragons",
+      "adventure"
+    ],
+    "category": "fantasy",
+    "author": "Oliver Bellamy"
+  },
+  {
+    "id": 192,
+    "title": "A House of Moonlight",
+    "shortDescription": "When an unexpected discovery changes everything, a house of moonlight follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "journey",
+      "exploration",
+      "survival",
+      "quest",
+      "friendship"
+    ],
+    "category": "adventure",
+    "author": "Zoe Mercer"
+  },
+  {
+    "id": 193,
+    "title": "The Edge of Whispers",
+    "shortDescription": "When an unexpected discovery changes everything, the edge of whispers follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "identity",
+      "family",
+      "friendship",
+      "secrets",
+      "coming of age"
+    ],
+    "category": "fiction",
+    "author": "Arthur Caldwell"
+  },
+  {
+    "id": 194,
+    "title": "The Forgotten Kings",
+    "shortDescription": "When an unexpected discovery changes everything, the forgotten kings follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "family",
+      "betrayal",
+      "identity",
+      "secrets",
+      "love"
+    ],
+    "category": "drama",
+    "author": "Fiona Oakley"
+  },
+  {
+    "id": 195,
+    "title": "The Silent Ghosts",
+    "shortDescription": "When an unexpected discovery changes everything, the silent ghosts follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "love",
+      "family",
+      "identity",
+      "secrets",
+      "friendship"
+    ],
+    "category": "romance",
+    "author": "Marcus Ellington"
+  },
+  {
+    "id": 196,
+    "title": "The Book of Roses",
+    "shortDescription": "When an unexpected discovery changes everything, the book of roses follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "dark",
+      "ghosts",
+      "supernatural",
+      "secrets",
+      "survival"
+    ],
+    "category": "horror",
+    "author": "Violet Quincy"
+  },
+  {
+    "id": 197,
+    "title": "The City of Silence",
+    "shortDescription": "When an unexpected discovery changes everything, the city of silence follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "detective",
+      "secrets",
+      "betrayal",
+      "revenge"
+    ],
+    "category": "mystery",
+    "author": "David Grayson"
+  },
+  {
+    "id": 198,
+    "title": "The Shadow of Stars",
+    "shortDescription": "When an unexpected discovery changes everything, the shadow of stars follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "space",
+      "time travel",
+      "exploration",
+      "identity",
+      "survival"
+    ],
+    "category": "science fiction",
+    "author": "Eleanor Sterling"
+  },
+  {
+    "id": 199,
+    "title": "The Silent Lanterns",
+    "shortDescription": "When an unexpected discovery changes everything, the silent lanterns follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "mystery",
+      "betrayal",
+      "revenge",
+      "survival",
+      "secrets"
+    ],
+    "category": "thriller",
+    "author": "Julian Iverson"
+  },
+  {
+    "id": 200,
+    "title": "The Last Shadows",
+    "shortDescription": "When an unexpected discovery changes everything, the last shadows follows a group of unlikely companions as they confront old secrets, difficult choices, and a journey that could reshape their lives.",
+    "tags": [
+      "war",
+      "family",
+      "love",
+      "politics",
+      "identity"
+    ],
+    "category": "historical fiction",
+    "author": "Sofia Ashford"
+  }
+]

@@ -24,33 +24,35 @@ class User extends AbstractModel
      * @throws ResourceNotFoundException
      * @throws UndefinedClassException
      */
-    public function assignRole(Role|string $role): void
+    public function assignRole(Role|string ...$roles): void
     {
-        $role = $this->getRole($role);
+        foreach ($roles as $role) {
+            $role = $this->getRole($role);
 
-        if (
-            !$this->DB(
-                'user_roles',
-                null,
-                ['user_id', 'role_id'],
-            )->where(
-                'user_id',
-                '=',
-                $this->id,
-            )->where(
-                'role_id',
-                '=',
-                $role->id,
-            )->first()
-        ) {
-            $this->DB(
-                'user_roles',
-                null,
-                ['user_id', 'role_id'],
-            )->insert([
-                'user_id' => $this->id,
-                'role_id' => $role->id,
-            ]);
+            if (
+                !$this->DB(
+                    'user_roles',
+                    null,
+                    ['user_id', 'role_id'],
+                )->where(
+                    'user_id',
+                    '=',
+                    $this->id,
+                )->where(
+                    'role_id',
+                    '=',
+                    $role->id,
+                )->first()
+            ) {
+                $this->DB(
+                    'user_roles',
+                    null,
+                    ['user_id', 'role_id'],
+                )->insert([
+                    'user_id' => $this->id,
+                    'role_id' => $role->id,
+                ]);
+            }
         }
     }
 
