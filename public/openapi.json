@@ -894,7 +894,7 @@
                     "Stocks"
                 ],
                 "summary": "Create stock",
-                "description": "Creates a stock record holding the quantity of a book at a library.",
+                "description": "Creates a stock record holding the quantity of a book at a library. A library holds one record per book, so an existing record has its quantity replaced by the submitted value.",
                 "operationId": "7f7bf3796211cccf328f64d9bb00c44d",
                 "requestBody": {
                     "required": true,
@@ -908,7 +908,7 @@
                 },
                 "responses": {
                     "201": {
-                        "description": "Stock created",
+                        "description": "Stock created or updated",
                         "content": {
                             "application\/json": {
                                 "schema": {

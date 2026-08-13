@@ -19,6 +19,7 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCategoryCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateLibraryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateStockCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateAuthorCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateBookCommandHandler;
@@ -38,6 +39,7 @@ use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateCategoryCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateCouncilCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateLibraryCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateStockCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateUserCommandHandler;
 
 /*
@@ -64,5 +66,6 @@ return [
     UpdateCategoryCommand::class => UpdateCategoryCommandHandler::class,
     UpdateCouncilCommand::class => UpdateCouncilCommandHandler::class,
     UpdateLibraryCommand::class => UpdateLibraryCommandHandler::class,
+    UpdateStockCommand::class => UpdateStockCommandHandler::class,
     UpdateUserCommand::class => UpdateUserCommandHandler::class,
 ];

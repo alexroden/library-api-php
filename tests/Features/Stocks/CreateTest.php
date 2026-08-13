@@ -73,6 +73,72 @@ class CreateTest extends AbstractFeaturesTestCase
         $this->assertEquals(0, $stock->quantity);
     }
 
+    public function testCreateStockUpdatesAnExistingRecord(): void
+    {
+        $this->asAuthorizedUser();
+
+        $existing = Stock::create([
+            'library_id' => $this->library->id,
+            'book_id' => $this->book->id,
+            'quantity' => 5,
+        ]);
+
+        $response = $this->handle(
+            Request::create(
+                method: 'POST',
+                uri: '/api/stocks',
+                body: [
+                    'library_id' => $this->library->id,
+                    'book_id' => $this->book->id,
+                    'quantity' => 12,
+                ]
+            )
+        );
+
+        $this->assertEquals(201, $response->status());
+
+        $stocks = Stock::where('library_id', '=', $this->library->id)->get();
+        $this->assertCount(1, $stocks);
+        $this->assertEquals($existing->id, $stocks[0]->id);
+        $this->assertEquals(12, $stocks[0]->quantity);
+    }
+
+    public function testCreateStockIsScopedToTheLibraryAndBookPair(): void
+    {
+        $this->asAuthorizedUser();
+
+        $otherBook = BookFactory::create();
+        Stock::create([
+            'library_id' => $this->library->id,
+            'book_id' => $otherBook->id,
+            'quantity' => 5,
+        ]);
+
+        $response = $this->handle(
+            Request::create(
+                method: 'POST',
+                uri: '/api/stocks',
+                body: [
+                    'library_id' => $this->library->id,
+                    'book_id' => $this->book->id,
+                    'quantity' => 12,
+                ]
+            )
+        );
+
+        $this->assertEquals(201, $response->status());
+
+        $this->assertCount(2, Stock::where('library_id', '=', $this->library->id)->get());
+        $this->assertEquals(
+            5,
+            Stock::findByLibraryAndBook($this->library->id, $otherBook->id)->quantity
+        );
+        $this->assertEquals(
+            12,
+            Stock::findByLibraryAndBook($this->library->id, $this->book->id)->quantity
+        );
+    }
+
     public function testCreateStockRequiresALibraryAndABook(): void
     {
         $this->asAuthorizedUser();

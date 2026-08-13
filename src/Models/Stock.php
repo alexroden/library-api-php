@@ -18,6 +18,25 @@ class Stock extends AbstractModel
     ];
 
     /**
+     * A library holds one stock record per book, so this is the pair the unique
+     * constraint is on.
+     *
+     * @throws UndefinedClassException
+     */
+    public static function findByLibraryAndBook(int $libraryId, int $bookId): ?Stock
+    {
+        return static::where(
+            'library_id',
+            '=',
+            $libraryId,
+        )->where(
+            'book_id',
+            '=',
+            $bookId,
+        )->first();
+    }
+
+    /**
      * @throws UndefinedClassException
      */
     public function library(): ?Library
