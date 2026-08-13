@@ -2,6 +2,8 @@
 
 namespace AlexRoden\LibraryApiPhp\Models;
 
+use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
+
 /**
  * @extends AbstractModel<Book>
  */
@@ -107,6 +109,36 @@ class Book extends AbstractModel
             'category_id',
             'id',
             ['id', 'name'],
+        )->excludeLocalAttributes()->get();
+    }
+
+    /**
+     * The libraries stocking this book, each carrying its `quantity` from `stocks`.
+     *
+     * @return array<Library>
+     *
+     * @throws UndefinedClassException
+     */
+    public function libraries(): array
+    {
+        return $this->DB(
+            'stocks',
+            Library::class,
+        )->where(
+            'book_id',
+            '=',
+            $this->id,
+        )->join(
+            'libraries',
+            'library_id',
+            'id',
+            [
+                'id',
+                'name',
+                'created_at',
+                'updated_at',
+                'stocks.quantity',
+            ],
         )->excludeLocalAttributes()->get();
     }
 

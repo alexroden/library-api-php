@@ -6,6 +6,7 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\CreateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCategoryCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateLibraryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\CreateStockCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteAuthorCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteBookCommand;
@@ -18,12 +19,14 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCategoryCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateLibraryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateStockCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateAuthorCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateCategoryCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateCouncilCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateLibraryCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateStockCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\CreateUserCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteAuthorCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteBookCommandHandler;
@@ -36,6 +39,7 @@ use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateCategoryCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateCouncilCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateLibraryCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateStockCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateUserCommandHandler;
 
 /*
@@ -49,6 +53,7 @@ return [
     CreateCategoryCommand::class => CreateCategoryCommandHandler::class,
     CreateCouncilCommand::class => CreateCouncilCommandHandler::class,
     CreateLibraryCommand::class => CreateLibraryCommandHandler::class,
+    CreateStockCommand::class => CreateStockCommandHandler::class,
     CreateUserCommand::class => CreateUserCommandHandler::class,
     DeleteAuthorCommand::class => DeleteAuthorCommandHandler::class,
     DeleteBookCommand::class => DeleteBookCommandHandler::class,
@@ -61,5 +66,6 @@ return [
     UpdateCategoryCommand::class => UpdateCategoryCommandHandler::class,
     UpdateCouncilCommand::class => UpdateCouncilCommandHandler::class,
     UpdateLibraryCommand::class => UpdateLibraryCommandHandler::class,
+    UpdateStockCommand::class => UpdateStockCommandHandler::class,
     UpdateUserCommand::class => UpdateUserCommandHandler::class,
 ];

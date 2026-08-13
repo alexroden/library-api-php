@@ -888,6 +888,49 @@
                 ]
             }
         },
+        "\/api\/stocks": {
+            "post": {
+                "tags": [
+                    "Stocks"
+                ],
+                "summary": "Create stock",
+                "description": "Creates a stock record holding the quantity of a book at a library. A library holds one record per book, so an existing record has its quantity replaced by the submitted value.",
+                "operationId": "7f7bf3796211cccf328f64d9bb00c44d",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CreateStockRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Stock created or updated",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/StockResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "\/api\/auth": {
             "post": {
                 "tags": [
@@ -1305,6 +1348,29 @@
                 },
                 "type": "object"
             },
+            "CreateStockRequest": {
+                "required": [
+                    "library_id",
+                    "book_id"
+                ],
+                "properties": {
+                    "library_id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "book_id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "example": 12,
+                        "nullable": true,
+                        "default": 0
+                    }
+                },
+                "type": "object"
+            },
             "CreateUserRequest": {
                 "required": [
                     "email",
@@ -1555,6 +1621,14 @@
                 },
                 "type": "object"
             },
+            "StockResponse": {
+                "properties": {
+                    "data": {
+                        "$ref": "#\/components\/schemas\/Stock"
+                    }
+                },
+                "type": "object"
+            },
             "UserCollection": {
                 "properties": {
                     "meta": {
@@ -1669,6 +1743,29 @@
                     },
                     "name": {
                         "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Stock": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "library_id": {
+                        "type": "integer"
+                    },
+                    "book_id": {
+                        "type": "integer"
+                    },
+                    "quantity": {
+                        "type": "integer"
                     },
                     "created_at": {
                         "type": "string"
@@ -1806,6 +1903,10 @@
         {
             "name": "Libraries",
             "description": "Libraries"
+        },
+        {
+            "name": "Stocks",
+            "description": "Stocks"
         },
         {
             "name": "Users",

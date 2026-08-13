@@ -10,5 +10,5 @@ $openapi = (new Generator())->generate([
 
 file_put_contents(
     __DIR__ . '/../public/openapi.json',
-    $openapi->toJson(JSON_PRETTY_PRINT)
+    $openapi->toJson(JSON_PRETTY_PRINT) . PHP_EOL
 );
