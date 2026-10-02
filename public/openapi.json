@@ -352,6 +352,65 @@
                 ]
             }
         },
+        "\/api\/books\/{book}\/stocks": {
+            "get": {
+                "tags": [
+                    "Books",
+                    "Stocks"
+                ],
+                "summary": "List stock for a given book",
+                "description": "Returns the stock of a given book across libraries. Pass library_id to narrow the list to that library; a library holding no stock of the book returns an empty list.",
+                "operationId": "9f737a8c0babea7625346d2bd759c268",
+                "parameters": [
+                    {
+                        "name": "book",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "library_id",
+                        "in": "query",
+                        "description": "Only return the stock held by this library.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Stock returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/StockCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Book not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "\/api\/categories": {
             "get": {
                 "tags": [
@@ -888,6 +947,65 @@
                 ]
             }
         },
+        "\/api\/libraries\/{library}\/stocks": {
+            "get": {
+                "tags": [
+                    "Libraries",
+                    "Stocks"
+                ],
+                "summary": "List stock for a given library",
+                "description": "Returns the stock held by a given library. Pass book_id to narrow the list to that book; a book the library holds no stock for returns an empty list.",
+                "operationId": "0a17d08a2deb4843b75ebd3852f37a9b",
+                "parameters": [
+                    {
+                        "name": "library",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "book_id",
+                        "in": "query",
+                        "description": "Only return the stock held for this book.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Limit"
+                    },
+                    {
+                        "$ref": "#\/components\/parameters\/Offset"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Stock returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/StockCollection"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Library not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "\/api\/stocks": {
             "post": {
                 "tags": [
@@ -922,6 +1040,49 @@
                     },
                     "422": {
                         "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "\/api\/stocks\/{stock}": {
+            "get": {
+                "tags": [
+                    "Stocks"
+                ],
+                "summary": "Get a given stock record",
+                "description": "Returns a given stock record.",
+                "operationId": "08f9cd32a9727645681eaebfbbf9db6a",
+                "parameters": [
+                    {
+                        "name": "stock",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Stock returned",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/StockResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "404": {
+                        "description": "Stock not found"
                     }
                 },
                 "security": [
@@ -1621,6 +1782,20 @@
                 },
                 "type": "object"
             },
+            "StockCollection": {
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Pagination"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Stock"
+                        }
+                    }
+                },
+                "type": "object"
+            },
             "StockResponse": {
                 "properties": {
                     "data": {
@@ -1889,6 +2064,10 @@
             "description": "Books"
         },
         {
+            "name": "Stocks",
+            "description": "Stocks"
+        },
+        {
             "name": "Categories",
             "description": "Categories"
         },
@@ -1903,10 +2082,6 @@
         {
             "name": "Libraries",
             "description": "Libraries"
-        },
-        {
-            "name": "Stocks",
-            "description": "Stocks"
         },
         {
             "name": "Users",
