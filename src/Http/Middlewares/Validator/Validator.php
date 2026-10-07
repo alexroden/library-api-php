@@ -36,6 +36,22 @@ class Validator
                 }
 
                 if (
+                    $rule === 'present'
+                    && !isset($this->data[$field])
+                ) {
+                    $this->errors[$field][] = $field.' is required.';
+                }
+
+                if (
+                    $rule === 'non_negative_integer'
+                    && array_key_exists($field, $this->data)
+                    && $this->data[$field] !== null
+                    && !$this->isNonNegativeInteger($this->data[$field])
+                ) {
+                    $this->errors[$field][] = ucfirst($field).' must be a whole number of 0 or more.';
+                }
+
+                if (
                     $rule === 'email'
                     && isset($this->data[$field])
                     && !filter_var($this->data[$field], FILTER_VALIDATE_EMAIL)) {
@@ -96,6 +112,15 @@ class Validator
         $date = DateTimeImmutable::createFromFormat(self::DATE_FORMAT, $value);
 
         return $date !== false && $date->format(self::DATE_FORMAT) === $value;
+    }
+
+    private function isNonNegativeInteger(mixed $value): bool
+    {
+        if (is_int($value)) {
+            return $value >= 0;
+        }
+
+        return is_string($value) && ctype_digit($value);
     }
 
     public function fails(): bool

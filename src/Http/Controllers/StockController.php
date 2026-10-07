@@ -10,6 +10,7 @@ use AlexRoden\LibraryApiPhp\Http\Exceptions\InternalServiceException;
 use AlexRoden\LibraryApiPhp\Http\Foundation\Request;
 use AlexRoden\LibraryApiPhp\Http\Helpers\JsonResponse;
 use AlexRoden\LibraryApiPhp\Http\Requests\CreateStockRequest;
+use AlexRoden\LibraryApiPhp\Http\Requests\UpdateStockRequest;
 use AlexRoden\LibraryApiPhp\Models\Book;
 use AlexRoden\LibraryApiPhp\Models\Library;
 use AlexRoden\LibraryApiPhp\Models\Stock;
@@ -57,6 +58,27 @@ class StockController extends AbstractController
 
     public function get(Request $request, Stock $stock): JsonResponse
     {
+        return new JsonResponse([
+            'data' => $stock,
+        ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function update(UpdateStockRequest $request, Stock $stock): JsonResponse
+    {
+        try {
+            $stock = $this->commandBus->dispatch(
+                new UpdateStockCommand($stock, ...$request->validated())
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
         return new JsonResponse([
             'data' => $stock,
         ]);

@@ -24,6 +24,7 @@ use OpenApi\Attributes as OA;
         new OA\Property(
             property: "quantity",
             type: "integer",
+            minimum: 0,
             example: 12,
             default: 0,
             nullable: true,

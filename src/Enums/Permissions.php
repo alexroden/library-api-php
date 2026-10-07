@@ -36,6 +36,7 @@ final class Permissions
     const string STOCKS_CREATE = 'stocks.create';
     const string STOCKS_GET = 'stocks.get';
     const string STOCKS_LIST = 'stocks.list';
+    const string STOCKS_UPDATE = 'stocks.update';
     const string USERS_CREATE = 'users.create';
     const string USERS_GET = 'users.get';
     const string USERS_LIST = 'users.list';

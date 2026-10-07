@@ -13,7 +13,7 @@ class CreateStockRequest extends FormRequest
              * Not `required`: the validator treats it with empty(), which would
              * reject a legitimate opening quantity of 0. The command defaults it.
              */
-            'quantity' => 'nullable',
+            'quantity' => 'nullable|non_negative_integer',
         ];
     }
 

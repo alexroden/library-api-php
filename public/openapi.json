@@ -1090,6 +1090,63 @@
                         "bearerAuth": []
                     }
                 ]
+            },
+            "put": {
+                "tags": [
+                    "Stocks"
+                ],
+                "summary": "Update stock",
+                "description": "Replaces the quantity of a given stock record. The library and book the record belongs to cannot be changed.",
+                "operationId": "0dbddfd976c9980f1b38c1bfd59d9a5d",
+                "parameters": [
+                    {
+                        "name": "stock",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/UpdateStockRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Stock updated",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/StockResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "403": {
+                        "description": "Missing the stocks.update permission"
+                    },
+                    "404": {
+                        "description": "Stock not found"
+                    },
+                    "422": {
+                        "$ref": "#\/components\/responses\/Validation"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "\/api\/auth": {
@@ -1527,7 +1584,8 @@
                         "type": "integer",
                         "example": 12,
                         "nullable": true,
-                        "default": 0
+                        "default": 0,
+                        "minimum": 0
                     }
                 },
                 "type": "object"
@@ -1631,6 +1689,20 @@
                         "format": "date",
                         "example": "1813-01-28",
                         "nullable": true
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateStockRequest": {
+                "required": [
+                    "quantity"
+                ],
+                "properties": {
+                    "quantity": {
+                        "description": "Whole number of copies held, 0 or more. library_id and book_id are ignored if sent.",
+                        "type": "integer",
+                        "example": 12,
+                        "minimum": 0
                     }
                 },
                 "type": "object"

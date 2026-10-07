@@ -168,6 +168,58 @@ class CreateTest extends AbstractFeaturesTestCase
         $this->assertNull(Stock::where('book_id', '=', $this->book->id)->first());
     }
 
+    public function testCreateStockRejectsANegativeQuantity(): void
+    {
+        $this->asAuthorizedUser();
+
+        try {
+            $this->handle(
+                Request::create(
+                    method: 'POST',
+                    uri: '/api/stocks',
+                    body: [
+                        'library_id' => $this->library->id,
+                        'book_id' => $this->book->id,
+                        'quantity' => -1,
+                    ]
+                )
+            );
+
+            $this->fail('Expected the request to fail validation.');
+        } catch (ValidationException $e) {
+            $this->assertEquals(422, $e->statusCode());
+            $this->assertArrayHasKey('quantity', $e->errors());
+        }
+
+        $this->assertNull(Stock::where('book_id', '=', $this->book->id)->first());
+    }
+
+    public function testCreateStockRejectsANonNumericQuantity(): void
+    {
+        $this->asAuthorizedUser();
+
+        try {
+            $this->handle(
+                Request::create(
+                    method: 'POST',
+                    uri: '/api/stocks',
+                    body: [
+                        'library_id' => $this->library->id,
+                        'book_id' => $this->book->id,
+                        'quantity' => 'abc',
+                    ]
+                )
+            );
+
+            $this->fail('Expected the request to fail validation.');
+        } catch (ValidationException $e) {
+            $this->assertEquals(422, $e->statusCode());
+            $this->assertArrayHasKey('quantity', $e->errors());
+        }
+
+        $this->assertNull(Stock::where('book_id', '=', $this->book->id)->first());
+    }
+
     /**
      * The other feature tests authorise as a super admin, which cannot catch a
      * route that is missing its permission middleware, so mint a token without
