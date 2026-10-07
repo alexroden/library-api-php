@@ -168,6 +168,137 @@ class CreateTest extends AbstractFeaturesTestCase
         $this->assertNull(Stock::where('book_id', '=', $this->book->id)->first());
     }
 
+    public function testCreateStockRejectsALibraryThatDoesNotExist(): void
+    {
+        $this->asAuthorizedUser();
+
+        try {
+            $this->handle(
+                Request::create(
+                    method: 'POST',
+                    uri: '/api/stocks',
+                    body: [
+                        'library_id' => $this->library->id + 1,
+                        'book_id' => $this->book->id,
+                        'quantity' => 12,
+                    ]
+                )
+            );
+
+            $this->fail('Expected the request to fail validation.');
+        } catch (ValidationException $e) {
+            $this->assertEquals(422, $e->statusCode());
+            $this->assertArrayHasKey('library_id', $e->errors());
+            $this->assertArrayNotHasKey('book_id', $e->errors());
+        }
+
+        $this->assertNull(Stock::where('book_id', '=', $this->book->id)->first());
+    }
+
+    public function testCreateStockRejectsABookThatDoesNotExist(): void
+    {
+        $this->asAuthorizedUser();
+
+        try {
+            $this->handle(
+                Request::create(
+                    method: 'POST',
+                    uri: '/api/stocks',
+                    body: [
+                        'library_id' => $this->library->id,
+                        'book_id' => $this->book->id + 1,
+                        'quantity' => 12,
+                    ]
+                )
+            );
+
+            $this->fail('Expected the request to fail validation.');
+        } catch (ValidationException $e) {
+            $this->assertEquals(422, $e->statusCode());
+            $this->assertArrayHasKey('book_id', $e->errors());
+            $this->assertArrayNotHasKey('library_id', $e->errors());
+        }
+
+        $this->assertNull(Stock::where('library_id', '=', $this->library->id)->first());
+    }
+
+    public function testCreateStockReportsEveryMissingRecord(): void
+    {
+        $this->asAuthorizedUser();
+
+        try {
+            $this->handle(
+                Request::create(
+                    method: 'POST',
+                    uri: '/api/stocks',
+                    body: [
+                        'library_id' => $this->library->id + 1,
+                        'book_id' => $this->book->id + 1,
+                    ]
+                )
+            );
+
+            $this->fail('Expected the request to fail validation.');
+        } catch (ValidationException $e) {
+            $this->assertArrayHasKey('library_id', $e->errors());
+            $this->assertArrayHasKey('book_id', $e->errors());
+        }
+    }
+
+    public function testCreateStockRejectsNonNumericIds(): void
+    {
+        $this->asAuthorizedUser();
+
+        try {
+            $this->handle(
+                Request::create(
+                    method: 'POST',
+                    uri: '/api/stocks',
+                    body: [
+                        'library_id' => 'abc',
+                        'book_id' => '1.5',
+                        'quantity' => 12,
+                    ]
+                )
+            );
+
+            $this->fail('Expected the request to fail validation.');
+        } catch (ValidationException $e) {
+            $this->assertEquals(422, $e->statusCode());
+            $this->assertArrayHasKey('library_id', $e->errors());
+            $this->assertArrayHasKey('book_id', $e->errors());
+        }
+    }
+
+    public function testCreateStockStillUpdatesWhenTheRecordsExist(): void
+    {
+        $this->asAuthorizedUser();
+
+        Stock::create([
+            'library_id' => $this->library->id,
+            'book_id' => $this->book->id,
+            'quantity' => 5,
+        ]);
+
+        $response = $this->handle(
+            Request::create(
+                method: 'POST',
+                uri: '/api/stocks',
+                body: [
+                    'library_id' => (string) $this->library->id,
+                    'book_id' => (string) $this->book->id,
+                    'quantity' => 9,
+                ]
+            )
+        );
+
+        $this->assertEquals(201, $response->status());
+        $this->assertEquals(
+            9,
+            Stock::findByLibraryAndBook($this->library->id, $this->book->id)->quantity
+        );
+    }
+
     public function testCreateStockRejectsANegativeQuantity(): void
     {
         $this->asAuthorizedUser();
