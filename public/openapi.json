@@ -398,7 +398,19 @@
                         }
                     },
                     "401": {
-                        "$ref": "#\/components\/responses\/Unauthorized"
+                        "description": "Missing or invalid token, or the token lacks the stocks.list permission",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Book not found"
@@ -993,7 +1005,19 @@
                         }
                     },
                     "401": {
-                        "$ref": "#\/components\/responses\/Unauthorized"
+                        "description": "Missing or invalid token, or the token lacks the stocks.list permission",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Library not found"
@@ -1036,7 +1060,19 @@
                         }
                     },
                     "401": {
-                        "$ref": "#\/components\/responses\/Unauthorized"
+                        "description": "Missing or invalid token, or the token lacks the stocks.create permission",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "422": {
                         "$ref": "#\/components\/responses\/Validation"
@@ -1079,7 +1115,19 @@
                         }
                     },
                     "401": {
-                        "$ref": "#\/components\/responses\/Unauthorized"
+                        "description": "Missing or invalid token, or the token lacks the stocks.get permission",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Stock not found"
@@ -1130,10 +1178,19 @@
                         }
                     },
                     "401": {
-                        "$ref": "#\/components\/responses\/Unauthorized"
-                    },
-                    "403": {
-                        "description": "Missing the stocks.update permission"
+                        "description": "Missing or invalid token, or the token lacks the stocks.update permission",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Stock not found"
@@ -1170,10 +1227,19 @@
                         "description": "Empty response"
                     },
                     "401": {
-                        "$ref": "#\/components\/responses\/Unauthorized"
-                    },
-                    "403": {
-                        "description": "Missing the stocks.delete permission"
+                        "description": "Missing or invalid token, or the token lacks the stocks.delete permission",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Stock not found"

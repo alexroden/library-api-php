@@ -34,8 +34,15 @@ use OpenApi\Attributes as OA;
                 ref: "#/components/schemas/StockResponse"
             )
         ),
-        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401),
-        new OA\Response(response: 403, description: "Missing the stocks.update permission"),
+        new OA\Response(
+            response: 401,
+            description: "Missing or invalid token, or the token lacks the stocks.update permission",
+            content: new OA\JsonContent(
+                properties: [
+                    new OA\Property(property: "message", type: "string"),
+                ]
+            )
+        ),
         new OA\Response(response: 404, description: "Stock not found"),
         new OA\Response(ref: "#/components/responses/Validation", response: 422),
     ]

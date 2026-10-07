@@ -25,8 +25,15 @@ use OpenApi\Attributes as OA;
             response: 204,
             description: "Empty response",
         ),
-        new OA\Response(ref: "#/components/responses/Unauthorized", response: 401),
-        new OA\Response(response: 403, description: "Missing the stocks.delete permission"),
+        new OA\Response(
+            response: 401,
+            description: "Missing or invalid token, or the token lacks the stocks.delete permission",
+            content: new OA\JsonContent(
+                properties: [
+                    new OA\Property(property: "message", type: "string"),
+                ]
+            )
+        ),
         new OA\Response(response: 404, description: "Stock not found"),
     ]
 )]
