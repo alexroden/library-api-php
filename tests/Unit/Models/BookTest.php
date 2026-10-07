@@ -5,10 +5,13 @@ namespace AlexRoden\LibraryApiPhp\Tests\Unit\Models;
 use AlexRoden\LibraryApiPhp\Models\Author;
 use AlexRoden\LibraryApiPhp\Models\Book;
 use AlexRoden\LibraryApiPhp\Models\Category;
+use AlexRoden\LibraryApiPhp\Models\Library;
+use AlexRoden\LibraryApiPhp\Models\Stock;
 use AlexRoden\LibraryApiPhp\Tests\AbstractTestCase;
 use AlexRoden\LibraryApiPhp\Tests\Factories\AuthorFactory;
 use AlexRoden\LibraryApiPhp\Tests\Factories\BookFactory;
 use AlexRoden\LibraryApiPhp\Tests\Factories\CategoryFactory;
+use AlexRoden\LibraryApiPhp\Tests\Factories\LibraryFactory;
 
 class BookTest extends AbstractTestCase
 {
@@ -89,6 +92,31 @@ class BookTest extends AbstractTestCase
         $authors = $this->book->authors();
         $this->assertCount(1, $authors);
         $this->assertJson($author->toJson(), $authors[0]->toJson());
+    }
+
+    public function testLibraries(): void
+    {
+        /** @var Library $library */
+        $library = LibraryFactory::create();
+        Stock::create([
+            'library_id' => $library->id,
+            'book_id' => $this->book->id,
+            'quantity' => 7,
+        ]);
+
+        $libraries = $this->book->libraries();
+
+        $this->assertCount(1, $libraries);
+        $this->assertEquals($library->id, $libraries[0]->id);
+        $this->assertEquals($library->name, $libraries[0]->name);
+        $this->assertEquals(7, $libraries[0]->quantity);
+    }
+
+    public function testLibrariesIsEmptyWithoutStock(): void
+    {
+        LibraryFactory::create();
+
+        $this->assertSame([], $this->book->libraries());
     }
 
     public function testCategories(): void

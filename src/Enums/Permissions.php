@@ -33,6 +33,11 @@ final class Permissions
     const string LIBRARIES_LIST = 'libraries.list';
     const string LIBRARIES_UPDATE = 'libraries.update';
     const string LIBRARIES_DELETE = 'libraries.delete';
+    const string STOCKS_CREATE = 'stocks.create';
+    const string STOCKS_GET = 'stocks.get';
+    const string STOCKS_LIST = 'stocks.list';
+    const string STOCKS_UPDATE = 'stocks.update';
+    const string STOCKS_DELETE = 'stocks.delete';
     const string USERS_CREATE = 'users.create';
     const string USERS_GET = 'users.get';
     const string USERS_LIST = 'users.list';

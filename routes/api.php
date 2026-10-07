@@ -9,6 +9,7 @@ use AlexRoden\LibraryApiPhp\Http\Controllers\CategoryController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\CouncilController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\HealthController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\LibraryController;
+use AlexRoden\LibraryApiPhp\Http\Controllers\StockController;
 use AlexRoden\LibraryApiPhp\Http\Controllers\UserController;
 
 $router->prefix('/api', function ($router) {
@@ -37,6 +38,7 @@ $router->prefix('/api', function ($router) {
             $router->get('/{library}', [LibraryController::class, 'get', ['permission:'.Permissions::LIBRARIES_GET]]);
             $router->put('/{library}', [LibraryController::class, 'update', ['permission:'.Permissions::LIBRARIES_UPDATE]]);
             $router->delete('/{library}', [LibraryController::class, 'delete', ['permission:'.Permissions::LIBRARIES_DELETE]]);
+            $router->get('/{library}/stocks', [StockController::class, 'listForLibrary'], ['permission:'.Permissions::STOCKS_LIST]);
         });
         $router->group(['prefix' => '/authors'], function ($router) {
             $router->post('/', [AuthorController::class, 'create', ['permission:'.Permissions::AUTHORS_CREATE]]);
@@ -58,6 +60,13 @@ $router->prefix('/api', function ($router) {
             $router->get('/{book}', [BookController::class, 'get', ['permission:'.Permissions::BOOKS_GET]]);
             $router->put('/{book}', [BookController::class, 'update', ['permission:'.Permissions::BOOKS_UPDATE]]);
             $router->delete('/{book}', [BookController::class, 'delete', ['permission:'.Permissions::BOOKS_DELETE]]);
+            $router->get('/{book}/stocks', [StockController::class, 'listForBook'], ['permission:'.Permissions::STOCKS_LIST]);
+        });
+        $router->group(['prefix' => '/stocks'], function ($router) {
+            $router->post('/', [StockController::class, 'create'], ['permission:'.Permissions::STOCKS_CREATE]);
+            $router->get('/{stock}', [StockController::class, 'get'], ['permission:'.Permissions::STOCKS_GET]);
+            $router->put('/{stock}', [StockController::class, 'update'], ['permission:'.Permissions::STOCKS_UPDATE]);
+            $router->delete('/{stock}', [StockController::class, 'delete'], ['permission:'.Permissions::STOCKS_DELETE]);
         });
     });
 });
