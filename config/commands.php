@@ -13,6 +13,7 @@ use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteBookCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteCategoryCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteCouncilCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteLibraryCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteStockCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteUserCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateAuthorCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateBookCommand;
@@ -33,6 +34,7 @@ use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteBookCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteCategoryCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteCouncilCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteLibraryCommandHandler;
+use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteStockCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\DeleteUserCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateAuthorCommandHandler;
 use AlexRoden\LibraryApiPhp\Bus\Handlers\UpdateBookCommandHandler;
@@ -60,6 +62,7 @@ return [
     DeleteCategoryCommand::class => DeleteCategoryCommandHandler::class,
     DeleteCouncilCommand::class => DeleteCouncilCommandHandler::class,
     DeleteLibraryCommand::class => DeleteLibraryCommandHandler::class,
+    DeleteStockCommand::class => DeleteStockCommandHandler::class,
     DeleteUserCommand::class => DeleteUserCommandHandler::class,
     UpdateAuthorCommand::class => UpdateAuthorCommandHandler::class,
     UpdateBookCommand::class => UpdateBookCommandHandler::class,

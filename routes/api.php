@@ -66,6 +66,7 @@ $router->prefix('/api', function ($router) {
             $router->post('/', [StockController::class, 'create'], ['permission:'.Permissions::STOCKS_CREATE]);
             $router->get('/{stock}', [StockController::class, 'get'], ['permission:'.Permissions::STOCKS_GET]);
             $router->put('/{stock}', [StockController::class, 'update'], ['permission:'.Permissions::STOCKS_UPDATE]);
+            $router->delete('/{stock}', [StockController::class, 'delete'], ['permission:'.Permissions::STOCKS_DELETE]);
         });
     });
 });

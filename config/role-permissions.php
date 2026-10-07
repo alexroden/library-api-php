@@ -42,6 +42,7 @@ return [
         Permissions::STOCKS_GET,
         Permissions::STOCKS_LIST,
         Permissions::STOCKS_UPDATE,
+        Permissions::STOCKS_DELETE,
         Permissions::USERS_CREATE,
         Permissions::USERS_GET,
         Permissions::USERS_LIST,

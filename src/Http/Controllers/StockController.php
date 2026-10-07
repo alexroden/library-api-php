@@ -3,6 +3,7 @@
 namespace AlexRoden\LibraryApiPhp\Http\Controllers;
 
 use AlexRoden\LibraryApiPhp\Bus\Commands\CreateStockCommand;
+use AlexRoden\LibraryApiPhp\Bus\Commands\DeleteStockCommand;
 use AlexRoden\LibraryApiPhp\Bus\Commands\UpdateStockCommand;
 use AlexRoden\LibraryApiPhp\Exceptions\UndefinedClassException;
 use AlexRoden\LibraryApiPhp\Http\Exceptions\DatabaseException;
@@ -82,6 +83,25 @@ class StockController extends AbstractController
         return new JsonResponse([
             'data' => $stock,
         ]);
+    }
+
+    /**
+     * @throws DatabaseException
+     * @throws InternalServiceException
+     */
+    public function delete(Request $request, Stock $stock): JsonResponse
+    {
+        try {
+            $this->commandBus->dispatch(
+                new DeleteStockCommand($stock)
+            );
+        } catch (PDOException $e) {
+            throw new DatabaseException($e->getMessage(), $e->getCode(), $e);
+        } catch (Exception $e) {
+            throw new InternalServiceException($e->getMessage());
+        }
+
+        return new JsonResponse(null, 204);
     }
 
     /**

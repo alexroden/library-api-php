@@ -1147,6 +1147,43 @@
                         "bearerAuth": []
                     }
                 ]
+            },
+            "delete": {
+                "tags": [
+                    "Stocks"
+                ],
+                "summary": "Delete a given stock record",
+                "description": "Deletes a given stock record. The library and book it referred to are not affected.",
+                "operationId": "d90df0e9c77b9b9f9c89b3677307e77b",
+                "parameters": [
+                    {
+                        "name": "stock",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Empty response"
+                    },
+                    "401": {
+                        "$ref": "#\/components\/responses\/Unauthorized"
+                    },
+                    "403": {
+                        "description": "Missing the stocks.delete permission"
+                    },
+                    "404": {
+                        "description": "Stock not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "\/api\/auth": {

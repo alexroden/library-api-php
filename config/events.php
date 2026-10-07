@@ -10,6 +10,7 @@ use AlexRoden\LibraryApiPhp\Bus\Events\CreateUserEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteCategoryEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteCouncilEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteLibraryEvent;
+use AlexRoden\LibraryApiPhp\Bus\Events\DeleteStockEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\DeleteUserEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\UpdateAuthorEvent;
 use AlexRoden\LibraryApiPhp\Bus\Events\UpdateBookEvent;
@@ -39,6 +40,7 @@ return [
     DeleteCategoryEvent::class => [],
     DeleteCouncilEvent::class => [],
     DeleteLibraryEvent::class => [],
+    DeleteStockEvent::class => [],
     DeleteUserEvent::class => [
         LeavingEmailListener::class,
     ],
